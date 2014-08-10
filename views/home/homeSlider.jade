@@ -1,5 +1,3 @@
-extends ../layouts/layout
-
 block content
   .wrapper
     .fullwidthbanner-container.roundedcorners
@@ -14,7 +12,7 @@ block content
               br
               | The Gentle Barn
             .tp-caption.lfb(data-x='90', data-y='330', data-speed='2000', data-start='2500', data-easing='Sine.easeOut')
-              a.btn.btn-primary.btn-lg(ui-sref='ellen') Learn More
+              a.btn.btn-primary.btn-lg(href='ellen') Learn More
           li(data-transition='random', data-slotamount='7', data-masterspeed='2000')
             img(src='img/dummy.png', alt='church1', data-lazyload='img/home2.png', data-fullwidthcentering='on')
             .tp-caption.large_text.lft(data-x='90', data-y='180', data-speed='2000', data-start='1000', data-easing='Power4.easeOut')
@@ -56,70 +54,3 @@ block content
             .tp-caption.lfb(data-x='90', data-y='330', data-speed='2000', data-start='2500', data-easing='Power4.easeOut')
               a.btn.btn-primary.btn-lg(href='ellen.html', target='_blank') Learn More
         .tp-bannertimer
-
-
-block scripts
-  //- Async load odometer styles
-  script.
-    var cb = function() {
-      var l = document.createElement('link'); l.rel = 'stylesheet';
-      l.href = 'lib/odometer/themes/odometer-theme-minimal.css';
-      var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-    };
-    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-        webkitRequestAnimationFrame || msRequestAnimationFrame;
-    if (raf) raf(cb);
-    else window.addEventListener('load', cb);
-
-    jQuery(document).ready(function() {
-      /**
-        @HALFSCREEN SLIDER
-      **/
-      jQuery('.fullwidthbanner').revolution({
-        delay:9000,
-        startwidth:1170,
-        startheight:500,
-        hideThumbs:10,
-        thumbWidth:100,
-        thumbHeight:50,
-        thumbAmount:5,
-        navigationType:"both",
-        navigationArrows:"solo",
-        navigationStyle:"round",
-        touchenabled:"on",
-        onHoverStop:"on",
-        navigationHAlign:"center",
-        navigationVAlign:"bottom",
-        navigationHOffset:0,
-        navigationVOffset:0,
-        soloArrowLeftHalign:"left",
-        soloArrowLeftValign:"center",
-        soloArrowLeftHOffset:20,
-        soloArrowLeftVOffset:0,
-        soloArrowRightHalign:"right",
-        soloArrowRightValign:"center",
-        soloArrowRightHOffset:20,
-        soloArrowRightVOffset:0,
-        shadow:1,
-        fullWidth:"on",
-        fullScreen:"off",
-        stopLoop:"off",
-        stopAfterLoops:-1,
-        stopAtSlide:-1,
-        shuffle:"off",
-        autoHeight:"off",
-        forceFullWidth:"off",
-        hideThumbsOnMobile:"off",
-        hideBulletsOnMobile:"on",
-        hideArrowsOnMobile:"on",
-        hideThumbsUnderResolution:0,
-        hideSliderAtLimit:0,
-        hideCaptionAtLimit:768,
-        hideAllCaptionAtLilmit:0,
-        startWithSlide:0,
-        videoJsPath: '',
-        fullScreenOffsetContainer: ''});
-      // Used by styleswitcher onle - delete this on production!
-      jQuery("#is_wide, #is_boxed").bind("click", function() { revapi.revredraw(); });
-      });
-

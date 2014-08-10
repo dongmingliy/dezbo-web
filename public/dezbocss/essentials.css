@@ -855,33 +855,6 @@ text-decoration: none !important;
 
 
 
-/** 14. Alerts
- **************************************************************** **/
-.alert {
-    border: 0;
-}
-.alert i.fa {
-    font-size:20px;
-    margin-right:10px;
-}
-.alert.alert-success {
-    background-color:#d2ebb8;
-    border-left:#3C763D 3px solid;
-}
-.alert.alert-info {
-    background-color:#aae1f5;
-    border-left:#31708F 3px solid;
-}
-.alert.alert-warning {
-    background-color:#fce3a3;
-    border-left:#8A6D3B 3px solid;
-}
-.alert.alert-danger {
-    background-color:#f8bac0;
-    border-left:#A94442 3px solid;
-}
-
-
 /** 15. Pagination
  **************************************************************** **/
 .pagination {

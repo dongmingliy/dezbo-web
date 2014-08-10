@@ -9,7 +9,7 @@ module.exports.controller = function (app) {
     if (req.user) {
       return res.redirect('/api');
     }
-    res.render('home/homeSlider', {
+    res.render('home/index', {
       url: req.url
     });
   });

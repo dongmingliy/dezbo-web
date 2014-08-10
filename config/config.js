@@ -86,20 +86,20 @@ config.loginAttempts.expires   = '20m';
 
 // Who are we sending email as?
 config.smtp                    = {};
-config.smtp.name               = process.env.SMTP_FROM_NAME    || 'Skeleton';
-config.smtp.address            = process.env.SMTP_FROM_ADDRESS || 'skeleton@skeleton.com';
+config.smtp.name               = process.env.SMTP_FROM_NAME    || 'Dezbo';
+config.smtp.address            = process.env.SMTP_FROM_ADDRESS || 'louis@dezbo.com';
 
 // How are we sending it?
 config.gmail                   = {};
-config.gmail.user              = process.env.SMTP_USERNAME || 'you@gmail.com';
-config.gmail.password          = process.env.SMTP_PASSWORD || 'appspecificpassword';
+config.gmail.user              = process.env.SMTP_USERNAME || 'dezbo.contact@gmail.com';
+config.gmail.password          = process.env.SMTP_PASSWORD || 'dezbo123';
 
 /**
  * Authorization Configuration
  */
 
 config.localAuth               = true;
-config.verificationRequired    = false;  // on/off for user email verification at signup
+config.verificationRequired    = true;  // on/off for user email verification at signup
 config.enhancedSecurity        = true;   // on/off for two factor authentication
 
 // Facebook
@@ -117,8 +117,8 @@ config.github.clientSecret     = process.env.GITHUB_SECRET || 'Your Secret';
 // Twitter
 config.twitterAuth             = true;
 config.twitter                 = {};
-config.twitter.consumerKey     = process.env.TWITTER_KEY    || 'Your Key';
-config.twitter.consumerSecret  = process.env.TWITTER_SECRET || 'Your Secret';
+config.twitter.consumerKey     = process.env.TWITTER_KEY    || 'oEtALDwDbRWGrsj42q5lbVBMj';
+config.twitter.consumerSecret  = process.env.TWITTER_SECRET || 'tZmjL5YRBCiNeTiM0p2h4CjKoo7yiUiOdhBihlz0ph0DGFlwCa';
 
 // Google
 config.googleAuth              = true;

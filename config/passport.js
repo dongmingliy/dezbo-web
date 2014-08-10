@@ -262,7 +262,7 @@ exports.isAdministrator = function (req, res, next) {
     // user must be be an administrator
     if (req.user.type !== 'admin') {
       req.flash('error', { msg: 'You must be an Administrator reach that page.' });
-      return res.redirect('/api');
+      return res.redirect('/');
     } else {
       return next();
     }

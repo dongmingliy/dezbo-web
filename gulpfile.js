@@ -61,7 +61,10 @@ var paths = {
     // 'public/lib/bootstrap/js/affix.js'
     // =========================================
     'public/lib/fastclick/lib/fastclick.js',
-    'public/js/main.js'
+    'public/js/main.js',
+    'public/lib/revolution-slider/js/jquery.themepunch.plugins.min.js',
+    'public/lib/revolution-slider/js/jquery.themepunch.revolution.min.js',
+    'public/lib/atropos-theme/atropos.js'
   ],
   lint: [
     'config/**/*.js',
