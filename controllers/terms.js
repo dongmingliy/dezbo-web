@@ -16,5 +16,9 @@ module.exports.controller = function (app) {
       url: req.url
     });
   });
-
+  app.get('/faq', function (req, res) {
+    res.render('terms/faq', {
+      url: req.url
+    });
+  });
 };

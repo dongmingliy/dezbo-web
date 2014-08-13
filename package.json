@@ -1,8 +1,8 @@
 {
   "private": true,
-  "version": "1.0.0-26",
+  "version": "1.0.0-27",
   "name": "dezbo",
-  "company": "dezbo, Inc.",
+  "company": "Dezbo, Inc.",
   "subdomain": "dezbo-app",
   "description": "A friendly node and express framework",
   "author": "Louis Li",

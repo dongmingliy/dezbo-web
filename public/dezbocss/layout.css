@@ -41,7 +41,7 @@ body {
 
 .wrapper {
     position:relative;
-    background-color:rgba(244,245,247,0.9); /* if background image used */
+    background-color:#f4f5f7; /* if background image used */
     overflow:hidden;
     margin:0; padding:0;
 }

@@ -18,7 +18,7 @@
                 a(href='blog-post.html') Privacy
             .column.col-md-4
               h3
-                a(href='blog-post.html') FAQ
+                a(href='faq') FAQ
               h3
                 a(href='blog-post.html') About us
             .column.col-md-4
@@ -42,9 +42,6 @@ script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
 //- Backup just in case
 script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min.js"><\/script>')
 //- Then use jQuery to async load everything else
-script(src='lib/revolution-slider/js/jquery.themepunch.plugins.min.js')
-script(src='lib/revolution-slider/js/jquery.themepunch.revolution.min.js')
-script(src='lib/revolution-slider/js/slider_revolution.js')
 script.
   $(document).ready(function() {
     //- Async load main project js
@@ -76,3 +73,21 @@ script.
       });
     });
   });
+script.
+  function downloadJSAtOnload() {
+    var element = document.createElement("script");
+    element.src = "lib/revolution-slider/js/jquery.themepunch.plugins.min.js";
+    document.body.appendChild(element);
+    var element2 = document.createElement("script");
+    element2.src = "lib/revolution-slider/js/jquery.themepunch.revolution.min.js";
+    document.body.appendChild(element2);
+    var element3 = document.createElement("script");
+    element3.src = "lib/revolution-slider/js/slider_revolution.js";
+    document.body.appendChild(element3);
+  }
+  if (window.addEventListener)
+    window.addEventListener("load", downloadJSAtOnload, false);
+  else if (window.attachEvent)
+    window.attachEvent("onload", downloadJSAtOnload);
+  else
+    window.onload = downloadJSAtOnload;
