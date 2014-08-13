@@ -122,7 +122,7 @@ var paths = {
     // =========================================
     'public/lib/fastclick/lib/fastclick.js',
     'public/js/main.js',
-    'public/lib/atropos-theme/atropos.js'
+    'pubic/lib/jssor-slider/js/jssor.slider.mini.js'
   ],
   lint: [
     'config/**/*.js',
