@@ -61,8 +61,7 @@ var paths = {
     'public/lib/bootstrap/js/affix.js',
     // =========================================
     'public/lib/fastclick/lib/fastclick.js',
-    'public/js/main.js',
-    'pubic/lib/jssor-slider/js/jssor.slider.mini.js'
+    'public/js/main.js'
   ],
   lint: [
     'config/**/*.js',
@@ -105,8 +104,6 @@ gulp.task('styles', function () {
       'Opera 12.1'
     ], { cascade: true }))
     .pipe($.csscomb())                      // Coding style formatter for CSS
-    .pipe($.csslint('.csslintrc'))          // Lint CSS
-    .pipe($.csslint.reporter())             // Report issues
     .pipe($.rename(pkg.name + '.css'))      // Rename to "packagename.css"
     .pipe($.sourcemaps.write())             // Write sourcemap
     .pipe(gulp.dest('./public/css'))        // Save CSS here
@@ -117,7 +114,8 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('./public/css'))        // Save minified CSS
     .pipe($.livereload());                  // Initiate a reload
 });
-
+//.pipe($.csslint('.csslintrc'))          // Lint CSS
+//    .pipe($.csslint.reporter())             // Report issues
 /**
  * Process Scripts
  */
@@ -213,12 +211,12 @@ gulp.task('nodemon', ['build'], function (cb) {
         called = true;
         cb();
       }
-    }, 3000);  // wait for start
+    }, 1000);  // wait for start
   })
   .on('restart', function () {
     setTimeout(function () {
       $.livereload.changed('/');
-    }, 3000);  // wait for restart
+    }, 1000);  // wait for restart
   });
 });
 
@@ -258,6 +256,6 @@ gulp.task('default', ['open'], function () {
 // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
 
 gulp.task('pagespeed', pagespeed.bind(null, {
-  url: 'https://skeleton-app.jit.su',
+  url: 'https://dezbo-app.jit.su',
   strategy: 'desktop'
 }));

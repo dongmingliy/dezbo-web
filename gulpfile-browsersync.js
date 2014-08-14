@@ -121,8 +121,7 @@ var paths = {
     'public/lib/bootstrap/js/affix.js',
     // =========================================
     'public/lib/fastclick/lib/fastclick.js',
-    'public/js/main.js',
-    'pubic/lib/jssor-slider/js/jssor.slider.mini.js'
+    'public/js/main.js'
   ],
   lint: [
     'config/**/*.js',
@@ -261,13 +260,13 @@ gulp.task('nodemon', function (cb) {
         console.log('start');
         cb();
       }
-    }, 3500);  // adjust as needed
+    }, 1000);  // adjust as needed
   })
   .on('restart', function () {
     setTimeout(function () {
       console.log('restart');
       reload();
-    }, 3500);  // adjust as needed
+    }, 1000);  // adjust as needed
   });
 });
 
