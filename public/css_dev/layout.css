@@ -1,0 +1,216 @@
+/** ********************************************** **
+	@Author			Dorin Grigoras
+	@Website		www.stepofweb.com
+	@Last Update	8:23 AM Friday, February 07, 2014
+
+	TABLE CONTENTS
+	-------------------------------
+		01. Globals
+		02. Boxed Layout
+		03. Top Nav
+		04. Slider
+		05. Content
+		06. Special Pages (maintenance, coming soon, etc)
+		07. Contact
+		08. Item Box (team, shop, etc)
+		09. Comments
+		10. Footer
+
+*************************************************** **/
+
+
+/** 01. Globals
+ **************************************************************** **/
+html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    color:#2E363F;
+    background-color:#f1f2f7;
+    font-family:'Open Sans', Arial, sans-serif;
+
+    font-size:14px; line-height:23px;
+}
+
+.wrapper {
+    position:relative;
+    background-color:#f4f5f7; /* if background image used */
+    overflow:hidden;
+    margin:0; padding:0;
+}
+
+section.margin-footer {
+    margin-bottom:-92px; /* see wrapper padding */
+}
+
+
+
+
+
+/** 02. Boxed Layout
+ **************************************************************** **/
+body.boxed {
+    background-color:#D7D6D6;
+}
+body.boxed .wrapper {
+    background-color:#f4f5f7;
+}
+
+body.boxed .wrapper,
+body.boxed header, /* IE BUG */
+body.boxed footer {
+    max-width:1170px;
+    margin:auto;
+}
+
+
+
+/** 10. .footer
+ **************************************************************** **/
+.footer {
+    color:#87919F;
+    font-size:13px;
+}
+.footer a, a:hover {
+    color:#fff;
+}
+
+.footer ul,
+ul li {
+    list-style:none;
+    margin:0; padding:0;
+}
+.footer-bar {
+    background:#292f38;
+    display:block;
+    position:relative;
+}
+
+
+.footer-bar .copyright {
+    display:inline-block;
+    padding:20px 0;
+}
+.footer-bar .toTop {
+    position:absolute;
+    right:0;
+    padding: 20px 0 20px 70px;
+    width:50%;
+    display:inline-block;
+    border-left:#403E44 1px dashed;
+}
+
+.footer-bar .toTop:hover {
+    text-decoration:none;
+}
+
+/* columns */
+.footer-content {
+    background:#2E363F;
+    border-top:#403E44 1px dashed;
+    padding:30px 0;
+    display:block;
+}
+
+.footer-content h3 {
+    color:#fff !important;
+    font-weight:200;
+    font-size:16px;
+}
+
+.column {
+    display:block;
+    height:100%;
+}
+
+/* logo */
+.column.logo {
+    position:relative;
+    background:#292f38;
+    display:block;
+    margin-top:-30px;
+    margin-bottom:-30px;
+    padding-top:50px;
+    padding-bottom:50px;
+
+    -webkit-border-bottom-right-radius: 15px;
+    -webkit-border-bottom-left-radius: 15px;
+    -moz-border-radius-bottomright: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.column.logo h4 {
+    color:#fff;
+    font-size:20px;
+    padding:0; margin:0;
+}
+
+
+/* latest posts */
+.post-item,
+.post-item p,
+.post-item small {
+    padding:0; margin:0;
+    display:block;
+}
+.post-item {
+    border-top:#403E44 1px dashed;
+    padding-top:10px;
+    margin-top:10px;
+}
+.post-item:first-child {
+    border-top:0;
+}
+.post-item small {
+    font-size:11px;
+}
+.post-item h3 {
+    font-size:13px;
+    line-height:20px;
+    font-weight:normal;
+    padding:0; margin:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    text-transform:none;
+}
+.view-more {
+    display:block;
+    margin-top:20px;
+    font-size:13px;
+}
+
+/* contact */
+/*address .footer-sprite {*/
+/*margin-bottom:20px;*/
+/*padding-left:30px;*/
+/*background:url('../images/.footer_sprite.png') no-repeat 0 0;*/
+/*}*/
+address .footer-sprite:last-child {
+    margin-bottom:0;
+}
+.footer p {
+    line-height:18px;
+}
+.footer p.contact-desc {
+    margin:0 0 30px 0;
+    padding:0 0 10px 0;
+    border-bottom:#403E44 1px dashed;
+}
+address .footer-sprite.address {
+    background-position:0 0;
+}
+address .footer-sprite.phone {
+    background-position:0 -138px;
+    line-height:30px;
+}
+address .footer-sprite.email {
+    background-position:0 -247px;
+}

@@ -1,0 +1,92 @@
+.footer
+  .footer-bar
+    .container
+      .row.column.col-md-6
+        span.copyright
+          | Copyright © Dezbo . All Rights Reserved
+      .row.column.col-md-6
+        a.toTop(href='#topNav')
+          | BACK TO TOP&nbsp;
+          i.fa.fa-arrow-circle-up
+    .footer-content
+      .container
+        .row.column.col-md-8
+            .column.col-md-4
+              h3
+                a(href='blog-post.html') Terms
+              h3
+                a(href='blog-post.html') Privacy
+            .column.col-md-4
+              h3
+                a(href='faq') FAQ
+              h3
+                a(href='blog-post.html') About us
+            .column.col-md-4
+              h3
+                a(href='blog-post.html') Contact
+              h3
+                a(href='blog-post.html') Jobs
+            .column.col-md-4
+        .column.col-md-4.text-right
+          .row
+            a.btn.btn-social-icon.btn-facebook
+              i.fa.fa-facebook
+            |&nbsp;
+            a.btn.btn-social-icon.btn-twitter
+              i.fa.fa-twitter
+//- Load jQuery, food for thought:
+//- https://palant.de/2014/06/30/please-don-t-use-externally-hosted-javascript-libraries
+
+if 'production' == process.env.NODE_ENV
+  script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+  script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+else if 'development' == process.env.NODE_ENV
+  script(src='/lib/jquery/dist/jquery.min.js')
+  cfscript(src='/lib/bootstrap/dist/js/bootstrap.min.js')
+//- Backup just in case
+script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min.js"><\/script>')
+script $.fn.modal || document.write('<script src="/lib/bootstrap/dist/js/bootstrap.min.js"><\/script>')
+//- Then use jQuery to async load everything else
+script.
+  jQuery(document).ready(function($) {
+    //- Async load main project js
+    $.ajax({
+      type: 'GET',
+      url: '/js/#{application}.min.js',
+      dataType: 'script',
+      cache: true
+    }).done(function () {
+      window.addEventListener('load', function() {
+        FastClick.attach(document.body);
+      }, false);
+    });
+    //- Async load socket.io
+    $.ajax({
+      type: 'GET',
+      url: '//cdn.socket.io/socket.io-1.0.6.js',
+      dataType: 'script',
+      cache: true
+    }).done(function () {
+      $(function(){
+        var socket = io(window.location.hostname);
+        socket.on('connect', function () {
+          socket.emit('pageview', window.location.href);
+        });
+        window.onhashchange = function () {
+          socket.emit('pageview', window.location.href);
+        };
+      });
+    });
+  });
+script.
+  $(window).load(function(){
+    $('.flexslider').flexslider({
+      animation: "slide",
+      prevText:"",
+      nextText:"",
+      pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+      pauseOnHover: true,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
+      useCSS: true,
+      touch: true
+    });
+  });

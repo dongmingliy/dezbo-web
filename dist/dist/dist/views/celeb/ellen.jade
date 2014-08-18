@@ -1,0 +1,131 @@
+extends ../layouts/layout
+block content
+  section.wrapper
+    // Title
+    section
+      h1.text-center
+        strong Ellen Degeneres
+        div Supporting
+        a(href='http://www.gentlebarn.org') The Gentle Barn
+    // /Title
+    // ONE NATION
+    section.container
+      .row
+        // video
+        .col-md-6
+          iframe(width='480', height='360', src='//www.youtube.com/embed/8V_l_Zn4j5M?feature=player_detailpage', frameborder='0', allowfullscreen='')
+        // /video
+        // video description
+        .col-md-6
+          a(href='http://www.gentlebarn.org')
+            img(src='img/gentle_barn.png')
+          p
+            | The Gentle Barn is a nonprofit corporation. It was founded in 1999 by Ellie R. Laks and is now run by
+            | Ellie and Jay Weiner, who joined forces in 2002. The Gentle Barn's mission is to provide sanctuary for
+            | abused animals who would not otherwise be able to find homes.
+        // /video description
+    // /ONE NATION
+    .divider
+      // divider
+      i.fa.fa-leaf
+    .row
+      .col-sm-6.col-md-6
+        carousel.carouselSize(interval='myInterval')
+          slide(ng-repeat='slide in ellenCouchSlides', active='slide.active')
+            img(ng-src='{{slide.image}}', style='margin:auto;')
+      .col-sm-6.col-md-6
+        // product detail
+        form.form-inline.productDescription.noajax(method='get', action='shop-cart.html', role='form')
+          // hidden fields
+          input(type='hidden', name='action', value='cart_add')
+          input(type='hidden', name='product_id', value='1')
+          h2.product-title Ellen’s Red Couch on the Ellen Show
+          // product price
+          .productRowInfo
+            span.price.styleSecondColor.fsize20 $1150.00
+          // /product price
+          .row.attributes
+            .row
+              .col-md-7
+          .row
+            // quantity + add to cart
+            .row
+              .col-md-7.col-sm-12
+                .addCartBtn
+                  .input-group
+                    input#product_qty1.text-center.form-control(type='text', name='product_qty', value='$', placeholder='Qty')
+                    span.input-group-btn
+                      button#addToCartBtn1.btn.btn-primary
+                        i.fa.fa-shopping-cart
+                        | Bid
+                  // /input-group
+            // /quantity + add to cart
+          // product description
+          .desc
+            h3.page-header DESCRIPTION
+            p
+              | Hundreds of celebrities sat here. Enter for a chance to win this unique couch and show it off to your friends at home. Sit where the celebrities sat!
+          // /product description
+          .socialApis
+            // facebook
+            .api
+              .fb-like(data-href='https://www.facebook.com/stepofweb', data-layout='button_count', data-action='like', data-show-faces='false', data-share='false')
+            // twitter
+            .api
+              a.twitter-share-button(href='https://twitter.com/share', data-lang='en') Tweet
+        // product detail
+    // /ONE NATION
+    .divider
+      // divider
+      i.fa.fa-leaf
+    .row
+      .col-sm-6.col-md-6
+        carousel(interval='myInterval')
+          slide(ng-repeat='slide in ellenSelfieSlides', active='slide.active')
+            img.carouselSize(ng-src='{{slide.image}}')
+      .col-sm-6.col-md-6
+        // product detail
+        form.form-inline.productDescription.noajax(method='get', action='shop-cart.html', role='form')
+          // hidden fields
+          input(type='hidden', name='action', value='cart_add')
+          input(type='hidden', name='product_id', value='1')
+          h2.product-title Ellen’s signed Oscars Selfie
+          // product price
+          .productRowInfo
+            span.price.styleSecondColor.fsize20 $800.00
+          // /product price
+          .row.attributes
+            .row
+              .col-md-7
+          .row
+            // quantity + add to cart
+            .row
+              .col-md-7.col-sm-12
+                .addCartBtn
+                  .input-group
+                    input#product_qty.text-center.form-control(type='text', name='product_qty', value='1', placeholder='Qty')
+                    span.input-group-btn
+                      button#addToCartBtn.btn.btn-primary
+                        i.fa.fa-shopping-cart
+                        | Add To Cart
+                  // /input-group
+            // /quantity + add to cart
+          // product description
+          .desc
+            h3.page-header DESCRIPTION
+            p
+              | Hundreds of celebrities sat here. Enter for a chance to win this unique couch and show it off to your friends at home. Sit where the celebrities sat!
+          // /product description
+          .socialApis
+            // facebook
+            .api
+              .fb-like(data-href='https://www.facebook.com/stepofweb', data-layout='button_count', data-action='like', data-show-faces='false', data-share='false')
+            // twitter
+            .api
+              a.twitter-share-button(href='https://twitter.com/share') Tweet
+        // product detail
+    // /WRAPPER
+  // twitter
+  script#twitter-wjs(src='http://platform.twitter.com/widgets.js')
+  script
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');

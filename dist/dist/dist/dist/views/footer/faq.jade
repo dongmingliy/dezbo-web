@@ -1,0 +1,160 @@
+extends ../layouts/layout
+
+block head
+  title #{application} &middot; FAQ
+
+block content
+  .wrapper
+    section.container
+    h2
+      strong F
+      | requently
+      strong A
+      | sked
+      strong Q
+      | uestions
+    h3.text-center General
+    .divider
+      i.fa.fa-star
+    .toggle
+      label I am a Fan. How does Dezbo help me?
+      .toggle-content
+        | Dezbo connects you to your favourite celebrities by offering premium items directly from them. These items are
+        | one of a kind and can only be awarded here. You are also supporting a good cause.
+    .toggle
+      label I am a charity. How does Dezbo help our organization?
+      .toggle-content
+        | We offer a new line of revenue to your organization by having celebrities sponsor you and reward their fans
+        | their unique items. Please contact us at&nbsp;
+        a(href='mailto:contact@dezbo.com') contact@dezbo.com&nbsp;
+        | for more information.
+    .toggle
+      label I am a celebrity. How can I join?
+      .toggle-content
+        | You have come to the right place! Please contact&nbsp;
+        a(href='mailto:celebrity@dezbo.com') celebrity@dezbo.com&nbsp;
+        | for details.
+    .toggle
+      label How long does it take to receive my reward (item)?
+      .toggle-content
+        | After announcing the winner, items usually take between 4-6 weeks to reach your address. You may choose our
+        | premium shipping service for faster delivery.
+    .toggle
+      label Does Dezbo charge a fee to its non-profit pals?
+      .toggle-content
+        | Dezbo does not take an upfront fee. Dezbo however takes a 20% commission on the highest bid and on all raffle
+        | entries to cover the services we offer. This fee covers all aspects of the prize draw process and item delivery,
+        | legalities, accounting, creating awareness around the campaigns, copywriting, graphic design and more.
+    .toggle
+      label How do I know if I won a reward?
+      .toggle-content
+        | You will be notified by email (or text).
+    .toggle
+      label What percentage of the proceeds actually goes to the cause?
+      .toggle-content
+        | Every campaign differs. However, most of the charities end up receiving 80% of the
+        | proceeds or more.
+    .toggle
+      label
+        | The celebrity I follow is not on Dezbo, is there anyway you can help me get them on Dezbo?
+      .toggle-content
+        | We will include monthly polls to determine whom we should bring on next. However, feel
+        | free to email us at&nbsp;
+        a(href='mailto:contact@dezbo.com') contact@dezbo.com&nbsp;
+        | with your suggestions.
+    .toggle
+      label
+        | Can I enter a contest from any part of the world? Are competitions open for international
+        | participants?
+      .toggle-content
+        | Yes. However, shipping costs may vary depending on where you are located.
+    .toggle
+      label After I win, what happens next?
+      .toggle-content
+        | You will be notified by email (or text) and we will go ahead and ship your reward to
+        | the desired address. Dezbo takes care of it all.
+    br
+    h3.text-center Bidding
+    .divider
+      i.fa.fa-star
+    .toggle
+      label How is the winner selected?
+      .toggle-content
+        | To put it simply, the HIGHEST bidder wins.
+    .toggle
+      label How will I know if someone has outbid me?
+      .toggle-content
+        | You will be notified by email (or text). Here, you will be given the option of either outbidding the
+        | ‘out-bidder’ or simply accepting it.
+    br
+    h3.text-center Raffle Entries
+    .divider
+      i.fa.fa-star
+    .toggle
+      label Do I have to pay to enter a campaign? Can I enter for free?
+      .toggle-content
+        | No. Dezbo carries a ‘no purchase necessary’ policy. Fans can enter raffle draws for free by filling out this
+        | form and posting it to: Dezbo Inc. (Dezbo Address). It is the responsibility of the fan to ensure correct and
+        | sufficient postage is paid. Bulk entries are void and cannot be accepted. Further details can be found in the
+        | reward-specific terms and conditions.
+    .toggle
+      label How is the winner selected?
+      .toggle-content
+        | When you enter a raffle contest you will receive raffle entries, which will be displayed in your Dezbo account
+        | after activation. Our Random Number Generator software will select/draw the winner once all raffle entries for
+        | the competition have been entered.
+    .toggle
+      label Are Dezbo’s raffle entries considered gambling?
+      .toggle-content
+        | No. Dezbo raffle draws are considered “free competitions”. A “free competition” is a raffle draw, for which a
+        | free and user-friendly method of entry is offered (in Dezbo’s case, a free postal route).
+    br
+    h3.text-center Account
+    .divider
+      i.fa.fa-star
+    .toggle
+      label Are payments secure on Dezbo.com?
+      .toggle-content
+        | We provide a 100% secure and reliable payment process.
+    .toggle
+      label Why do fans need to register?
+      .toggle-content
+        | Registering for Dezbo makes it easier for you to use the site in the future. Once entered, your details will be
+        | securely stored and you will not need to enter them again. When signed in, you can view your profile at any time
+        | to follow the raffle draws that you have entered, as well as, your bidding status. You will also be able to edit
+        | any of your account details.
+
+script.
+  $(document).ready(function () {
+    $("div.toggle.active > p").addClass("preview-active");
+    $("div.toggle.active > div.toggle-content").slideDown(400);
+    $("div.toggle > label").click(function (e) {
+      var parentSection = jQuery(this).parent(),
+        parentWrapper = jQuery(this).parents("div.toogle"),
+      previewPar = false,
+    isAccordion = parentWrapper.hasClass("toogle-accordion");
+  if (isAccordion && typeof(e.originalEvent) != "undefined") {
+    parentWrapper.find("div.toggle.active > label").trigger("click");
+  }
+  parentSection.toggleClass("active");
+  if (parentSection.find("> p").get(0)) {
+    previewPar = parentSection.find("> p");
+  var previewParCurrentHeight = previewPar.css("height");
+  var previewParAnimateHeight = previewPar.css("height");
+  previewPar.css("height", "auto");
+  previewPar.css("height", previewParCurrentHeight);
+  }
+  var toggleContent = parentSection.find("> div.toggle-content");
+  if (parentSection.hasClass("active")) {
+    $(previewPar).animate({height: previewParAnimateHeight}, 350, function () {
+    $(this).addClass("preview-active");
+    });
+    toggleContent.slideDown(350);
+  } else {
+    $(previewPar).animate({height: previewParClosedHeight}, 350, function () {
+    $(this).removeClass("preview-active");
+    });
+    toggleContent.slideUp(350);
+  }
+  });
+  });

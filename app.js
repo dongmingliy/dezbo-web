@@ -241,19 +241,22 @@ app.use(helmet.csp({
     'oss.maxcdn.com',
     'cdn.socket.io',
     'checkout.stripe.com',
-    'cdnjs.cloudflare.com'
+    'cdnjs.cloudflare.com',
+    'maxcdn.bootstrapcdn.com'
   ],
   styleSrc: [
     "'self'",
     "'unsafe-inline'",
     'fonts.googleapis.com',
-    'checkout.stripe.com'
+    'checkout.stripe.com',
+    'maxcdn.bootstrapcdn.com'
   ],
   fontSrc: [
     "'self'",
     'fonts.googleapis.com',
     'fonts.gstatic.com',
-    'themes.googleusercontent.com'
+    'themes.googleusercontent.com',
+    'maxcdn.bootstrapcdn.com'
   ],
   imgSrc: [
     "'self'",

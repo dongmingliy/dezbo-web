@@ -103,25 +103,10 @@ var paths = {
     'public/css/**/*.min.css'
   ],
   js: [
-    // ============= Bootstrap  ================
-    // Enable/disable as needed but only turn on
-    // .js that is needed on *every* page. No bloat!
-    // =========================================
-    'public/lib/bootstrap/js/transition.js',
-    'public/lib/bootstrap/js/alert.js',
-    'public/lib/bootstrap/js/button.js',
-    'public/lib/bootstrap/js/carousel.js',
-    'public/lib/bootstrap/js/collapse.js',
-    'public/lib/bootstrap/js/dropdown.js',
-    'public/lib/bootstrap/js/modal.js',
-    'public/lib/bootstrap/js/tooltip.js',
-    'public/lib/bootstrap/js/popover.js',
-    'public/lib/bootstrap/js/scrollspy.js',
-    'public/lib/bootstrap/js/tab.js',
-    'public/lib/bootstrap/js/affix.js',
     // =========================================
     'public/lib/fastclick/lib/fastclick.js',
-    'public/js/main.js'
+    'public/js/main.js',
+    'public/lib/flex-slider/jquery.flexslider.js'
   ],
   lint: [
     'config/**/*.js',
@@ -137,6 +122,9 @@ var paths = {
   ],
   jade: [
     'views/**/*.jade'
+  ],
+  css: [
+    'public/dev_css/*.css'
   ]
 };
 
@@ -260,13 +248,13 @@ gulp.task('nodemon', function (cb) {
         console.log('start');
         cb();
       }
-    }, 1000);  // adjust as needed
+    }, 3000);  // adjust as needed
   })
   .on('restart', function () {
     setTimeout(function () {
       console.log('restart');
       reload();
-    }, 1000);  // adjust as needed
+    }, 3000);  // adjust as needed
   });
 });
 

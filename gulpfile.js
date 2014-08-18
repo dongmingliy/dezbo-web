@@ -23,7 +23,7 @@ var banner = [
   ' * <%= pkg.name %> - <%= pkg.description %>',
   ' * @version v<%= pkg.version %>',
   ' * @link <%= pkg.homepage %>',
-  ' * @license <%= pkg.license %>',
+  ' * @license <%= pkg.licenses[0].type %>',
   ' */',
   ''
 ].join('\n');
@@ -43,25 +43,10 @@ var paths = {
     'public/css/**/*.min.css'
   ],
   js: [
-    // ============= Bootstrap  ================
-    // Enable/disable as needed but only turn on
-    // .js that is needed on *every* page. No bloat!
-    // =========================================
-    'public/lib/bootstrap/js/transition.js',
-    'public/lib/bootstrap/js/alert.js',
-    'public/lib/bootstrap/js/button.js',
-    'public/lib/bootstrap/js/carousel.js',
-    'public/lib/bootstrap/js/collapse.js',
-    'public/lib/bootstrap/js/dropdown.js',
-    'public/lib/bootstrap/js/modal.js',
-    'public/lib/bootstrap/js/tooltip.js',
-    'public/lib/bootstrap/js/popover.js',
-    'public/lib/bootstrap/js/scrollspy.js',
-    'public/lib/bootstrap/js/tab.js',
-    'public/lib/bootstrap/js/affix.js',
     // =========================================
     'public/lib/fastclick/lib/fastclick.js',
-    'public/js/main.js'
+    'public/js/main.js',
+    'public/lib/flex-slider/jquery.flexslider.js'
   ],
   lint: [
     'config/**/*.js',
@@ -74,6 +59,9 @@ var paths = {
   ],
   less: [
     'less/**/*.less'
+  ],
+  css: [
+    'public/dev_css/*.css'
   ]
 };
 
@@ -86,7 +74,7 @@ var paths = {
 
 gulp.task('clean', function () {
   return gulp.src(paths.clean, { read: false })
-    .pipe($.rimraf());
+      .pipe($.rimraf());
 });
 
 /**
@@ -95,41 +83,42 @@ gulp.task('clean', function () {
 
 gulp.task('styles', function () {
   return gulp.src('./less/main.less')       // Read in Less file
-    .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
-    .pipe($.less({ strictMath: true }))     // Compile Less files
-    .pipe($.autoprefixer([                  // Autoprefix for target browsers
-      'last 2 versions',
-      '> 1%',
-      'Firefox ESR',
-      'Opera 12.1'
-    ], { cascade: true }))
-    .pipe($.csscomb())                      // Coding style formatter for CSS
-    .pipe($.rename(pkg.name + '.css'))      // Rename to "packagename.css"
-    .pipe($.sourcemaps.write())             // Write sourcemap
-    .pipe(gulp.dest('./public/css'))        // Save CSS here
-    .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
-    .pipe($.csso())                         // Minify CSS
-    .pipe($.header(banner, { pkg : pkg }))  // Add banner
-    .pipe($.size({ title: 'CSS:' }))        // What size are we at?
-    .pipe(gulp.dest('./public/css'))        // Save minified CSS
-    .pipe($.livereload());                  // Initiate a reload
+      .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
+      .pipe($.less({ strictMath: true }))     // Compile Less files
+      .pipe($.autoprefixer([                  // Autoprefix for target browsers
+        'last 2 versions',
+        '> 1%',
+        'Firefox ESR',
+        'Opera 12.1'
+      ], { cascade: true }))
+      .pipe($.csscomb())                      // Coding style formatter for CSS
+      .pipe($.csslint('.csslintrc'))          // Lint CSS
+      .pipe($.csslint.reporter())             // Report issues
+      .pipe($.rename(pkg.name + '.css'))      // Rename to "packagename.css"
+      .pipe($.sourcemaps.write())             // Write sourcemap
+      .pipe(gulp.dest('./public/css'))        // Save CSS here
+      .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
+      .pipe($.csso())                         // Minify CSS
+      .pipe($.header(banner, { pkg: pkg }))  // Add banner
+      .pipe($.size({ title: 'CSS:' }))        // What size are we at?
+      .pipe(gulp.dest('./public/css'))        // Save minified CSS
+      .pipe($.livereload());                  // Initiate a reload
 });
-//.pipe($.csslint('.csslintrc'))          // Lint CSS
-//    .pipe($.csslint.reporter())             // Report issues
+
 /**
  * Process Scripts
  */
 
 gulp.task('scripts', function () {
   return gulp.src(paths.js)                 // Read .js files
-    .pipe($.concat(pkg.name + '.js'))       // Concatenate .js files
-    .pipe(gulp.dest('./public/js'))         // Save main.js here
-    .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
-    .pipe($.uglify({ outSourceMap: true })) // Minify the .js
-    .pipe($.header(banner, { pkg : pkg }))  // Add banner
-    .pipe($.size({ title: 'JS:' }))         // What size are we at?
-    .pipe(gulp.dest('./public/js'))         // Save minified .js
-    .pipe($.livereload());                  // Initiate a reload
+      .pipe($.concat(pkg.name + '.js'))       // Concatenate .js files
+      .pipe(gulp.dest('./public/js'))         // Save main.js here
+      .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
+      .pipe($.uglify({ outSourceMap: true })) // Minify the .js
+      .pipe($.header(banner, { pkg: pkg }))  // Add banner
+      .pipe($.size({ title: 'JS:' }))         // What size are we at?
+      .pipe(gulp.dest('./public/js'))         // Save minified .js
+      .pipe($.livereload());                  // Initiate a reload
 });
 
 /**
@@ -138,13 +127,13 @@ gulp.task('scripts', function () {
 
 gulp.task('images', function () {
   return gulp.src('public/img/**/*')        // Read images
-    .pipe($.changed('./public/img'))        // Only process new/changed
-    .pipe($.imagemin({                      // Compress images
-      optimizationLevel: 5,
-      progressive: true,
-      interlaced: true
-    }))
-    .pipe(gulp.dest('./public/img'));      // Write processed images
+      .pipe($.changed('./public/img'))        // Only process new/changed
+      .pipe($.imagemin({                      // Compress images
+        optimizationLevel: 5,
+        progressive: true,
+        interlaced: true
+      }))
+      .pipe(gulp.dest('./public/img'));      // Write processed images
 });
 
 /**
@@ -153,8 +142,8 @@ gulp.task('images', function () {
 
 gulp.task('lint', function () {
   return gulp.src(paths.lint)               // Read .js files
-    .pipe($.jshint())                       // lint .js files
-    .pipe($.jshint.reporter('jshint-stylish'));
+      .pipe($.jshint())                       // lint .js files
+      .pipe($.jshint.reporter('jshint-stylish'));
 });
 
 /**
@@ -163,12 +152,12 @@ gulp.task('lint', function () {
 
 gulp.task('jscs', function () {
   return gulp.src(paths.lint)               // Read .js files
-    .pipe($.jscs())                         // jscs .js files
-    .on('error', function (e) {
-      $.util.log(e.message);
-      $.jscs().end();
-    })
-    .pipe(terminus.devnull({ objectMode: true }));
+      .pipe($.jscs())                         // jscs .js files
+      .on('error', function (e) {
+        $.util.log(e.message);
+        $.jscs().end();
+      })
+      .pipe(terminus.devnull({ objectMode: true }));
 });
 
 /**
@@ -178,10 +167,10 @@ gulp.task('jscs', function () {
 
 gulp.task('build', function (cb) {
   runSequence(
-    'clean',                                // first clean
-    ['lint', 'jscs'],                       // then lint and jscs in parallel
-    ['styles', 'scripts', 'images'],        // etc.
-    cb);
+      'clean',                                // first clean
+      ['lint', 'jscs'],                       // then lint and jscs in parallel
+      ['styles', 'scripts', 'images'],        // etc.
+      cb);
 });
 
 /**
@@ -195,7 +184,7 @@ gulp.task('nodemon', ['build'], function (cb) {
     script: 'app.js',
     verbose: false,
     env: { 'NODE_ENV': 'development', 'DEBUG': 'skeleton' },
-    // nodeArgs: ['--debug'],
+    nodeArgs: ['--debug'],
     ext: 'js',
     ignore: [
       'gulpfile.js',
@@ -205,19 +194,19 @@ gulp.task('nodemon', ['build'], function (cb) {
       'node_modules/'
     ]
   })
-  .on('start', function () {
-    setTimeout(function () {
-      if (!called) {
-        called = true;
-        cb();
-      }
-    }, 1000);  // wait for start
-  })
-  .on('restart', function () {
-    setTimeout(function () {
-      $.livereload.changed('/');
-    }, 1000);  // wait for restart
-  });
+      .on('start', function () {
+        setTimeout(function () {
+          if (!called) {
+            called = true;
+            cb();
+          }
+        }, 3500);  // wait for start
+      })
+      .on('restart', function () {
+        setTimeout(function () {
+          $.livereload.changed('/');
+        }, 3500);  // wait for restart
+      });
 });
 
 /**
@@ -232,7 +221,7 @@ gulp.task('open', ['nodemon'], function () {
   // Doesn't matter which file since we set the URL above
   // Weird, I know...
   gulp.src('./public/humans.txt')
-  .pipe($.open('', options));
+      .pipe($.open('', options));
 });
 
 /**
@@ -259,3 +248,4 @@ gulp.task('pagespeed', pagespeed.bind(null, {
   url: 'https://dezbo-app.jit.su',
   strategy: 'desktop'
 }));
+
