@@ -22,43 +22,24 @@ ul.nav li:hover {
     background-color: #007695;
 }
 
-.flip {
-    -webkit-perspective: 100;
-    position: relative;
-    margin: 10px auto;
-}
-.flip .card.flipped {
-    -webkit-transform: rotateY(180deg);
-}
-.flip .card {
-    -webkit-transform-style: preserve-3d;
-    -webkit-transition: 0.9s;
-}
-.flip .card .face {
-    position: absolute;
-    -webkit-backface-visibility: hidden ;
-    z-index: 2;
-}
-.flip .card .front {
-    position: absolute;
-    z-index: 1;
-}
-.flip .card .back {
-    -webkit-transform: rotateY(180deg);
-}
-
 .carouselSize{
     height:340px;
     overflow: hidden;
 }
 .slider-caption{
-    margin-top: 100px;
-    margin-left: 10px;
+    top: 1em;
     position:absolute;
-
 }
-.slider-font{
+.slider-font h1{
     color: #ffffff !important;
     font:arial, sans-serif;
     text-shadow: #000111 0px 2px 5px;
+    font-size: 14px !important;
+    font-size: 1.5vw !important;
 }
+
+.slider-border{
+    background: url(../img/shadow1.png) no-repeat;
+    background-size: 100% 100%;
+}
+

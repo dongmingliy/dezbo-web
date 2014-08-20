@@ -49,7 +49,7 @@ config.loggly.json    = true;
  */
 
 config.mongodb        = {};
-config.mongodb.url    = process.env.MONGODB_URL || 'mongodb://lli:sa@ds043467.mongolab.com:43467/dezbodb';
+config.mongodb.url    = process.env.MONGODB_URL || 'mongodb://localhost/dezbofullstack-dev';
 
 /**
  * Session Configuration

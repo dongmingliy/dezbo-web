@@ -1,10 +1,8 @@
 .footer
   .footer-bar
     .container
-      .row.column.col-md-6
-        span.copyright
+        div.copyright
           | Copyright © Dezbo . All Rights Reserved
-      .row.column.col-md-6
         a.toTop(href='#topNav')
           | BACK TO TOP&nbsp;
           i.fa.fa-arrow-circle-up
@@ -87,6 +85,7 @@ script.
       pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
       pauseOnHover: true,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
       useCSS: true,
-      touch: true
+      touch: true,
+      controlNav:false
     });
   });

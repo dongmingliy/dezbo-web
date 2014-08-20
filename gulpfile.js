@@ -230,6 +230,7 @@ gulp.task('open', ['nodemon'], function () {
 
 gulp.task('default', ['open'], function () {
   gulp.watch(paths.less, ['styles']);
+  gulp.watch(paths.css, ['styles']);
   gulp.watch(paths.js, ['scripts']);
   gulp.watch(paths.lint, ['lint', 'jscs']);
   gulp.watch('views/**/*.jade').on('change', $.livereload.changed);
