@@ -32,23 +32,30 @@
 }
 
 .thumbnail:hover{
-    cursor:hand !important;
+    cursor:pointer;
 }
 
 .thumbnail .support{
     color:grey;
-    font-size: small;
-    bottom:2px;
+    font-size: 11px;
+    bottom:0;
     position:absolute;
+    width:100%;
 }
 
 .countdown{
     background-color: #005595;
-    margin-left:-6px;
-    margin-right:-6px;
-    padding:4px;
+    margin-left:-8px;
+    margin-right:8px;
+    padding:4px 4px 4px 10px;
+    font-size:14px;
+}
+.bidtitle{
+    font-size:16px;
+    padding-top:40px;
 }
 
 .bidprice{
     font-size:18px;
+    color: #0082c3;
 }
