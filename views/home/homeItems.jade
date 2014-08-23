@@ -1,98 +1,84 @@
 block content
-  .container.shop
-    h3.text-center
-      strong Popular Items
+  .divider
+    i.fa.fa-star
+  .container
     .row
+      h3.text-center.text-uppercase Bidding
+      br
       .col-md-3.col-sm-4
-        .thumbnail.curl-top-right.border-fade
-          figure
-            img.img-responsive(src='img/shop/ellen1_small.png', width='263', height='263', alt='')
-          .item-box
-            h5 Ellen’s Red Couch on the Ellen Show
-            a(href='ellen.html')
-              button.btn.btn-success Bid
-            div
-              | Current Bid:
-              strong $1150.00
-            div
-              | Ending
-              strong May 30, 2014
-            .support
-              | Supporting 
-              a(href='www.gentlebarn.org') The Gentle Barn
-      .col-md-3.col-sm-4
-        .thumbnail.curl-top-right.border-fade
+        .thumbnail.border-fade
           figure
             img.img-responsive(src='img/shop/ellen4_small.png', width='263', height='263', alt='')
           .item-box
             h5 Ellen’s signed Oscars Selfie
-            a(href='ellen.html')
-              button.btn.btn-success Buy
-            div
-              | Price:
-              strong $800.00
-            div
-              | Ending
-              strong May 30, 2014
-            .support
-              | Supporting
-              a(href='www.gentlebarn.org') The Gentle Barn
-      .col-md-3.col-sm-4
-        .thumbnail.curl-top-right.border-fade
-          figure
-            img.img-responsive(src='img/shop/snoop1_small.png', width='263', height='263', alt='')
-          .item-box
-            h5 Snoop’s Stage Mic
-            a(href='snoop.html')
-              button.btn.btn-success Raffle
-            div
-              | Ending
-              strong Jun 22, 2014
+            .bidprice
+              | Current Bid:
+              strong $350.00
+            .countdown.white
+              timer(start-time="1401000000000")
+                | {{days}} d - {{hours}}h:{{minutes}}m:{{seconds}}s
             .support
               | Supporting 
-              a(href='www.snoopyfl.net"') Youth Football League Foundation
+              a(href='www.gentlebarn.org') The Gentle Barn
       .col-md-3.col-sm-4
-        .thumbnail.curl-top-right.border-fade
+        .thumbnail.border-fade
           figure
             img.img-responsive(src='img/shop/snoop5_small.png', width='263', height='263', alt='')
           .item-box
             h5 Snoop’s Sunglasses
-            a(href='snoop.html')
-              button.btn.btn-success Buy
-            div
-              | Price:
+            .bidprice
+              | Current Bid:
               strong $250.00
-            div
-              | Ending
-              strong Jun 22, 2014
+            .countdown.white
+              timer(start-time="1400800000000")
+                | {{days}} d - {{hours}}h:{{minutes}}m:{{seconds}}s
             .support
               | Supporting 
               a(href='www.snoopyfl.net"') Youth Football League Foundation
-      
       .col-md-3.col-sm-4
-        .thumbnail.curl-top-right.border-fade
+        .thumbnail.border-fade
+          figure
+            img.img-responsive(src='img/shop/gaga4_small.png', width='263', height='263', alt='')
+          .item-box
+            h5 Lady Gaga’s Gloves
+            div
+              | Current Bid:
+              strong $784.00
+            .countdown.white
+              timer(start-time="1401000000000")
+                | {{days}} d - {{hours}}h:{{minutes}}m:{{seconds}}s
+            .support
+              | Supporting 
+              a(href='www.bornthiswayfoundation.org/"') Born This Way Foundation
+      .col-md-3.col-sm-4
+        .thumbnail.border-fade
           figure
             img.img-responsive(src='img/shop/kristine1_small.png', width='263', height='263', alt='')
           .item-box
             h5 Kristen Bell’s Camera in ‘Veronica Mars’
-            a(href='ellen.html')
-              button.btn.btn-success Buy
             div
-              | Price:
+              | Current Bid:
               strong $1500.00
-            div
-              strong Ending Jun 8, 2014
+            .countdown.white
+              timer(start-time="1401100000000")
+                | {{days}} d - {{hours}}h:{{minutes}}m:{{seconds}}s
             .support
               | Supporting 
               a(href='www.peta.org"') PETA
+  .divider
+    i.fa.fa-star
+  .container
+    h3.text-center.text-uppercase Enter to win
+    br
+    .row
       .col-md-3.col-sm-4
-        .thumbnail.curl-top-right.border-fade
+        .thumbnail.border-fade
           figure
             img.img-responsive(src='img/shop/queen1_small.png', width='263', height='263', alt='')
           .item-box
             h5 Queen Rania’s Autographed Book
             a(href='ellen.html')
-              button.btn.btn-success Raffle
+              button.btn.btn-primary Enter to win
             div
               | Ending
               strong Jun 2, 2014
@@ -101,13 +87,13 @@ block content
               | Supporting 
               a(href='www.jordanriver.jo"') Jordan River Foundation
       .col-md-3.col-sm-4
-        .thumbnail.curl-top-right.border-fade
+        .thumbnail.border-fade
           figure
             img.img-responsive(src='img/shop/gaga1_small.png', width='263', height='263', alt='')
           .item-box
             h5 Lady Gaga’s Red Carpet Heels
             a(href='ellen.html')
-              button.btn.btn-success Raffle
+              button.btn.btn-primary Enter to win
             div
               | Ending
               strong Jul 5, 2014
@@ -116,20 +102,30 @@ block content
               | Supporting 
               a(href='www.bornthiswayfoundation.org/"') Born This Way Foundation
       .col-md-3.col-sm-4
-        .thumbnail.curl-top-right.border-fade
+        .thumbnail.border-fade
           figure
-            img.img-responsive(src='img/shop/gaga4_small.png', width='263', height='263', alt='')
+            img.img-responsive(src='img/shop/snoop1_small.png', width='263', height='263', alt='')
           .item-box
-            h5 Lady Gaga’s Gloves
-            a(href='ellen.html')
-              button.btn.btn-success Bid
-            div
-              | Current Bid:
-              strong $784.00
+            h5 Snoop’s Stage Mic
+            a(href='snoop.html')
+              button.btn.btn-primary Enter to win
             div
               | Ending
-              strong Jul 5, 2014
+              strong Jun 22, 2014
             .support
               | Supporting 
-              a(href='www.bornthiswayfoundation.org/"') Born This Way Foundation
-
+              a(href='www.snoopyfl.net"') Youth Football League Foundation
+      .col-md-3.col-sm-4
+        .thumbnail.border-fade
+          figure
+            img.img-responsive(src='img/shop/ellen1_small.png', width='263', height='263', alt='')
+          .item-box
+            h5 Ellen’s Red Couch on the Ellen Show
+            a(href='ellen.html')
+              button.btn.btn-primary Enter to win
+            div
+              | Current Bid:
+              strong $1150.00
+            .support
+              | Supporting 
+              a(href='www.gentlebarn.org') The Gentle Barn

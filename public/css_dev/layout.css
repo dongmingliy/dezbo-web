@@ -1,22 +1,4 @@
-/** ********************************************** **
-	@Author			Dorin Grigoras
-	@Website		www.stepofweb.com
-	@Last Update	8:23 AM Friday, February 07, 2014
 
-	TABLE CONTENTS
-	-------------------------------
-		01. Globals
-		02. Boxed Layout
-		03. Top Nav
-		04. Slider
-		05. Content
-		06. Special Pages (maintenance, coming soon, etc)
-		07. Contact
-		08. Item Box (team, shop, etc)
-		09. Comments
-		10. Footer
-
-*************************************************** **/
 
 
 /** 01. Globals
@@ -30,13 +12,6 @@ html, body {
     min-height: 100%;
 }
 
-body {
-    color:#2E363F;
-    background-color:#f1f2f7;
-    font-family:'Open Sans', Arial, sans-serif;
-
-    font-size:14px; line-height:23px;
-}
 
 .wrapper {
     position:relative;
@@ -49,14 +24,17 @@ section.margin-footer {
     margin-bottom:-92px; /* see wrapper padding */
 }
 
-
+h1,
+h2,
+h3{
+    font-family: 'Open Sans', sans-serif !important;
+}
 
 
 
 /** 02. Boxed Layout
  **************************************************************** **/
 body.boxed {
-    background-color:#D7D6D6;
 }
 body.boxed .wrapper {
     background-color:#f4f5f7;
@@ -92,7 +70,6 @@ ul li {
     position:relative;
     margin-top:100px !important;
 }
-
 
 .footer-bar .copyright {
     display:inline-block;
@@ -187,12 +164,7 @@ ul li {
     font-size:13px;
 }
 
-/* contact */
-/*address .footer-sprite {*/
-/*margin-bottom:20px;*/
-/*padding-left:30px;*/
-/*background:url('../images/.footer_sprite.png') no-repeat 0 0;*/
-/*}*/
+
 address .footer-sprite:last-child {
     margin-bottom:0;
 }
@@ -291,15 +263,72 @@ address .footer-sprite.email {
     }
 }
 
-.shop{
+.howSection{
+    background: #EEEEEE;
+    margin-top:20px;
+    padding-top:20px;
+    padding-bottom: 30px;
+}
 
-    background: rgb(252,255,244); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,255,244,1)), color-stop(40%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
 
+.btn-outlined {
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.btn-outlined.btn-primary {
+    background: none;
+    border: 3px solid #428bca;
+    color: #428bca;
+}
+.btn-outlined.btn-primary:hover,
+.btn-outlined.btn-primary:active {
+    color: #FFF;
+    background: #428bca;
+    border-color: #428bca;
+}
+
+.btn-outlined.btn-success {
+    background: none;
+    border: 3px solid #5cb85c;
+    color: #5cb85c;
+}
+.btn-outlined.btn-success:hover,
+.btn-outlined.btn-success:active {
+    color: #FFF;
+    background: #47a447;
+}
+
+.btn-outlined.btn-info {
+    background: none;
+    border: 3px solid #5bc0de;
+    color: #5bc0de;
+}
+.btn-outlined.btn-info:hover,
+.btn-outlined.btn-info:active {
+    color: #FFF;
+    background: #39b3d7;
+}
+
+.btn-outlined.btn-warning {
+    background: none;
+    border: 3px solid #f0ad4e;
+    color: #f0ad4e;
+}
+.btn-outlined.btn-warning:hover,
+.btn-outlined.btn-warning:active {
+    color: #FFF;
+    background: #ed9c28;
+}
+
+.btn-outlined.btn-danger {
+    background: none;
+    border: 3px solid #d9534f;
+    color: #d9534f;
+}
+.btn-outlined.btn-danger:hover,
+.btn-outlined.btn-danger:active {
+    color: #FFF;
+    background: #d2322d;
 }

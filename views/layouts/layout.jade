@@ -1,10 +1,9 @@
 doctype html
 html(lang="en")
   include ../home/head
-  body.boxed
+  body.boxed(ng-app="dezboapp" ng-controller="shopController")
     include ../home/navigation
     include ../home/flash
     block content
     include ../home/footer
     block scripts
-

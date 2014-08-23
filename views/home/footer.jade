@@ -41,6 +41,11 @@ if 'production' == process.env.NODE_ENV
 else if 'development' == process.env.NODE_ENV
   script(src='/lib/jquery/dist/jquery.min.js')
   script(src='/lib/bootstrap/dist/js/bootstrap.min.js')
+
+script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js')
+script(src='/lib/angular-timer/dist/angular-timer.min.js')
+script(src='/controller/shop.js')
+
 //- Backup just in case
 script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min.js"><\/script>')
 script $.fn.modal || document.write('<script src="/lib/bootstrap/dist/js/bootstrap.min.js"><\/script>')

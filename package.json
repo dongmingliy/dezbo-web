@@ -1,19 +1,19 @@
 {
   "private": true,
-  "version": "1.0.0-39",
+  "version": "1.0.0-44",
   "name": "dezbo",
   "company": "Dezbo, Inc.",
   "subdomain": "dezbo-app",
-  "description": "A friendly node and express framework",
+  "description": "Celebrity items for a cause. Fans bid or 'donate to win' celebrity memorabilias and raise money for charity.",
   "author": "Louis Li",
   "keywords": [
-    "skeleton",
-    "node",
-    "express",
-    "passport",
-    "bootstrap",
-    "fontawesome",
-    "framework"
+    "celebrity",
+    "memorabilias",
+    "fans",
+    "charity",
+    "causes",
+    "donate",
+    "dezbo"
   ],
   "homepage": "http://dezbo-appp.jit.su",
   "repository": {
