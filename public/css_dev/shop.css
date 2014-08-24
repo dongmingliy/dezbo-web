@@ -42,6 +42,11 @@
     position:absolute;
     width:100%;
 }
+/* Make sure no anchor effects in thumbnail */
+.thumbnail a, a:hover{
+    text-decoration: none !important;
+    color:inherit !important;
+}
 
 .countdown{
     background-color: #005595;
@@ -51,11 +56,11 @@
     font-size:14px;
 }
 .bidtitle{
-    font-size:16px;
-    padding-top:40px;
+    font-size:14px;
+    padding-top:30px;
 }
 
 .bidprice{
-    font-size:18px;
+    font-size:20px;
     color: #0082c3;
 }

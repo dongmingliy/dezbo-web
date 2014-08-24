@@ -1,35 +1,35 @@
 .footer
   .footer-bar
     .container
-        div.copyright
-          | Copyright © Dezbo . All Rights Reserved
-        a.toTop(href='#topNav')
-          | BACK TO TOP&nbsp;
-          i.fa.fa-arrow-circle-up
+      div.copyright
+        | Copyright © Dezbo . All Rights Reserved
+      a.toTop(href='#topNav')
+        | BACK TO TOP&nbsp;
+        i.fa.fa-arrow-circle-up
     .footer-content
       .container
         .row.column.col-md-8
-            .column.col-md-4
-              h3
-                a(href='blog-post.html') Terms
-              h3
-                a(href='blog-post.html') Privacy
-            .column.col-md-4
-              h3
-                a(href='faq') FAQ
-              h3
-                a(href='blog-post.html') About us
-            .column.col-md-4
-              h3
-                a(href='blog-post.html') Contact
-              h3
-                a(href='blog-post.html') Jobs
-            .column.col-md-4
+          .column.col-md-4
+            h3
+              a(href='blog-post.html') Terms
+            h3
+              a(href='blog-post.html') Privacy
+          .column.col-md-4
+            h3
+              a(href='faq') FAQ
+            h3
+              a(href='blog-post.html') About us
+          .column.col-md-4
+            h3
+              a(href='blog-post.html') Contact
+            h3
+              a(href='blog-post.html') Jobs
+          .column.col-md-4
         .column.col-md-4.text-right
           .row
             a.btn.btn-social-icon.btn-facebook
               i.fa.fa-facebook
-            |&nbsp;
+            | &nbsp;
             a.btn.btn-social-icon.btn-twitter
               i.fa.fa-twitter
 //- Load jQuery, food for thought:
@@ -83,14 +83,16 @@ script.
   });
 script.
   $(window).load(function(){
-    $('.flexslider').flexslider({
-      animation: "slide",
-      prevText:"",
-      nextText:"",
-      pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
-      pauseOnHover: true,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
-      useCSS: true,
-      touch: true,
-      controlNav:false
-    });
+    if($('.flexslider').length > 0){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        prevText:"",
+        nextText:"",
+        pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+        pauseOnHover: true,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
+        useCSS: true,
+        touch: true,
+        controlNav:false
+      });
+    }
   });

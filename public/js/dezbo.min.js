@@ -1,6 +1,6 @@
 /**
  * dezbo - Celebrity items for a cause. Fans bid or 'donate to win' celebrity memorabilias and raise money for charity.
- * @version v1.0.0-47
+ * @version v1.0.0-50
  * @link http://dezbo-appp.jit.su
  * @license MIT
  */

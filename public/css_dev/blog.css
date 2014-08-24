@@ -190,7 +190,7 @@
 }
 .blog-timeline .timeline-item .item-date {
 	position:absolute;
-	background:#fff;
+	background: #e5e5e5;
 	color:#333;
 	font-size:20px;
 	text-align:center;
@@ -201,9 +201,9 @@
 			border-radius: 6px;
 }
 .blog-timeline .timeline-item.pull-right .item-date:after {
-	background: #FFF;
-	border-right: 1px solid #FFF;
-	border-top: 1px solid #FFF;
+	background: #e5e5e5;
+	border-right: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
 	content: "";
 	display: block;
 	height: 14px;
@@ -218,9 +218,9 @@
 	transform: rotate(45deg);
 }
 .blog-timeline .timeline-item.pull-left .item-date:after {
-	background: #fff;
-	border-right: 1px solid #fff;
-	border-top: 1px solid #fff;
+	background: #e5e5e5;
+	border-right: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
 	content: "";
 	display: block;
 	height: 14px;
