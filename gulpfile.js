@@ -127,8 +127,8 @@ gulp.task('scripts', function () {
  */
 
 gulp.task('images', function () {
-  return gulp.src('images/**/*')            // Read images
-    .pipe($.changed('./public/img'))        // Only process new/changed
+  return gulp.src('public/images/**/*')            // Read images
+    .pipe($.changed('./public/img'))
     .pipe($.imagemin({                      // Compress images
       progressive: true,
       optimizationLevel: 3,
