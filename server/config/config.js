@@ -30,7 +30,7 @@ config.keywords       = pkg.keywords;
 config.nodeVersion    = pkg.engines.node;
 
 config.port           = process.env.PORT || 3000;
-config.ga             = process.env.GA   || 'UA-44765020-2';
+config.ga             = process.env.GA   || 'UA-54252003-1';
 
 /**
  * Logging Configuration
