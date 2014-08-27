@@ -1,0 +1,70 @@
+extends ../layouts/layout
+block content
+  section.wrapper
+    h1.text-center
+      strong Ellen Degeneres
+      div Supporting
+      a(href='http://www.gentlebarn.org') The Gentle Barn
+    div.text-center
+      iframe(width='480', height='360', src='//www.youtube.com/embed/8V_l_Zn4j5M?feature=player_detailpage', frameborder='0', allowfullscreen='')
+
+      div
+        a(href='http://www.gentlebarn.org')
+          img(src='img/gentle_barn.png')
+      p
+        | The Gentle Barn is a nonprofit corporation. It was founded in 1999 by Ellie R. Laks and is now run by
+        | Ellie and Jay Weiner, who joined forces in 2002. The Gentle Barn's mission is to provide sanctuary for
+        | abused animals who would not otherwise be able to find homes.
+
+    .divider
+      i.fa.fa-leaf
+    .container
+      .row
+        .col-sm-6.col-md-6
+          img.img-responsive(src='img/ellen1.png', width='500', alt='')
+        .col-sm-6.col-md-6
+          // product detail
+          div(ng-init="qty=1;cost=5")
+            h2.product-title Ellen’s Red Couch on the Ellen Show
+            div
+              | Your donation amount:{{qty * cost | currency}}
+
+            span Quantity
+            div.input-group(style="width:200px;")
+              a.input-group-addon.btn.btn-social-icon(ng-click="qty = qty - 1")
+                i.fa.fa-minus-square.fa-2
+              input.form-control(ng-model="qty" type="number" ng-minlength="1" ng-maxlength="1000000" ng-pattern="onlyNumbers")
+              a.input-group-addon.btn.btn-social-icon(ng-click="qty = qty + 1")
+                i.fa.fa-plus-square.fa-2
+            div
+              form(method='POST')
+                input(type='hidden', name='_csrf', value=_csrf)
+                script(
+                src='https://checkout.stripe.com/checkout.js',
+                class='stripe-button',
+                data-key='pk_test_yL4LS1acvSfYZqb8Nh3LB41q',
+                data-image='img/logo_small.png',
+                data-name='dezbo',
+                data-description='Raffle Tickets',
+                data-amount='qty')
+            div
+              form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_top')
+                input(type='hidden', name='cmd', value='_s-xclick')
+                input(type='hidden', name='hosted_button_id', value='VV6ACEZ5YL9UN')
+                input(type='image', src='https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif', border='0', name='submit', alt='PayPal - The safer, easier way to pay online!')
+                img(alt='', border='0', src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif', width='1', height='1')
+            div
+              a(href='/api/paypal')
+                button.btn.btn-primary Pay with Paypal
+            .desc
+              h3.page-header DESCRIPTION
+              p
+                | Hundreds of celebrities sat here. Enter for a chance to win this unique couch and show it off to your friends at home. Sit where the celebrities sat!
+            .socialApis
+              .api
+                .fb-like(data-href='https://www.facebook.com/stepofweb', data-layout='button_count', data-action='like', data-show-faces='false', data-share='false')
+              .api
+                a.twitter-share-button(href='https://twitter.com/share', data-lang='en') Tweet
+  script#twitter-wjs(src='http://platform.twitter.com/widgets.js')
+  script
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');

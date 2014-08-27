@@ -18,5 +18,6 @@ function shopController($scope) {
   $scope.$on('timer-stopped', function (event, data) {
     console.log('Timer Stopped - data = ', data);
   });
+  $scope.onlyNumbers = /^\d+$/;
 }
 shopController.$inject = ['$scope'];

@@ -20,7 +20,7 @@ var fs                = require('fs');                      // http://nodejs.org
 var path              = require('path');                    // http://nodejs.org/docs/v0.10.25/api/path.html
 var debug             = require('debug')('skeleton');       // https://github.com/visionmedia/debug
 var flash             = require('express-flash');           // https://npmjs.org/package/express-flash
-var config            = require('./config/config');         // Get configuration file
+var config            = require('./server/config/config');         // Get configuration file
 var logger            = require('express-loggly');          // https://github.com/dstroot/express-loggly
 var helmet            = require('helmet');                  // https://github.com/evilpacket/helmet
 var semver            = require('semver');                  // https://npmjs.org/package/semver
@@ -138,7 +138,7 @@ app.set('port', config.port);
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // Setup the view engine (jade)
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'public/views'));
 app.set('view engine', 'jade');
 
 // Compress response data with gzip / deflate.
@@ -238,9 +238,9 @@ app.use(flash());
  */
 
 // Dynamically include routes (via controllers)
-fs.readdirSync('./controllers').forEach(function (file) {
+fs.readdirSync('./server/controllers').forEach(function (file) {
   if (file.substr(-3) === '.js') {
-    var route = require('./controllers/' + file);
+    var route = require('./server/controllers/' + file);
     route.controller(app);
   }
 });
@@ -253,7 +253,7 @@ var hour = (minute * 60); //   3600000
 var day  = (hour * 24);   //  86400000
 var week = (day * 7);     // 604800000
 
-app.use(express.static(__dirname + '/public', { maxAge: week }));
+app.use(express.static(__dirname + '/public', { maxAge: week,redirect: false }));
 
 /**
  * Error Handling

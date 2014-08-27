@@ -8,7 +8,7 @@
  */
 
 var should  = require('chai').should();
-var Attempt    = require('../models/LoginAttempt');
+var Attempt    = require('./LoginAttempt');
 var attempt;
 
 /**

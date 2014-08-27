@@ -1,0 +1,61 @@
+// NOTE: By copying the main bootstrap.less file and importing
+// this one instead we can turn on/off components here
+// without changing any of the bootstrap source files (EASY TO UPDATE)
+
+// NOTE: we overide bootstrap variables and styles directly in our
+// styles.less file
+
+// NOTE: I generally recommend commenting out all of the
+// "Components" and "Components w/ JavaScript" and only
+// turning them back on as needed - fight bloat!
+
+// Core variables and mixins
+@import "../lib/bootstrap/less/variables";
+@import "../lib/bootstrap/less/mixins";
+
+// Reset and dependencies
+@import "../lib/bootstrap/less/normalize";
+// @import "../lib/bootstrap/less/print.less";
+// @import "../lib/bootstrap/less/glyphicons.less";
+
+// Core CSS
+@import "../lib/bootstrap/less/scaffolding";
+@import "../lib/bootstrap/less/type";
+// @import "../lib/bootstrap/less/code.less";
+@import "../lib/bootstrap/less/grid";
+@import "../lib/bootstrap/less/tables";
+@import "../lib/bootstrap/less/forms";
+@import "../lib/bootstrap/less/buttons";
+
+// Components
+@import "../lib/bootstrap/less/component-animations";
+@import "../lib/bootstrap/less/dropdowns";
+// @import "../lib/bootstrap/less/button-groups.less";
+// @import "../lib/bootstrap/less/input-groups.less";
+@import "../lib/bootstrap/less/navs";
+@import "../lib/bootstrap/less/navbar";
+// @import "../lib/bootstrap/less/breadcrumbs.less";
+// @import "../lib/bootstrap/less/pagination.less";
+// @import "../lib/bootstrap/less/pager.less";
+// @import "../lib/bootstrap/less/labels.less";
+// @import "../lib/bootstrap/less/badges.less";
+@import "../lib/bootstrap/less/jumbotron";
+// @import "../lib/bootstrap/less/thumbnails.less";
+@import "../lib/bootstrap/less/alerts";
+@import "../lib/bootstrap/less/progress-bars";
+// @import "../lib/bootstrap/less/media.less";
+// @import "../lib/bootstrap/less/list-group.less";
+@import "../lib/bootstrap/less/panels";
+// @import "../lib/bootstrap/less/responsive-embed.less";
+@import "../lib/bootstrap/less/wells";
+@import "../lib/bootstrap/less/close";
+
+// Components w/ JavaScript
+@import "../lib/bootstrap/less/modals";
+// @import "../lib/bootstrap/less/tooltip.less";
+// @import "../lib/bootstrap/less/popovers.less";
+// @import "../lib/bootstrap/less/carousel.less";
+
+// Utility classes
+@import "../lib/bootstrap/less/utilities";
+@import "../lib/bootstrap/less/responsive-utilities";

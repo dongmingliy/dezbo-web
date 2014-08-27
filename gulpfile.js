@@ -50,16 +50,16 @@ var paths = {
     'public/lib/flex-slider/jquery.flexslider.js'
   ],
   lint: [
-    'config/**/*.js',
+    'server/config/**/*.js',
     'test/**/*.js',
-    'controllers/**/*.js',
-    'models/**/*.js',
+    'server/controllers/**/*.js',
+    'server/models/**/*.js',
     'app.js',
     'app_cluster.js',
     'gulpfile.js'
   ],
   less: [
-    'less/**/*.less'
+    'public/less/**/*.less'
   ],
   css: [
     'public/dev_css/*.css'
@@ -83,7 +83,7 @@ gulp.task('clean', function () {
  */
 
 gulp.task('styles', function () {
-  return gulp.src('./less/main.less')       // Read in Less file
+  return gulp.src('./public/less/main.less')       // Read in Less file
       .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
       .pipe($.less({ strictMath: true }))     // Compile Less files
       .pipe($.autoprefixer([                  // Autoprefix for target browsers
@@ -192,8 +192,6 @@ gulp.task('nodemon', ['build'], function (cb) {
     ignore: [
       'gulpfile.js',
       'public/',
-      'views/',
-      'less/',
       'node_modules/'
     ]
   })
@@ -236,7 +234,7 @@ gulp.task('default', ['open'], function () {
   gulp.watch(paths.css, ['styles']);
   gulp.watch(paths.js, ['scripts']);
   gulp.watch(paths.lint, ['lint', 'jscs']);
-  gulp.watch('views/**/*.jade').on('change', $.livereload.changed);
+  gulp.watch('public/views/**/*.jade').on('change', $.livereload.changed);
 });
 
 /**

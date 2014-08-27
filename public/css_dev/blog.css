@@ -5,6 +5,7 @@
 	position:relative;
 	border:0;
 	margin:0;
+    background-color: #f4f5f7;
 }
 .blog h2 a {
 	text-decoration:none;

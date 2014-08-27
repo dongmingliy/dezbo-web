@@ -8,7 +8,7 @@
  */
 
 var should  = require('chai').should();
-var User    = require('../models/User');
+var User    = require('./User');
 var user;
 
 /**
