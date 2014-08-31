@@ -177,11 +177,11 @@ li.divider {
     width: 25px;
 }
 
-.panel-title a {
-    text-decoration:none;
-    display:block;
-    color:#333;
-}
+/*.panel-title a {*/
+    /*text-decoration:none;*/
+    /*display:block;*/
+    /*color:#333;*/
+/*}*/
 
 .panel-body {
     padding: 21px;

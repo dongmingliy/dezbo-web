@@ -43,7 +43,7 @@
     width:100%;
 }
 /* Make sure no anchor effects in thumbnail */
-.thumbnail a, a:hover{
+.thumbnail.a, .thumbnail.a:hover{
     text-decoration: none !important;
     color:inherit !important;
 }
@@ -69,4 +69,10 @@
 }
 .productDescription{
     padding-bottom: 50px;
+}
+.product-section{
+    padding:5px;
+}
+.campaignHeading{
+    color:#0082c3;
 }

@@ -2,61 +2,83 @@ extends ../layouts/layout
 block content
   section.wrapper
     h1.text-center
-      strong Ellen Degeneres
-      div Supporting
-      a(href='http://www.gentlebarn.org') The Gentle Barn
-    div.text-center
-      iframe(width='480', height='360', src='//www.youtube.com/embed/8V_l_Zn4j5M?feature=player_detailpage', frameborder='0', allowfullscreen='')
+      span.campaignHeading Ellen Degeneres&nbsp;
+      span Supporting
+      a(href='http://www.gentlebarn.org') &nbsp;The Gentle Barn
+    .container
+      .row
+        .col-md-4
+          .text-center
+            img(src='img/ellen_round.png', width='220')
+          .text-center
+            | Beloved television icon and entertainment pioneer, Ellen DeGeneres' distinctive comic voice has resonated with audiences from her first stand-up comedy appearances through her work today on television, in film and in the literary world.
+        .col-md-4
+          .text-center
+            iframe(width='320', height='240', src='//www.youtube.com/embed/8V_l_Zn4j5M?feature=player_detailpage', frameborder='0', allowfullscreen='')
+        .col-md-4
+            .text-center
+              a(href='http://www.gentlebarn.org')
+                img(src='img/gentle_barn.png')
+              p
+                | The Gentle Barn is a nonprofit corporation. It was founded in 1999 by Ellie R. Laks and is now run by
+                | Ellie and Jay Weiner, who joined forces in 2002. The Gentle Barn's mission is to provide sanctuary for
+                | abused animals who would not otherwise be able to find homes.
 
-      div
-        a(href='http://www.gentlebarn.org')
-          img(src='img/gentle_barn.png')
-      p
-        | The Gentle Barn is a nonprofit corporation. It was founded in 1999 by Ellie R. Laks and is now run by
-        | Ellie and Jay Weiner, who joined forces in 2002. The Gentle Barn's mission is to provide sanctuary for
-        | abused animals who would not otherwise be able to find homes.
 
     .divider
       i.fa.fa-leaf
-    .container
+    .container(ng-init="qty=1;cost=5")
       .row
         .col-sm-6.col-md-6
-          img.img-responsive(src='img/ellen1.png', width='500', alt='')
+          img.img-responsive(src='img/ellen1.png', width='500')
         .col-sm-6.col-md-6
           // product detail
-          div(ng-init="qty=1;cost=5")
+          div.product-section
             h2.product-title Ellen’s Red Couch on the Ellen Show
-            div
-              | Your donation amount:{{qty * cost | currency}}
+            p
+              | Your donation amount:&nbsp;
+              span.bidprice {{qty * cost | currency}}
+            p Raffle Tickets:
+              div.input-group(style="width:200px;" ng-show="qty > 50")
+                a.input-group-addon.btn.btn-social-icon(ng-click="qty = qty - 1")
+                  i.fa.fa-minus-square.fa-2
+                input.form-control(ng-model="qty" type="number")
+                a.input-group-addon.btn.btn-social-icon(ng-click="qty = qty + 1")
+                  i.fa.fa-plus-square.fa-2
+            p.btn-group
+              label.btn.btn-success(ng-model='qty', btn-radio='1') Supporter(1)
+              label.btn.btn-success(ng-model='qty', btn-radio='5') Friend(5)
+              label.btn.btn-success(ng-model='qty', btn-radio='20') Superstar(20)
+              label.btn.btn-success(ng-model='qty', btn-radio='50') Angel(50)
+              label.btn.btn-success(ng-model='qty', btn-radio='100') Custom Amount
 
-            span Quantity
-            div.input-group(style="width:200px;")
-              a.input-group-addon.btn.btn-social-icon(ng-click="qty = qty - 1")
-                i.fa.fa-minus-square.fa-2
-              input.form-control(ng-model="qty" type="number" ng-minlength="1" ng-maxlength="1000000" ng-pattern="onlyNumbers")
-              a.input-group-addon.btn.btn-social-icon(ng-click="qty = qty + 1")
-                i.fa.fa-plus-square.fa-2
-            div
-              form(method='POST')
-                input(type='hidden', name='_csrf', value=_csrf)
-                script(
-                src='https://checkout.stripe.com/checkout.js',
-                class='stripe-button',
-                data-key='pk_test_yL4LS1acvSfYZqb8Nh3LB41q',
-                data-image='img/logo_small.png',
-                data-name='dezbo',
-                data-description='Raffle Tickets',
-                data-amount='qty')
-            div
+            script(src="https://checkout.stripe.com/checkout.js")
+            p
+              button#customButton.btn.btn-primary Pay with Card
               form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_top')
                 input(type='hidden', name='cmd', value='_s-xclick')
                 input(type='hidden', name='hosted_button_id', value='VV6ACEZ5YL9UN')
                 input(type='image', src='https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif', border='0', name='submit', alt='PayPal - The safer, easier way to pay online!')
-                img(alt='', border='0', src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif', width='1', height='1')
-            div
-              a(href='/api/paypal')
-                button.btn.btn-primary Pay with Paypal
-            .desc
+
+            script.
+              var handler = StripeCheckout.configure({
+              key: 'pk_test_4QEbCtB0Oe5p02jlSxBR7Out',
+              image: '../img/logo_small.png',
+              token: function(token) {
+              // Use the token to create the charge with a server-side script.
+              // You can access the token ID with `token.id`
+              }
+              });
+              document.getElementById('customButton').addEventListener('click', function(e) {
+              // Open Checkout with further options
+              handler.open({
+              name: 'Dezbo',
+              description: 'Raffle',
+              amount: 500
+              });
+              e.preventDefault();
+              });
+          .desc
               h3.page-header DESCRIPTION
               p
                 | Hundreds of celebrities sat here. Enter for a chance to win this unique couch and show it off to your friends at home. Sit where the celebrities sat!

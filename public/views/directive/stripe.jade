@@ -1,0 +1,28 @@
+//
+   Created by Louis on 2014-08-30.
+
+button#customButton Purchase
+script
+  var handler = StripeCheckout.configure({
+  key: "pk_test_sK21onMmCuKNuoY7pbml8z3Q",
+  image: "apple-touch-icon.png",
+  token: function(token, args) {
+  jQuery.ajax({
+  type:"POST",
+  url: "/stripetoken/", //For own custom domain, put the full https appspot url here
+  data:  token,
+  timeout: 200000,
+  beforeSend: function(settings) {
+  console.log("About to send the transaction, may take a while, but this will be async")
+  },
+  success: function(result)
+  {
+  alert("Paiement Effectué");
+  },
+  error: function(result) {
+  console.log("Error",result);
+  }
+  });
+  }
+  });
+

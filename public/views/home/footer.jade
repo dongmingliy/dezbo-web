@@ -37,32 +37,18 @@
 
 if 'production' == process.env.NODE_ENV
   script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
-  script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
 else if 'development' == process.env.NODE_ENV
   script(src='/lib/jquery/dist/jquery.min.js')
-  script(src='/lib/bootstrap/dist/js/bootstrap.min.js')
 
 script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js')
-script(src='/lib/angular-timer/dist/angular-timer.min.js')
-script(src='/controller/shop.js')
-
+script(src='/js/#{application}.min.js')
+script(src="https://js.stripe.com/v2/")
 //- Backup just in case
 script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min.js"><\/script>')
 script $.fn.modal || document.write('<script src="/lib/bootstrap/dist/js/bootstrap.min.js"><\/script>')
 //- Then use jQuery to async load everything else
 script.
   jQuery(document).ready(function($) {
-    //- Async load main project js
-    $.ajax({
-      type: 'GET',
-      url: '/js/#{application}.min.js',
-      dataType: 'script',
-      cache: true
-    }).done(function () {
-      window.addEventListener('load', function() {
-        FastClick.attach(document.body);
-      }, false);
-    });
     //- Async load socket.io
     $.ajax({
       type: 'GET',

@@ -47,7 +47,11 @@ var paths = {
     // =========================================
     'public/lib/fastclick/lib/fastclick.js',
     'public/js/main.js',
-    'public/lib/flex-slider/jquery.flexslider.js'
+    'public/lib/angular-timer/dist/angular-timer.min.js',
+    'public/controller/*.js',
+    'public/directive/*.js',
+    'public/lib/flex-slider/jquery.flexslider.js',
+    'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js'
   ],
   lint: [
     'server/config/**/*.js',
