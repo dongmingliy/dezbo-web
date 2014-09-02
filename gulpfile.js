@@ -45,11 +45,11 @@ var paths = {
   ],
   js: [
     // =========================================
-    'public/lib/fastclick/lib/fastclick.js',
-    'public/js/main.js',
+    'client/js/main.js',
+    'client/controller/*.js',
+    'client/directive/*.js',
     'public/lib/angular-timer/dist/angular-timer.min.js',
-    'public/controller/*.js',
-    'public/directive/*.js',
+    'public/lib/fastclick/lib/fastclick.js',
     'public/lib/flex-slider/jquery.flexslider.js',
     'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js'
   ],
@@ -63,10 +63,10 @@ var paths = {
     'gulpfile.js'
   ],
   less: [
-    'public/less/**/*.less'
+    'client/less/**/*.less'
   ],
   css: [
-    'public/dev_css/*.css'
+    'client/css/*.css'
   ]
 };
 
@@ -87,7 +87,7 @@ gulp.task('clean', function () {
  */
 
 gulp.task('styles', function () {
-  return gulp.src('./public/less/main.less')       // Read in Less file
+  return gulp.src('./client/less/main.less')       // Read in Less file
       .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
       .pipe($.less({ strictMath: true }))     // Compile Less files
       .pipe($.autoprefixer([                  // Autoprefix for target browsers
@@ -108,6 +108,14 @@ gulp.task('styles', function () {
       .pipe($.size({ title: 'CSS:' }))        // What size are we at?
       .pipe(gulp.dest('./public/css'))        // Save minified CSS
       .pipe($.livereload());                  // Initiate a reload
+});
+
+// task
+gulp.task('minify-css', function () {
+  return gulp.src('./client/css/*.css') // path to your file
+    .pipe($.minifyCss())
+    .pipe(gulp.dest('./public/css'))
+    .pipe($.livereload());
 });
 
 /**
@@ -131,8 +139,8 @@ gulp.task('scripts', function () {
  */
 
 gulp.task('images', function () {
-  return gulp.src('public/images/**/*')            // Read images
-    .pipe($.changed('./public/img'))
+  return gulp.src('client/img/**/*')            // Read images
+    .pipe($.changed('./public/img/'))
     .pipe($.imagemin({                      // Compress images
       progressive: true,
       optimizationLevel: 3,
@@ -176,7 +184,7 @@ gulp.task('build', function (cb) {
   runSequence(
       'clean',                                // first clean
       ['lint', 'jscs'],                       // then lint and jscs in parallel
-      ['styles', 'scripts', 'images'],        // etc.
+      ['styles','minify-css', 'scripts', 'images'],        // etc.
       cb);
 });
 
@@ -238,7 +246,7 @@ gulp.task('default', ['open'], function () {
   gulp.watch(paths.css, ['styles']);
   gulp.watch(paths.js, ['scripts']);
   gulp.watch(paths.lint, ['lint', 'jscs']);
-  gulp.watch('public/views/**/*.jade').on('change', $.livereload.changed);
+  gulp.watch('client/views/**/*.jade').on('change', $.livereload.changed);
 });
 
 /**
@@ -251,7 +259,7 @@ gulp.task('default', ['open'], function () {
 // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
 
 gulp.task('pagespeed', pagespeed.bind(null, {
-  url: 'https://dezbo-app.jit.su',
+  url: 'http://www.dezbo.com',
   strategy: 'desktop'
 }));
 

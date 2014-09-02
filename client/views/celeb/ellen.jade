@@ -27,7 +27,7 @@ block content
 
     .divider
       i.fa.fa-leaf
-    .container(ng-init="qty=1;cost=5")
+    .container(ng-init="qty=1;cost=5;")
       .row
         .col-sm-6.col-md-6
           img.img-responsive(src='img/ellen1.png', width='500')
@@ -39,18 +39,18 @@ block content
               | Your donation amount:&nbsp;
               span.bidprice {{qty * cost | currency}}
             p Raffle Tickets:
-              div.input-group(style="width:200px;" ng-show="qty > 50")
+              div.input-group(style="width:200px;" ng-hide="showInput != 1")
                 a.input-group-addon.btn.btn-social-icon(ng-click="qty = qty - 1")
                   i.fa.fa-minus-square.fa-2
                 input.form-control(ng-model="qty" type="number")
                 a.input-group-addon.btn.btn-social-icon(ng-click="qty = qty + 1")
                   i.fa.fa-plus-square.fa-2
             p.btn-group
-              label.btn.btn-success(ng-model='qty', btn-radio='1') Supporter(1)
-              label.btn.btn-success(ng-model='qty', btn-radio='5') Friend(5)
-              label.btn.btn-success(ng-model='qty', btn-radio='20') Superstar(20)
-              label.btn.btn-success(ng-model='qty', btn-radio='50') Angel(50)
-              label.btn.btn-success(ng-model='qty', btn-radio='100') Custom Amount
+              label.btn.btn-success(ng-click="qty=1", ng-model='qty', btn-radio='1') Supporter(1)
+              label.btn.btn-success(ng-click="qty=5", ng-model='qty', btn-radio='5') Friend(5)
+              label.btn.btn-success(ng-click="qty=20", ng-model='qty', btn-radio='20') Superstar(20)
+              label.btn.btn-success(ng-click="qty=50",ng-model='qty', btn-radio='50') Angel(50)
+              label.btn.btn-success(ng-click="showInput = 1;qty=100", ng-model='qty', btn-radio='0') Custom Amount
 
             script(src="https://checkout.stripe.com/checkout.js")
             p

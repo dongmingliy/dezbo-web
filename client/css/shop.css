@@ -43,7 +43,7 @@
     width:100%;
 }
 /* Make sure no anchor effects in thumbnail */
-.thumbnail.a, .thumbnail.a:hover{
+.thumbnail a, .thumbnail a:hover{
     text-decoration: none !important;
     color:inherit !important;
 }

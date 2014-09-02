@@ -138,7 +138,7 @@ app.set('port', config.port);
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // Setup the view engine (jade)
-app.set('views', path.join(__dirname, 'public/views'));
+app.set('views', path.join(__dirname, 'client/views'));
 app.set('view engine', 'jade');
 
 // Compress response data with gzip / deflate.
@@ -245,7 +245,7 @@ fs.readdirSync('./server/controllers').forEach(function (file) {
   }
 });
 
-// Now setup serving static assets from /public
+// Now setup serving static assets from /client
 
 // time in milliseconds...
 var minute = 1000 * 60;   //     60000
