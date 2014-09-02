@@ -46,10 +46,7 @@ Thumbs.db
 ###################
 public/css/styles.css
 builtAssets/
-public/lib
-public/css
-public/js
-public/img
+public/**/*
 
 # Configuration
 ##################
