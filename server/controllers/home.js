@@ -9,7 +9,7 @@ module.exports.controller = function (app) {
     if (req.user) {
       return res.redirect('home/index');
     }
-    res.render('home/index', {
+    res.render('home/comingSoon', {
       url: req.url
     });
   });
