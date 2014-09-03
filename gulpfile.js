@@ -63,7 +63,8 @@ var paths = {
     'gulpfile.js'
   ],
   less: [
-    'client/less/**/*.less'
+    'client/less/**/*.less',
+    'public/lib/bootstrap-social/bootstrap-social'
   ],
   css: [
     'client/css/*.css'
@@ -86,36 +87,33 @@ gulp.task('clean', function () {
  * Process CSS
  */
 
+// no minification, separate files
 gulp.task('styles', function () {
-  return gulp.src('./client/less/main.less')       // Read in Less file
-      .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
-      .pipe($.less({ strictMath: true }))     // Compile Less files
-      .pipe($.autoprefixer([                  // Autoprefix for target browsers
-        'last 2 versions',
-        '> 1%',
-        'Firefox ESR',
-        'Opera 12.1'
-      ], { cascade: true }))
-      .pipe($.csscomb())                      // Coding style formatter for CSS
-      .pipe($.csslint('.csslintrc'))          // Lint CSS
-      .pipe($.csslint.reporter())             // Report issues
-      .pipe($.rename(pkg.name + '.css'))      // Rename to "packagename.css"
-      .pipe($.sourcemaps.write())             // Write sourcemap
-      .pipe(gulp.dest('./public/css'))        // Save CSS here
-      .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
-      .pipe($.csso())                         // Minify CSS
-      .pipe($.header(banner, { pkg: pkg }))  // Add banner
-      .pipe($.size({ title: 'CSS:' }))        // What size are we at?
-      .pipe(gulp.dest('./public/css'))        // Save minified CSS
-      .pipe($.livereload());                  // Initiate a reload
+  return gulp.src(paths.less)               // Read in Less file
+    .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
+    .pipe($.less({ strictMath: true }))     // Compile Less files
+    .pipe($.autoprefixer([                  // Autoprefix for target browsers
+      'last 2 versions',
+      '> 1%',
+      'Firefox ESR',
+      'Opera 12.1'
+    ], { cascade: true }))
+    .pipe($.csscomb())                      // Coding style formatter for CSS
+    .pipe($.csslint('.csslintrc'))          // Lint CSS
+    .pipe($.csslint.reporter())             // Report issues
+    .pipe($.sourcemaps.write())             // Write sourcemap
+    .pipe(gulp.dest('./public/css'))        // Save CSS here
+    .pipe($.csso())                         // Minify CSS
+    .pipe($.size({ title: 'CSS:' }))        // What size are we at?
+    .pipe(gulp.dest('./public/css'))        // Save minified CSS
+    .pipe($.livereload());                  // Initiate a reload
 });
 
-// task
-gulp.task('minify-css', function () {
-  return gulp.src('./client/css/*.css') // path to your file
-    .pipe($.minifyCss())
-    .pipe(gulp.dest('./public/css'))
-    .pipe($.livereload());
+// TODO: not sure why concat is not working, need to use it for production
+gulp.task('concat', function () {
+  return gulp.src('./public/css/*.css')
+    .pipe($.concat(pkg.name + 'min.css'))
+    .pipe(gulp.dest('./public/css'));
 });
 
 /**
@@ -123,12 +121,12 @@ gulp.task('minify-css', function () {
  */
 
 gulp.task('scripts', function () {
-  return gulp.src(paths.js)                 // Read .js files
+  return gulp.src(paths.js)                   // Read .js files
       .pipe($.concat(pkg.name + '.js'))       // Concatenate .js files
       .pipe(gulp.dest('./public/js'))         // Save main.js here
       .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
       .pipe($.uglify({ outSourceMap: true })) // Minify the .js
-      .pipe($.header(banner, { pkg: pkg }))  // Add banner
+      .pipe($.header(banner, { pkg: pkg }))   // Add banner
       .pipe($.size({ title: 'JS:' }))         // What size are we at?
       .pipe(gulp.dest('./public/js'))         // Save minified .js
       .pipe($.livereload());                  // Initiate a reload
@@ -141,14 +139,14 @@ gulp.task('scripts', function () {
 gulp.task('images', function () {
   return gulp.src('client/img/**/*')            // Read images
     .pipe($.changed('./public/img/'))
-    .pipe($.imagemin({                      // Compress images
+    .pipe($.imagemin({                          // Compress images
       progressive: true,
       optimizationLevel: 3,
       interlaced: true,
       svgoPlugins: [{ removeViewBox: false }],
       use: [pngcrush()]
     }))
-    .pipe(gulp.dest('./public/img'));       // Write processed images
+    .pipe(gulp.dest('./public/img'));          // Write processed images
 });
 
 /**
@@ -156,7 +154,7 @@ gulp.task('images', function () {
  */
 
 gulp.task('lint', function () {
-  return gulp.src(paths.lint)               // Read .js files
+  return gulp.src(paths.lint)                 // Read .js files
       .pipe($.jshint())                       // lint .js files
       .pipe($.jshint.reporter('jshint-stylish'));
 });
@@ -184,7 +182,7 @@ gulp.task('build', function (cb) {
   runSequence(
       'clean',                                // first clean
       ['lint', 'jscs'],                       // then lint and jscs in parallel
-      ['styles','minify-css', 'scripts', 'images'],        // etc.
+      ['styles', 'scripts', 'images','concat'],        // etc.
       cb);
 });
 
@@ -213,12 +211,12 @@ gulp.task('nodemon', ['build'], function (cb) {
             called = true;
             cb();
           }
-        }, 3500);  // wait for start
+        }, 500);  // wait for start
       })
       .on('restart', function () {
         setTimeout(function () {
           $.livereload.changed('/');
-        }, 3500);  // wait for restart
+        }, 500);  // wait for restart
       });
 });
 

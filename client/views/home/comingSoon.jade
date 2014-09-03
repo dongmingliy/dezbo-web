@@ -4,4 +4,55 @@ html(lang="en")
   body.boxed(id="topNav" ng-app="dezboapp" style="padding-top:0")
     block content
       .comingSection
-        h2.text-center.text-uppercase Something Awesome Coming
+        h1.text-center.text-uppercase Something Awesome Coming
+      .divider
+        i.fa.fa-star
+      .container
+        .row
+          h3.text-center.text-uppercase.htitle Enter to win
+          .col-md-3.col-sm-4
+            .thumbnail.border-fade
+              a(href='ellen')
+                figure
+                  img.img-responsive(src='img/shop/ellen1_small.png', width='263', height='263', alt='')
+                .item-box
+                  h5 Ellen’s Red Couch on the Ellen Show
+                  .support
+                    | Supporting The Gentle Barn
+                    .countdown.white
+                      | Ending Nov 5, 2014
+          .col-md-3.col-sm-4
+            .thumbnail.border-fade
+              figure
+                img.img-responsive(src='img/shop/pharrell1_small.png', width='263', height='263', alt='')
+              .item-box
+                h5 Pharrell's Tall Hat
+                .support
+                  | Supporting From One Hand To Another
+                  .countdown.white
+                    | Ending Oct 29, 2014
+          .col-md-3.col-sm-4
+            .thumbnail.border-fade
+              figure
+                img.img-responsive(src='img/shop/gaga1_small.png', width='263', height='263', alt='')
+              .item-box
+                h5 Lady Gaga’s Red Carpet Heels
+                .support
+                  | Supporting Born This Way Foundation
+                  .countdown.white
+                    | Ending Dec 1, 2014
+          .col-md-3.col-sm-4
+            .thumbnail.border-fade
+              figure
+                img.img-responsive(src='img/shop/snoop1_small.png', width='263', height='263', alt='')
+              .item-box
+                h5 Snoop’s Stage Mic
+                .support
+                  | Supporting Youth Football League Foundation
+                  .countdown.white
+                    | Ending Nov 12, 2014
+      .container
+        .text-center Email:
+          input(value="your email")
+        
+      include howItWorks
