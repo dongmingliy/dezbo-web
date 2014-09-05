@@ -3,56 +3,71 @@ html(lang="en")
   include head
   body.boxed(id="topNav" ng-app="dezboapp" style="padding-top:0")
     block content
-      .comingSection
-        h1.text-center.text-uppercase Something Awesome Coming
+      script#twitter-wjs(src='http://platform.twitter.com/widgets.js')
+      script.
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      .comingSection.jumbotron.white
+        h1.text-center.text-uppercase Something Awesome is Coming
+        img.img-responsive.col-centered(src='img/logo.png', alt='')
+      .divider
+        i.fa.fa-star
+      div
+        .container
+          .row
+            h3.text-center.text-uppercase.htitle Enter to win
+            .col-md-3.col-sm-4
+              .thumbnail
+                a(href='ellen')
+                  figure
+                    img.img-responsive(src='img/shop/ellen1_small.png', width='263', height='263', alt='')
+                  .item-box
+                    h5 Ellen’s Red Couch on the Ellen Show
+                    iframe(src='//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.dezbo.com&width&layout=button_count&action=like&show_faces=true&share=true&height=21&appId=281205038733656', scrolling='no', frameborder='0', style='border:none; overflow:hidden; height:21px;', allowTransparency='true')
+                    a.twitter-share-button(href='https://twitter.com/share') Tweet
+                      .countdown.white
+                        | Ending Nov 5, 2014
+            .col-md-3.col-sm-4
+              .thumbnail
+                figure
+                  img.img-responsive(src='img/shop/pharrell1_small.png', width='263', height='263', alt='')
+                .item-box
+                  h5 Pharrell's Tall Hat
+                  a.twitter-share-button(href='https://twitter.com/share') Tweet
+                    .countdown.white
+                      | Ending Oct 29, 2014
+            .col-md-3.col-sm-4
+              .thumbnail
+                figure
+                  img.img-responsive(src='img/shop/gaga1_small.png', width='263', height='263', alt='')
+                .item-box
+                  h5 Lady Gaga’s Red Carpet Heels
+                  .support
+                    | Supporting Born This Way Foundation
+                    .countdown.white
+                      | Ending Dec 1, 2014
+            .col-md-3.col-sm-4
+              .thumbnail
+                figure
+                  img.img-responsive(src='img/shop/snoop1_small.png', width='263', height='263', alt='')
+                .item-box
+                  h5 Snoop’s Stage Mic
+                  .support
+                    | Supporting Youth Football League Foundation
+                    .countdown.white
+                      | Ending Nov 12, 2014
       .divider
         i.fa.fa-star
       .container
-        .row
-          h3.text-center.text-uppercase.htitle Enter to win
-          .col-md-3.col-sm-4
-            .thumbnail.border-fade
-              a(href='ellen')
-                figure
-                  img.img-responsive(src='img/shop/ellen1_small.png', width='263', height='263', alt='')
-                .item-box
-                  h5 Ellen’s Red Couch on the Ellen Show
-                  .support
-                    | Supporting The Gentle Barn
-                    .countdown.white
-                      | Ending Nov 5, 2014
-          .col-md-3.col-sm-4
-            .thumbnail.border-fade
-              figure
-                img.img-responsive(src='img/shop/pharrell1_small.png', width='263', height='263', alt='')
-              .item-box
-                h5 Pharrell's Tall Hat
-                .support
-                  | Supporting From One Hand To Another
-                  .countdown.white
-                    | Ending Oct 29, 2014
-          .col-md-3.col-sm-4
-            .thumbnail.border-fade
-              figure
-                img.img-responsive(src='img/shop/gaga1_small.png', width='263', height='263', alt='')
-              .item-box
-                h5 Lady Gaga’s Red Carpet Heels
-                .support
-                  | Supporting Born This Way Foundation
-                  .countdown.white
-                    | Ending Dec 1, 2014
-          .col-md-3.col-sm-4
-            .thumbnail.border-fade
-              figure
-                img.img-responsive(src='img/shop/snoop1_small.png', width='263', height='263', alt='')
-              .item-box
-                h5 Snoop’s Stage Mic
-                .support
-                  | Supporting Youth Football League Foundation
-                  .countdown.white
-                    | Ending Nov 12, 2014
-      .container
-        .text-center Email:
-          input(value="your email")
-        
+        form(method='POST')
+          input(type='hidden', name='_csrf', value=_csrf)
+          .form-group
+            label.sr-only(for='password') New Password:
+            input.form-control(type='password', name='password', id='password', placeholder='New password', autocomplete='off', autofocus=true, required, pattern='^[^\S]{4,}', title='At least 4 characters!')
+            .progress
+              .progress-bar(role='progressbar')
+          .form-group
+            label.sr-only(for='confirm') Confirm Password:
+            input.form-control(type='password', name='confirm', placeholder='Confirm your new password', autocomplete='off', required, pattern='^[^\S]{4,}', title='At least 4 characters!')
+          .form-group
+            button.btn.btn-primary.btn-reset(type='submit') Set Password
       include howItWorks

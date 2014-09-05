@@ -23,29 +23,28 @@
     margin-left:4px;
 }
 /* Override thumbnail from bootstrap */
-
+.homeItems{
+  .thumbnail:hover{
+    cursor:pointer;
+  }
+}
 .thumbnail{
     max-width: 260px;
     min-height: 340px;
     border: 1px solid #8f8f8f !important;
     /*padding:0 !important;*/
-}
-
-.thumbnail:hover{
-    cursor:pointer;
-}
-
-.thumbnail .support{
+  .support{
     color:grey;
     font-size: 11px;
     bottom:0;
     position:absolute;
     width:100%;
-}
-/* Make sure no anchor effects in thumbnail */
-.thumbnail a, .thumbnail a:hover{
+  }
+  /* Make sure no anchor effects in thumbnail */
+  .a, a:hover{
     text-decoration: none !important;
     color:inherit !important;
+  }
 }
 
 .countdown{
