@@ -6,7 +6,7 @@
 var mongoose = require('mongoose');
 
 var userEmailSchema = new mongoose.Schema({
-  type: String, unique: true
+  email: { type: String, unique: true, index: true }
 });
 
 module.exports = mongoose.model('UserEmail', userEmailSchema);

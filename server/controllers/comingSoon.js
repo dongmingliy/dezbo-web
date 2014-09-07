@@ -1,8 +1,9 @@
+'use strict';
+
 /**
  * Created by Louis on 2014-09-03.
  */
-'use strict';
-
+var UserEmail = require('../models/UserEmail');
 var config = require('../config/config');
 var nodemailer = require('nodemailer');
 
@@ -10,15 +11,32 @@ module.exports.controller = function (app) {
 
   app.post('/comingsoon', function (req, res, next) {
 
-    var emailAddress = 'louis.dm.li@gmail.com';
+    var emailAddress = req.body.email;
     // Create a workflow
     var workflow = new (require('events').EventEmitter)();
 
     /**
-     * Step 1: Send a coming soon email
+     * Step 1: Save User Email to database
      * */
 
-    workflow.on('sendComingSoonEmail', function (emailAddress) {
+    workflow.on('saveUserEmail', function () {
+      var userEmail = new UserEmail({
+        email:          req.body.email.toLowerCase()
+      });
+      // save user email
+      userEmail.save(function (err) {
+        if (err) {
+          req.flash('error', { msg: err });
+        }
+      });
+      // next step
+      workflow.emit('sendComingsoonEmail');
+    });
+
+    /**
+     * Step 2: Send a coming soon email
+     * */
+    workflow.on('sendComingsoonEmail', function () {
 
       // Create reusable transporter object using SMTP transport
       var transporter = nodemailer.createTransport({
@@ -30,25 +48,13 @@ module.exports.controller = function (app) {
       });
 
       // Render HTML to send using .jade mail template (just like rendering a page)
-      res.render('mail/cocomingSoon', {
+      res.render('mail/comingsoon', {
         name: 'Dear fan'
       }, function (err, html) {
         if (err) {
           req.flash('error', { msg: err });
         }
         else {
-          // Now create email text (multiline string as array FTW)
-          var text = [
-            'Hello!',
-            'We would like to welcome you as our newest member!',
-            'Thanks so much for using our services! If you have any questions, or suggestions, feel free to email us here at ' + config.smtp.address + '.',
-            'If you want to get the latest scoop check out our <a href="' +
-            req.protocol + '://' + req.headers.host + '/blog' +
-            '">blog</a> and our <a href="' +
-            req.protocol + '://' + req.headers.host + '/forums">forums</a>.',
-            '  - The ' + config.smtp.name + ' team'
-          ].join('\n\n');
-
           // Create email
           var mailOptions = {
             to: emailAddress,
@@ -62,15 +68,16 @@ module.exports.controller = function (app) {
           transporter.sendMail(mailOptions, function (err, info) {
             if (err) {
               req.flash('error', { msg: err });
-            } // else {
-            // console.log('Message sent: ' + info.response);
-            // }
+            } else {
+              req.flash('info', { msg: 'Thanks for signing up! You rock!' });
+              res.redirect('/');
+            }
           });
-
         }
       });
-
     });
-    workflow.emit('sendComingSoonEmail', emailAddress);
+
+    workflow.emit('saveUserEmail');
+
   });
 };
