@@ -60,7 +60,6 @@ module.exports.controller = function (app) {
             to: emailAddress,
             from: config.smtp.name + ' <' + config.smtp.address + '>',
             subject: 'Welcome to ' + app.locals.application + '!',
-            text: text,
             html: html
           };
 
