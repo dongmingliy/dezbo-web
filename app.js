@@ -100,7 +100,7 @@ if (app.get('env') === 'production') {
   app.locals.pretty = false;
   app.locals.compileDebug = false;
   // Enable If behind nginx, proxy, or a load balancer (e.g. Heroku, Nodejitsu)
-  // app.enable('trust proxy', 1);  // trust first proxy
+  app.enable('trust proxy', 1);  // trust first proxy
   // Since our application has signup, login, etc. forms these should be protected
   // with SSL encryption. Heroku, Nodejitsu and other hosters often use reverse
   // proxies or load balancers which offer SSL endpoints (but then forward unencrypted
@@ -121,9 +121,9 @@ if (app.get('env') === 'production') {
   // visit by HTTPS for the next ninety days:
   // TODO: should we actually have this *and* app.use(enforce.HTTPS(true)); above?
   //       this seems more flexible rather than a hard redirect.
-//  var ninetyDaysInMilliseconds = 7776000000;
-//  app.use(helmet.hsts({ maxAge: ninetyDaysInMilliseconds }));
-//  // Turn on HTTPS/SSL cookies
+  var ninetyDaysInMilliseconds = 7776000000;
+  app.use(helmet.hsts({ maxAge: ninetyDaysInMilliseconds }));
+  // Turn on HTTPS/SSL cookies
 //  config.session.proxy = true;
 //  config.session.cookie.secure = true;
 }
