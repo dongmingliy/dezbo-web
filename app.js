@@ -24,7 +24,6 @@ var config            = require('./server/config/config');         // Get config
 var logger            = require('express-loggly');          // https://github.com/dstroot/express-loggly
 var helmet            = require('helmet');                  // https://github.com/evilpacket/helmet
 var semver            = require('semver');                  // https://npmjs.org/package/semver
-var enforce           = require('express-sslify');          // https://github.com/florianheinemann/express-sslify
 var mongoose          = require('mongoose');                // https://npmjs.org/package/mongoose
 var passport          = require('passport');                // https://npmjs.org/package/passport
 var MongoStore        = require('connect-mongo')(session);  // https://npmjs.org/package/connect-mongo
@@ -116,7 +115,7 @@ if (app.get('env') === 'production') {
   //
   // NOTE: Use `enforce.HTTPS(true)` if you are behind a proxy or load
   // balancer that terminates SSL for you (e.g. Heroku, Nodejitsu).
-  app.use(enforce.HTTPS(false));
+  // app.use(enforce.HTTPS(false));
   // This tells browsers, "hey, only use HTTPS for the next period of time".
   // This will set the Strict Transport Security header, telling browsers to
   // visit by HTTPS for the next ninety days:
