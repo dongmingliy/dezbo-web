@@ -49,7 +49,6 @@
     "express-flash": "~0.0.2",
     "express-loggly": "~0.0.4",
     "express-session": "^1.7.6",
-    "express-sslify": "^0.1.0",
     "express-validator": "~2.3.0",
     "fbgraph": "~0.2.11",
     "github-api": "~0.7.0",
