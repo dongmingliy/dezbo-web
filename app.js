@@ -116,7 +116,7 @@ if (app.get('env') === 'production') {
   //
   // NOTE: Use `enforce.HTTPS(true)` if you are behind a proxy or load
   // balancer that terminates SSL for you (e.g. Heroku, Nodejitsu).
-  app.use(enforce.HTTPS(true));
+  // app.use(enforce.HTTPS(true));
   // This tells browsers, "hey, only use HTTPS for the next period of time".
   // This will set the Strict Transport Security header, telling browsers to
   // visit by HTTPS for the next ninety days:
