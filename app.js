@@ -121,11 +121,11 @@ if (app.get('env') === 'production') {
   // visit by HTTPS for the next ninety days:
   // TODO: should we actually have this *and* app.use(enforce.HTTPS(true)); above?
   //       this seems more flexible rather than a hard redirect.
-  var ninetyDaysInMilliseconds = 7776000000;
-  app.use(helmet.hsts({ maxAge: ninetyDaysInMilliseconds }));
-  // Turn on HTTPS/SSL cookies
-  config.session.proxy = true;
-  config.session.cookie.secure = true;
+//  var ninetyDaysInMilliseconds = 7776000000;
+//  app.use(helmet.hsts({ maxAge: ninetyDaysInMilliseconds }));
+//  // Turn on HTTPS/SSL cookies
+//  config.session.proxy = true;
+//  config.session.cookie.secure = true;
 }
 
 // Port to listen on.
