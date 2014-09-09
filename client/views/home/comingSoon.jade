@@ -4,6 +4,16 @@ html(lang="en")
   include flash
   body.boxed(id="topNav" ng-app="dezboapp" style="padding-top:0")
     block content
+      #fb-root
+      script#facebook-jssdk(src='//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=281205038733656&version=v2.0')
+      script.
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=281205038733656&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
       script#twitter-wjs(src='http://platform.twitter.com/widgets.js')
       script.
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
@@ -21,7 +31,7 @@ html(lang="en")
                 .voteSection
                   h5 Ellen’s Red Couch on the Ellen Show
                   .socialVote
-                    iframe(src='//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.dezbo.com%2Fimg%2Fcoming_soon%2Fbeckham.png&width&layout=button_count&action=like&show_faces=true&share=true&height=21&appId=281205038733656', scrolling='no', frameborder='0', style='border:none; overflow:hidden; height:21px;', allowTransparency='true')
+                    div.fb-like(data-href='http://www.dezbo.com/img/coming_soon/beckham.png', data-layout='standard', data-action='like', data-show-faces='true', data-share='true')
                     a.twitter-share-button(href='https://twitter.com/share') Tweet
                 .voteCountdown.bg-brand1.text-center.white
                       | Ending Nov 5, 2014
@@ -32,7 +42,7 @@ html(lang="en")
                 .voteSection
                   h5 Pharrell's Tall Hat
                   .socialVote
-                    iframe(src='//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.dezbo.com%2Fimg%2Fcoming_soon%2Fdeadmouse.png&width&layout=button_count&action=like&show_faces=true&share=true&height=21&appId=281205038733656', scrolling='no', frameborder='0', style='border:none; overflow:hidden; height:21px;', allowTransparency='true')
+                    div.fb-like(data-href='http://www.dezbo.com/img/coming_soon/deadmouse.png', data-layout='standard', data-action='like', data-show-faces='true', data-share='true')
                     a.twitter-share-button(href='https://twitter.com/share') Tweet
                 .voteCountdown.bg-brand1.text-center.white
                     | Ending Nov 5, 2014
@@ -43,7 +53,7 @@ html(lang="en")
                 .voteSection
                   h5 Lady Gaga’s Red Carpet Heels
                   .socialVote
-                    iframe(src='//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.dezbo.com%2Fimg%2Fcoming_soon%2Fnflball.png&width&layout=button_count&action=like&show_faces=true&share=true&height=21&appId=281205038733656', scrolling='no', frameborder='0', style='border:none; overflow:hidden; height:21px;', allowTransparency='true')
+                    div.fb-like(data-href='http://www.dezbo.com/img/coming_soon/nflball.png', data-layout='standard', data-action='like', data-show-faces='true', data-share='true')
                     a.twitter-share-button(href='https://twitter.com/share') Tweet
                 .voteCountdown.bg-brand1.text-center.white
                     | Ending Nov 5, 2014
@@ -54,7 +64,7 @@ html(lang="en")
                 .voteSection
                   h5 Lady Gaga’s Red Carpet Heels
                   .socialVote
-                    iframe(src='//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.dezbo.com%2Fimg%2Fcoming_soon%2Frihanna.png&width&layout=button_count&action=like&show_faces=true&share=true&height=21&appId=281205038733656', scrolling='no', frameborder='0', style='border:none; overflow:hidden; height:21px;', allowTransparency='true')
+                    div.fb-like(data-href='http://www.dezbo.com/img/coming_soon/rihanna.png', data-layout='standard', data-action='like', data-show-faces='true', data-share='true')
                     a.twitter-share-button(href='https://twitter.com/share') Tweet
                 .voteCountdown.bg-brand1.text-center.white
                     | Ending Nov 5, 2014
