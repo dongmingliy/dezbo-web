@@ -6,7 +6,8 @@ head
   meta(name='apple-mobile-web-app-capable', content='yes')
   //- http://updates.html5rocks.com/2013/12/300ms-tap-delay-gone-away
   meta(name='viewport', content='width=device-width, initial-scale=1.0, minimal-ui')
-
+  // Disable cache
+  meta(http-equiv='Cache-Control', content='no-store')
   //- SEO Meta Data
   block head
   meta(name='author', content='#{author}')
@@ -14,19 +15,29 @@ head
   meta(name='keywords', content='#{keywords}')
 
   //- Facebook Open Graph Meta Data
-  meta(property='og:description', content='If we get 1,000 "likes/Tweets", we will contact the celebrity. This contest ends on October 10.')
-  meta(property='og:image', content='http://www.dezbo.com/img/coming_soon/beckham.png')
-  meta(property="og:image:type" content='image/png')
-  meta(property='og:image', content='http://www.dezbo.com/img/coming_soon/deadmouse.png')
-  meta(property="og:image:type" content='image/png')
-  meta(property='og:image', content='http://www.dezbo.com/img/coming_soon/nflball.png')
-  meta(property="og:image:type" content='image/png')
-  meta(property='og:image', content='http://www.dezbo.com/img/coming_soon/rihanna.png')
-  meta(property="og:image:type" content='image/png')
   meta(property='og:site_name', content='dezbo')
   meta(property='og:title', content='#{application}')
   meta(property='og:type', content='website')
   meta(property='og:url', content='http://www.dezbo.com')
+  meta(property='og:description', content='#{description}')
+  //images open graph meta data
+  meta(property='og:image', content='http://www.dezbo.com/img/coming_soon/beckham.png')
+  meta(property="og:image:type" content='image/png')
+  meta(property='og:description', content='If we get 1,000 likes, we will contact the celebrity. This contest ends on October 10.')
+  meta(property='og:title', content="Beckham's helmet")
+  meta(property='og:image', content='http://www.dezbo.com/img/coming_soon/deadmouse.png')
+  meta(property="og:image:type" content='image/png')
+  meta(property='og:description', content='If we get 1,000 likes, we will contact the celebrity. This contest ends on October 10.')
+  meta(property='og:title', content='Deadmouse vs Mickey mouse')
+  meta(property='og:image', content='http://www.dezbo.com/img/coming_soon/nflball.png')
+  meta(property="og:image:type" content='image/png')
+  meta(property='og:description', content='If we get 1,000 likes, we will contact the celebrity. This contest ends on October 10.')
+  meta(property='og:title', content='NFL football')
+  meta(property='og:image', content='http://www.dezbo.com/img/coming_soon/rihanna.png')
+  meta(property="og:image:type" content='image/png')
+  meta(property='og:description', content='If we get 1,000 likes, we will contact the celebrity. This contest ends on October 10.')
+  meta(property='og:title', content="Rihanna's bikini")
+
 
   //- Twitter Meta Data
   //- meta(name='twitter:description', content='#{description}')
