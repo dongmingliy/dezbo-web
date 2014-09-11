@@ -16,12 +16,13 @@ html(lang="en")
         }(document, 'script', 'facebook-jssdk'));
       script#twitter-wjs(src='http://platform.twitter.com/widgets.js')
       .comingSection.jumbotron.white
-        .socialIcons
+        h1.text-center.text-uppercase Something Awesome is Coming
+        img.img-responsive.col-centered(src='img/coming_soon/logo_coming_soon.png', width='400px' alt='')
+        .socialIcons.pull-right
           div.fb-like(data-href='http://www.dezbo.com/img/coming_soon',colorscheme='dark', data-layout='standard', data-action='like', data-show-faces='true', data-share='true')
           div
             a.twitter-share-button(href='https://twitter.com/share', data-url='http://www.dezbo.com/img/coming_soon', data-text='Go to www.dezbo.com and vote for your favorite celebrity item. When we get 1,000 votes, we will guarantee to contact the celebrity. #DezboVotes', data-hashtags='votedezbo') Tweet
-        h1.text-center.text-uppercase Something Awesome is Coming
-        img.img-responsive.col-centered(src='img/coming_soon/logo_coming_soon.png', width='400px' alt='')
+
       script.
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
       div.bg-gray-darker
@@ -32,6 +33,8 @@ html(lang="en")
             div.gray-lighter.text-center
               | Soon you can finally get a chance to own your favorite celebrity’s item. We did not want to feature our own staff picks, so we decided to have you (the fans) vote on the items you would like to see on our platform when we launch. You can vote for any of the items below. When we reach 1,000 votes, we will guarantee to contact the celebrity. Subscribe (with your email) & follow us on Facebook/Twitter to receive the latest updates.
             br
+            br
+            br
         .container-fluid
           // item 1
           .row.row-no-padding
@@ -39,21 +42,21 @@ html(lang="en")
               .col-md-8.col-sm-8.bg-gray.row-no-padding
                 img.img-responsive.comingImg(src='img/coming_soon/deadmau5.png', alt='')
               .col-md-4.col-sm-4.bg-gray-darker.row-no-padding.alightbottom
-                .voteSection.bg-gray-dark.gray-lighter
+                div.itemComingSoon
+                  img.img-responsive.comingImg(src='img/coming_soon/deadmau5_item.png', alt='')
+                .voteSection.text-center.gray-lighter
                   h4 Deadmau5's hat
                   div
                     | Has been recently involved in a legal battle with his celebrity look alike ‘Mickey Mouse’. Mickey claims that their logos are very similar. Help support mouse peace and end mouse on mouse crime.
-                div.itemComingSoon
-                  img.img-responsive.comingImg(src='img/coming_soon/deadmau5_item.png', alt='')
             .clearfix
             // item 2
             .col-md-4.col-sm-4.bg-gray-darker.row-no-padding
-              .voteSection.bg-gray-dark.gray-lighter
+              div.itemComingSoon
+                img.img-responsive.comingImg(src='img/coming_soon/ellen_item.png', alt='')
+              .voteSection.text-center.gray-lighter
                 h4 Ellen’s Red Couch on the Ellen Show
                 div
                   | Hundreds of celebrities sat here. Vote for a chance to win this unique couch and show it off to your friends at home. Sit where the celebrities sat!
-              div.itemComingSoon
-              img.img-responsive.comingImg(src='img/coming_soon/ellen_item.png', alt='')
             .col-md-8.col-sm-8.bg-gray.row-no-padding
               img.img-responsive.comingImg(src='img/coming_soon/ellen.png', alt='')
             .clearfix
@@ -61,21 +64,21 @@ html(lang="en")
             .col-md-8.col-sm-8.bg-gray.row-no-padding
               img.img-responsive.comingImg(src='img/coming_soon/NFL.png', alt='')
             .col-md-4.col-sm-4.bg-gray-darker.row-no-padding
-              .voteSection.bg-gray-dark.gray-lighter
+              div.itemComingSoon
+                img.img-responsive.comingImg(src='img/coming_soon/NFL_item.png', alt='')
+              .voteSection.text-center.gray-lighter
                 h4 NFL game ball
                 div
                   | The Seahawks won their first superbowl last year. And have kicked off the season by kicking Green Bays A**. Let’s help bring this game ball to a fan that deserves it.
-              div.itemComingSoon
-                img.img-responsive.comingImg(src='img/coming_soon/NFL_item.png', alt='')
             .clearfix
             // item 4
             .col-md-4.col-sm-4.bg-gray-darker.row-no-padding
-              .voteSection.bg-gray-dark.gray-lighter
+              div.itemComingSoon
+                img.img-responsive.comingImg(src='img/coming_soon/beckham_item.png', alt='')
+              .voteSection.text-center.gray-lighter
                 h4 David Beckham’s Helmet
                 div
                   | David Beckham was recently involved in a minor bike accident (DO NOT WORRY HE IS OKAY!) thanks to this helmet he was wearing. Lets show BECKS and his HELMET some love. Safety First. We’re glad you’re ok Becks.
-              div.itemComingSoon
-              img.img-responsive.comingImg(src='img/coming_soon/beckham_item.png', alt='')
             .col-md-8.col-sm-8.bg-gray.row-no-padding
               img.img-responsive.comingImg(src='img/coming_soon/beckham.png', alt='')
       .bg-gray-dark.comingSoonEmail
@@ -85,5 +88,5 @@ html(lang="en")
           br
           form.form-inline(method='POST', action='comingsoon')
             .row-fluid.text-center
-              input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Email', required)
+              input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
               button.btn.btn-primary.btn-reset(type='submit') Sign up
