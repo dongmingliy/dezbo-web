@@ -15,16 +15,17 @@ html(lang="en")
         fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
       script#twitter-wjs(src='http://platform.twitter.com/widgets.js')
+      script(type='text/javascript', src='http://w.sharethis.com/button/buttons.js')
+      script(type='text/javascript') stLight.options({publisher: "1fa6b08b-97c2-4f7e-8ed4-8500c4b226f5", doNotHash: false, doNotCopy: false, hashAddressBar: false});
+
       .comingSection.jumbotron.white
         h1.text-center.text-uppercase Something Awesome is Coming
         img.img-responsive.col-centered(src='img/coming_soon/logo_coming_soon.png', width='400px' alt='')
-        .socialIcons.pull-right
-          div.fb-like(data-href='http://www.dezbo.com/img/coming_soon',colorscheme='dark', data-layout='standard', data-action='like', data-show-faces='true', data-share='true')
-          div
-            a.twitter-share-button(href='https://twitter.com/share', data-url='http://www.dezbo.com/img/coming_soon', data-text='Go to www.dezbo.com and vote for your favorite celebrity item. When we get 1,000 votes, we will guarantee to contact the celebrity. #DezboVotes', data-hashtags='votedezbo') Tweet
-
-      script.
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        .socialIcons.text-center
+          br
+          br
+          span.st_twitter_large(displaytext='Tweet' st_url="http://dezbo.com")
+          span.st_facebook_large(displaytext='Facebook' st_url="http://dezbo.com")
       div.bg-gray-darker
         .container
           .row
@@ -38,49 +39,78 @@ html(lang="en")
         .container-fluid
           // item 1
           .row.row-no-padding
-            .grid-bottom
-              .col-md-8.col-sm-8.bg-gray.row-no-padding
-                img.img-responsive.comingImg(src='img/coming_soon/deadmau5.png', alt='')
-              .col-md-4.col-sm-4.bg-gray-darker.row-no-padding.alightbottom
-                div.itemComingSoon
-                  img.img-responsive.comingImg(src='img/coming_soon/deadmau5_item.png', alt='')
-                .voteSection.text-center.gray-lighter
-                  h4 Deadmau5's hat
-                  div
-                    | Has been recently involved in a legal battle with his celebrity look alike ‘Mickey Mouse’. Mickey claims that their logos are very similar. Help support mouse peace and end mouse on mouse crime.
+            .col-md-8.bg-gray.row-no-padding#d5
+              img.img-responsive.comingImg(src='img/coming_soon/deadmau5.png', alt='')
+              div.comingsoonCaption.deadmau5.white
+                h1 DEADMAU5
+            .col-md-4.bg-gray-darker.row-no-padding.alightbottom
+              div.itemComingSoon
+                img.img-responsive.comingImg(src='img/coming_soon/deadmau5_item.png', alt='')
+              .voteSection.text-center.gray-lighter
+                h4 Deadmau5 Head
+                div
+                  | Deadmau5 has been recently involved in a legal battle with his celebrity look alike ‘Mickey Mouse’. Mickey claims that their logos are very similar. Help support mouse peace and end mouse on mouse crime.
+              .socialVote
+                div.fb-like(data-href='http://www.dezbo.com/#d5',colorscheme='dark', data-layout='standard', data-action='like', data-show-faces='true')
+                div
+                  a.twitter-share-button(href='https://twitter.com/share', data-url='http://www.dezbo.com/#d5',
+                  data-text='1,000 tweets on any of the celebrity items we feature & we will guarantee to contact the celebrity.', data-hashtags='DezboVotes') Tweet
+
             .clearfix
-            // item 2
-            .col-md-4.col-sm-4.bg-gray-darker.row-no-padding
+            // item 2, push for grid stacking in smaller screens
+            .col-md-8.col-md-push-4.bg-gray.row-no-padding#ellen
+              img.img-responsive.comingImg(src='img/coming_soon/ellen.png', alt='')
+              div.comingsoonCaption.deadmau5.white
+                h1 ELLEN DEGENERES
+            .col-md-4.col-md-pull-8.bg-gray-darker.row-no-padding
               div.itemComingSoon
                 img.img-responsive.comingImg(src='img/coming_soon/ellen_item.png', alt='')
               .voteSection.text-center.gray-lighter
-                h4 Ellen’s Red Couch on the Ellen Show
+                h4 Couch on the Ellen Show
                 div
                   | Hundreds of celebrities sat here. Vote for a chance to win this unique couch and show it off to your friends at home. Sit where the celebrities sat!
-            .col-md-8.col-sm-8.bg-gray.row-no-padding
-              img.img-responsive.comingImg(src='img/coming_soon/ellen.png', alt='')
+              .socialVote
+                div.fb-like(data-href='http://www.dezbo.com/#ellen',colorscheme='dark', data-layout='standard', data-action='like', data-show-faces='true')
+                div
+                  a.twitter-share-button(href='https://twitter.com/share', data-url='http://www.dezbo.com/#ellen',
+                  data-text='1,000 tweets on any of the celebrity items we feature & we will guarantee to contact the celebrity.', data-hashtags='DezboVotes') Tweet
+
             .clearfix
-            // item 3
-            .col-md-8.col-sm-8.bg-gray.row-no-padding
+            // item 3, push for grid stacking in smaller screens
+            .col-md-8.bg-gray.row-no-padding#nfl
               img.img-responsive.comingImg(src='img/coming_soon/NFL.png', alt='')
-            .col-md-4.col-sm-4.bg-gray-darker.row-no-padding
+              div.comingsoonCaption.nfl.white
+                h1 NFL
+            .col-md-4.bg-gray-darker.row-no-padding
               div.itemComingSoon
                 img.img-responsive.comingImg(src='img/coming_soon/NFL_item.png', alt='')
               .voteSection.text-center.gray-lighter
-                h4 NFL game ball
+                h4 NFL Game Ball
                 div
                   | The Seahawks won their first superbowl last year. And have kicked off the season by kicking Green Bays A**. Let’s help bring this game ball to a fan that deserves it.
+              .socialVote
+                div.fb-like(data-href='http://www.dezbo.com/#nfl',colorscheme='dark', data-layout='standard', data-action='like', data-show-faces='true')
+                div
+                  a.twitter-share-button(href='https://twitter.com/share', data-url='http://www.dezbo.com/#nfl',
+                  data-text='1,000 tweets on any of the celebrity items we feature & we will guarantee to contact the celebrity.', data-hashtags='DezboVotes') Tweet
             .clearfix
             // item 4
-            .col-md-4.col-sm-4.bg-gray-darker.row-no-padding
+            .col-md-8.col-md-push-4.bg-gray.row-no-padding#beckham
+              img.img-responsive.comingImg(src='img/coming_soon/beckham.png', alt='')
+              div.comingsoonCaption.beckham.white
+                h1 DAVID BECKHAM
+            .col-md-4.col-md-pull-8.bg-gray-darker.row-no-padding
               div.itemComingSoon
                 img.img-responsive.comingImg(src='img/coming_soon/beckham_item.png', alt='')
               .voteSection.text-center.gray-lighter
                 h4 David Beckham’s Helmet
                 div
                   | David Beckham was recently involved in a minor bike accident (DO NOT WORRY HE IS OKAY!) thanks to this helmet he was wearing. Lets show BECKS and his HELMET some love. Safety First. We’re glad you’re ok Becks.
-            .col-md-8.col-sm-8.bg-gray.row-no-padding
-              img.img-responsive.comingImg(src='img/coming_soon/beckham.png', alt='')
+              .socialVote
+                div.fb-like(data-href='http://www.dezbo.com/#beckham',colorscheme='dark', data-layout='standard', data-action='like', data-show-faces='true')
+                div
+                  a.twitter-share-button(href='https://twitter.com/share', data-url='http://www.dezbo.com/#beckham',
+                  data-text='1,000 tweets on any of the celebrity items we feature & we will guarantee to contact the celebrity.', data-hashtags='DezboVotes') Tweet
       .bg-gray-dark.comingSoonEmail
         .container
           h4.gray-lighter.text-center.text-uppercase
@@ -88,5 +118,6 @@ html(lang="en")
           br
           form.form-inline(method='POST', action='comingsoon')
             .row-fluid.text-center
+              input(type='hidden', name='_csrf', value=_csrf)
               input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
               button.btn.btn-primary.btn-reset(type='submit') Sign up

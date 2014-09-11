@@ -1,6 +1,6 @@
 .comingSection {
   padding-top:100px;
-  height: 400px;
+  height: 600px;
   background-image: url(../img/coming_soon/coming_soon.png);
   background-size: cover;
   color: #ffffff;
@@ -27,9 +27,6 @@
 .voteSection{
   padding-left:4px;
   padding-bottom:30px;
-  .socialVote{
-    width:100%;
-  }
   h1,h2,h3,h4,h5 {
     margin-top:0 !important;
     margin-bottom:0 !important;
@@ -39,6 +36,10 @@
   }
 }
 
+.socialVote{
+  width:100%;
+  margin-left:8px;
+}
 .voteCountdown{
   width:100%;
 }
@@ -59,4 +60,50 @@
 .comingSoonEmail{
   padding-top:100px;
   padding-bottom:100px;
+}
+
+.comingsoonCaption{
+  position: absolute;
+}
+
+.deadmau5 {
+  top: 2%;
+  left:5%;
+}
+
+.beckham {
+  top:35%;
+  left:60%;
+}
+.nfl {
+  top:1%;
+  right:5%;
+}
+@media (min-width: 480px) {
+  .comingsoonCaption{
+    h1 {
+      font-size: 30px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .comingsoonCaption{
+    h1 {
+      font-size: 40px;
+    }
+  }
+}
+@media (min-width: 992px) {
+  .comingsoonCaption{
+    h1 {
+      font-size: 50px;
+    }
+  }
+}
+@media (min-width: 1170px) {
+  .comingsoonCaption{
+    h1 {
+      font-size: 60px;
+    }
+  }
 }
