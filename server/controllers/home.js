@@ -14,7 +14,7 @@ module.exports.controller = function (app) {
     });
   });
   app.get('/d5', function (req, res) {
-    res.render('home/comingSoon', {
+    res.render('home/comingsoond5', {
       url: req.url
     });
   });
