@@ -15,13 +15,10 @@ html(lang="en")
         fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
       script#twitter-wjs(src='http://platform.twitter.com/widgets.js')
-      script(type='text/javascript') stLight.options({publisher: "1fa6b08b-97c2-4f7e-8ed4-8500c4b226f5", doNotHash: false, doNotCopy: false, hashAddressBar: false});
+      script.
+        stLight.options({publisher: "1fa6b08b-97c2-4f7e-8ed4-8500c4b226f5", doNotHash: true, doNotCopy: false, hashAddressBar: false});
 
       script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-540f8ed6699d23bb')
-      script(type='text/javascript')
-        var addthis_config = addthis_config||{};
-        addthis_config.data_track_addressbar = false;
-        addthis_config.data_track_clickback = false;
 
       .comingSection.jumbotron.white
         h1.text-center.text-uppercase Something Awesome is Coming
@@ -29,7 +26,7 @@ html(lang="en")
         .socialIcons.text-center
           br
           br
-          // div.addthis_sharing_toolbox(tw:hashtags='#DezboVote', data-url='http://dezbo.com', data-title='dezbo')
+          div.addthis_sharing_toolbox(tw:hashtags='#DezboVote', data-url='http://dezbo.com', data-title='dezbo')
       div.bg-gray-darker
         .container
           .row
@@ -124,3 +121,7 @@ html(lang="en")
               input(type='hidden', name='_csrf', value=_csrf)
               input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
               button.btn.btn-primary.btn-reset(type='submit') Sign up
+    script(type='text/javascript')
+      var addthis_config = addthis_config||{};
+      addthis_config.data_track_addressbar = false;
+      addthis_config.data_track_clickback = false;
