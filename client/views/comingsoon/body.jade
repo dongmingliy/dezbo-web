@@ -1,155 +1,24 @@
-body.boxed(id="topNav" ng-app="dezboapp" style="padding-top:0")
+body.boxed.bg-gray-darker(id="topNav" ng-app="dezboapp" style="padding-top:0")
   block content
-    #fb-root
-    script#facebook-jssdk(src='//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=281205038733656&version=v2.0')
-    script.
-      (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=281205038733656&version=v2.0";
-      fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
     script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-540f8ed6699d23bb')
     script.
       var addthis_config = {
            data_track_clickback: false
       }
     .comingSection.jumbotron.white
-      h1.text-center.text-uppercase Something Awesome is Coming
       img.img-responsive.col-centered(src='img/coming_soon/logo_coming_soon.png', width='400px' alt='')
+      br
+      h4.text-center.text-uppercase Celebrity Items for a Cause
       .socialIcons.text-center.gray-lighter
         div.addthis_horizontal_follow_toolbox
 
-    div.bg-gray-darker
+    .comingSoonEmail
       .container
-        .row
-          br
-          h3.text-center.text-uppercase.htitle.gray-lighter Welcome to dezbo
-          div.gray-lighter.text-center
-            | As fans these days, it is hard for us to connect to our favourite celebrities. We at Dezbo believe that every diehard fan should be able to afford their favourite celebrity’s item. That is why we want to reach out to the celebrities and have them donate their valuable items on our platform. Together, we can get their attention by liking and sharing these items on Facebook & Twitter. Tell us which celebrities you follow, and celebrity items you would like to own. Sign up with your email, and follow us on Facebook & Twitter to receive the latest updates.
-            div
-              | JOIN THE MOVEMENT: “Celebrity Items for a Cause”
-          br
-          br
-          br
-      .container-fluid(ng-controller="comingsoonCtrl")
-        // item 1
-        .row.row-no-padding
-          .col-md-8.bg-gray.row-no-padding
-            img.img-responsive.comingImg(src='img/coming_soon/deadmau5.png', alt='')
-            div.comingsoonCaption.deadmau5.white
-              h1 DEADMAU5
-          .col-md-4.bg-gray-darker.row-no-padding.alightbottom
-            div.itemComingSoon
-              img.img-responsive.comingImg(src='img/coming_soon/deadmau5_item.png', alt='')
-            .voteSection.text-center.gray-lighter
-              h4 Deadmau5 Head
-              div
-                | Deadmau5 has been recently involved in a legal battle with his celebrity look alike ‘Mickey Mouse’. Mickey claims that their logos are very similar. Help support mouse peace and end mouse on mouse crime.
-            .socialVote#d5
-              div.fb-like(data-href='http://www.dezbo.com/d5',colorscheme='dark', data-layout='standard', data-action='like', data-show-faces='true')
-              br
-              div.addthis_sharing_toolbox(data-url="http://www.dezbo.com/d5", data-title="I voted for Deadmau5’s Head on www.dezbo.com. Which celebrity item would you vote for? #DezboVotes")
-            div.voteSection
-              progressbar.gray-darker(value='d5_count/10', type='primary')
-                | {{d5_count/10}}%
-              .gray-lighter
-                .col-md-4
-                  strong {{d5_count}}
-                  | &nbsp;fans voted
-                .col-md-4.text-center
-                  | Goal: 1000 votes
-                timer.col-md-4(start-time="1409000000000")
-                  .pull-right {{days}} days to go
-          .clearfix
-          // item 2, push for grid stacking in smaller screens
-          .col-md-8.col-md-push-4.bg-gray.row-no-padding
-            img.img-responsive.comingImg(src='img/coming_soon/ellen.png', alt='')
-            div.comingsoonCaption.deadmau5.white
-              h1 ELLEN DEGENERES
-          .col-md-4.col-md-pull-8.bg-gray-darker.row-no-padding
-            div.itemComingSoon
-              img.img-responsive.comingImg(src='img/coming_soon/ellen_item.png', alt='')
-            .voteSection.text-center.gray-lighter
-              h4 Couch on the Ellen Show
-              div
-                | Hundreds of celebrities sat here. Vote for a chance to win this unique couch and show it off to your friends at home. Sit where the celebrities sat!
-            .socialVote#el
-              div.fb-like(data-href='http://www.dezbo.com/el',colorscheme='dark', data-layout='standard', data-action='like', data-show-faces='true')
-              br
-              div.addthis_sharing_toolbox(data-url="http://www.dezbo.com/el", data-title="I voted for Ellen Show’s Red Couch on www.dezbo.com. Which celebrity item would you vote for? #DezboVotes")
-            div.voteSection
-              progressbar.gray-darker(value='el_count/10', type='primary')
-                | {{el_count/10}}%
-              .gray-lighter
-                .col-md-4
-                  strong {{el_count}}
-                  | &nbsp;fans voted
-                .col-md-4.text-center
-                  | Goal: 1000 votes
-                timer.col-md-4(start-time="1408000000000")
-                  .pull-right {{days}} days to go
-          .clearfix
-          // item 3, push for grid stacking in smaller screens
-          .col-md-8.bg-gray.row-no-padding
-            img.img-responsive.comingImg(src='img/coming_soon/NFL.png', alt='')
-            div.comingsoonCaption.nfl.white
-              h1 NFL
-          .col-md-4.bg-gray-darker.row-no-padding
-            div.itemComingSoon
-              img.img-responsive.comingImg(src='img/coming_soon/NFL_item.png', alt='')
-            .voteSection.text-center.gray-lighter
-              h4 NFL Game Ball
-              div
-                | The Seahawks won their first superbowl last year. And have kicked off the season by kicking Green Bays A**. Let’s help bring this game ball to a fan that deserves it.
-            .socialVote#nfl
-              div.fb-like(data-href='http://www.dezbo.com/nfl',colorscheme='dark', data-layout='standard', data-action='like', data-show-faces='true')
-              div.addthis_sharing_toolbox(data-url="http://www.dezbo.com/nfl", data-title="I voted for NFL Game Ball on www.dezbo.com. Which celebrity item would you vote for? #DezboVotes")
-            div.voteSection
-              progressbar.gray-darker(value='nfl_count/10', type='primary')
-                | {{nfl_count/10}}%
-              .gray-lighter
-                .col-md-4
-                  strong {{nfl_count}}
-                  | &nbsp;fans voted
-                .col-md-4.text-center
-                  | Goal: 1000 votes
-                timer.col-md-4(start-time="1408000000000")
-                  .pull-right {{days}} days to go
-          .clearfix
-          // item 4
-          .col-md-8.col-md-push-4.bg-gray.row-no-padding
-            img.img-responsive.comingImg(src='img/coming_soon/jax.png', alt='')
-          .col-md-4.col-md-pull-8.bg-gray-darker.row-no-padding
-            div.itemComingSoon
-              img.img-responsive.comingImg(src='img/coming_soon/jax_item.png', alt='')
-            .voteSection.text-center.gray-lighter
-              h4 Jax Teller's Jacket
-              div
-                | Charlie Hunnam AKA Jax Teller: Here we go again, another season premiers with Jax Teller and SAMCRO. Let’s bring Jax’s ‘PRESIDENT’ jacket from the SOA set to the Dezbo Platform. Start LIKING and SHARING. Don’t be a prospect, become a Full Patch.
-            .socialVote#db
-              div.fb-like(data-href='http://www.dezbo.com/db',colorscheme='dark', data-layout='standard', data-action='like', data-show-faces='true')
-              div.addthis_sharing_toolbox(data-url="http://www.dezbo.com/db", data-title="I voted for Jax’s Jacket (SOA) on www.dezbo.com. Which celebrity item would you vote for? #DezboVotes")
-
-            div.voteSection
-              progressbar.gray-darker(value='db_count/10', type='primary')
-                | {{db_count/10}}%
-              .gray-lighter
-                .col-md-4
-                  strong {{db_count}}
-                  | &nbsp;fans voted
-                .col-md-4.text-center
-                  | Goal: 1000 votes
-                timer.col-md-4(start-time="1408000000000")
-                  .pull-right {{days}} days to go
-      .bg-gray-dark.comingSoonEmail
-        .container
-          h4.gray-lighter.text-center.text-uppercase
-            | STAY UPDATED
-          br
-          form.form-inline(method='POST', action='comingsoon')
-            .row-fluid.text-center
-              input(type='hidden', name='_csrf', value=_csrf)
-              input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
-              button.btn.btn-primary.btn-reset(type='submit') Sign up
+        h4.gray-lighter.text-center.text-uppercase
+          | STAY UPDATED
+        br
+        form.form-inline(method='POST', action='comingsoon')
+          .row-fluid.text-center
+            input(type='hidden', name='_csrf', value=_csrf)
+            input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
+            button.btn.btn-primary.btn-reset(type='submit') Sign up
