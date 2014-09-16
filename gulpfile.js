@@ -125,7 +125,7 @@ gulp.task('scripts', function () {
       .pipe($.concat(pkg.name + '.js'))       // Concatenate .js files
       .pipe(gulp.dest('./public/js'))         // Save main.js here
       .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
-      .pipe($.uglify({ outSourceMap: true })) // Minify the .js
+      // .pipe($.uglify({ outSourceMap: true })) // Minify the .js
       .pipe($.header(banner, { pkg: pkg }))   // Add banner
       .pipe($.size({ title: 'JS:' }))         // What size are we at?
       .pipe(gulp.dest('./public/js'))         // Save minified .js

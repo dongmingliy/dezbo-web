@@ -26,7 +26,7 @@ module.exports.controller = function (app) {
       // save user email
       userEmail.save(function (err) {
         if (err) {
-          req.flash('error', { msg: err });
+          console.log(err);
         }
       });
       // next step
@@ -59,7 +59,7 @@ module.exports.controller = function (app) {
           var mailOptions = {
             to: emailAddress,
             from: config.smtp.name + ' <' + config.smtp.address + '>',
-            subject: 'Welcome to ' + app.locals.application + '!',
+            subject: 'Welcome to Dezbo!',
             html: html
           };
 

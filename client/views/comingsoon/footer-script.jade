@@ -1,37 +1,3 @@
-.footer
-  .footer-bar
-    .container
-      div.copyright
-        | Copyright © Dezbo . All Rights Reserved
-      a.toTop(href='#topNav')
-        | BACK TO TOP&nbsp;
-        i.fa.fa-arrow-circle-up
-    .footer-content
-      .container
-        .row.column.col-md-8
-          .column.col-md-4
-            h3
-              a(href='blog-post.html') Terms
-            h3
-              a(href='blog-post.html') Privacy
-          .column.col-md-4
-            h3
-              a(href='faq') FAQ
-            h3
-              a(href='blog-post.html') About us
-          .column.col-md-4
-            h3
-              a(href='blog-post.html') Contact
-            h3
-              a(href='blog-post.html') Jobs
-          .column.col-md-4
-        .column.col-md-4.text-right
-          .row
-            a.btn.btn-social-icon.btn-facebook
-              i.fa.fa-facebook
-            | &nbsp;
-            a.btn.btn-social-icon.btn-twitter
-              i.fa.fa-twitter
 //- Load jQuery, food for thought:
 //- https://palant.de/2014/06/30/please-don-t-use-externally-hosted-javascript-libraries
 
@@ -43,7 +9,6 @@ else if 'development' == process.env.NODE_ENV
 script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js')
 script(src='/js/#{application}.min.js')
 script(src="https://js.stripe.com/v2/")
-
 //- Backup just in case
 script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min.js"><\/script>')
 script $.fn.modal || document.write('<script src="/lib/bootstrap/dist/js/bootstrap.min.js"><\/script>')

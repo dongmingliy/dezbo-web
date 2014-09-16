@@ -19,5 +19,7 @@ dezboapp.controller('timerController', ['$scope',
     $scope.$on('timer-stopped', function (event, data) {
       console.log('Timer Stopped - data = ', data);
     });
+
+    $scope.d5count = 124;
   }
 ]);
