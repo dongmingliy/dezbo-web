@@ -1,0 +1,30 @@
+block content
+  .container
+    .row
+      .gameSection.center-block
+        div.imgSection
+          img(src='http://images.agoramedia.com/everydayhealth/gcms/celebrity-sleep-disorders-Jennifer-Aniston-pg-full.jpg'
+          ,width='600', height='400')
+        .col-md-6
+          a.btn.btn-danger.btn-lg(href='#', style='width:200px;')
+            i.fa.fa-times.fa-6
+            | &nbsp;Not Interested
+
+        .col-md-6
+          .pull-right
+            a.btn.btn-success.btn-lg(href='#', style='width:200px;')
+              i.fa.fa-heart.fa-6
+              | &nbsp;I Want this
+   //       button.btn.btn-primary.btn-reset(type='submit') Not Interested
+  // button.btn.btn-primary.btn-reset(type='submit') I Want It
+
+  .comingSoonEmail
+    .container
+      h4.gray-lighter.text-center.text-uppercase
+        | STAY UPDATED
+      br
+      form.form-inline(method='POST', action='comingsoon')
+        .row-fluid.text-center
+          input(type='hidden', name='_csrf', value=_csrf)
+          input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
+          button.btn.btn-primary.btn-reset(type='submit') Sign up
