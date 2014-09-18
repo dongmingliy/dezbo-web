@@ -181,7 +181,7 @@ gulp.task('jscs', function () {
 gulp.task('build', function (cb) {
   runSequence(
       'clean',                                // first clean
-      ['lint', 'jscs'],                       // then lint and jscs in parallel
+     // ['lint', 'jscs'],                       // then lint and jscs in parallel
       ['styles', 'scripts', 'images','concat'],        // etc.
       cb);
 });

@@ -1,28 +1,33 @@
 block content
+  .headline.responsive-heading.col-md-4.text-center
+    h3.gray-dark "Celebrity Items for a Cause"
   .container
     .row
       .gameSection.center-block
-        h2.text-center Ellen Degeneres's Couch
+        h2.text-center.gameTitle Red Couch on the Ellen Show
+        div.bottom
+          div.face-wrapper.pull-left
+            img.img-circle.face(src='img/game/ellen_head.png', width='100', height='100')
+          div.v-middle
+            h4 Ellen Degeneres
         div.imgSection
-          img(src='img/shop/ellen1.png'
-          ,width='600', height='400')
-        .col-md-6
-          a.btn.btn-danger.btn-lg(href='#', style='width:200px;')
+          img.img-responsive(src='img/shop/ellen1.png')
+        .col-md-6.text-center(style='margin-bottom: 20px;')
+          a.btn.btn-danger.btn-lg.btn-responsive(href='#', style='width:200px;')
             i.fa.fa-times.fa-6
             | &nbsp;Not Interested
-        .col-md-6
-          .pull-right
-            a.btn.btn-success.btn-lg(href='#', style='width:200px;')
-              i.fa.fa-heart.fa-6
-              | &nbsp;I Want this
+        .col-md-6.text-center
+          a.btn.btn-success.btn-lg.btn-responsive(href='#', style='width:200px;')
+            i.fa.fa-heart.fa-6
+            | &nbsp;I Want this
 
-  .comingSoonEmail
-    .container
-      h4.gray-lighter.text-center.text-uppercase
-        | STAY UPDATED
-      br
-      form.form-inline(method='POST', action='comingsoon')
-        .row-fluid.text-center
-          input(type='hidden', name='_csrf', value=_csrf)
-          input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
-          button.btn.btn-primary.btn-reset(type='submit') Sign up
+  //.comingSoonEmail
+  //  .container
+  //    h4.gray-lighter.text-center.text-uppercase
+  //      | STAY UPDATED
+  //    br
+  //    form.form-inline(method='POST', action='comingsoon')
+  //      .row-fluid.text-center
+  //        input(type='hidden', name='_csrf', value=_csrf)
+  //        input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
+  //        button.btn.btn-primary.btn-reset(type='submit') Sign up

@@ -3,16 +3,14 @@ script.
   var addthis_config = {
        data_track_clickback: false
   }
-nav#topNav.navbar.navbar-default.navbar-fixed-top(role='navigation')
-  .logo(style='padding-left:40px;')
-    a.navbar-brand(href='/')
-      img(src='/img/logo.png')
-  .container
-    ul.navbar-nav
-      li.divider-vertical
-      li
-        h3.gray-dark "Celebrity Items for a Cause"
-      li.divider-vertical
-    .pull-right
-      .socialIcons.text-center.gray-lighter.pull-right
-        div.addthis_horizontal_follow_toolbox
+.container-fluid.bg-gray-verylight
+  .row
+    .col-xs-12.col-md-4.gamelogo
+      a(href='/')
+        img.img-responsive.center-block(src='/img/logo.png')
+    .col-sm-12.col-md-4
+      div.text-center.navtagline
+        h5.gray-dark I want these products on Dezbo!
+    .col-sm-12.col-md-4.center-block
+      .socialIcons.text-center.gray
+        div.addthis_horizontal_follow_toolbox(style='width: 110px;margin: 0 auto;')
