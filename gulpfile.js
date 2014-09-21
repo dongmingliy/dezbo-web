@@ -86,11 +86,40 @@ gulp.task('clean', function () {
 /**
  * Process CSS
  */
+//
+//// no minification, separate files
+//gulp.task('styles', function () {
+//  return gulp.src(paths.less)               // Read in Less file
+//    .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
+//    .pipe($.less({ strictMath: true }))     // Compile Less files
+//    .pipe($.autoprefixer([                  // Autoprefix for target browsers
+//      'last 2 versions',
+//      '> 1%',
+//      'Firefox ESR',
+//      'Opera 12.1'
+//    ], { cascade: true }))
+//    .pipe($.csscomb())                      // Coding style formatter for CSS
+//    .pipe($.csslint('.csslintrc'))          // Lint CSS
+//    .pipe($.csslint.reporter())             // Report issues
+//    .pipe($.sourcemaps.write())             // Write sourcemap
+//    .pipe(gulp.dest('./public/css'))        // Save CSS here
+//    .pipe($.csso())                         // Minify CSS
+//    .pipe($.size({ title: 'CSS:' }))        // What size are we at?
+//    .pipe(gulp.dest('./public/css'))        // Save minified CSS
+//    .pipe($.livereload());                  // Initiate a reload
+//});
+//
+//// TODO: not sure why concat is not working, need to use it for production
+//gulp.task('concat', function () {
+//  return gulp.src('./public/css/*.css')
+//    .pipe($.concat(pkg.name + 'min.css'))
+//    .pipe(gulp.dest('./public/css'));
+//});
 
-// no minification, separate files
+// production
 gulp.task('styles', function () {
-  return gulp.src(paths.less)               // Read in Less file
-    .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
+  return gulp.src('./client/less/production.less')       // Read in Less file
+    // .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
     .pipe($.less({ strictMath: true }))     // Compile Less files
     .pipe($.autoprefixer([                  // Autoprefix for target browsers
       'last 2 versions',
@@ -101,19 +130,15 @@ gulp.task('styles', function () {
     .pipe($.csscomb())                      // Coding style formatter for CSS
     .pipe($.csslint('.csslintrc'))          // Lint CSS
     .pipe($.csslint.reporter())             // Report issues
-    .pipe($.sourcemaps.write())             // Write sourcemap
+    .pipe($.rename(pkg.name + '.css'))      // Rename to "packagename.css"
+    // .pipe($.sourcemaps.write())             // Write sourcemap
     .pipe(gulp.dest('./public/css'))        // Save CSS here
+    .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
     .pipe($.csso())                         // Minify CSS
+    .pipe($.header(banner, { pkg: pkg }))  // Add banner
     .pipe($.size({ title: 'CSS:' }))        // What size are we at?
     .pipe(gulp.dest('./public/css'))        // Save minified CSS
     .pipe($.livereload());                  // Initiate a reload
-});
-
-// TODO: not sure why concat is not working, need to use it for production
-gulp.task('concat', function () {
-  return gulp.src('./public/css/*.css')
-    .pipe($.concat(pkg.name + 'min.css'))
-    .pipe(gulp.dest('./public/css'));
 });
 
 /**
@@ -125,7 +150,7 @@ gulp.task('scripts', function () {
       .pipe($.concat(pkg.name + '.js'))       // Concatenate .js files
       .pipe(gulp.dest('./public/js'))         // Save main.js here
       .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
-      // .pipe($.uglify({ outSourceMap: true })) // Minify the .js
+      .pipe($.uglify({ outSourceMap: true })) // Minify the .js
       .pipe($.header(banner, { pkg: pkg }))   // Add banner
       .pipe($.size({ title: 'JS:' }))         // What size are we at?
       .pipe(gulp.dest('./public/js'))         // Save minified .js
@@ -181,8 +206,8 @@ gulp.task('jscs', function () {
 gulp.task('build', function (cb) {
   runSequence(
       'clean',                                // first clean
-     // ['lint', 'jscs'],                       // then lint and jscs in parallel
-      ['styles', 'scripts', 'images','concat'],        // etc.
+      ['lint', 'jscs'],                       // then lint and jscs in parallel
+      ['styles', 'scripts', 'images'],        // etc.
       cb);
 });
 
