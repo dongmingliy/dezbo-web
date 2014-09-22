@@ -134,8 +134,8 @@ app.set('port', config.port);
 
 // Favicon - This middleware will come very early in your stack
 // (maybe even first) to avoid processing any other middleware
-// if we already know the request is for favicon.ico
-app.use(favicon(__dirname + '/public/favicon.ico'));
+// if we already know the request is for dezbo.ico
+app.use(favicon(__dirname + '/public/dezbo.ico'));
 
 // Setup the view engine (jade)
 app.set('views', path.join(__dirname, 'client/views'));

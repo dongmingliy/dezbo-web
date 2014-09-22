@@ -31,20 +31,6 @@ head
   //- meta(name='twitter:card', content='summary_large_image')
 
   //- Humans
-  link(rel='author', href='humans.txt')
-if 'production' == process.env.NODE_ENV
-  link(rel='stylesheet', href='/css/blog.css')
-  link(rel='stylesheet', href='/css/comingSoon.css')
-  link(rel='stylesheet', href='/css/common.css')
-  link(rel='stylesheet', href='/css/essentials.css')
-  link(rel='stylesheet', href='/css/flexSlider.css')
-  link(rel='stylesheet', href='/css/layout.css')
-  link(rel='stylesheet', href='/css/login.css')
-  link(rel='stylesheet', href='/css/main.css')
-  link(rel='stylesheet', href='/css/shop.css')
-  link(rel='stylesheet', href='/css/slider.css')
-  link(rel='stylesheet', href='/css/game.css')
-else if 'development' == process.env.NODE_ENV
   link(rel='stylesheet', href='/css/#{dezbocss}')
 
   link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Open+Sans|Old+Standard+TT')
