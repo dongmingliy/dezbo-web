@@ -5,7 +5,7 @@
  */
 
 var pkg               = require('../../package.json');
-
+var rev               = require('../../rev-manifest.json');
 /**
  * Configuration File
  *
@@ -31,7 +31,7 @@ config.nodeVersion    = pkg.engines.node;
 
 config.port           = process.env.PORT || 3000;
 config.ga             = process.env.GA   || 'UA-54252003-1';
-
+config.dezbocss       = rev.dezbomin;
 /**
  * Logging Configuration
  */

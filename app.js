@@ -69,7 +69,8 @@ app.locals.description  = config.description;
 app.locals.author       = config.author;
 app.locals.keywords     = config.keywords;
 app.locals.ga           = config.ga;
-
+// Use revisioned css
+app.locals.dezbocss     = config.dezbocss;
 // Format dates/times in jade templates
 // Use moment anywhere within a jade template like this:
 // p #{moment(Date.now()).format('MM/DD/YYYY')}

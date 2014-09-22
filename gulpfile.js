@@ -14,6 +14,8 @@ var gulp = require('gulp');
 var pngcrush = require('imagemin-pngcrush');
 var terminus = require('terminus');
 var runSequence = require('run-sequence');
+var rev = require('gulp-rev');
+
 /**
  * Banner
  */
@@ -67,7 +69,7 @@ var paths = {
     'public/lib/bootstrap-social/bootstrap-social'
   ],
   css: [
-    'client/css/*.css'
+    'client/less/*.less'
   ]
 };
 
@@ -87,8 +89,8 @@ gulp.task('clean', function () {
  * Process CSS
  */
 //
-//// no minification, separate files
-//gulp.task('styles', function () {
+// no minification, separate files
+// gulp.task('styles', function () {
 //  return gulp.src(paths.less)               // Read in Less file
 //    .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
 //    .pipe($.less({ strictMath: true }))     // Compile Less files
@@ -107,19 +109,19 @@ gulp.task('clean', function () {
 //    .pipe($.size({ title: 'CSS:' }))        // What size are we at?
 //    .pipe(gulp.dest('./public/css'))        // Save minified CSS
 //    .pipe($.livereload());                  // Initiate a reload
-//});
+// });
 //
-//// TODO: not sure why concat is not working, need to use it for production
-//gulp.task('concat', function () {
+// TODO: not sure why concat is not working, need to use it for production
+// gulp.task('concat', function () {
 //  return gulp.src('./public/css/*.css')
 //    .pipe($.concat(pkg.name + 'min.css'))
 //    .pipe(gulp.dest('./public/css'));
-//});
+// });
 
 // production
 gulp.task('styles', function () {
   return gulp.src('./client/less/production.less')       // Read in Less file
-    // .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
+    .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
     .pipe($.less({ strictMath: true }))     // Compile Less files
     .pipe($.autoprefixer([                  // Autoprefix for target browsers
       'last 2 versions',
@@ -131,15 +133,26 @@ gulp.task('styles', function () {
     .pipe($.csslint('.csslintrc'))          // Lint CSS
     .pipe($.csslint.reporter())             // Report issues
     .pipe($.rename(pkg.name + '.css'))      // Rename to "packagename.css"
-    // .pipe($.sourcemaps.write())             // Write sourcemap
+    .pipe($.sourcemaps.write())             // Write sourcemap
     .pipe(gulp.dest('./public/css'))        // Save CSS here
-    .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
+    .pipe($.rename(pkg.name + 'min'))       // Add min (cannot use . in the name in config.js)
     .pipe($.csso())                         // Minify CSS
-    .pipe($.header(banner, { pkg: pkg }))  // Add banner
+    .pipe($.header(banner, { pkg: pkg }))   // Add banner
     .pipe($.size({ title: 'CSS:' }))        // What size are we at?
     .pipe(gulp.dest('./public/css'))        // Save minified CSS
+    .pipe(rev())                            // Append hash to file main-098f6bcd.css
+    .pipe($.rename({ suffix: '.css' }))     // Add .css suffix
+    .pipe(gulp.dest('./public/css'))        // Save to something like dezbo-min-cb5af184.css
+    .pipe(rev.manifest())
+    .pipe(gulp.dest('./')) // write manifest to build dir
     .pipe($.livereload());                  // Initiate a reload
 });
+
+
+/**
+ * Build Task
+ *   - Build all the things...
+ */
 
 /**
  * Process Scripts
@@ -197,11 +210,6 @@ gulp.task('jscs', function () {
       })
       .pipe(terminus.devnull({ objectMode: true }));
 });
-
-/**
- * Build Task
- *   - Build all the things...
- */
 
 gulp.task('build', function (cb) {
   runSequence(
