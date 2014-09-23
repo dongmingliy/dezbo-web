@@ -1,7 +1,7 @@
 //- Load jQuery, food for thought:
 //- https://palant.de/2014/06/30/please-don-t-use-externally-hosted-javascript-libraries
 
-if 'production' == process.env.NODE_ENV
+if 'development' != process.env.NODE_ENV
   script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
 else if 'development' == process.env.NODE_ENV
   script(src='/lib/jquery/dist/jquery.min.js')
