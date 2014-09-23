@@ -3,23 +3,23 @@ block content
     h4.gray-light Vote & we will approach the celebrities
       bt
      h4.gray-light with the most popular items
-  .container
+  .container(ng-controller='gameCtrl')
     .row
       .gameSection.center-block
-        h2.text-center.gameTitle Red Couch on the Ellen Show
+        h2.text-center.gameTitle(ng-model='counter') {{celebItem.itemTitle}}
         div.bottom
           div.face-wrapper.pull-left
-            img.img-circle.face(src='img/game/ellen_head.png', width='70', height='70')
+            img.img-circle.face(ng-src='{{celebItem.celebURL}}', width='70', height='70')
           div.v-middle
-            h4 Ellen Degeneres
+            h4 {{celebItem.celebName}}
         div.imgSection
-          img.img-responsive(src='img/shop/ellen1.png')
+          img.img-responsive(ng-src='{{celebItem.itemURL}}')
         .col-md-6.text-center(style='margin-bottom: 20px;')
-          a.btn.btn-success.btn-lg.btn-responsive(href='#', style='width:200px;')
+          a.btn.btn-success.btn-lg.btn-responsive(href='#', style='width:200px;', ng-click='changeItem()')
             i.fa.fa-heart.fa-6
             | &nbsp;I Want this
         .col-md-6.text-center
-          a.btn.btn-danger.btn-lg.btn-responsive(href='#', style='width:200px;')
+          a.btn.btn-danger.btn-lg.btn-responsive(href='#', style='width:200px;', ng-click='changeItem()')
             i.fa.fa-times.fa-6
             | &nbsp;Not Interested
 

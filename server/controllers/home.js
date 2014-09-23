@@ -7,13 +7,13 @@ var passportConf  = require('../config/passport');
 
 module.exports.controller = function (app) {
 
-  app.get('/game', function (req, res) {
+  app.get('/', function (req, res) {
     res.render('game/index', {
       url: req.url
     });
   });
 
-  app.get('/', function (req, res) {
+  app.get('/comingsoon', function (req, res) {
     res.render('comingsoon/main', {
       url: req.url
     });

@@ -7,7 +7,10 @@ else if 'development' == process.env.NODE_ENV
   script(src='/lib/jquery/dist/jquery.min.js')
 
 script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js')
-script(src='/js/#{application}.min.js')
+if 'development' != process.env.NODE_ENV
+  script(src='/js/#{application}.min.js')
+else if 'development' == process.env.NODE_ENV
+  script(src='/js/#{application}.js')
 script(src="https://js.stripe.com/v2/")
 //- Backup just in case
 script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min.js"><\/script>')
