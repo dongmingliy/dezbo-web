@@ -4077,7 +4077,9 @@ html[xmlns] .flexslider .slides
 }
 .gameSection .imgSection
 {
-    padding-bottom: 20px;
+    width: 600px;
+    height: 400px;
+    margin-bottom: 40px;
 }
 .gamelogo
 {
@@ -4104,6 +4106,21 @@ html[xmlns] .flexslider .slides
 .gameTitle
 {
     border-bottom: 1px solid #000;
+}
+.progressSection
+{
+    float: none;
+
+    max-width: 200px;
+    margin: 0 auto;
+}
+.progressSection .progress
+{
+    margin-bottom: 0 !important;
+}
+.progressSection .progress-bar
+{
+    color: black !important;
 }
 @media (min-width: 300px)
 {

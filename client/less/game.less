@@ -3,7 +3,9 @@
   padding-bottom: 20px;
   max-width: 600px;
   .imgSection{
-    padding-bottom: 20px;
+    margin-bottom: 40px;
+    width:600px;
+    height:400px;
   }
 }
 .gamelogo {
@@ -29,7 +31,18 @@
 .gameTitle{
   border-bottom: 1px solid #000;
 }
-
+.progressSection{
+  float: none;
+  margin: 0 auto;
+  max-width:200px;
+  //override bootstrap
+  .progress{
+    margin-bottom: 0 !important;
+  }
+  .progress-bar{
+    color: black !important;
+  }
+}
 @media (min-width: 300px) {
   .responsive-heading{
     h1 {

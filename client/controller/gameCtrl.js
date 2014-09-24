@@ -1,22 +1,31 @@
 'use strict';
-dezboapp.controller('gameCtrl', ['$scope','$http','$window',
-  function($scope, $http,$window) {
-    $scope.celebItems =[
-      {"id": 0, "itemTitle":"Red Couch on the Ellen Show", "itemURL":"img/shop/ellen1.png","celebName":"Ellen Degeneres", "celebURL": "img/game/ellen_head.png"},
-      {"id": 1, "itemTitle":"NFL's Game Ball", "itemURL":"img/coming_soon/NFL.png","celebName":"Pharrell Williams", "celebURL": "img/logo_o.png"}
-    ];
-//    $http.get('celebItems.json').
-//      success(function(data){
-//      $scope.celebItems = data;
-//    })
-//      .error(function(data){
-//        console.log(data);
+dezboapp.controller('gameCtrl', ['$scope','$http','$window','$timeout',
+  function($scope, $http, $window, $timeout) {
+    $scope.celebItems = [];
+    $http.get('/celebItems').
+      success(function(data){
+      $scope.celebItems = data;
+        $scope.counter = 0;
+        $scope.celebItem = $scope.celebItems[$scope.counter];
+        $scope.showProgress = false;
+    })
+      .error(function(data){
+        console.log(data);
+        $scope.$apply(function() { $location.path("/comingsoon"); });
+    });
+//    $http({
+//      method: "post",
+//      url: "process.cfm",
+//      transformRequest: transformRequestAsFormPost,
+//      data: {
+//        id: 4,
+//        name: "Kim",
+//        status: "Best Friend"
+//      }
 //    });
-    $scope.itemTitle = 'Red Couch on the Ellen Show';
-    $scope.itemURL ='img/game/ellen_head.png';
-    $scope.counter = 0;
-    $scope.celebItem = $scope.celebItems[$scope.counter];
+
     $scope.changeItem = function(voteValue) {
+      $scope.inProgress = true;
       if($scope.counter == 1){
         $scope.counter = 0;
       } else {
@@ -26,7 +35,16 @@ dezboapp.controller('gameCtrl', ['$scope','$http','$window',
       if($window.ga){
         ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle , voteValue);
       }
-      $scope.celebItem = $scope.celebItems[$scope.counter];
+      $scope.showProgress = true;
+      $scope.votePercentage = Math.floor((Math.random() * 100) + 0);
+      var nextImage = function() {
+        $scope.celebItem = $scope.celebItems[$scope.counter];
+        $scope.showProgress = false;
+        $scope.inProgress = false;
+        $scope.votePercentage = 0;
+      };
+
+      $timeout(nextImage, 1500);
     };
   }
 ]);
