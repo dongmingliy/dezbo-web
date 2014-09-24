@@ -15,11 +15,11 @@ block content
         div.imgSection
           img.img-responsive(ng-src='{{celebItem.itemURL}}')
         .col-md-6.text-center(style='margin-bottom: 20px;')
-          a.btn.btn-success.btn-lg.btn-responsive(href='#', style='width:200px;', ng-click='changeItem()')
+          a.btn.btn-success.btn-lg.btn-responsive(href='#', style='width:200px;', ng-click='changeItem(1)')
             i.fa.fa-heart.fa-6
             | &nbsp;I Want this
         .col-md-6.text-center
-          a.btn.btn-danger.btn-lg.btn-responsive(href='#', style='width:200px;', ng-click='changeItem()')
+          a.btn.btn-danger.btn-lg.btn-responsive(href='#', style='width:200px;', ng-click='changeItem(0)')
             i.fa.fa-times.fa-6
             | &nbsp;Not Interested
 
