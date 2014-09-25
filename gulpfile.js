@@ -90,63 +90,51 @@ gulp.task('clean', function () {
  */
 //
 // no minification, separate files
-// gulp.task('styles', function () {
-//  return gulp.src(paths.less)               // Read in Less file
-//    .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
-//    .pipe($.less({ strictMath: true }))     // Compile Less files
-//    .pipe($.autoprefixer([                  // Autoprefix for target browsers
-//      'last 2 versions',
-//      '> 1%',
-//      'Firefox ESR',
-//      'Opera 12.1'
-//    ], { cascade: true }))
+gulp.task('styles', function () {
+  return gulp.src(paths.less)               // Read in Less file
+    .pipe($.less({ strictMath: true }))     // Compile Less files
+    .pipe($.autoprefixer([                  // Autoprefix for target browsers
+      'last 2 versions',
+      '> 1%',
+      'Firefox ESR',
+      'Opera 12.1'
+    ], { cascade: true }))
 //    .pipe($.csscomb())                      // Coding style formatter for CSS
 //    .pipe($.csslint('.csslintrc'))          // Lint CSS
 //    .pipe($.csslint.reporter())             // Report issues
-//    .pipe($.sourcemaps.write())             // Write sourcemap
-//    .pipe(gulp.dest('./public/css'))        // Save CSS here
+    .pipe(gulp.dest('./public/css'))        // Save CSS here
 //    .pipe($.csso())                         // Minify CSS
 //    .pipe($.size({ title: 'CSS:' }))        // What size are we at?
-//    .pipe(gulp.dest('./public/css'))        // Save minified CSS
-//    .pipe($.livereload());                  // Initiate a reload
-// });
-//
-// TODO: not sure why concat is not working, need to use it for production
-// gulp.task('concat', function () {
-//  return gulp.src('./public/css/*.css')
-//    .pipe($.concat(pkg.name + 'min.css'))
-//    .pipe(gulp.dest('./public/css'));
-// });
-
-// production
-gulp.task('styles', function () {
-  return gulp.src('./client/less/production.less')       // Read in Less file
-    .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
-      .pipe($.less({ strictMath: true }))     // Compile Less files
-      .pipe($.autoprefixer([                  // Autoprefix for target browsers
-        'last 2 versions',
-        '> 1%',
-        'Firefox ESR',
-        'Opera 12.1'
-      ], { cascade: true }))
-      .pipe($.csscomb())                      // Coding style formatter for CSS
-      .pipe($.csslint('.csslintrc'))          // Lint CSS
-      .pipe($.csslint.reporter())             // Report issues
-      .pipe(gulp.dest('./public/css'))        // Save CSS here
-      .pipe($.rename(pkg.name + 'min'))       // Add min (cannot use . in the name in config.js)
-      .pipe($.csso())                         // Minify CSS
-      .pipe($.header(banner, { pkg: pkg }))   // Add banner
-      .pipe($.size({ title: 'CSS:' }))        // What size are we at?
-      .pipe(gulp.dest('./public/css'))        // Save minified CSS
-      .pipe(rev())                            // Append hash to file main-098f6bcd.css
-      .pipe($.rename({ suffix: '.css' }))     // Add .css suffix
-      .pipe(gulp.dest('./public/css'))        // Save to something like dezbo-min-cb5af184.css
-      .pipe(rev.manifest())
-      .pipe(gulp.dest('./')) // write manifest to build dir
-    .pipe($.sourcemaps.write('./'))             // Write sourcemap
+    .pipe(gulp.dest('./public/css'))        // Save minified CSS
     .pipe($.livereload());                  // Initiate a reload
 });
 
+
+// production
+gulp.task('stylesprod', function () {
+  return gulp.src('./client/less/production.less')       // Read in Less file
+    .pipe($.less({ strictMath: true }))     // Compile Less files
+    .pipe($.autoprefixer([                  // Autoprefix for target browsers
+      'last 2 versions',
+      '> 1%',
+      'Firefox ESR',
+      'Opera 12.1'
+    ], { cascade: true }))
+    .pipe(gulp.dest('./public/css'))        // Save CSS here
+    .pipe($.rename(pkg.name + 'min'))       // Add min (cannot use . in the name in config.js)
+    .pipe($.csso())                         // Minify CSS
+    .pipe($.header(banner, { pkg: pkg }))   // Add banner
+    .pipe($.size({ title: 'CSS:' }))        // What size are we at?
+    .pipe($.rename({ suffix: '.css' }))     // Add .css suffix
+    .pipe(gulp.dest('./public/css'))        // Save minified CSS
+    .pipe($.rename(pkg.name + 'min'))       // Rename
+    .pipe(rev())                            // Append hash to file main-098f6bcd.css
+    .pipe($.rename({ suffix: '.css' }))     // Add .css suffix
+    .pipe(gulp.dest('./public/css'))        // Save to something like dezbo-min-cb5af184.css
+    .pipe(rev.manifest())
+    .pipe(gulp.dest('./'));                 // write manifest to build dir
+
+});
 
 /**
  * Process Scripts
@@ -209,7 +197,7 @@ gulp.task('build', function (cb) {
   runSequence(
       'clean',                                // first clean
       ['lint', 'jscs'],                       // then lint and jscs in parallel
-      ['styles', 'scripts', 'images'],        // etc.
+      ['styles', 'stylesprod', 'scripts', 'images'],        // etc.
       cb);
 });
 

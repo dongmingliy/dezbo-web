@@ -5,7 +5,7 @@
  */
 
 // Express 4.x Modules
-var csrf              = require('csurf');                   // https://github.com/expressjs/csurf
+// var csrf              = require('csurf');                   // https://github.com/expressjs/csurf
 var morgan            = require('morgan');                  // https://github.com/expressjs/morgan
 var express           = require('express');                 // https://npmjs.org/package/express
 var favicon           = require('serve-favicon');           // https://github.com/expressjs/favicon
@@ -211,7 +211,7 @@ app.use(logger({
 
 // Security Settings
 app.disable('x-powered-by');          // Don't advertise our server type
-app.use(csrf());                      // Prevent Cross-Site Request Forgery
+//  app.use(csrf());                      // Prevent Cross-Site Request Forgery
 app.use(helmet.nosniff());            // Sets X-Content-Type-Options to nosniff
 app.use(helmet.ienoopen());           // X-Download-Options for IE8+
 app.use(helmet.xssFilter());          // sets the X-XSS-Protection header
@@ -222,13 +222,13 @@ app.use(helmet.crossdomain());        // crossdomain.xml
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Keep user, csrf token and config available
-app.use(function (req, res, next) {
-  res.locals.user = req.user;
-  res.locals.config = config;
-  res.locals._csrf = req.csrfToken();
-  next();
-});
+//  // Keep user, csrf token and config available
+//  app.use(function (req, res, next) {
+//    res.locals.user = req.user;
+//    res.locals.config = config;
+//    res.locals._csrf = req.csrfToken();
+//    next();
+//  });
 
 // Flash messages
 app.use(flash());

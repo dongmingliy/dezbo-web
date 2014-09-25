@@ -120,45 +120,38 @@ dezboapp.controller('comingsoonCtrl', ['$scope','$http','$timeout',
 ]);
 
 'use strict';
-dezboapp.controller('gameCtrl', ['$scope','$http','$window','$timeout',
-  function($scope, $http, $window, $timeout) {
+dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout',
+  function ($scope, $http, $window, $timeout) {
     $scope.celebItems = [];
     $http.get('/celebItems').
-      success(function(data){
-      $scope.celebItems = data;
+      success(function (data) {
+        $scope.celebItems = data;
         $scope.counter = 0;
         $scope.celebItem = $scope.celebItems[$scope.counter];
         $scope.showProgress = false;
-    })
-      .error(function(data){
+      })
+      .error(function (data) {
         console.log(data);
-        $scope.$apply(function() { $location.path("/comingsoon"); });
-    });
-//    $http({
-//      method: "post",
-//      url: "process.cfm",
-//      transformRequest: transformRequestAsFormPost,
-//      data: {
-//        id: 4,
-//        name: "Kim",
-//        status: "Best Friend"
-//      }
-//    });
+        $scope.$apply(function () {
+          $location.path("/comingsoon");
+        });
+      });
 
-    $scope.changeItem = function(voteValue) {
+
+    $scope.changeItem = function (voteValue) {
       $scope.inProgress = true;
-      if($scope.counter == 1){
+      if ($scope.counter == 1) {
         $scope.counter = 0;
       } else {
         $scope.counter = 1;
       }
       // send google analytics the current item's vote
-      if($window.ga){
-        ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle , voteValue);
+      if ($window.ga) {
+        ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle, voteValue);
       }
       $scope.showProgress = true;
       $scope.votePercentage = Math.floor((Math.random() * 100) + 0);
-      var nextImage = function() {
+      var nextImage = function () {
         $scope.celebItem = $scope.celebItems[$scope.counter];
         $scope.showProgress = false;
         $scope.inProgress = false;
@@ -166,6 +159,10 @@ dezboapp.controller('gameCtrl', ['$scope','$http','$window','$timeout',
       };
 
       $timeout(nextImage, 1500);
+      $http({method: 'Post', url: '/voteitem', data: {greeting: 'hi'}}).
+        success(function(data, status, headers, config) {
+          alert(data);
+        });
     };
   }
 ]);

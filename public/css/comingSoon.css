@@ -1,1 +1,108 @@
-.comingSection{height:600px;padding-top:100px;color:#fff;background-image:url(../img/coming_soon/coming_soon.png);background-size:cover}.comingSection h1{margin-top:0}.comingSection .socialIcons{position:absolute;left:45%;margin-top:40px}.comingImg{display:block;overflow:hidden;width:100%}.voteSection{padding:8px 8px 4px}.voteSection h1,.voteSection h2,.voteSection h3,.voteSection h4,.voteSection h5{margin-top:0!important;margin-bottom:0!important;padding-top:10px;padding-bottom:10px;color:#b4b4b4}.voteSection .progress{margin-bottom:0!important}.voteSection .progress-bar{color:#000!important}.socialVote{width:100%;margin-left:8px}.socialVote .fb-like{padding-bottom:4px!important}.voteCountdown{width:100%}.thumbnail{max-width:400px;min-height:340px;border:1px solid #8f8f8f!important}.row-no-padding [class*='col-']{padding-right:0!important;padding-left:0!important}.comingSoonEmail{padding-top:50px;padding-bottom:50px}.comingsoonCaption{position:absolute}.deadmau5{top:2%;left:5%}.beckham{top:35%;left:60%}.nfl{top:0;right:5%}@media (min-width:300px){.comingsoonCaption h1{font-size:16px}}@media (min-width:480px){.comingsoonCaption h1{font-size:24px}}@media (min-width:768px){.comingsoonCaption h1{font-size:34px}}@media (min-width:992px){.comingsoonCaption h1{font-size:40px}}@media (min-width:1170px){.comingsoonCaption h1{font-size:50px}}@media (min-width:1440px){.comingsoonCaption h1{font-size:60px}}
+.comingSection {
+  padding-top: 100px;
+  height: 600px;
+  background-image: url(../img/coming_soon/coming_soon.png);
+  background-size: cover;
+  color: #ffffff;
+}
+.comingSection h1 {
+  margin-top: 0;
+}
+.comingSection .socialIcons {
+  margin-top: 40px;
+  left: 45%;
+  position: absolute;
+}
+.comingImg {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.voteSection {
+  padding: 8px 8px 4px 8px;
+}
+.voteSection h1,
+.voteSection h2,
+.voteSection h3,
+.voteSection h4,
+.voteSection h5 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #b4b4b4;
+}
+.voteSection .progress {
+  margin-bottom: 0 !important;
+}
+.voteSection .progress-bar {
+  color: black !important;
+}
+.socialVote {
+  width: 100%;
+  margin-left: 8px;
+}
+.socialVote .fb-like {
+  padding-bottom: 4px !important;
+}
+.voteCountdown {
+  width: 100%;
+}
+.thumbnail {
+  max-width: 400px;
+  min-height: 340px;
+  border: 1px solid #8f8f8f !important;
+}
+.row-no-padding [class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.comingSoonEmail {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.comingsoonCaption {
+  position: absolute;
+}
+.deadmau5 {
+  top: 2%;
+  left: 5%;
+}
+.beckham {
+  top: 35%;
+  left: 60%;
+}
+.nfl {
+  top: 0;
+  right: 5%;
+}
+@media (min-width: 300px) {
+  .comingsoonCaption h1 {
+    font-size: 16px;
+  }
+}
+@media (min-width: 480px) {
+  .comingsoonCaption h1 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .comingsoonCaption h1 {
+    font-size: 34px;
+  }
+}
+@media (min-width: 992px) {
+  .comingsoonCaption h1 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1170px) {
+  .comingsoonCaption h1 {
+    font-size: 50px;
+  }
+}
+@media (min-width: 1440px) {
+  .comingsoonCaption h1 {
+    font-size: 60px;
+  }
+}

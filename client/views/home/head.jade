@@ -31,11 +31,24 @@ head
   //- meta(name='twitter:card', content='summary_large_image')
 
   //- Humans
-  link(rel='stylesheet', href='/css/#{dezbocss}')
 
   link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Open+Sans|Old+Standard+TT')
   link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')
 
+if 'development' == process.env.NODE_ENV
+  link(rel='stylesheet', href='/css/bootstrap.css')
+  link(rel='stylesheet', href='/css/blog.css')
+  link(rel='stylesheet', href='/css/comingSoon.css')
+  link(rel='stylesheet', href='/css/common.css')
+  link(rel='stylesheet', href='/css/flexslider.css')
+  link(rel='stylesheet', href='/css/game.css')
+  link(rel='stylesheet', href='/css/layout.css')
+  link(rel='stylesheet', href='/css/login.css')
+  link(rel='stylesheet', href='/css/main.css')
+  link(rel='stylesheet', href='/css/shop.css')
+  link(rel='stylesheet', href='/css/slider.css')
+if 'development' != process.env.NODE_ENV
+  link(rel='stylesheet', href='/css/#{dezbocss}')
 
   // @endif
   //- favicon.ico and apple-touch-icon(s)
