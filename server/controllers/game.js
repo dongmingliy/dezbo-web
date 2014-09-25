@@ -8,7 +8,7 @@ module.exports.controller = function (app) {
 
   var celebItems = [
     {'id': '0', 'itemTitle': 'Red Couch on the Ellen Show', 'itemURL': 'img/shop/ellen1.png', 'celebName': 'Ellen Degeneres', 'celebURL': 'img/game/ellen_head.png'},
-    {'id': '1', 'itemTitle': 'NFL\'s Game Ball test', 'itemURL': 'img/coming_soon/NFL_item.png', 'celebName': 'Pharrell Williams', 'celebURL': 'img/game/snoop_face.png'}
+    {'id': '1', 'itemTitle': 'Snoop Dog\'s Stage Mic', 'itemURL': 'img/game/snoopmic.png', 'celebName': 'Snoop Dog', 'celebURL': 'img/game/snoop_face.png'}
   ];
   app.get('/celebItems', function (req, res) {
     res.json(celebItems);

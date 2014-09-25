@@ -12,16 +12,14 @@ block content
             h4 {{celebItem.celebName}}
         div.imgSection
           img.img-responsive(ng-src='{{celebItem.itemURL}}')
-        form
-          input(type='hidden', name='_csrf', value=_csrf)
-          .col-md-6.text-center(style='margin-bottom: 20px;')
-            a.btn.btn-success.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(1)')
-              i.fa.fa-heart.fa-6
-              | &nbsp;I Want this
-          .col-md-6.text-center
-            a.btn.btn-danger.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(-1)')
-              i.fa.fa-times.fa-6
-              | &nbsp;Not Interested
+        .col-md-6.text-center(style='margin-bottom: 20px;')
+          a.btn.btn-success.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(1)')
+            i.fa.fa-heart.fa-6
+            | &nbsp;I Want this
+        .col-md-6.text-center
+          a.btn.btn-danger.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(-1)')
+            i.fa.fa-times.fa-6
+            | &nbsp;Not Interested
     div.progressSection
       progressbar(value='votePercentage', type='primary')
         span(ng-show='showProgress') {{votePercentage}}%
