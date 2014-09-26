@@ -120,7 +120,7 @@ dezboapp.controller('comingsoonCtrl', ['$scope','$http','$timeout',
 ]);
 
 'use strict';
-var randomItems = [0,1,2,3,4,5,6,7,8,9,10,11,12,13];
+var randomItems = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex ;
 
@@ -141,9 +141,11 @@ function shuffle(array) {
 }
 shuffle(randomItems);
 
-dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout',
-  function ($scope, $http, $window, $timeout) {
+dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout','$modal',
+  function ($scope, $http, $window, $timeout,$modal) {
     $scope.counter = 0;
+    var showModal = 5;
+    $scope.maxItems = showModal;
     $scope.celebItems = [];
     $http.get('/celebItems').
       success(function (data) {
@@ -163,6 +165,18 @@ dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout',
     $scope.changeItem = function (voteValue) {
       $scope.counter++;
       $scope.inProgress = true;
+      if($scope.counter === showModal){
+        var modalInstance = $modal.open({
+          templateUrl: '/game/signup',
+          controller: 'ModalInstanceCtrl',
+          backdrop: 'static'
+        });
+        modalInstance.result.then(function () {
+          $scope.maxItems = randomItems.length;
+          $scope.inProgress = false;
+        });
+      }
+
       if ($scope.celebItems[randomItems[$scope.counter]]) {
         // send google analytics the current item's vote
         if ($window.ga) {
@@ -184,11 +198,23 @@ dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout',
 //          });
       } else {
         $scope.inProgress = false;
+        $window.location.href = '/comingsoon';
       }
     };
   }
 ]);
 
+'use strict';
+dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance',
+  function ($scope, $modalInstance) {
+    $scope.ok = function () {
+      $modalInstance.close();
+    };
+
+    $scope.cancel = function () {
+      $modalInstance.close();
+    };
+  }]);
 'use strict';
 dezboapp.controller('shopController', ['$scope',
   function($scope) {

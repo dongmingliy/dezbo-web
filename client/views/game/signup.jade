@@ -1,0 +1,18 @@
+.modal-content
+  .modal-header
+    button.close(type='button', ng-click='cancel()') ×
+    h4.modal-title STAY UPDATED
+  .modal-body
+    h4.gray-darker.text-center.text-uppercase
+      | STAY UPDATED
+    div
+      | Sign up to receive exclusive access to your webiste. Continue voting to see the most popular items.
+    br
+    form.form-inline(method='POST', action='comingsoon')
+      .row-fluid.text-center
+        input(type='hidden', name='_csrf', value=_csrf)
+        input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
+        button.btn.btn-primary.btn-reset(type='submit') Sign up
+  .modal-footer
+    button.btn.btn-primary(type='button', ng-click='ok()') Continue
+

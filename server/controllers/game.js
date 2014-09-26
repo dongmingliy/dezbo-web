@@ -7,25 +7,51 @@ var ItemVote = require('../models/itemvotes');
 module.exports.controller = function (app) {
 
   var celebItems = [
-    {'id': '0', 'itemTitle': 'Ellen Show\'s Red Couch', 'itemURL': 'img/shop/ellen1.png', 'celebName': 'Ellen Degeneres', 'celebURL': 'img/game/ellen_head.png'},
-    {'id': '1', 'itemTitle': 'Snoop Dogg\'s Mic', 'itemURL': 'img/game/snoopmic.png', 'celebName': 'Snoop Dogg', 'celebURL': 'img/game/snoop_face.png'},
-    {'id': '2', 'itemTitle': 'Signed Beats by Dre', 'itemURL': 'img/game/beatsdre.png', 'celebName': 'Dr.Dre', 'celebURL': 'img/game/dre.png'},
-    {'id': '3', 'itemTitle': 'Ariana\'s Signed White Mic', 'itemURL': 'img/game/arianawhitemic.png', 'celebName': 'Ariana Grande', 'celebURL': 'img/game/arianaface.png'},
-    {'id': '4', 'itemTitle': 'Ronaldo\'s Signed Nike Boots', 'itemURL': 'img/game/ronaldoshoe.png', 'celebName': 'Cristiano Ronaldo', 'celebURL': 'img/game/ronaldoface.png'},
-    {'id': '5', 'itemTitle': 'Messi\'s Signed FCB Jersey', 'itemURL': 'img/game/messijersey.png', 'celebName': 'Leo Messi', 'celebURL': 'img/game/messiface.png'},
-    {'id': '6', 'itemTitle': 'Brazuca Match Ball', 'itemURL': 'img/game/FIFAball.png', 'celebName': 'FIFAball', 'celebURL': 'img/game/FIFA.png'},
-    {'id': '7', 'itemTitle': 'Sheldon\'s laptop', 'itemURL': 'img/game/TBBTSheldonlaptop.png', 'celebName': 'The Big Bang Theory', 'celebURL': 'img/game/TBBT.png'},
-    {'id': '8', 'itemTitle': 'Frank Underwood\'s Typewriter', 'itemURL': 'img/game/HOCtypewriter.png', 'celebName': 'House of Cards', 'celebURL': 'img/game/HOC.png'},
-    {'id': '9', 'itemTitle': 'Jax\'s President Jacket', 'itemURL': 'img/game/SOAjacket.png', 'celebName': 'Sons of Anarchy', 'celebURL': 'img/game/SOA.png'},
-    {'id': '10', 'itemTitle': 'Season Premiere Game Ball', 'itemURL': 'img/game/NFL_ball.png', 'celebName': 'NFL', 'celebURL': 'img/game/NFL.png'},
-    {'id': '11', 'itemTitle': 'Lebron\'s Signed Basketball', 'itemURL': 'img/game/Lebronball.png', 'celebName': 'Lebron James', 'celebURL': 'img/game/lebronface.png'},
-    {'id': '12', 'itemTitle': 'Crosby\'s Signed Hockey Stick', 'itemURL': 'img/game/Sidneystick.png', 'celebName': 'Sidney Crosby', 'celebURL': 'img/game/sidneyface.png'},
-    {'id': '13', 'itemTitle': 'Tony\'s Autographed Skateboard', 'itemURL': 'img/game/Tonyboard.png', 'celebName': 'Tony Hawk', 'celebURL': 'img/game/tony.png'}
+    // sports
+    {'id': 's1', 'itemTitle': 'Ronaldo’s Signed Nike Boots', 'itemURL': 'img/game/ronaldoshoe.png', 'celebName': 'Cristiano Ronaldo', 'celebURL': 'img/game/ronaldoface.png'},
+    {'id': 's2', 'itemTitle': 'Messi’s Signed FCB Jersey', 'itemURL': 'img/game/messijersey.png', 'celebName': 'Leo Messi', 'celebURL': 'img/game/messiface.png'},
+    {'id': 's3', 'itemTitle': 'Brazuca Match Ball', 'itemURL': 'img/game/FIFAball.png', 'celebName': 'FIFAball', 'celebURL': 'img/game/FIFA.png'},
+    {'id': 's4', 'itemTitle': '2014 CL Official Match Ball', 'itemURL': 'img/game/CLball.png', 'celebName': 'UEFA Champions League', 'celebURL': 'img/game/CL.png'},
+    {'id': 's5', 'itemTitle': 'Season Premiere Game Ball', 'itemURL': 'img/game/NFL_ball.png', 'celebName': 'NFL', 'celebURL': 'img/game/NFL.png'},
+    {'id': 's8', 'itemTitle': 'Lebron’s Signed Basketball', 'itemURL': 'img/game/Lebronball.png', 'celebName': 'Lebron James', 'celebURL': 'img/game/lebronface.png'},
+    {'id': 's9', 'itemTitle': 'Kobe’s Signed Jersey', 'itemURL': 'img/game/Kobejersey.png', 'celebName': 'Lebron James', 'celebURL': 'img/game/Kobeface.png'},
+    {'id': 's10', 'itemTitle': 'Crosby’s Signed Hockey Stick', 'itemURL': 'img/game/Sidneystick.png', 'celebName': 'Sidney Crosby', 'celebURL': 'img/game/sidneyface.png'},
+    {'id': 's11', 'itemTitle': 'Tony’s Autographed Skateboard', 'itemURL': 'img/game/Tonyboard.png', 'celebName': 'Tony Hawk', 'celebURL': 'img/game/tony.png'},
+    {'id': 's13', 'itemTitle': 'Dale’s Nascar gloves', 'itemURL': 'img/game/DEJgloves.png', 'celebName': 'Dale Earnhardt Jr.', 'celebURL': 'img/game/DEJ.png'},
+    // movies
+    {'id': 'm1', 'itemTitle': 'Katniss’ Bow ', 'itemURL': 'img/game/Movies/hungergamesbow.png', 'celebName': 'The Hunger Games', 'celebURL': 'img/game/Movies/Hungergames.png'},
+    {'id': 'm2', 'itemTitle': 'The Lion’s Head', 'itemURL': 'img/game/Movies/herculeshat.png', 'celebName': 'Hercules', 'celebURL': 'img/game/Movies/hercules.png'},
+    {'id': 'm3', 'itemTitle': 'Thor’s Hammer', 'itemURL': 'img/game/Movies/Thorhammer.png', 'celebName': 'Thor', 'celebURL': 'img/game/Movies/Thor.png'},
+    {'id': 'm4', 'itemTitle': 'Wilson The Volleyball ', 'itemURL': 'img/game/Movies/castball.png', 'celebName': 'Castaway', 'celebURL': 'img/game/Movies/castaway.png'},
+    {'id': 'm5', 'itemTitle': 'Raquel Welch Poster', 'itemURL': 'img/game/Movies/shawposter.png', 'celebName': 'Shawshank Redemption', 'celebURL': 'img/game/Movies/shawshank.png'},
+    {'id': 'm6', 'itemTitle': 'The Axe', 'itemURL': 'img/game/Movies/shiningaxe.png', 'celebName': 'The Shining', 'celebURL': 'img/game/Movies/shining.png'},
+    {'id': 'm7', 'itemTitle': 'Blue Or Red Pill', 'itemURL': 'img/game/Movies/Matrixpills.png', 'celebName': 'The Matrix', 'celebURL': 'img/game/Movies/Matrix.png'},
+//    {'id': 'm8', 'itemTitle': 'Hockey Mask', 'itemURL': 'img/game/Movies/DEJgloves.png', 'celebName': 'Fridy the 13th', 'celebURL': 'img/game/Movies/DEJ.png'},
+    {'id': 'm9', 'itemTitle': 'Lightsaber', 'itemURL': 'img/game/Movies/starwarssaber.png', 'celebName': 'Star Wars', 'celebURL': 'img/game/Movies/starwars.png'},
+//    {'id': 'm10', 'itemTitle': 'The One Ring', 'itemURL': 'img/game/Movies/DEJgloves.png', 'celebName': 'Lord of the Rings', 'celebURL': 'img/game/Movies/DEJ.png'},
+//    {'id': 'm11', 'itemTitle': 'Bullwhip', 'itemURL': 'img/game/Movies/DEJgloves.png', 'celebName': 'Indiana Jones', 'celebURL': 'img/game/Movies/DEJ.png'},
+    {'id': 'm12', 'itemTitle': 'Dorothy’s Red Shoes', 'itemURL': 'img/game/Movies/WOZshoes.png', 'celebName': 'The Wizard of Oz', 'celebURL': 'img/game/Movies/WOZ.png'},
+
+    // tv shows
+    {'id': 't1', 'itemTitle': 'Ellen Show’s Red Couch', 'itemURL': 'img/shop/ellen1.png', 'celebName': 'Ellen Degeneres', 'celebURL': 'img/game/ellen_head.png'},
+    {'id': 't2', 'itemTitle': 'Jax’s President Jacket', 'itemURL': 'img/game/SOAjacket.png', 'celebName': 'Sons of Anarchy', 'celebURL': 'img/game/SOA.png'},
+//    {'id': 't3', 'itemTitle': 'Heisenberg’s Hat ', 'itemURL': 'img/shop/ellen1.png', 'celebName': 'Breaking Bad', 'celebURL': 'img/game/ellen_head.png'},
+    {'id': 't6', 'itemTitle': 'Frank Underwood’s Typewriter', 'itemURL': 'img/game/HOCtypewriter.png', 'celebName': 'House of Cards', 'celebURL': 'img/game/HOC.png'},
+    {'id': 't11', 'itemTitle': 'Sheldon’s laptop', 'itemURL': 'img/game/TBBTSheldonlaptop.png', 'celebName': 'The Big Bang Theory', 'celebURL': 'img/game/TBBT.png'},
+    // music
+    {'id': 's1', 'itemTitle': 'Snoop Dogg’s Mic', 'itemURL': 'img/game/snoopmic.png', 'celebName': 'Snoop Dogg', 'celebURL': 'img/game/snoop_face.png'},
+    {'id': 's2', 'itemTitle': 'Signed Beats by Dre', 'itemURL': 'img/game/beatsdre.png', 'celebName': 'Dr.Dre', 'celebURL': 'img/game/dre.png'},
+    {'id': 's4', 'itemTitle': 'Ariana’s Signed White Mic', 'itemURL': 'img/game/arianawhitemic.png', 'celebName': 'Ariana Grande', 'celebURL': 'img/game/arianaface.png'}
+
   ];
   app.get('/celebItems', function (req, res) {
     res.json(celebItems);
   });
-
+  app.get('/game/signup', function (req, res) {
+    res.render('game/signup', {
+      url: req.url
+    });
+  });
   app.post('/voteitem', function (req, res) {
     var vote = req.body;
     var voteID = req.body.id;

@@ -3,7 +3,7 @@
   max-width: 600px;
 }
 .gameSection .imgSection {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 .gamelogo {
   padding-top: 6px;
@@ -48,6 +48,10 @@
     font-size: 14px;
     text-align: center;
   }
+  .headline {
+    width: 260px;
+    padding-top: 10px !important;
+  }
 }
 @media (min-width: 768px) {
   .responsive-heading h1 {
@@ -66,8 +70,12 @@
     font-size: 16px;
     text-align: center;
   }
+  .headline {
+    width: 200px;
+    padding-top: 10px !important;
+  }
   .navtagline {
-    padding-top: 20px;
+    padding-top: 8px;
   }
 }
 @media (min-width: 1170px) {
@@ -77,6 +85,10 @@
   .responsive-heading h4 {
     font-size: 18px;
     padding-left: 4px;
+  }
+  .headline {
+    width: 360px;
+    padding-top: 10px !important;
   }
   .navtagline {
     padding-top: 20px;

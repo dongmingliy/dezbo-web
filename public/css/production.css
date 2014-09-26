@@ -3181,7 +3181,7 @@ html[xmlns] .flexslider .slides {
   max-width: 600px;
 }
 .gameSection .imgSection {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 .gamelogo {
   padding-top: 6px;
@@ -3226,6 +3226,10 @@ html[xmlns] .flexslider .slides {
     font-size: 14px;
     text-align: center;
   }
+  .headline {
+    width: 260px;
+    padding-top: 10px !important;
+  }
 }
 @media (min-width: 768px) {
   .responsive-heading h1 {
@@ -3244,8 +3248,12 @@ html[xmlns] .flexslider .slides {
     font-size: 16px;
     text-align: center;
   }
+  .headline {
+    width: 200px;
+    padding-top: 10px !important;
+  }
   .navtagline {
-    padding-top: 20px;
+    padding-top: 8px;
   }
 }
 @media (min-width: 1170px) {
@@ -3256,11 +3264,15 @@ html[xmlns] .flexslider .slides {
     font-size: 18px;
     padding-left: 4px;
   }
+  .headline {
+    width: 360px;
+    padding-top: 10px !important;
+  }
   .navtagline {
     padding-top: 20px;
   }
 }
-@media (min-width: 1920px) {
+@media (min-width: 2560px) {
   .responsive-heading h1 {
     font-size: 34px;
   }
