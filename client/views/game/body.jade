@@ -5,11 +5,13 @@ block content
     .row
       .gameSection.center-block
         h2.text-center.gameTitle(ng-model='counter') {{celebItem.itemTitle}}
-        div.bottom
+        div
           div.face-wrapper.pull-left
             img.img-circle.face(ng-src='{{celebItem.celebURL}}', width='70', height='70')
           div.v-middle
             h4 {{celebItem.celebName}}
+          div.pull-right
+            | {{counter+1}}/10
         div.imgSection
           img.img-responsive(ng-src='{{celebItem.itemURL}}')
         .col-md-6.text-center(style='margin-bottom: 20px;')
@@ -20,11 +22,6 @@ block content
           a.btn.btn-danger.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(-1)')
             i.fa.fa-times.fa-6
             | &nbsp;Not Interested
-    div.progressSection
-      progressbar(value='votePercentage', type='primary')
-        span(ng-show='showProgress') {{votePercentage}}%
-      div.text-center(ng-show='showProgress')
-        | {{votePercentage}}% of people want this
 
 
   //.comingSoonEmail

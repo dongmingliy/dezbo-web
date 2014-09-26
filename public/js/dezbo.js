@@ -120,7 +120,7 @@ dezboapp.controller('comingsoonCtrl', ['$scope','$http','$timeout',
 ]);
 
 'use strict';
-var randnums = [0,1,2,3,4,5,6];
+var randomItems = [0,1,2,3,4,5,6,7,8,9,10,11,12,13];
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex ;
 
@@ -139,19 +139,21 @@ function shuffle(array) {
 
   return array;
 }
-shuffle(randnums);
+shuffle(randomItems);
+
 dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout',
   function ($scope, $http, $window, $timeout) {
-    var counter = 0;
+    $scope.counter = 0;
     $scope.celebItems = [];
     $http.get('/celebItems').
       success(function (data) {
         $scope.celebItems = data;
         $scope.counter = 0;
-        $scope.celebItem = $scope.celebItems[randnums[counter]];
+        $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
         $scope.showProgress = false;
       })
-      .error(function (data) {
+      .error(function (data)
+      {
         console.log(data);
         $scope.$apply(function () {
           $location.path("/comingsoon");
@@ -159,9 +161,9 @@ dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout',
       });
 
     $scope.changeItem = function (voteValue) {
-      counter++;
+      $scope.counter++;
       $scope.inProgress = true;
-      if ($scope.celebItems[randnums[counter]]) {
+      if ($scope.celebItems[randomItems[$scope.counter]]) {
         // send google analytics the current item's vote
         if ($window.ga) {
           ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle, voteValue);
@@ -169,17 +171,19 @@ dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout',
         $scope.showProgress = true;
         $scope.votePercentage = Math.floor((Math.random() * 100) + 0);
         var nextImage = function () {
-          $scope.celebItem = $scope.celebItems[randnums[counter]];
+          $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
           $scope.showProgress = false;
           $scope.inProgress = false;
           $scope.votePercentage = 0;
         };
 
-        $timeout(nextImage, 1500);
+        $timeout(nextImage, 200);
 //        $http({method: 'Post', url: '/voteitem', data: {greeting: 'hi'}}).
 //          success(function (data, status, headers, config) {
 //            alert(data);
 //          });
+      } else {
+        $scope.inProgress = false;
       }
     };
   }
