@@ -3,8 +3,8 @@ block content
     h4.gray-light.col-centered.headline.text-center Vote & we will approach the celebrities with the most popular items
   .container(ng-controller='gameCtrl')
     .row
-      .gameSection.center-block
-        h2.text-center.gameTitle(ng-model='counter') {{celebItem.itemTitle}}
+      .gameSection.center-block.responsive-heading
+        h1.responsive-heading.text-center.gameTitle(ng-model='counter') {{celebItem.itemTitle}}
         div
           div.face-wrapper.pull-left
             img.img-circle.face(ng-src='{{celebItem.celebURL}}', width='70', height='70')
@@ -14,11 +14,11 @@ block content
             | {{counter+1}}/10
         div.imgSection
           img.img-responsive(ng-src='{{celebItem.itemURL}}')
-        .col-md-6.text-center(style='margin-bottom: 20px;')
+        .col-md-6.col-sm-12.text-center(style='margin-bottom: 20px;')
           a.btn.btn-success.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(1)')
             i.fa.fa-heart.fa-6
             | &nbsp;I Want this
-        .col-md-6.text-center
+        .col-md-6.col-sm-12.text-center
           a.btn.btn-danger.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(-1)')
             i.fa.fa-times.fa-6
             | &nbsp;Not Interested

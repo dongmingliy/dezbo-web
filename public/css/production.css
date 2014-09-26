@@ -3220,28 +3220,28 @@ html[xmlns] .flexslider .slides {
 }
 @media (min-width: 300px) {
   .responsive-heading h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
-  .responsive-heading h3 {
-    font-size: 20px;
+  .responsive-heading h4 {
+    font-size: 14px;
     text-align: center;
   }
 }
 @media (min-width: 768px) {
   .responsive-heading h1 {
-    font-size: 34px;
+    font-size: 30px;
   }
-  .responsive-heading h3 {
-    font-size: 20px;
+  .responsive-heading h4 {
+    font-size: 14px;
     text-align: center;
   }
 }
 @media (min-width: 992px) {
   .responsive-heading h1 {
-    font-size: 20px;
+    font-size: 36px;
   }
-  .responsive-heading h3 {
-    font-size: 20px;
+  .responsive-heading h4 {
+    font-size: 16px;
     text-align: center;
   }
   .navtagline {
@@ -3250,22 +3250,22 @@ html[xmlns] .flexslider .slides {
 }
 @media (min-width: 1170px) {
   .responsive-heading h1 {
-    font-size: 50px;
+    font-size: 40px;
   }
-  .responsive-heading h3 {
-    font-size: 20px;
+  .responsive-heading h4 {
+    font-size: 18px;
     padding-left: 4px;
   }
   .navtagline {
     padding-top: 20px;
   }
 }
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
   .responsive-heading h1 {
-    font-size: 60px;
+    font-size: 34px;
   }
-  .responsive-heading h3 {
-    font-size: 24px;
+  .responsive-heading h4 {
+    font-size: 18px;
   }
   .navtagline {
     padding-top: 20px;
