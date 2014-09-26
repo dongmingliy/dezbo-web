@@ -42,7 +42,7 @@
 }
 @media (min-width: 300px) {
   .responsive-heading h1 {
-    font-size: 22px;
+    font-size: 20px;
   }
   .responsive-heading h4 {
     font-size: 14px;
@@ -51,7 +51,7 @@
 }
 @media (min-width: 768px) {
   .responsive-heading h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
   .responsive-heading h4 {
     font-size: 14px;
@@ -60,7 +60,7 @@
 }
 @media (min-width: 992px) {
   .responsive-heading h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
   .responsive-heading h4 {
     font-size: 16px;
@@ -82,7 +82,7 @@
     padding-top: 20px;
   }
 }
-@media (max-width: 1440px) {
+@media (min-width: 2560px) {
   .responsive-heading h1 {
     font-size: 34px;
   }

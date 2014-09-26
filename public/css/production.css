@@ -3220,7 +3220,7 @@ html[xmlns] .flexslider .slides {
 }
 @media (min-width: 300px) {
   .responsive-heading h1 {
-    font-size: 22px;
+    font-size: 20px;
   }
   .responsive-heading h4 {
     font-size: 14px;
@@ -3229,7 +3229,7 @@ html[xmlns] .flexslider .slides {
 }
 @media (min-width: 768px) {
   .responsive-heading h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
   .responsive-heading h4 {
     font-size: 14px;
@@ -3238,7 +3238,7 @@ html[xmlns] .flexslider .slides {
 }
 @media (min-width: 992px) {
   .responsive-heading h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
   .responsive-heading h4 {
     font-size: 16px;
@@ -3260,7 +3260,7 @@ html[xmlns] .flexslider .slides {
     padding-top: 20px;
   }
 }
-@media (max-width: 1440px) {
+@media (min-width: 1920px) {
   .responsive-heading h1 {
     font-size: 34px;
   }
