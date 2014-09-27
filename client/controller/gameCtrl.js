@@ -1,5 +1,5 @@
 'use strict';
-var randomItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+var randomItems;
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -18,21 +18,68 @@ function shuffle(array) {
 
   return array;
 }
-shuffle(randomItems);
 
-function showModalDialog($scope, showModal, $modal) {
-  if ($scope.counter === showModal) {
+
+function showModalDialog($scope, showModal, $modal,$window, $timeout) {
+  if ($scope.counter === (showModal - 1)) {
     var modalInstance = $modal.open({
       templateUrl: '/game/signup',
       controller: 'ModalInstanceCtrl',
       size: 'modal-sm',
       backdrop: 'static'
     });
+
     modalInstance.result.then(function () {
       $scope.maxItems = randomItems.length;
       $scope.inProgress = false;
+      showNextImage($scope, $window, $timeout);
     });
+  } else {
+    showNextImage($scope, $window, $timeout);
   }
+}
+
+function showNextImage($scope, $window, $timeout) {
+  $scope.counter++;
+  if ($scope.celebItems[randomItems[$scope.counter]]) {
+
+    $scope.showProgress = true;
+    var nextImage = function () {
+      $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
+      $scope.inProgress = false;
+      // send google analytics the current item's vote
+      if ($window.ga) {
+        ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle, voteValue);
+      }
+    };
+    $timeout(nextImage, 400);
+  }
+  // no item on the current index
+  else {
+    $scope.inProgress = false;
+    // $window.location.href = '/comingsoon';
+  }
+}
+
+function retrieveCelebItems($http, $scope) {
+  $http.get('/celebItems').
+    success(function (data) {
+      randomItems = new Array(data.length);
+      for (var i = 0; i < randomItems.length; i++) {
+        randomItems[i] = i;
+      }
+      shuffle(randomItems);
+      $scope.celebItems = data;
+      $scope.counter = 0;
+      $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
+      $scope.showProgress = false;
+    })
+    .error(function (data) {
+      console.log(data);
+      $scope.$apply(function () {
+        $location.path("/comingsoon");
+      });
+    });
 }
 
 dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
@@ -41,61 +88,20 @@ dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$mod
     var showModal = 5;
     $scope.maxItems = showModal;
     $scope.celebItems = [];
-    $http.get('/celebItems').
-      success(function (data) {
-        $scope.celebItems = data;
-        $scope.counter = 0;
-        $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
-        $scope.showProgress = false;
-      })
-      .error(function (data) {
-        console.log(data);
-        $scope.$apply(function () {
-          // $location.path("/comingsoon");
-        });
-      });
-
+    retrieveCelebItems($http, $scope);
     $scope.changeItem = function (voteValue) {
       $scope.inProgress = true;
       var currentItem = $scope.celebItems[randomItems[$scope.counter]];
-      var transform = function (data) {
-        return $.param(data);
-      };
-      $http.post('/voteitem', $scope.celebItems[randomItems[$scope.counter]],
-        {headers: {'Content-Type': 'application/x-www-form-urlencoded'}, transformRequest: transform})
-        .success(function (response) {
-          alert(response);
-        })
-        .error(function (error){
-          console.log(error);
-        });
+//      var transform = function (data) {
+//        return $.param(data);
+//      };
       currentItem.vote = voteValue;
-      $scope.counter++;
-      showModalDialog($scope, showModal, $modal);
-
-      if ($scope.celebItems[randomItems[$scope.counter]]) {
-        // send google analytics the current item's vote
-        if ($window.ga) {
-          ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle, voteValue);
-        }
-        $scope.showProgress = true;
-        var nextImage = function () {
-          $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
-          $scope.showProgress = false;
-          $scope.inProgress = false;
-          $scope.votePercentage = 0;
-
-        };
-        $timeout(nextImage, 200);
-
-
-      }
-      // no item on the current index
-      else {
-        $scope.inProgress = false;
-        // $window.location.href = '/comingsoon';
-      }
+//      $http.post('/voteitem', $scope.celebItems[randomItems[$scope.counter]],
+//        {headers: {'Content-Type': 'application/x-www-form-urlencoded'}, transformRequest: transform})
+//        .error(function (error){
+//          console.log(error);
+//        });
+      showModalDialog($scope, showModal, $modal,$window, $timeout);
     };
-
   }
 ]);
