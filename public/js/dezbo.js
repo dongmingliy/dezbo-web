@@ -161,11 +161,12 @@ function showModalDialog($scope, showModal, $modal,$window, $timeout) {
 }
 
 function showNextImage($scope, $window, $timeout) {
-  $scope.counter++;
-  if ($scope.celebItems[randomItems[$scope.counter]]) {
+  var itemCounter = $scope.counter + 1;
+  if ($scope.celebItems[randomItems[itemCounter]]) {
 
     $scope.showProgress = true;
     var nextImage = function () {
+      $scope.counter++;
       $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
       $scope.inProgress = false;
       // send google analytics the current item's vote

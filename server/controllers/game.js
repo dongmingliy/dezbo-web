@@ -12,7 +12,7 @@ module.exports.controller = function (app) {
     {'id': 's2', 'itemTitle': 'Messi’s Signed FCB Jersey', 'itemURL': 'img/game/Sports/messijersey.png', 'celebName': 'Leo Messi', 'celebURL': 'img/game/Sports/messiface.png'},
     {'id': 's3', 'itemTitle': 'Brazuca Match Ball', 'itemURL': 'img/game/Sports/FIFAball.png', 'celebName': 'FIFAball', 'celebURL': 'img/game/Sports/FIFA.png'},
     {'id': 's4', 'itemTitle': '2014 CL Official Match Ball', 'itemURL': 'img/game/Sports/CLball.png', 'celebName': 'UEFA Champions League', 'celebURL': 'img/game/Sports/CL.png'},
-    {'id': 's5', 'itemTitle': 'Season Premiere Game Ball', 'itemURL': 'img/game/Sports/NFL_ball.png', 'celebName': 'NFL', 'celebURL': 'img/game/Sports/NFL.png'},
+    {'id': 's5', 'itemTitle': 'Season Premiere Game Ball', 'itemURL': 'img/game/Sports/NFLball.png', 'celebName': 'NFL', 'celebURL': 'img/game/Sports/NFL.png'},
     {'id': 's8', 'itemTitle': 'Lebron’s Signed Basketball', 'itemURL': 'img/game/Sports/Lebronball.png', 'celebName': 'Lebron James', 'celebURL': 'img/game/Sports/lebronface.png'},
     {'id': 's9', 'itemTitle': 'Kobe’s Signed Jersey', 'itemURL': 'img/game/Sports/Kobejersey.png', 'celebName': 'Lebron James', 'celebURL': 'img/game/Sports/Kobeface.png'},
     {'id': 's10', 'itemTitle': 'Crosby’s Signed Hockey Stick', 'itemURL': 'img/game/Sports/Sidneystick.png', 'celebName': 'Sidney Crosby', 'celebURL': 'img/game/Sports/sidneyface.png'},
@@ -39,7 +39,7 @@ module.exports.controller = function (app) {
     {'id': 't6', 'itemTitle': 'Frank Underwood’s Typewriter', 'itemURL': 'img/game/TVShows/HOCtypewriter.png', 'celebName': 'House of Cards', 'celebURL': 'img/game/TVShows/HOC.png'},
     {'id': 't11', 'itemTitle': 'Sheldon’s laptop', 'itemURL': 'img/game/TVShows/TBBTSheldonlaptop.png', 'celebName': 'The Big Bang Theory', 'celebURL': 'img/game/TVShows/TBBT.png'},
     // music
-    {'id': 's1', 'itemTitle': 'Snoop Dogg’s Mic', 'itemURL': 'img/game/Music/snoopmic.png', 'celebName': 'Snoop Dogg', 'celebURL': 'img/game/Music/snoop_face.png'},
+    {'id': 's1', 'itemTitle': 'Snoop Dogg’s Mic', 'itemURL': 'img/game/Music/snoopmic.png', 'celebName': 'Snoop Dogg', 'celebURL': 'img/game/Music/snoopface.png'},
     {'id': 's2', 'itemTitle': 'Signed Beats by Dre', 'itemURL': 'img/game/Music/beatsdre.png', 'celebName': 'Dr.Dre', 'celebURL': 'img/game/Music/dre.png'},
     {'id': 's4', 'itemTitle': 'Ariana’s Signed White Mic', 'itemURL': 'img/game/Music/arianawhitemic.png', 'celebName': 'Ariana Grande', 'celebURL': 'img/game/Music/arianaface.png'}
 
