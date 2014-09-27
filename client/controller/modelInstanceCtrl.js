@@ -1,6 +1,6 @@
 'use strict';
-dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance',
-  function ($scope, $modalInstance) {
+dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
+  function ($scope, $modalInstance,$http) {
     $scope.ok = function () {
       $modalInstance.close();
     };
@@ -8,4 +8,18 @@ dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance',
     $scope.cancel = function () {
       $modalInstance.close();
     };
+    var transform = function (data) {
+      return $.param(data);
+    };
+    $scope.signupPending = true;
+    $scope.signup = function (emailAddress) {
+      $http.post('/comingsoon', {email: emailAddress},
+        {headers: {'Content-Type': 'application/x-www-form-urlencoded'}, transformRequest: transform})
+        .success(function (response) {
+          $scope.signupPending = false;
+        })
+        .error(function (error){
+          console.log(error);
+        });
+    }
   }]);

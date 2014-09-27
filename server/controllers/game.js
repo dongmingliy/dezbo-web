@@ -4,6 +4,7 @@
  * Game Controller
  */
 var ItemVote = require('../models/itemvotes');
+var UserEmail = require('../models/useremail');
 module.exports.controller = function (app) {
 
   var celebItems = [
@@ -53,12 +54,26 @@ module.exports.controller = function (app) {
     });
   });
   app.post('/voteitem', function (req, res) {
-    var vote = req.body;
     var voteID = req.body.id;
     var voteValue = req.body.vote;
     // save user vote
     var query = { 'id': voteID };
-    ItemVote.findOneAndUpdate( query,{ vote:voteValue }, { upsert: true }, function (err, document) {
+    ItemVote.findOneAndUpdate(query, { vote: voteValue }, { upsert: true }, function (err, document) {
+      if (err) {
+        console.log(err);
+      }
+    });
+
+  });
+  app.post('/gamesignup', function (req, res) {
+
+    var emailAddress = req.body.email;
+
+    var userEmail = new UserEmail({
+      email: req.body.email.toLowerCase()
+    });
+    // save user email
+    userEmail.save(function (err) {
       if (err) {
         console.log(err);
       }

@@ -120,9 +120,9 @@ dezboapp.controller('comingsoonCtrl', ['$scope','$http','$timeout',
 ]);
 
 'use strict';
-var randomItems = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+var randomItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
 function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex ;
+  var currentIndex = array.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
@@ -141,10 +141,25 @@ function shuffle(array) {
 }
 shuffle(randomItems);
 
-dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout','$modal',
-  function ($scope, $http, $window, $timeout,$modal) {
-    $scope.counter = 0;
-    var showModal = 5;
+function showModalDialog($scope, showModal, $modal) {
+  if ($scope.counter === showModal) {
+    var modalInstance = $modal.open({
+      templateUrl: '/game/signup',
+      controller: 'ModalInstanceCtrl',
+      size: 'modal-sm',
+      backdrop: 'static'
+    });
+    modalInstance.result.then(function () {
+      $scope.maxItems = randomItems.length;
+      $scope.inProgress = false;
+    });
+  }
+}
+
+dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+  function ($scope, $http, $window, $timeout, $modal) {
+    $scope.counter = 1;
+    var showModal = 10;
     $scope.maxItems = showModal;
     $scope.celebItems = [];
     $http.get('/celebItems').
@@ -154,28 +169,30 @@ dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout','$moda
         $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
         $scope.showProgress = false;
       })
-      .error(function (data)
-      {
+      .error(function (data) {
         console.log(data);
         $scope.$apply(function () {
-          $location.path("/comingsoon");
+          // $location.path("/comingsoon");
         });
       });
 
     $scope.changeItem = function (voteValue) {
-      $scope.counter++;
       $scope.inProgress = true;
-      if($scope.counter === showModal){
-        var modalInstance = $modal.open({
-          templateUrl: '/game/signup',
-          controller: 'ModalInstanceCtrl',
-          backdrop: 'static'
+      var currentItem = $scope.celebItems[randomItems[$scope.counter]];
+      var transform = function (data) {
+        return $.param(data);
+      };
+      $http.post('/voteitem', $scope.celebItems[randomItems[$scope.counter]],
+        {headers: {'Content-Type': 'application/x-www-form-urlencoded'}, transformRequest: transform})
+        .success(function (response) {
+          alert(response);
+        })
+        .error(function (error){
+          console.log(error);
         });
-        modalInstance.result.then(function () {
-          $scope.maxItems = randomItems.length;
-          $scope.inProgress = false;
-        });
-      }
+      currentItem.vote = voteValue;
+      $scope.counter++;
+      showModalDialog($scope, showModal, $modal);
 
       if ($scope.celebItems[randomItems[$scope.counter]]) {
         // send google analytics the current item's vote
@@ -183,30 +200,30 @@ dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout','$moda
           ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle, voteValue);
         }
         $scope.showProgress = true;
-        $scope.votePercentage = Math.floor((Math.random() * 100) + 0);
         var nextImage = function () {
           $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
           $scope.showProgress = false;
           $scope.inProgress = false;
           $scope.votePercentage = 0;
-        };
 
+        };
         $timeout(nextImage, 200);
-//        $http({method: 'Post', url: '/voteitem', data: {greeting: 'hi'}}).
-//          success(function (data, status, headers, config) {
-//            alert(data);
-//          });
-      } else {
+
+
+      }
+      // no item on the current index
+      else {
         $scope.inProgress = false;
-        $window.location.href = '/comingsoon';
+        // $window.location.href = '/comingsoon';
       }
     };
+
   }
 ]);
 
 'use strict';
-dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance',
-  function ($scope, $modalInstance) {
+dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
+  function ($scope, $modalInstance,$http) {
     $scope.ok = function () {
       $modalInstance.close();
     };
@@ -214,6 +231,20 @@ dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance',
     $scope.cancel = function () {
       $modalInstance.close();
     };
+    var transform = function (data) {
+      return $.param(data);
+    };
+    $scope.signupPending = true;
+    $scope.signup = function (emailAddress) {
+      $http.post('/comingsoon', {email: emailAddress},
+        {headers: {'Content-Type': 'application/x-www-form-urlencoded'}, transformRequest: transform})
+        .success(function (response) {
+          $scope.signupPending = false;
+        })
+        .error(function (error){
+          console.log(error);
+        });
+    }
   }]);
 'use strict';
 dezboapp.controller('shopController', ['$scope',
