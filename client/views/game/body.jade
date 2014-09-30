@@ -13,16 +13,18 @@ block content
           div.pull-right
             | {{counter+1}}/{{maxItems}}
         div.imgSection
-          img.img-responsive(src='{{celebItem.itemURL}}')
+          img.img-responsive(ng-src='{{celebItem.itemURL}}')
         br
-        .col-md-6.col-sm-12.text-center(style='margin-bottom: 20px;')
-          a.btn.btn-success.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(1)')
-            i.fa.fa-heart.fa-6
-            | &nbsp;I Want this
-        .col-md-6.col-sm-12.text-center
-          a.btn.btn-danger.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(-1)')
-            i.fa.fa-times.fa-6
-            | &nbsp;Not Interested
+        .row-no-padding
+          .col-md-6.col-xs-12.text-center(style='margin-bottom: 20px;')
+            a.btn.btn-lg.btn-success.btn-responsive(style='width:180px;' ng-class="{'disabled': inProgress == 1}", ng-click='changeItem(1)')
+              i.fa.fa-heart.fa-6
+              | &nbsp;I Want this
+          .col-md-6.col-xs-12.text-center
+            a.btn.btn-lg.btn-danger.btn-responsive(style='width:180px;' ng-class="{'disabled': inProgress == -1}", ng-click='changeItem(-1)')
+              i.fa.fa-times.fa-6
+              | &nbsp;Not Interested
+
 
 
   //.comingSoonEmail

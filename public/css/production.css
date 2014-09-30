@@ -3230,6 +3230,12 @@ html[xmlns] .flexslider .slides {
     width: 260px;
     padding-top: 10px !important;
   }
+  .btnVote {
+    padding: 10px 5px;
+    font-size: 16px;
+    border-radius: 4px ;
+    width: 180px;
+  }
 }
 @media (min-width: 768px) {
   .responsive-heading h1 {
@@ -3238,6 +3244,13 @@ html[xmlns] .flexslider .slides {
   .responsive-heading h4 {
     font-size: 14px;
     text-align: center;
+  }
+  .btnVote {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width: 160px;
   }
 }
 @media (min-width: 992px) {
@@ -3255,6 +3268,13 @@ html[xmlns] .flexslider .slides {
   .navtagline {
     padding-top: 8px;
   }
+  .btnVote {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width: 200px;
+  }
 }
 @media (min-width: 1170px) {
   .responsive-heading h1 {
@@ -3271,6 +3291,13 @@ html[xmlns] .flexslider .slides {
   .navtagline {
     padding-top: 20px;
   }
+  .btnVote {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width: 200px;
+  }
 }
 @media (min-width: 2560px) {
   .responsive-heading h1 {
@@ -3281,6 +3308,13 @@ html[xmlns] .flexslider .slides {
   }
   .navtagline {
     padding-top: 20px;
+  }
+  .btnVote {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width: 200px;
   }
 }
 .v-middle {

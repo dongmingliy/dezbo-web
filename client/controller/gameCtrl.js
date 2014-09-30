@@ -20,34 +20,30 @@ function shuffle(array) {
 }
 
 
-function showModalDialog($scope, showModal, $modal,$window, $timeout) {
-  if ($scope.counter === (showModal - 1)) {
-    var modalInstance = $modal.open({
-      templateUrl: '/game/signup',
-      controller: 'ModalInstanceCtrl',
-      size: 'modal-sm',
-      backdrop: 'static'
-    });
+function showModalDialog($scope, $modal, $window, $timeout,voteValue) {
+  var modalInstance = $modal.open({
+    templateUrl: '/game/signup',
+    controller: 'ModalInstanceCtrl',
+    size: 'modal-sm',
+    backdrop: 'static'
+  });
 
-    modalInstance.result.then(function () {
-      $scope.maxItems = randomItems.length;
-      $scope.inProgress = false;
-      showNextImage($scope, $window, $timeout);
-    });
-  } else {
-    showNextImage($scope, $window, $timeout);
-  }
+  modalInstance.result.then(function () {
+    $scope.maxItems = randomItems.length;
+    $scope.inProgress = voteValue;
+    showNextImage($scope, $window, $timeout,voteValue);
+  });
+
 }
 
-function showNextImage($scope, $window, $timeout) {
+function showNextImage($scope, $window, $timeout,voteValue) {
   var itemCounter = $scope.counter + 1;
   if ($scope.celebItems[randomItems[itemCounter]]) {
 
-    $scope.showProgress = true;
     var nextImage = function () {
       $scope.counter++;
       $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
-      $scope.inProgress = false;
+      $scope.inProgress = -100;
       // send google analytics the current item's vote
       if ($window.ga) {
         ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle, voteValue);
@@ -73,7 +69,6 @@ function retrieveCelebItems($http, $scope) {
       $scope.celebItems = data;
       $scope.counter = 0;
       $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
-      $scope.showProgress = false;
     })
     .error(function (data) {
       console.log(data);
@@ -91,7 +86,8 @@ dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$mod
     $scope.celebItems = [];
     retrieveCelebItems($http, $scope);
     $scope.changeItem = function (voteValue) {
-      $scope.inProgress = true;
+      // in progress will determine which button will get disabled 1 means up button is disabled, -1 is the other one
+      $scope.inProgress = voteValue;
       var currentItem = $scope.celebItems[randomItems[$scope.counter]];
 //      var transform = function (data) {
 //        return $.param(data);
@@ -102,7 +98,11 @@ dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$mod
 //        .error(function (error){
 //          console.log(error);
 //        });
-      showModalDialog($scope, showModal, $modal,$window, $timeout);
+      if ($scope.counter === (showModal - 1)) {
+        showModalDialog($scope, $modal, $window, $timeout,voteValue);
+      } else {
+        showNextImage($scope, $window, $timeout,voteValue);
+      }
     };
   }
 ]);
