@@ -90,7 +90,7 @@ function showNextImage($scope,$http, $window, $timeout,voteValue) {
   // no item on the current index
   else {
     $scope.inProgress = false;
-    //-0 $window.location.href = '/comingsoon';
+    $window.location.href = '/result';
   }
 }
 

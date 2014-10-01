@@ -211,7 +211,7 @@ function showNextImage($scope,$http, $window, $timeout,voteValue) {
   // no item on the current index
   else {
     $scope.inProgress = false;
-    //-0 $window.location.href = '/comingsoon';
+    $window.location.href = '/result';
   }
 }
 
@@ -260,6 +260,30 @@ dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
         });
     }
   }]);
+'use strict';
+
+dezboapp.controller('resultCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+  function ($scope, $http, $window, $timeout, $modal) {
+    retreiveVoteResult($http, $scope);
+    $scope.test = 54;
+
+  }
+]);
+
+function retreiveVoteResult($http, $scope) {
+  $http.get('/voteresult').
+    success(function (data) {
+      $scope.voteResults = data;
+      console.log($scope.voteResults);
+    })
+    .error(function (data) {
+      console.log(data);
+      $scope.$apply(function () {
+        $location.path("/comingsoon");
+      });
+    });
+}
+
 'use strict';
 dezboapp.controller('shopController', ['$scope',
   function($scope) {
