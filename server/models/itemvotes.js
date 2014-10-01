@@ -6,7 +6,8 @@
 var mongoose = require('mongoose');
 
 var itemVotesSchema = new mongoose.Schema({
-  vote: { type: Number, index: true },
+  voteup: { type: Number, index: true },
+  votedown: { type: Number, index: true },
   id:{type: String, index: true},
   title: {type: String}
 });

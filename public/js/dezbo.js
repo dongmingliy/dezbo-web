@@ -120,6 +120,31 @@ dezboapp.controller('comingsoonCtrl', ['$scope','$http','$timeout',
 ]);
 
 'use strict';
+
+dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+  function ($scope, $http, $window, $timeout, $modal) {
+    $scope.counter = 1;
+    var showModal = 5;
+    $scope.maxItems = showModal;
+    $scope.celebItems = [];
+    retrieveCelebItems($http, $scope);
+
+    $scope.changeItem = function (voteValue) {
+      // in progress will determine which button will get disabled 1 means up button is disabled, -1 is the other one
+      $scope.inProgress = voteValue;
+      var currentItem = $scope.celebItems[randomItems[$scope.counter]];
+      currentItem.vote = voteValue;
+
+      if ($scope.counter === (showModal - 1)) {
+        showModalDialog($scope,$http, $modal, $window, $timeout,voteValue);
+      } else {
+        showNextImage($scope,$http, $window, $timeout,voteValue);
+      }
+    };
+
+  }
+]);
+
 var randomItems;
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -141,7 +166,7 @@ function shuffle(array) {
 }
 
 
-function showModalDialog($scope, $modal, $window, $timeout,voteValue) {
+function showModalDialog($scope,$http, $modal, $window, $timeout,voteValue) {
   var modalInstance = $modal.open({
     templateUrl: '/game/signup',
     controller: 'ModalInstanceCtrl',
@@ -152,14 +177,25 @@ function showModalDialog($scope, $modal, $window, $timeout,voteValue) {
   modalInstance.result.then(function () {
     $scope.maxItems = randomItems.length;
     $scope.inProgress = voteValue;
-    showNextImage($scope, $window, $timeout,voteValue);
+    showNextImage($scope,$http, $window, $timeout,voteValue);
   });
 
 }
 
-function showNextImage($scope, $window, $timeout,voteValue) {
+function showNextImage($scope,$http, $window, $timeout,voteValue) {
   var itemCounter = $scope.counter + 1;
   if ($scope.celebItems[randomItems[itemCounter]]) {
+    var transform = function (data) {
+      return $.param(data);
+    };
+    $http.post('/voteitem', $scope.celebItems[randomItems[$scope.counter]],
+      {headers: {'Content-Type': 'application/x-www-form-urlencoded'}, transformRequest: transform})
+      .success(function (data) {
+        $timeout(nextImage, 200);
+      })
+      .error(function (error){
+        console.log(error);
+      });
 
     var nextImage = function () {
       $scope.counter++;
@@ -170,12 +206,12 @@ function showNextImage($scope, $window, $timeout,voteValue) {
         ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle, voteValue);
       }
     };
-    $timeout(nextImage, 400);
+
   }
   // no item on the current index
   else {
     $scope.inProgress = false;
-    // $window.location.href = '/comingsoon';
+    //-0 $window.location.href = '/comingsoon';
   }
 }
 
@@ -198,35 +234,6 @@ function retrieveCelebItems($http, $scope) {
       });
     });
 }
-
-dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
-  function ($scope, $http, $window, $timeout, $modal) {
-    $scope.counter = 1;
-    var showModal = 5;
-    $scope.maxItems = showModal;
-    $scope.celebItems = [];
-    retrieveCelebItems($http, $scope);
-    $scope.changeItem = function (voteValue) {
-      // in progress will determine which button will get disabled 1 means up button is disabled, -1 is the other one
-      $scope.inProgress = voteValue;
-      var currentItem = $scope.celebItems[randomItems[$scope.counter]];
-//      var transform = function (data) {
-//        return $.param(data);
-//      };
-      currentItem.vote = voteValue;
-//      $http.post('/voteitem', $scope.celebItems[randomItems[$scope.counter]],
-//        {headers: {'Content-Type': 'application/x-www-form-urlencoded'}, transformRequest: transform})
-//        .error(function (error){
-//          console.log(error);
-//        });
-      if ($scope.counter === (showModal - 1)) {
-        showModalDialog($scope, $modal, $window, $timeout,voteValue);
-      } else {
-        showNextImage($scope, $window, $timeout,voteValue);
-      }
-    };
-  }
-]);
 
 'use strict';
 dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',

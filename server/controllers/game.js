@@ -57,11 +57,20 @@ module.exports.controller = function (app) {
     var voteValue = req.body.vote;
     // save user vote
     var query = { 'id': voteID };
-    ItemVote.findOneAndUpdate(query, { vote: voteValue }, { upsert: true }, function (err, document) {
-      if (err) {
-        console.log(err);
-      }
-    });
-
+    if (voteValue == 1) {
+      ItemVote.findOneAndUpdate(query, { $inc: {voteup: 1} }, { upsert: true }, function (err, doc) {
+        if (err) {
+          console.log(err);
+        }
+      });
+    }
+    else if (voteValue == -1) {
+      ItemVote.findOneAndUpdate(query, { $inc: {votedown: 1} }, { upsert: true }, function (err, doc) {
+        if (err) {
+          console.log(err);
+        }
+      });
+    }
+    res.send('success!');
   });
 };
