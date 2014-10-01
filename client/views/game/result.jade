@@ -10,7 +10,7 @@ html(lang="en")
       .col-md-6.col-md-offset-3
         div(ng-repeat='result in voteResults')
           | {{result.title}} ({{result.voteup}} likes)
-          progressbar(value='30', type='primary')
+          progressbar(value='100*result.voteup/(result.votedown + result.voteup)', type='primary')
             span {{100*result.voteup/(result.votedown + result.voteup) | number:0}}% of fans want it
 
   include ../home/footer-script
