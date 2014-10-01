@@ -2,8 +2,9 @@
 
 dezboapp.controller('resultCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
   function ($scope, $http, $window, $timeout, $modal) {
+    $scope.voteResults = [];
+
     retreiveVoteResult($http, $scope);
-    $scope.test = 54;
 
   }
 ]);

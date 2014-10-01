@@ -37,7 +37,7 @@ module.exports.controller = function (app) {
     {'id': 't2', 'itemTitle': 'Jax’s President Jacket', 'itemURL': 'img/game/TVShows/SOAjacket.png', 'celebName': 'Sons of Anarchy', 'celebURL': 'img/game/TVShows/SOA.png'},
     {'id': 't3', 'itemTitle': 'Heisenberg’s Hat', 'itemURL': 'img/game/TVShows/BBhat.png', 'celebName': 'Breaking Bad', 'celebURL': 'img/game/TVShows/BB.png'},
     {'id': 't6', 'itemTitle': 'Frank Underwood’s Typewriter', 'itemURL': 'img/game/TVShows/HOCtypewriter.png', 'celebName': 'House of Cards', 'celebURL': 'img/game/TVShows/HOC.png'},
-    {'id': 't11', 'itemTitle': 'Sheldon’s laptop', 'itemURL': 'img/game/TVShows/TBBTSheldonlaptop.png', 'celebName': 'The Big Bang Theory', 'celebURL': 'img/game/TVShows/TBBT.png'},
+    {'id': 't11', 'itemTitle': 'Sheldon’s Laptop', 'itemURL': 'img/game/TVShows/TBBTSheldonlaptop.png', 'celebName': 'The Big Bang Theory', 'celebURL': 'img/game/TVShows/TBBT.png'},
     // music
     {'id': 's1', 'itemTitle': 'Snoop Dogg’s Mic', 'itemURL': 'img/game/Music/snoopmic.png', 'celebName': 'Snoop Dogg', 'celebURL': 'img/game/Music/snoopface.png'},
     {'id': 's2', 'itemTitle': 'Signed Beats by Dre', 'itemURL': 'img/game/Music/beatsdre.png', 'celebName': 'Dr.Dre', 'celebURL': 'img/game/Music/dre.png'},
@@ -89,13 +89,26 @@ module.exports.controller = function (app) {
 
   app.get('/voteresult', function (req, res) {
     var data;
-    ItemVote.find({}).sort({voteup: -1}).limit(5).exec(
+    ItemVote.find({}).sort({voteup: -1, votedown: 1}).limit(5).exec(
       function (err, doc) {
         data = doc;
         res.json(data);
       }
     );
-
+//    ItemVote.aggregate(
+//      { $match: {voteup:6} }, // your find query
+//      { $project: {
+//        voteup: 1, // original fields
+//        votedown: 1,
+//        percentage: { $divide: ['votedown', 'voteup' ] } // calculated field
+//      } },
+//      { $sort: { percentage: -1 } },
+//      // And then the normal Mongoose stuff:
+//      function (err, doc) {
+//        data = doc;
+//        res.json(data);
+//      }
+//    );
 //    function (err, doc) {
 //      data = doc;
 //      res.json(data);
