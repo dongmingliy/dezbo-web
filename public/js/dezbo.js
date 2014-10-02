@@ -268,6 +268,16 @@ dezboapp.controller('resultCtrl', ['$scope', '$http', '$window', '$timeout', '$m
 
     retreiveVoteResult($http, $scope);
 
+    $scope.signup = function (emailAddress) {
+      $http.post('/comingsoon', {email: emailAddress},
+        {headers: {'Content-Type': 'application/x-www-form-urlencoded'}, transformRequest: transform})
+        .success(function (response) {
+          $scope.signupPending = false;
+        })
+        .error(function (error){
+          console.log(error);
+        });
+    }
   }
 ]);
 
@@ -275,7 +285,7 @@ function retreiveVoteResult($http, $scope) {
   $http.get('/voteresult').
     success(function (data) {
       $scope.voteResults = data;
-      console.log($scope.voteResults);
+      $scope.topvotecount = $scope.voteResults[0].voteup;
     })
     .error(function (data) {
       console.log(data);

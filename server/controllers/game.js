@@ -4,6 +4,7 @@
  * Game Controller
  */
 var ItemVote = require('../models/itemvotes');
+var UserEmail = require('../models/useremail');
 module.exports.controller = function (app) {
 
   var celebItems = [
@@ -14,7 +15,7 @@ module.exports.controller = function (app) {
 //    {'id': 's4', 'itemTitle': '2014 CL Official Match Ball', 'itemURL': 'img/game/Sports/CLball.png', 'celebName': 'UEFA Champions League', 'celebURL': 'img/game/Sports/CL.png'},
     {'id': 's5', 'itemTitle': 'Season Premiere Game Ball', 'itemURL': 'img/game/Sports/NFLball.png', 'celebName': 'NFL', 'celebURL': 'img/game/Sports/NFL.png'},
     {'id': 's8', 'itemTitle': 'Lebron’s Signed Basketball', 'itemURL': 'img/game/Sports/Lebronball.png', 'celebName': 'Lebron James', 'celebURL': 'img/game/Sports/lebronface.png'},
-    {'id': 's9', 'itemTitle': 'Kobe’s Signed Jersey', 'itemURL': 'img/game/Sports/Kobejersey.png', 'celebName': 'Lebron James', 'celebURL': 'img/game/Sports/Kobeface.png'},
+    {'id': 's9', 'itemTitle': 'Kobe’s Signed Jersey', 'itemURL': 'img/game/Sports/Kobejersey.png', 'celebName': 'Kobe Bryant', 'celebURL': 'img/game/Sports/Kobeface.png'},
 //    {'id': 's10', 'itemTitle': 'Crosby’s Signed Hockey Stick', 'itemURL': 'img/game/Sports/Sidneystick.png', 'celebName': 'Sidney Crosby', 'celebURL': 'img/game/Sports/sidneyface.png'},
     {'id': 's11', 'itemTitle': 'Tony’s Autographed Skateboard', 'itemURL': 'img/game/Sports/Tonyboard.png', 'celebName': 'Tony Hawk', 'celebURL': 'img/game/Sports/tony.png'},
 //    {'id': 's13', 'itemTitle': 'Dale’s Nascar gloves', 'itemURL': 'img/game/Sports/DEJgloves.png', 'celebName': 'Dale Earnhardt Jr.', 'celebURL': 'img/game/Sports/DEJ.png'},
@@ -95,23 +96,20 @@ module.exports.controller = function (app) {
         res.json(data);
       }
     );
-//    ItemVote.aggregate(
-//      { $match: {voteup:6} }, // your find query
-//      { $project: {
-//        voteup: 1, // original fields
-//        votedown: 1,
-//        percentage: { $divide: ['votedown', 'voteup' ] } // calculated field
-//      } },
-//      { $sort: { percentage: -1 } },
-//      // And then the normal Mongoose stuff:
-//      function (err, doc) {
-//        data = doc;
-//        res.json(data);
-//      }
-//    );
-//    function (err, doc) {
-//      data = doc;
-//      res.json(data);
-//    });
+  });
+
+  app.post('/gamesignup', function (req, res, next) {
+
+    var userEmail = new UserEmail({
+      email: req.body.email.toLowerCase()
+    });
+    // save user email
+    userEmail.save(function (err) {
+      if (err) {
+        console.log(err);
+      }
+    });
+    req.flash('info', { msg: 'Thanks for signing up! You rock!' });
+    res.redirect('/result');
   });
 };

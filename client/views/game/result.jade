@@ -3,6 +3,7 @@ html(lang="en")
   include ../home/head
   body.boxed(id="topNav" ng-app="dezboapp" ng-controller='resultCtrl')
   include navigation
+  include ../home/flash
   .container
     .row
       h2.text-center Top 5 Items in Dezbo
@@ -10,6 +11,24 @@ html(lang="en")
       .col-md-6.col-md-offset-3
         div(ng-repeat="result in voteResults")
           | {{result.title}} ({{result.voteup + result.votedown}} votes)
-          progressbar(value='100*result.voteup/(result.votedown + result.voteup)', type='primary')
-            span {{100*result.voteup/(result.votedown + result.voteup) | number:0}}% of fans want it
+          progressbar(value='100*result.voteup/(topvotecount)', type='primary')
+            span {{result.voteup }} of fans want it
+      br
+    .row
+      h4.text-center
+        | STAY UPDATED
+      br
+      form.form-inline(method='POST', action='gamesignup')
+        .row-fluid.text-center
+          input(type='hidden', name='_csrf', value=_csrf)
+          input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
+          button.btn.btn-primary.btn-reset(type='submit') Sign up
+    //.row
+    //  .col-md-6.col-md-offset-3.text-center
+    //    br
+    //    div
+    //      h4 Stay Updated
+    //      input.form-control(style='min-width=200px', ng-model='emailAddress', type='email', name='email', id='email', placeholder='Enter your email', required)
+    //      br
+    //      button.btn.btn-primary.btn-reset(ng-click='signup(emailAddress)') Sign up
   include ../home/footer-script
