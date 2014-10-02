@@ -6,13 +6,15 @@ html(lang="en")
   include ../home/flash
   .container
     .row
-      h2.text-center Top 5 Items in Dezbo
+      h2.text-center Most Wanted Items in Dezbo
+      br
+      div.text-center.gray-light Results are sorted by the number of fans who want the item
       br
       .col-md-6.col-md-offset-3
         div(ng-repeat="result in voteResults")
-          | {{result.title}} ({{result.voteup + result.votedown}} votes)
+          | {{result.title}}
           progressbar(value='100*result.voteup/(topvotecount)', type='primary')
-            span {{result.voteup }} of fans want it
+            span {{result.voteup }} wants
       br
     .row
       h4.text-center
@@ -21,7 +23,7 @@ html(lang="en")
       form.form-inline(method='POST', action='gamesignup')
         .row-fluid.text-center
           input(type='hidden', name='_csrf', value=_csrf)
-          input.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
+          input.center-block.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
           button.btn.btn-primary.btn-reset(type='submit') Sign up
     //.row
     //  .col-md-6.col-md-offset-3.text-center
