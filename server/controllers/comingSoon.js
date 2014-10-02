@@ -29,6 +29,7 @@ module.exports.controller = function (app) {
           console.log(err);
         }
       });
+      res.send('Email saved');
       // next step
       workflow.emit('sendComingsoonEmail');
     });

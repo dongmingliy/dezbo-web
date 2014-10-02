@@ -6,9 +6,9 @@ html(lang="en")
   include ../home/flash
   .container
     .row
-      h2.text-center Most Wanted Items in Dezbo
+      h2.text-center Most Wanted Items On Dezbo
       br
-      div.text-center.gray-light Results are sorted by the number of fans who want the item
+      div.text-center.gray-light Results are sorted by the number of most wanted items
       br
       .col-md-6.col-md-offset-3
         div(ng-repeat="result in voteResults")
@@ -25,12 +25,4 @@ html(lang="en")
           input(type='hidden', name='_csrf', value=_csrf)
           input.center-block.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
           button.btn.btn-primary.btn-reset(type='submit') Sign up
-    //.row
-    //  .col-md-6.col-md-offset-3.text-center
-    //    br
-    //    div
-    //      h4 Stay Updated
-    //      input.form-control(style='min-width=200px', ng-model='emailAddress', type='email', name='email', id='email', placeholder='Enter your email', required)
-    //      br
-    //      button.btn.btn-primary.btn-reset(ng-click='signup(emailAddress)') Sign up
   include ../home/footer-script
