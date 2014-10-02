@@ -24,7 +24,7 @@ module.exports.controller = function (app) {
 //    {'id': 's13', 'itemTitle': 'Dale’s Nascar gloves', 'itemURL': 'img/game/Sports/DEJgloves.png', 'celebName': 'Dale Earnhardt Jr.', 'celebURL': 'img/game/Sports/DEJ.png'},
     // movies
     {'id': 'm1', 'itemTitle': 'Katniss’ Bow ', 'itemURL': 'img/game/Movies/hungergamesbow.png', 'celebName': 'The Hunger Games', 'celebURL': 'img/game/Movies/Hungergames.png'},
-    {'id': 'm2', 'itemTitle': 'The Lion’s Head', 'itemURL': 'img/game/Movies/herculeshat.png', 'celebName': 'Hercules', 'celebURL': 'img/game/Movies/hercules.png'},
+    {'id': 'm2', 'itemTitle': 'The Lion’s Head', 'itemURL': 'img/game/Movies/herculeshat.png', 'celebName': 'Hercules', 'celebURL': 'img/game/Movies/rock.png'},
 //    {'id': 'm3', 'itemTitle': 'Thor’s Hammer', 'itemURL': 'img/game/Movies/Thorhammer.png', 'celebName': 'Thor', 'celebURL': 'img/game/Movies/Thor.png'},
 //    {'id': 'm4', 'itemTitle': 'Wilson The Volleyball ', 'itemURL': 'img/game/Movies/castball.png', 'celebName': 'Castaway', 'celebURL': 'img/game/Movies/castaway.png'},
     {'id': 'm5', 'itemTitle': 'Raquel Welch Poster', 'itemURL': 'img/game/Movies/shawposter.png', 'celebName': 'Shawshank Redemption', 'celebURL': 'img/game/Movies/shawshank.png'},
