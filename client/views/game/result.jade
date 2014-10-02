@@ -15,10 +15,10 @@ html(lang="en")
           | {{result.title}}
           progressbar(value='100*result.voteup/(topvotecount)', type='primary')
             span {{result.voteup }} wants
-      br
-      div.text-center
-        iframe(width='560', height='315', src='//www.youtube.com/embed/UVOxtQ_xmgM', frameborder='0', allowfullscreen='')
+        div.text-center(style='padding-top:20px')
+          iframe(width='560', height='315', src='//www.youtube.com/embed/UVOxtQ_xmgM', frameborder='0', allowfullscreen='')
     .row
+      br
       h4.text-center
         | STAY UPDATED
       br
