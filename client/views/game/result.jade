@@ -15,8 +15,8 @@ html(lang="en")
           | {{result.title}}
           progressbar(value='100*result.voteup/(topvotecount)', type='primary')
             span {{result.voteup }} wants
-        div.text-center(style='padding-top:20px')
-          iframe(width='560', height='315', src='//www.youtube.com/embed/UVOxtQ_xmgM', frameborder='0', allowfullscreen='')
+        div.text-center.video-container(style='padding-top:20px')
+          iframe(src='//www.youtube.com/embed/UVOxtQ_xmgM', width='100%',height='100%' frameborder='0', allowfullscreen='')
     .row
       br
       h4.text-center
@@ -27,4 +27,5 @@ html(lang="en")
           input(type='hidden', name='_csrf', value=_csrf)
           input.center-block.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
           button.btn.btn-primary.btn-reset(type='submit') Sign up
+      br
   include ../home/footer-script
