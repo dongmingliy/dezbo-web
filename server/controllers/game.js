@@ -34,7 +34,7 @@ module.exports.controller = function (app) {
 
     // tv shows
     {'id': 't1', 'itemTitle': 'Ellen Show’s Red Couch', 'itemURL': 'img/game/TVShows/ellen1.png', 'celebName': 'Ellen Degeneres', 'celebURL': 'img/game/TVShows/ellen_head.png'},
-    {'id': 't2', 'itemTitle': 'Jax’s President Jacket', 'itemURL': 'img/game/TVShows/SOAjacket.png', 'celebName': 'Sons of Anarchy', 'celebURL': 'img/game/TVShows/SOA.png'},
+    {'id': 't2', 'itemTitle': 'Jax’s President Jacket', 'itemURL': 'img/game/TVShows/SOAjacket.jpg', 'celebName': 'Sons of Anarchy', 'celebURL': 'img/game/TVShows/SOA.png'},
     {'id': 't3', 'itemTitle': 'Heisenberg’s Hat', 'itemURL': 'img/game/TVShows/BBhat.png', 'celebName': 'Breaking Bad', 'celebURL': 'img/game/TVShows/BB.png'},
     {'id': 't6', 'itemTitle': 'Frank Underwood’s Typewriter', 'itemURL': 'img/game/TVShows/HOCtypewriter.png', 'celebName': 'House of Cards', 'celebURL': 'img/game/TVShows/HOC.png'},
     {'id': 't11', 'itemTitle': 'Sheldon’s Laptop', 'itemURL': 'img/game/TVShows/TBBTSheldonlaptop.png', 'celebName': 'The Big Bang Theory', 'celebURL': 'img/game/TVShows/TBBT.png'},
