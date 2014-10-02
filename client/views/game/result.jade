@@ -15,7 +15,8 @@ html(lang="en")
           | {{result.title}}
           progressbar(value='100*result.voteup/(topvotecount)', type='primary')
             span {{result.voteup }} wants
-        div.text-center.video-container(style='padding-top:20px')
+        div(style='padding-bottom:20px')
+        div.text-center.video-container
           iframe(src='//www.youtube.com/embed/UVOxtQ_xmgM', width='100%',height='100%' frameborder='0', allowfullscreen='')
     .row
       br
