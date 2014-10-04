@@ -2766,53 +2766,41 @@ fieldset[disabled] .btn-yahoo.active {
     width: 97%;
   }
 }
-.page-header {
-  padding-bottom: 0 !important;
-  margin: 0 !important;
-  border-bottom: 0 !important;
+.divider {
+  border: 0;
+  margin: 40px 0;
+  height: 4px;
+  border-top: #ddd 1px solid;
+  border-bottom: #ddd 1px solid;
+  text-align: center;
+  position: relative;
+  clear: both;
 }
-.page-header .navbar-nav {
-  float: right;
+.divider.half-margins {
+  margin: 30px 0;
 }
-.page-header > div > div,
-.page-header > div > ul {
+.divider .fa {
+  color: #bbb;
+  background: #f4f5f7;
+  /* same as background color */
   display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+  font-size: 20px;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  margin: 0 auto 0 -25px;
 }
-.text-edit {
-  padding: 13px 0 0 0;
+.divider.white .fa {
+  /* for white background color OR white rounded icon */
+  background: #fff;
+  color: #333;
 }
-.account {
-  text-align: right;
-}
-.account > div,
-.account > ul {
-  text-align: left;
-}
-.navbar .nav > li > a.brand {
-  padding-left: 20px;
-  margin-left: 0;
-}
-.content {
-  margin-top: 70px;
-  width: 100%;
-}
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 30px;
-  width: 100%;
-  background: #ddd;
-  box-shadow: 0 8px 6px 6px #000000;
-}
-footer p {
-  padding: 5px 0 12px 10px;
-}
-.ng-invalid.ng-dirty {
-  border-color: #FA787E;
-}
-.ng-valid.ng-dirty {
-  border-color: #78FA89;
+li.divider {
+  margin: 6px;
 }
 .comingSection {
   padding-top: 100px;
@@ -3532,70 +3520,6 @@ ul li {
   margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 30px;
-}
-.btn-outlined {
-  border-radius: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.btn-outlined.btn-primary {
-  background: none;
-  border: 3px solid #428bca;
-  color: #428bca;
-}
-.btn-outlined.btn-primary:hover,
-.btn-outlined.btn-primary:active {
-  color: #FFF;
-  background: #428bca;
-  border-color: #428bca;
-}
-.btn-outlined.btn-success {
-  background: none;
-  border: 3px solid #5cb85c;
-  color: #5cb85c;
-}
-.btn-outlined.btn-success:hover,
-.btn-outlined.btn-success:active {
-  color: #FFF;
-  background: #47a447;
-}
-.btn-outlined.btn-info {
-  background: none;
-  border: 3px solid #5bc0de;
-  color: #5bc0de;
-}
-.btn-outlined.btn-info:hover,
-.btn-outlined.btn-info:active {
-  color: #FFF;
-  background: #39b3d7;
-}
-.btn-outlined.btn-warning {
-  background: none;
-  border: 3px solid #f0ad4e;
-  color: #f0ad4e;
-}
-.btn-outlined.btn-warning:hover,
-.btn-outlined.btn-warning:active {
-  color: #FFF;
-  background: #ed9c28;
-}
-.btn-outlined.btn-danger {
-  background: none;
-  border: 3px solid #d9534f;
-  color: #d9534f;
-}
-.btn-outlined.btn-danger:hover,
-.btn-outlined.btn-danger:active {
-  color: #FFF;
-  background: #d2322d;
-}
-.col-centered {
-  display: inline-block;
-  float: none;
-  /* reset the text-align */
-  text-align: left;
-  /* inline-block space fix */
-  margin-right: -4px;
 }
 .form-signin {
   max-width: 400px;
@@ -8067,6 +7991,10 @@ html {
   position: relative;
   min-height: 100%;
 }
+body#topNav {
+  /* Account for fixed navbar */
+  padding-top: 50px;
+}
 /* thin style for large headers */
 h1,
 h2 {
@@ -8334,8 +8262,8 @@ a.noDecoration:hover {
   color: inherit !important;
 }
 .countdown {
-  margin-left: -8px;
-  margin-right: 8px;
+  margin-left: -4px;
+  margin-right: 4px;
   padding: 4px 4px 4px 10px;
   font-size: 14px;
 }

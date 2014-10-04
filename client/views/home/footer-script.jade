@@ -17,26 +17,6 @@ script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min
 script $.fn.modal || document.write('<script src="/lib/bootstrap/dist/js/bootstrap.min.js"><\/script>')
 //- Then use jQuery to async load everything else
 script.
-  jQuery(document).ready(function($) {
-    //- Async load socket.io
-    $.ajax({
-      type: 'GET',
-      url: '//cdn.socket.io/socket.io-1.0.6.js',
-      dataType: 'script',
-      cache: true
-    }).done(function () {
-      $(function(){
-        var socket = io(window.location.hostname);
-        socket.on('connect', function () {
-          socket.emit('pageview', window.location.href);
-        });
-        window.onhashchange = function () {
-          socket.emit('pageview', window.location.href);
-        };
-      });
-    });
-  });
-script.
   jQuery(window).load(function(){
     if(jQuery('.flexslider').length > 0){
       jQuery('.flexslider').flexslider({

@@ -6,36 +6,36 @@
 
 // Express 4.x Modules
 // var csrf              = require('csurf');                   // https://github.com/expressjs/csurf
-var morgan            = require('morgan');                  // https://github.com/expressjs/morgan
-var express           = require('express');                 // https://npmjs.org/package/express
-var favicon           = require('serve-favicon');           // https://github.com/expressjs/favicon
-var session           = require('express-session');         // https://github.com/expressjs/session
-var compress          = require('compression');             // https://github.com/expressjs/compression
-var bodyParser        = require('body-parser');             // https://github.com/expressjs/body-parser
-var errorHandler      = require('errorhandler');            // https://github.com/expressjs/errorhandler
-var methodOverride    = require('method-override');         // https://github.com/expressjs/method-override
+var morgan = require('morgan');                  // https://github.com/expressjs/morgan
+var express = require('express');                 // https://npmjs.org/package/express
+var favicon = require('serve-favicon');           // https://github.com/expressjs/favicon
+var session = require('express-session');         // https://github.com/expressjs/session
+var compress = require('compression');             // https://github.com/expressjs/compression
+var bodyParser = require('body-parser');             // https://github.com/expressjs/body-parser
+var errorHandler = require('errorhandler');            // https://github.com/expressjs/errorhandler
+var methodOverride = require('method-override');         // https://github.com/expressjs/method-override
 
 // Additional Modules
-var fs                = require('fs');                      // http://nodejs.org/docs/v0.10.25/api/fs.html
-var path              = require('path');                    // http://nodejs.org/docs/v0.10.25/api/path.html
-var debug             = require('debug')('skeleton');       // https://github.com/visionmedia/debug
-var flash             = require('express-flash');           // https://npmjs.org/package/express-flash
-var config            = require('./server/config/config');         // Get configuration file
-var logger            = require('express-loggly');          // https://github.com/dstroot/express-loggly
-var helmet            = require('helmet');                  // https://github.com/evilpacket/helmet
-var semver            = require('semver');                  // https://npmjs.org/package/semver
-var mongoose          = require('mongoose');                // https://npmjs.org/package/mongoose
-var passport          = require('passport');                // https://npmjs.org/package/passport
-var MongoStore        = require('connect-mongo')(session);  // https://npmjs.org/package/connect-mongo
-var expressValidator  = require('express-validator');       // https://npmjs.org/package/express-validator
+var fs = require('fs');                      // http://nodejs.org/docs/v0.10.25/api/fs.html
+var path = require('path');                    // http://nodejs.org/docs/v0.10.25/api/path.html
+var debug = require('debug')('skeleton');       // https://github.com/visionmedia/debug
+var flash = require('express-flash');           // https://npmjs.org/package/express-flash
+var config = require('./server/config/config');         // Get configuration file
+var logger = require('express-loggly');          // https://github.com/dstroot/express-loggly
+var helmet = require('helmet');                  // https://github.com/evilpacket/helmet
+var semver = require('semver');                  // https://npmjs.org/package/semver
+var mongoose = require('mongoose');                // https://npmjs.org/package/mongoose
+var passport = require('passport');                // https://npmjs.org/package/passport
+var MongoStore = require('connect-mongo')(session);  // https://npmjs.org/package/connect-mongo
+var expressValidator = require('express-validator');       // https://npmjs.org/package/express-validator
 
 /**
  * Create Express app, HTTP server and socket.io listener
  */
 
-var app    = module.exports = express();  // export app for testing ;)
+var app = module.exports = express();  // export app for testing ;)
 var server = require('http').Server(app);
-var io     = require('socket.io')(server);
+var io = require('socket.io')(server);
 
 /**
  * Configure Mongo Database
@@ -45,7 +45,7 @@ mongoose.connect(config.mongodb.url);
 var db = mongoose.connection;
 
 // Use Mongo for session store
-config.session.store  = new MongoStore({
+config.session.store = new MongoStore({
   mongoose_connection: db,
   auto_reconnect: true
 });
@@ -63,14 +63,14 @@ config.session.store  = new MongoStore({
 // for your own variable names, such as name, apply, bind, call,
 // arguments, length, and constructor.
 
-app.locals.application  = config.name;
-app.locals.version      = config.version;
-app.locals.description  = config.description;
-app.locals.author       = config.author;
-app.locals.keywords     = config.keywords;
-app.locals.ga           = config.ga;
+app.locals.application = config.name;
+app.locals.version = config.version;
+app.locals.description = config.description;
+app.locals.author = config.author;
+app.locals.keywords = config.keywords;
+app.locals.ga = config.ga;
 // Use revisioned css
-app.locals.dezbocss     = config.dezbocss;
+app.locals.dezbocss = config.dezbocss;
 // Format dates/times in jade templates
 // Use moment anywhere within a jade template like this:
 // p #{moment(Date.now()).format('MM/DD/YYYY')}
@@ -169,33 +169,33 @@ app.use(methodOverride());
 app.use(session(config.session));
 
 /*
-Thoughts on logging:
+ Thoughts on logging:
 
-** DEVELOPMENT **
+ ** DEVELOPMENT **
 
-In development we can use the standard logger (morgan) and
-debug (https://github.com/visionmedia/debug) for console output
+ In development we can use the standard logger (morgan) and
+ debug (https://github.com/visionmedia/debug) for console output
 
-Debug has an advantage over `console.log` because it only
-outputs when you specifically start node with it enabled.
+ Debug has an advantage over `console.log` because it only
+ outputs when you specifically start node with it enabled.
 
-** PRODUCTION **
+ ** PRODUCTION **
 
-Personally I prefer to stream Express logging to a service
-like Loggly or Papertrail.  That way I don't worry about
-the file system, log shipping/rotating, etc.  Plus these
-have useful features for analyzing the data.
+ Personally I prefer to stream Express logging to a service
+ like Loggly or Papertrail.  That way I don't worry about
+ the file system, log shipping/rotating, etc.  Plus these
+ have useful features for analyzing the data.
 
-If you want to log to a file in production you can do
-as follows. (Be careful however because this can fill up
-your file system unless you handle it properly.) Probably
-best to use a tool like Winston.  But the easy way is
-to send the morgan log stream to ./myLogFile.log:
+ If you want to log to a file in production you can do
+ as follows. (Be careful however because this can fill up
+ your file system unless you handle it properly.) Probably
+ best to use a tool like Winston.  But the easy way is
+ to send the morgan log stream to ./myLogFile.log:
 
-// use {flags: 'w'} to open in write mode, 'a' = append
-var logFile = fs.createWriteStream('./myLogFile.log', { flags: 'a' });
-app.use(morgan('combined', { stream: logFile }));
-*/
+ // use {flags: 'w'} to open in write mode, 'a' = append
+ var logFile = fs.createWriteStream('./myLogFile.log', { flags: 'a' });
+ app.use(morgan('combined', { stream: logFile }));
+ */
 
 // Log requests to Loggly in production
 // Needs to be below session and bodyParser in the stack
@@ -211,7 +211,7 @@ app.use(logger({
 
 // Security Settings
 app.disable('x-powered-by');          // Don't advertise our server type
-//  app.use(csrf());                      // Prevent Cross-Site Request Forgery
+// app.use(csrf());                      // Prevent Cross-Site Request Forgery
 app.use(helmet.nosniff());            // Sets X-Content-Type-Options to nosniff
 app.use(helmet.ienoopen());           // X-Download-Options for IE8+
 app.use(helmet.xssFilter());          // sets the X-XSS-Protection header
@@ -222,13 +222,12 @@ app.use(helmet.crossdomain());        // crossdomain.xml
 app.use(passport.initialize());
 app.use(passport.session());
 
-//  // Keep user, csrf token and config available
-//  app.use(function (req, res, next) {
-//    res.locals.user = req.user;
-//    res.locals.config = config;
-//    res.locals._csrf = req.csrfToken();
-//    next();
-//  });
+// Keep user, csrf token and config available
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  res.locals.config = config;
+  next();
+});
 
 // Flash messages
 app.use(flash());
@@ -250,10 +249,10 @@ fs.readdirSync('./server/controllers').forEach(function (file) {
 // time in milliseconds...
 var minute = 1000 * 60;   //     60000
 var hour = (minute * 60); //   3600000
-var day  = (hour * 24);   //  86400000
+var day = (hour * 24);   //  86400000
 var week = (day * 7);     // 604800000
 
-app.use(express.static(__dirname + '/public', { maxAge: week,redirect: false }));
+app.use(express.static(__dirname + '/public', { maxAge: week, redirect: false }));
 
 /**
  * Error Handling
