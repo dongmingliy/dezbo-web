@@ -6,7 +6,7 @@ html(lang="en")
   include ../home/flash
   .container
     .row
-      h2.text-center Most Wanted Items On Dezbo
+      h2.text-center MOST WANTED ITEMS ON DEZBO
       br
       div.text-center.gray-light Results are sorted by the number of most wanted items
       br
@@ -26,7 +26,8 @@ html(lang="en")
       form.form-inline(method='POST', action='gamesignup')
         .row-fluid.text-center
           input(type='hidden', name='_csrf', value=_csrf)
-          input.center-block.form-control(style='width:300px', type='email', name='email', id='email', placeholder='Enter your email', required)
+          input.center-block.form-control(style='width:300px;', type='email', name='email', id='email', placeholder='Enter your email', required)
+          span(style='margin-right:15px;') &nbsp;
           button.btn.btn-primary.btn-reset(type='submit') Sign up
       br
   include ../home/footer-script
