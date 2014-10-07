@@ -1,3 +1,57 @@
+/** 01. Globals
+ **************************************************************** **/
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+// remove empty space on the right for mobile
+html, body {
+  width: auto !important;
+  overflow-x: hidden !important;
+}
+
+.wrapper {
+  position:relative;
+  background-color:#f4f5f7; /* if background image used */
+  overflow:hidden;
+  margin:0; padding:0;
+}
+
+section.margin-footer {
+  margin-bottom:-92px; /* see wrapper padding */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Old Standard TT', serif !important;
+}
+
+
+
+/** 02. Boxed Layout
+ **************************************************************** **/
+body.boxed {
+}
+body.boxed .wrapper {
+  background-color:#f4f5f7;
+}
+
+body.boxed .wrapper,
+body.boxed header, /* IE BUG */
+body.boxed footer {
+  max-width:1170px;
+  margin:auto;
+}
+
+
 .divider {
   border: 0;
   margin: 40px 0;

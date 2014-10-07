@@ -11,27 +11,24 @@
         .row.column.col-md-8
           .column.col-md-4
             h3
-              a(href='blog-post.html') Terms
+              a(href='terms') Terms
             h3
-              a(href='blog-post.html') Privacy
+              a(href='privacy') Privacy
           .column.col-md-4
             h3
               a(href='faq') FAQ
             h3
-              a(href='blog-post.html') About us
+              a(href='faq') About us
           .column.col-md-4
             h3
-              a(href='blog-post.html') Contact
+              a(href='faq') Contact
             h3
-              a(href='blog-post.html') Jobs
+              a(href='faq') Jobs
           .column.col-md-4
         .column.col-md-4.text-right
           .row
-            a.btn.btn-social-icon.btn-facebook
-              i.fa.fa-facebook
-            | &nbsp;
-            a.btn.btn-social-icon.btn-twitter
-              i.fa.fa-twitter
+            .socialIcons.text-center.gray-lighter
+              div.addthis_horizontal_follow_toolbox
 //- Load jQuery, food for thought:
 //- https://palant.de/2014/06/30/please-don-t-use-externally-hosted-javascript-libraries
 
@@ -39,7 +36,12 @@ if 'production' == process.env.NODE_ENV
   script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
 else if 'development' == process.env.NODE_ENV
   script(src='/lib/jquery/dist/jquery.min.js')
-
+// addthis social buttons
+script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-540f8ed6699d23bb')
+script.
+  var addthis_config = {
+       data_track_clickback: false
+  }
 script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js')
 script(src='/js/#{application}.min.js')
 script(src="https://js.stripe.com/v2/")
