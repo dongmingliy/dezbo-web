@@ -1,8 +1,8 @@
 block content
-  section.container.howSection
+  section.container.howSection(ng-controller="homeCtrl")
     h3.text-center.text-uppercase How it works
     .row
-      .col-md-6
+      .col-md-4
         .featured-box.border-only.text-center
           img(src='img/shop/bid.png', height='100', width='100')
           .box-content
@@ -10,7 +10,9 @@ block content
             div Highest Bidder Wins!
             br
             div Support a charity with every winning bid
-      .col-md-6
+      .col-md-2
+        button.btn.btn-default(ng-click='showYoutubeModal') See How It Works
+      .col-md-4
         .featured-box.nobg.border-only.text-center
           img(src='img/shop/raffle.png', width='130')
           h4 Raffle Entry

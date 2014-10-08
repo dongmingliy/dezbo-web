@@ -1,6 +1,6 @@
 'use strict';
 
-dezboapp.controller('resultCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+angular.module('dezboapp').controller('resultCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
   function ($scope, $http, $window, $timeout, $modal) {
     $scope.voteResults = [];
 

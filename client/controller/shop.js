@@ -1,5 +1,5 @@
 'use strict';
-dezboapp.controller('shopController', ['$scope',
+angular.module('dezboapp').controller('shopController', ['$scope',
   function($scope) {
   }
 ]);

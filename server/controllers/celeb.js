@@ -9,12 +9,12 @@
 
 var passportConf  = require('../config/passport');
 module.exports.controller = function (app) {
-  app.get('/campaigns', passportConf.isAuthenticated, function (req, res) {
+  app.get('/campaigns', function (req, res) {
     res.render('celeb/campaigns', {
       url: req.url
     });
   });
-  app.get('/ellen', passportConf.isAuthenticated, function (req, res) {
+  app.get('/ellen', function (req, res) {
     res.render('celeb/ellen', {
       url: req.url
     });

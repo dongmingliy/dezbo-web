@@ -1,5 +1,5 @@
 'use strict';
-dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
+angular.module('dezboapp').controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
   function ($scope, $modalInstance,$http) {
     $scope.ok = function () {
       $modalInstance.close();

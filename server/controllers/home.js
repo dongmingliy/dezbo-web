@@ -18,7 +18,7 @@ module.exports.controller = function (app) {
       url: req.url
     });
   });
-  app.get('/home', passportConf.isAuthenticated, function (req, res) {
+  app.get('/home', function (req, res) {
 //    if (req.user) {
 //      return res.redirect('/home');
 //    }

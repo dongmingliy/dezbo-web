@@ -23,105 +23,79 @@ $(document).ready(function() {
   }
 });
 
-'use strict';
-
-var dezboapp = angular.module('dezboapp', ['timer','ui.bootstrap']);
-
-dezboapp.controller('timerController', ['$scope',
-  function($scope) {
-    $scope.timerRunning = true;
-
-    $scope.startTimer = function () {
-      $scope.$broadcast('timer-start');
-      $scope.timerRunning = true;
-    };
-
-    $scope.stopTimer = function () {
-      $scope.$broadcast('timer-stop');
-      $scope.timerRunning = false;
-    };
-
-    $scope.$on('timer-stopped', function (event, data) {
-      console.log('Timer Stopped - data = ', data);
-    });
-
-    $scope.d5count = 124;
-  }
-]);
-
-'use strict';
-dezboapp.controller('comingsoonCtrl', ['$scope','$http','$timeout',
-  function($scope, $http,$timeout) {
-    $scope.timerRunning = true;
-
-    $scope.startTimer = function () {
-      $scope.$broadcast('timer-start');
-      $scope.timerRunning = true;
-    };
-
-    $scope.stopTimer = function () {
-      $scope.$broadcast('timer-stop');
-      $scope.timerRunning = false;
-    };
-
-    $scope.$on('timer-stopped', function (event, data) {
-      console.log('Timer Stopped - data = ', data);
-    });
-    $scope.d5_count = 0;
-    $scope.el_count = 0;
-    $scope.nfl_count = 0;
-    $scope.db_count = 0;
-    $timeout(function(){
-      $http.get('http://graph.facebook.com/?ids=http://dezbo.com/d5,http://dezbo.com/el,http://dezbo.com/nfl,http://dezbo.com/db').
-        success(function(data) {
-          $scope.d5_count +=  parseInt(data['http://dezbo.com/d5'].shares) || 0;
-          $scope.el_count +=  (parseInt(data['http://dezbo.com/el'].shares) || 0);
-          $scope.nfl_count +=  parseInt(data['http://dezbo.com/nfl'].shares) || 0;
-          $scope.db_count +=  parseInt(data['http://dezbo.com/db'].shares) || 0;
-        }).
-        error(function (data, status, headers, config) {
-          console.log(headers);
-        });
-      $scope.d5_count += parseInt(angular.element('#d5 .at_flat_counter').text()) || 0;
-      $scope.el_count += parseInt(angular.element('#el .at_flat_counter').text()) || 0;
-      $scope.nfl_count += parseInt(angular.element('#nfl .at_flat_counter').text()) || 0;
-      $scope.db_count += parseInt(angular.element('#db .at_flat_counter').text()) || 0;
-    },2000);
-
-//    $scope.$on('$viewContentLoaded', function (event, data) {
-//      $scope.d5_count = angular.element('#d5 .at_flat_counter').contents();
+//'use strict';
+//dezboapp.controller('comingsoonCtrl', ['$scope','$http','$timeout',
+//  function($scope, $http,$timeout) {
+//    $scope.timerRunning = true;
+//
+//    $scope.startTimer = function () {
+//      $scope.$broadcast('timer-start');
+//      $scope.timerRunning = true;
+//    };
+//
+//    $scope.stopTimer = function () {
+//      $scope.$broadcast('timer-stop');
+//      $scope.timerRunning = false;
+//    };
+//
+//    $scope.$on('timer-stopped', function (event, data) {
+//      console.log('Timer Stopped - data = ', data);
 //    });
-//    $scope.d5_count = parseInt(angular.element('#d5 .at_flat_counter').text());
-//    $scope.$watch(function () {
-//      return parseInt(angular.element('#d5 .at_flat_counter').text());
-//    }, function(val) {
-//      console.log($scope.d5_count);
-//      console.log(val);
-//    });
-//    $http.get('http://graph.facebook.com/?ids=http%3a%2f%2fdezbo.com').
-//      success(function(data) {
-//        $scope.d5data = data['http://dezbo.com'];
-//        // somehow facebook call the number of likes "shares"
-//        $scope.d5count = data['http://dezbo.com'].shares;
-//      }).
-//      error(function (data, status, headers, config) {
-//        $scope.d5data = data;
-//      });
-
-//    var url = 'http://cdn.api.twitter.com/1/urls/count.json?url=http://news.ycombinator.com?callback=JSON_CALLBACK';
-//    $http.jsonp(url).
-//      success(function(data) {
-//        $scope.d5data = data;
-//      }).
-//      error(function (data, status, headers, config) {
-//        $scope.d5data = data;
-//      });
-  }
-]);
+//    $scope.d5_count = 0;
+//    $scope.el_count = 0;
+//    $scope.nfl_count = 0;
+//    $scope.db_count = 0;
+//    $timeout(function(){
+//      $http.get('http://graph.facebook.com/?ids=http://dezbo.com/d5,http://dezbo.com/el,http://dezbo.com/nfl,http://dezbo.com/db').
+//        success(function(data) {
+//          $scope.d5_count +=  parseInt(data['http://dezbo.com/d5'].shares) || 0;
+//          $scope.el_count +=  (parseInt(data['http://dezbo.com/el'].shares) || 0);
+//          $scope.nfl_count +=  parseInt(data['http://dezbo.com/nfl'].shares) || 0;
+//          $scope.db_count +=  parseInt(data['http://dezbo.com/db'].shares) || 0;
+//        }).
+//        error(function (data, status, headers, config) {
+//          console.log(headers);
+//        });
+//      $scope.d5_count += parseInt(angular.element('#d5 .at_flat_counter').text()) || 0;
+//      $scope.el_count += parseInt(angular.element('#el .at_flat_counter').text()) || 0;
+//      $scope.nfl_count += parseInt(angular.element('#nfl .at_flat_counter').text()) || 0;
+//      $scope.db_count += parseInt(angular.element('#db .at_flat_counter').text()) || 0;
+//    },2000);
+//
+////    $scope.$on('$viewContentLoaded', function (event, data) {
+////      $scope.d5_count = angular.element('#d5 .at_flat_counter').contents();
+////    });
+////    $scope.d5_count = parseInt(angular.element('#d5 .at_flat_counter').text());
+////    $scope.$watch(function () {
+////      return parseInt(angular.element('#d5 .at_flat_counter').text());
+////    }, function(val) {
+////      console.log($scope.d5_count);
+////      console.log(val);
+////    });
+////    $http.get('http://graph.facebook.com/?ids=http%3a%2f%2fdezbo.com').
+////      success(function(data) {
+////        $scope.d5data = data['http://dezbo.com'];
+////        // somehow facebook call the number of likes "shares"
+////        $scope.d5count = data['http://dezbo.com'].shares;
+////      }).
+////      error(function (data, status, headers, config) {
+////        $scope.d5data = data;
+////      });
+//
+////    var url = 'http://cdn.api.twitter.com/1/urls/count.json?url=http://news.ycombinator.com?callback=JSON_CALLBACK';
+////    $http.jsonp(url).
+////      success(function(data) {
+////        $scope.d5data = data;
+////      }).
+////      error(function (data, status, headers, config) {
+////        $scope.d5data = data;
+////      });
+//  }
+//]);
 
 'use strict';
-
-dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+var dezboapp = angular.module('dezboapp', ['timer', 'ui.bootstrap']);
+angular.module('dezboapp').controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
   function ($scope, $http, $window, $timeout, $modal) {
     $scope.counter = 1;
     var showModal = 5;
@@ -236,7 +210,39 @@ function retrieveCelebItems($http, $scope) {
 }
 
 'use strict';
-dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
+
+var dezboapp = angular.module('dezboapp', ['timer', 'ui.bootstrap']);
+
+angular.module('dezboapp').controller('homeCtrl', ['$scope', '$modal',
+  function ($scope, $modal) {
+    $scope.timerRunning = true;
+
+    $scope.startTimer = function () {
+      $scope.$broadcast('timer-start');
+      $scope.timerRunning = true;
+    };
+
+    $scope.stopTimer = function () {
+      $scope.$broadcast('timer-stop');
+      $scope.timerRunning = false;
+    };
+
+    $scope.$on('timer-stopped', function (event, data) {
+      console.log('Timer Stopped - data = ', data);
+    })
+
+//    $scope.showYoutubeModal = function ($scope,$http, $modal) {
+//      $modal.open({
+//        templateUrl: '/home/youtube',
+//        controller: 'ModalInstanceCtrl',
+//        size: 'modal-sm',
+//        backdrop: 'static'
+//      });
+//    }
+  }
+]);
+'use strict';
+angular.module('dezboapp').controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
   function ($scope, $modalInstance,$http) {
     $scope.ok = function () {
       $modalInstance.close();
@@ -262,7 +268,7 @@ dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
   }]);
 'use strict';
 
-dezboapp.controller('resultCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+angular.module('dezboapp').controller('resultCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
   function ($scope, $http, $window, $timeout, $modal) {
     $scope.voteResults = [];
 
@@ -296,7 +302,7 @@ function retreiveVoteResult($http, $scope) {
 }
 
 'use strict';
-dezboapp.controller('shopController', ['$scope',
+angular.module('dezboapp').controller('shopController', ['$scope',
   function($scope) {
   }
 ]);
