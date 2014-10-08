@@ -32,7 +32,7 @@
 //- Load jQuery, food for thought:
 //- https://palant.de/2014/06/30/please-don-t-use-externally-hosted-javascript-libraries
 
-if 'production' == process.env.NODE_ENV
+if 'development' != process.env.NODE_ENV
   script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
 else if 'development' == process.env.NODE_ENV
   script(src='/lib/jquery/dist/jquery.min.js')
@@ -43,7 +43,10 @@ script.
        data_track_clickback: false
   }
 script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js')
-script(src='/js/#{application}.min.js')
+if 'development' != process.env.NODE_ENV
+  script(src='/js/#{application}.min.js')
+else if 'development' == process.env.NODE_ENV
+  script(src='/js/#{application}.js')
 script(src="https://js.stripe.com/v2/")
 
 //- Backup just in case

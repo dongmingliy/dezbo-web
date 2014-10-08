@@ -15,6 +15,11 @@ script(src="https://js.stripe.com/v2/")
 //- Backup just in case
 script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min.js"><\/script>')
 script $.fn.modal || document.write('<script src="/lib/bootstrap/dist/js/bootstrap.min.js"><\/script>')
+script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-540f8ed6699d23bb')
+script.
+  var addthis_config = {
+       data_track_clickback: false
+  }
 //- Then use jQuery to async load everything else
 script.
   jQuery(window).load(function(){
