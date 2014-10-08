@@ -95,7 +95,7 @@ $(document).ready(function() {
 
 'use strict';
 var dezboapp = angular.module('dezboapp', ['timer', 'ui.bootstrap']);
-angular.module('dezboapp').controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
   function ($scope, $http, $window, $timeout, $modal) {
     $scope.counter = 1;
     var showModal = 5;
@@ -240,6 +240,7 @@ angular.module('dezboapp').controller('homeCtrl', ['$scope', '$modal',
   }
 ]);
 'use strict';
+
 angular.module('dezboapp').controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
   function ($scope, $modalInstance,$http) {
     $scope.ok = function () {
@@ -300,6 +301,7 @@ function retreiveVoteResult($http, $scope) {
 }
 
 'use strict';
+
 angular.module('dezboapp').controller('shopController', ['$scope',
   function($scope) {
   }

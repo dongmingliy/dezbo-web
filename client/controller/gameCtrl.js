@@ -1,6 +1,6 @@
 'use strict';
 var dezboapp = angular.module('dezboapp', ['timer', 'ui.bootstrap']);
-angular.module('dezboapp').controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
   function ($scope, $http, $window, $timeout, $modal) {
     $scope.counter = 1;
     var showModal = 5;
