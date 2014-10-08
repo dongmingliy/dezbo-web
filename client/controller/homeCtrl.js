@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dezboapp').controller('homeCtrl', ['$scope', '$modal',
+dezboapp.controller('homeCtrl', ['$scope', '$modal',
   function ($scope, $modal) {
     $scope.timerRunning = true;
 

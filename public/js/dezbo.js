@@ -23,6 +23,9 @@ $(document).ready(function() {
   }
 });
 
+'use strict';
+//make sure this is the first js file
+var dezboapp = angular.module('dezboapp', ['timer', 'ui.bootstrap']);
 //'use strict';
 //dezboapp.controller('comingsoonCtrl', ['$scope','$http','$timeout',
 //  function($scope, $http,$timeout) {
@@ -94,8 +97,8 @@ $(document).ready(function() {
 //]);
 
 'use strict';
-var dezboapp = angular.module('dezboapp', ['timer', 'ui.bootstrap']);
-angular.module('dezboapp').controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+
+dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
   function ($scope, $http, $window, $timeout, $modal) {
     $scope.counter = 1;
     var showModal = 5;
@@ -211,7 +214,7 @@ function retrieveCelebItems($http, $scope) {
 
 'use strict';
 
-angular.module('dezboapp').controller('homeCtrl', ['$scope', '$modal',
+dezboapp.controller('homeCtrl', ['$scope', '$modal',
   function ($scope, $modal) {
     $scope.timerRunning = true;
 
@@ -241,7 +244,7 @@ angular.module('dezboapp').controller('homeCtrl', ['$scope', '$modal',
 ]);
 'use strict';
 
-angular.module('dezboapp').controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
+dezboapp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance','$http',
   function ($scope, $modalInstance,$http) {
     $scope.ok = function () {
       $modalInstance.close();
@@ -267,7 +270,7 @@ angular.module('dezboapp').controller('ModalInstanceCtrl', ['$scope', '$modalIns
   }]);
 'use strict';
 
-angular.module('dezboapp').controller('resultCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+dezboapp.controller('resultCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
   function ($scope, $http, $window, $timeout, $modal) {
     $scope.voteResults = [];
 
@@ -302,7 +305,7 @@ function retreiveVoteResult($http, $scope) {
 
 'use strict';
 
-angular.module('dezboapp').controller('shopController', ['$scope',
+dezboapp.controller('shopController', ['$scope',
   function($scope) {
   }
 ]);
