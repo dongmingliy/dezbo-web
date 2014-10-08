@@ -211,8 +211,6 @@ function retrieveCelebItems($http, $scope) {
 
 'use strict';
 
-var dezboapp = angular.module('dezboapp', ['timer', 'ui.bootstrap']);
-
 angular.module('dezboapp').controller('homeCtrl', ['$scope', '$modal',
   function ($scope, $modal) {
     $scope.timerRunning = true;
