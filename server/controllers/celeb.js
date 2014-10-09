@@ -7,7 +7,7 @@
  * Celeb Controller
  */
 
-var passportConf  = require('../config/passport');
+
 module.exports.controller = function (app) {
   app.get('/campaigns', function (req, res) {
     res.render('celeb/campaigns', {
@@ -16,6 +16,11 @@ module.exports.controller = function (app) {
   });
   app.get('/ellen', function (req, res) {
     res.render('celeb/ellen', {
+      url: req.url
+    });
+  });
+  app.get('/pharrell', function (req, res) {
+    res.render('celeb/pharrell', {
       url: req.url
     });
   });
