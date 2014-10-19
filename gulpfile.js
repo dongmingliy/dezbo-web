@@ -53,7 +53,8 @@ var paths = {
     'public/lib/angular-timer/dist/angular-timer.min.js',
     'public/lib/fastclick/lib/fastclick.js',
     'public/lib/flex-slider/jquery.flexslider.js',
-    'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js'
+    'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
+    'public/lib/jquery-scrollbox/jquery.scrollbox.js'
   ],
   lint: [
     'server/config/**/*.js',
