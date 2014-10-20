@@ -42,8 +42,9 @@ ul li {
 }
 .footer-content h3 {
   color: #fff !important;
-  font-weight: 200;
+  font-weight: bold !important;
   font-size: 16px;
+  font-family: sans-serif !important;
 }
 .column {
   display: block;
