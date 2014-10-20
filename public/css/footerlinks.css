@@ -38,7 +38,6 @@ ul li {
 .footer-content {
   background: #2E363F;
   border-top: #403E44 1px dashed;
-  padding: 30px 0;
   display: block;
 }
 .footer-content h3 {
@@ -49,28 +48,6 @@ ul li {
 .column {
   display: block;
   height: 100%;
-}
-/* logo */
-.column.logo {
-  position: relative;
-  background: #292f38;
-  display: block;
-  margin-top: -30px;
-  margin-bottom: -30px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  -webkit-border-bottom-right-radius: 15px;
-  -webkit-border-bottom-left-radius: 15px;
-  -moz-border-radius-bottomright: 15px;
-  -moz-border-radius-bottomleft: 15px;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-}
-.column.logo h4 {
-  color: #fff;
-  font-size: 20px;
-  padding: 0;
-  margin: 0;
 }
 .faqSetion a:hover {
   cursor: pointer;

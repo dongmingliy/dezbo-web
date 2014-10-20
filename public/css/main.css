@@ -5261,6 +5261,11 @@ h2 {
   left: 20%;
   margin-left: 10px;
 }
+.nav-slogan {
+  float: left;
+  margin-top: 15px;
+  margin-left: 20px;
+}
 /**
  * Flash Alerts
  */
