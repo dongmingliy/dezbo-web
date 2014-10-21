@@ -2805,12 +2805,6 @@ h5 {
 body.boxed .wrapper {
   background-color: #f4f5f7;
 }
-body.boxed .wrapper,
-body.boxed header,
-body.boxed footer {
-  max-width: 1170px;
-  margin: auto;
-}
 .divider {
   border: 0;
   margin: 40px 0;
@@ -8106,7 +8100,6 @@ a.noDecoration:hover {
 }
 .howSection {
   background: #EEEEEE;
-  margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 30px;
 }
