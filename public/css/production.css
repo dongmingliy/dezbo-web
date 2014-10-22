@@ -2894,7 +2894,6 @@ li.divider {
 .thumbnail {
   max-width: 400px;
   min-height: 340px;
-  border: 1px solid #8f8f8f !important;
 }
 .row-no-padding [class*="col-"] {
   padding-left: 0 !important;
@@ -8122,41 +8121,32 @@ a.noDecoration:hover {
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 .item-box {
-  bottom: 20px;
+  bottom: 28px;
   padding: 4px;
+  font-family: 'Old Standard TT', serif;
 }
-.item-box h5 {
-  color: #08c;
-  margin-left: 4px;
+.itemName {
+  font-size: 24px;
+  margin-top: -5px;
+  border-bottom: 2px solid #cccccc;
 }
 /* Override thumbnail from bootstrap */
-.homeItems .thumbnail:hover {
-  cursor: pointer;
-}
 .homeItems .thumbnail {
-  max-width: 260px;
-  min-height: 340px;
-  border: 1px solid #8f8f8f !important;
+  max-width: 220px;
+  min-height: 380px;
   /*padding:0 !important;*/
-  /* Make sure no anchor effects in thumbnail */
 }
 .homeItems .thumbnail .support {
-  color: grey;
-  font-size: 11px;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-}
-.homeItems .thumbnail .a,
-.homeItems .thumbnail a:hover {
-  text-decoration: none !important;
-  color: inherit !important;
+  font-size: 14px;
+  font-style: italic;
+  padding-bottom: 8px;
 }
 .countdown {
   margin-left: -4px;
   margin-right: 4px;
   padding: 4px 4px 4px 10px;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 300;
 }
 .bidtitle {
   font-size: 14px;
