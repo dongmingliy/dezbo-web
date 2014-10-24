@@ -1,5 +1,11 @@
 ##Change Log
 
+###Version 1.1.7
+* Fix for https://github.com/siddii/angular-timer/issues/29 (start-time doesn't work in combination with autostart)
+
+###Version 1.1.6
+* Added countdown finished callback - https://github.com/siddii/angular-timer/pull/64
+
 ###Version 1.1.5
 * Fix for - https://github.com/siddii/angular-timer/issues/84
 

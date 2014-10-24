@@ -1,53 +1,9 @@
 block content
   .divider
     i.fa.fa-star
-  .container.homeItems
+  .container.homeItems(ng-controller="homeCtrl")
     .row
-      h3.text-center.text-uppercase.htitle Enter to win
-      .col-md-3.col-sm-4
-        .thumbnail
-          figure
-            img.img-responsive(src='img/shop/pharrell-hat.png', width='263', height='500', alt='')
-          .item-box
-            h5 ELLEN'S
-            h2.itemName Red Couch on the Ellen Show
-            .support Supporting The Gentle Barn
-            button.btn.btn-primary(style='width:150px;') ENTER TO WIN
-            .countdown.gray-darker
-              | Ending Nov 5, 2014
-      .col-md-3.col-sm-4
-        .thumbnail
-          figure
-            img.img-responsive(src='img/shop/pharrell1_small.png', width='263', height='263', alt='')
-          .item-box
-            h5 Pharrell's Tall Hat
-            img.img-responsive(src='img/shop/raffle.png', width='100', alt='')
-            .support
-              | Supporting From One Hand To Another
-            .countdown.bg-brand1.white
-                | Ending Oct 29, 2014
-      .col-md-3.col-sm-4
-        .thumbnail
-          figure
-            img.img-responsive(src='img/shop/gaga1_small.png', width='263', height='263', alt='')
-          .item-box
-            h5 Lady Gaga’s Red Carpet Heels
-            img.img-responsive(src='img/shop/raffle.png', width='100', alt='')
-            .support
-              | Supporting Born This Way Foundation
-              .countdown.bg-brand1.white
-                | Ending Dec 1, 2014
-      .col-md-3.col-sm-4
-        .thumbnail
-          figure
-            img.img-responsive(src='img/shop/snoop1_small.png', width='263', height='263', alt='')
-          .item-box
-            h5 Snoop’s Stage Mic
-            img.img-responsive(src='img/shop/raffle.png', width='100', alt='')
-            .support
-              | Supporting Youth Football League Foundation
-              .countdown.bg-brand1.white
-                | Ending Nov 12, 2014
+      itembox(ng-repeat='item in raffleitems', i='item')
   .divider
     i.fa.fa-star
   .container.homeItems(ng-controller="homeCtrl")

@@ -1,0 +1,11 @@
+.col-md-3.col-sm-4()
+  .thumbnail
+    figure
+      img.img-responsive(src='{{i.imageURL}}', width='263', height='500', alt='')
+    .item-box
+      h5.text-uppercase {{i.celebName}}
+      h2.itemName {{i.itemName}}
+      .support Supporting {{i.charityName}}
+      button.btn.btn-primary(style='width:150px;') ENTER TO WIN
+      .countdown.gray-darker
+        | Ending {{i.ending}}

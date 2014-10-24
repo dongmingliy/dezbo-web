@@ -5483,6 +5483,7 @@ a.noDecoration:hover {
 .homeItems .thumbnail {
   max-width: 220px;
   min-height: 380px;
+  border: 1px solid #777777 !important;
   /*padding:0 !important;*/
 }
 .homeItems .thumbnail .support {

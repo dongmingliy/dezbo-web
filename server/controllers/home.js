@@ -7,7 +7,7 @@ var passportConf  = require('../config/passport');
 
 module.exports.controller = function (app) {
 
-  app.get('/', function (req, res) {
+  app.get('/vote', function (req, res) {
     res.render('game/index', {
       url: req.url
     });
@@ -18,11 +18,16 @@ module.exports.controller = function (app) {
       url: req.url
     });
   });
-  app.get('/home', function (req, res) {
+  app.get('/', function (req, res) {
 //    if (req.user) {
 //      return res.redirect('/home');
 //    }
     res.render('home/index', {
+      url: req.url
+    });
+  });
+  app.get('/directive/itembox', function (req, res) {
+    res.render('directive/itembox', {
       url: req.url
     });
   });

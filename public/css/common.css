@@ -32,11 +32,13 @@ h4,
 h5 {
   font-family: 'Old Standard TT', serif !important;
 }
-/** 02. Boxed Layout
+/**Boxed Layout
  **************************************************************** **/
 body.boxed .wrapper {
   background-color: #f4f5f7;
 }
+/** Divider
+ **************************************************************** **/
 .divider {
   border: 0;
   margin: 40px 0;
@@ -72,4 +74,34 @@ body.boxed .wrapper {
 }
 li.divider {
   margin: 6px;
+}
+/** Nav Bar
+ **************************************************************** **/
+ul.nav li:hover {
+  background-color: #007695;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff !important;
+  font-weight: bold;
+}
+.navbar .divider-vertical {
+  height: 60px;
+  margin: 0 9px;
+  border-right: 1px solid #ffffff;
+  border-left: 1px solid #bbbbbb;
+}
+.navbar-inverse .divider-vertical {
+  border-right-color: #222222;
+  border-left-color: #111111;
+}
+@media (max-width: 767px) {
+  .divider-vertical {
+    display: none;
+  }
+}
+.active-nav {
+  -moz-text-decoration-color: #ffffff;
+       text-decoration-color: #ffffff;
+  color: #ffffff;
+  background-color: #007695;
 }
