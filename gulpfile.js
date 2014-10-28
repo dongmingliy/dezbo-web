@@ -193,12 +193,13 @@ gulp.task('jscs', function () {
       })
       .pipe(terminus.devnull({ objectMode: true }));
 });
-
+// add stylesprod for production build
 gulp.task('build', function (cb) {
   runSequence(
       'clean',                                // first clean
       ['lint', 'jscs'],                       // then lint and jscs in parallel
-      ['styles', 'stylesprod', 'scripts', 'images'],        // etc.
+      // ['styles', 'stylesprod', 'scripts', 'images'],        // etc.
+      ['styles', 'scripts', 'images'],        // etc.
       cb);
 });
 

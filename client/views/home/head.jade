@@ -35,7 +35,7 @@ head
   link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Open+Sans|Old+Standard+TT')
   link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')
 
-if 'development' == process.env.NODE_ENV
+if 'production' != process.env.NODE_ENV
   link(rel='stylesheet', href='/css/bootstrap.css')
   link(rel='stylesheet', href='/css/campaigns.css')
   link(rel='stylesheet', href='/css/comingSoon.css')
@@ -47,7 +47,7 @@ if 'development' == process.env.NODE_ENV
   link(rel='stylesheet', href='/css/main.css')
   link(rel='stylesheet', href='/css/shop.css')
   link(rel='stylesheet', href='/css/slider.css')
-if 'development' != process.env.NODE_ENV
+if 'production' == process.env.NODE_ENV
   link(rel='stylesheet', href='/css/#{dezbocss}')
 
   // @endif

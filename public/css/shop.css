@@ -5518,3 +5518,6 @@ a.noDecoration:hover {
 .campaignHeading {
   color: #0082c3;
 }
+.bg-whitediamond {
+  background-image: url(../img/whitediamond.png);
+}
