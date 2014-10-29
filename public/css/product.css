@@ -1,13 +1,20 @@
+.bg-ellen-banner {
+  background-image: url('../img/product/ellen-banner.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 529px;
+  background-color: lightgray;
+}
 .trapezoid {
   border-bottom: 100px solid #252525;
   border-left: 25px solid transparent;
   width: 400px;
-  right: 0;
 }
 .parallelogram {
-  width: 250px;
-  height: 180px;
-  -webkit-transform: skew(-20deg);
-  -moz-transform: skew(-20deg);
-  -o-transform: skew(-20deg);
+  width: 512px;
+  height: 287px;
+  -webkit-transform: skew(-12deg);
+  -moz-transform: skew(-12deg);
+  -o-transform: skew(-12deg);
 }
