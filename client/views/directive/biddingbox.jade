@@ -1,0 +1,14 @@
+.col-md-3.col-sm-4
+  .thumbnail
+    figure
+      img.img-responsive(src='{{i.imageURL}}', width='263', height='263', alt='')
+    .item-box
+      h5.celebrity-name.text-center.text-uppercase {{i.celebName}}
+      h2.item-name.text-center.text-uppercase {{i.itemName}}
+      .support.text-center.text-uppercase SUPPORTING
+      .charity-name.text-center.text-uppercase {{i.charityName}}
+      .bidtitle.text-center.text-uppercase
+        .bidprice.text-center {{i.currentBid}}
+        | Current Bid
+        .countdown.bg-brand1.white
+          timer(start-time="1401000000101") {{days}} d - {{hours}}h:{{minutes}}m:{{seconds}}s

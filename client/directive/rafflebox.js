@@ -1,9 +1,9 @@
 'use strict';
 
-dezboapp.directive('itembox', function() {
+dezboapp.directive('rafflebox', function() {
   return {
     restrict: 'E',
-    templateUrl: '/directive/itembox',
+    templateUrl: '/directive/rafflebox',
     scope: {
       i: "="
     }

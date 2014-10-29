@@ -26,8 +26,13 @@ module.exports.controller = function (app) {
       url: req.url
     });
   });
-  app.get('/directive/itembox', function (req, res) {
-    res.render('directive/itembox', {
+  app.get('/directive/rafflebox', function (req, res) {
+    res.render('directive/rafflebox', {
+      url: req.url
+    });
+  });
+  app.get('/directive/biddingbox', function (req, res) {
+    res.render('directive/biddingbox', {
       url: req.url
     });
   });
