@@ -5263,8 +5263,10 @@ h2 {
 }
 .nav-slogan {
   float: left;
-  margin-top: 15px;
-  margin-left: 20px;
+  font-family: Georgia;
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 22px;
 }
 /**
  * Flash Alerts
@@ -5479,7 +5481,7 @@ a.noDecoration:hover {
   font-weight: bold;
 }
 .item-name {
-  font-size: 24px;
+  font-size: 22px;
   margin-top: -5px;
   border-bottom: 2px solid #cccccc;
   font-weight: bold;
@@ -5513,11 +5515,12 @@ a.noDecoration:hover {
 }
 .bidtitle {
   font-size: 14px;
-  padding-top: 30px;
+  font-weight: bold;
 }
 .bidprice {
-  font-size: 28px;
-  color: #0082c3;
+  font-family: Georgia;
+  font-size: 40px;
+  font-weight: 400;
 }
 .productDescription {
   padding-bottom: 50px;
