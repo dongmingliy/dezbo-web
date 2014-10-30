@@ -1,13 +1,12 @@
 block content
-  .divider
-    i.fa.fa-star
   .container.homeItems(ng-controller="homeCtrl")
-    .row
-      h3.text-center.text-uppercase.htitle ENTER TO WIN
-      rafflebox(ng-repeat='item in raffleitems', i='item')
-  .divider
-    i.fa.fa-star
-  .container.homeItems(ng-controller="homeCtrl")
-    .row
-      h3.text-center.text-uppercase.htitle START BIDDING
-      biddingbox(ng-repeat='item in biddingitems', i='item')
+    .divider
+      i.fa.fa-star.color-raffle
+      .row
+        h3.text-center.text-uppercase.htitle ENTER TO WIN
+        rafflebox(ng-repeat='item in raffleitems', i='item')
+    .divider
+      i.fa.fa-star.color-bidding
+      .row
+        h3.text-center.text-uppercase.htitle START BIDDING
+        biddingbox(ng-repeat='item in biddingitems', i='item')

@@ -18,66 +18,63 @@
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 
-.item-box {
-  bottom: 28px;
-  padding: 4px;
-  font-family: @font-family-dezbo;
-}
-
-.celebrity-name {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.item-name {
-  font-size: 22px;
-  margin-top: -5px;
-  border-bottom: 2px solid @gray-lighter;
-  font-weight: bold;
-}
-
-.charity-name {
-  font-size: 16px;
-  padding-bottom: 8px;
-}
-
-.item-box-button {
-  width:150px;
-  margin:0 auto;
-  display:block;
-}
-
 /* Override thumbnail from bootstrap */
 .homeItems {
+  .color-raffle {
+    color: #018ED4;
+  }
+  .color-bidding {
+    color: #ffcb50;
+  }
+
   .thumbnail {
     max-width: 220px;
     min-height: 390px;
     border: 1px solid @gray-light !important;
     /*padding:0 !important;*/
-    .support {
-      font-size: 14px;
-      font-weight: bold;
+
+    .item-box {
+      bottom: 28px;
+      padding: 4px;
+      font-family: @font-family-sans-serif;
+
+      .celebrity-name {
+        font-size: 14px;
+      }
+      .item-name {
+        font-size: 22px;
+        margin-top: -5px;
+        border-bottom: 2px solid @gray-lighter;
+      }
+      .support {
+        font-size: 14px;
+      }
+      .charity-name {
+        font-family: Georgia;
+        font-size: 16px;
+      }
+      .countdown {
+        margin-left: -4px;
+        margin-right: 4px;
+        padding: 4px 4px 4px 10px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .item-box-button {
+        display:block;
+        margin:0 auto;
+        margin-top: 8px;
+        width:150px;
+      }
+      .bidtitle {
+        font-size: 14px;
+      }
+      .bidprice {
+        font-family: Georgia;
+        font-size: 40px;
+      }
     }
   }
-}
-
-.countdown {
-  margin-left: -4px;
-  margin-right: 4px;
-  padding: 4px 4px 4px 10px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.bidtitle {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.bidprice {
-  font-family: Georgia;
-  font-size: 40px;
-  font-weight: 400;
 }
 
 .productDescription {
