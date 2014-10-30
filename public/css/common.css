@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
 /** 01. Globals
  **************************************************************** **/
 html {
@@ -28,11 +29,14 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Old Standard TT', serif !important;
+  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .htitle {
   padding-bottom: 40px;
   font-size: 48px;
+  font-weight: bold;
+}
+.bold {
   font-weight: bold;
 }
 /** Divider
@@ -51,7 +55,6 @@ h5 {
   margin: 30px 0;
 }
 .divider .fa {
-  color: #018ED4;
   background: transparent;
   /* same as background color */
   display: inline-block;
