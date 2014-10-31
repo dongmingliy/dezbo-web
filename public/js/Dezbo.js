@@ -233,28 +233,28 @@ dezboapp.controller('homeCtrl', ['$scope', '$modal',
     })
 
     $scope.raffleitems = [{
-      imageURL: 'img/shop/ellen1_small.png',
-      celebName: "Ellen's",
+      imageURL: 'img/shop/raffleEllen.png',
+      celebName: "Ellen Degeneres'",
       itemName: "Red Couch on the Ellen Show",
       charityName: "The Gentle Barn",
       ending: "Nov 25, 2014"
     },
     {
-      imageURL: "img/shop/pharrell1_small.png",
-      celebName: "Pharrell's",
+      imageURL: "img/shop/rafflePharrell.png",
+      celebName: "Pharrell William's",
       itemName: "Tall Hat",
       charityName: "From One Hand To Another",
       ending: "Dec 11, 2014"
     },
     {
-      imageURL: "img/shop/gaga1_small.png",
+      imageURL: "img/shop/raffleGaga.png",
       celebName: "Lady Gaga’s ",
-      itemName: "Red Carpet Heels",
+      itemName: "Red Carpet Sparkly Diamond Heels",
       charityName: "Born This Way Foundation",
       ending: "Dec 15, 2014"
     },
     {
-      imageURL: "img/shop/snoop1_small.png",
+      imageURL: "img/shop/raffleSnoop.png",
       celebName: "Snoop’s ",
       itemName: "Stage Mic",
       charityName: "Youth Football League Foundation",
@@ -262,15 +262,15 @@ dezboapp.controller('homeCtrl', ['$scope', '$modal',
     }];
 
     $scope.biddingitems = [{
-      imageURL: 'img/shop/ellen2_small.png',
-      celebName: "Ellen's",
+      imageURL: 'img/shop/biddingEllen.png',
+      celebName: "Ellen Degeneres'",
       itemName: "signed Oscars Selfie",
       currentBid: "$350",
       charityName: "The Gentle Barn",
       startTime: "1401000000101"
     },
     {
-      imageURL: "img/shop/snoop5_small.png",
+      imageURL: "img/shop/biddingSnoop.png",
       celebName: "Snoop’s",
       itemName: "Sunglasses",
       currentBid: "$250",
@@ -278,17 +278,17 @@ dezboapp.controller('homeCtrl', ['$scope', '$modal',
       startTime: "1401000000101"
     },
     {
-      imageURL: "img/shop/gaga2_small.png",
+      imageURL: "img/shop/biddingGaga.png",
       celebName: "Lady Gaga’s",
-      itemName: "Gloves",
+      itemName: "Heart Leather Gloves",
       currentBid: "$784",
       charityName: "Born This Way Foundation",
       startTime: "1401000000101"
     },
     {
-      imageURL: "img/shop/kristine1_small.png",
+      imageURL: "img/shop/biddingKristen.png",
       celebName: "Kristen Bell’s",
-      itemName: "Camera",
+      itemName: "DSLR Camera",
       currentBid: "$1500",
       charityName: "PETA",
       startTime: "1401000000101"
