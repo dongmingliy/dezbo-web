@@ -30,6 +30,7 @@ h3,
 h4,
 h5 {
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  color: #666666 !important;
 }
 .htitle {
   padding-bottom: 40px;

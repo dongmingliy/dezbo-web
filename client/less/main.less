@@ -40,7 +40,7 @@
 @brand-primary: #428bca;
 @brand-success: #5cb85c;
 @brand-info:    #5bc0de;
-@brand-warning: #f06700;
+@brand-warning: #FFBC1B;
 @brand-danger:  #d9534f;
 
 // Brand Color Scheme (checkout: https://kuler.adobe.com/explore)
@@ -78,7 +78,7 @@
 @black:             #111111;
 
 // Gray Scale
-.white {            color: @white; }
+.white {            color: @white !important; }
 .gray-verylight {   color: @gray-verylight; }
 .gray-lighter {     color: @gray-lighter; }
 .gray-light {       color: @gray-light; }
@@ -150,11 +150,10 @@
 
 // Colors used by designer
 @blue-raffle:      #018ED4;
-@orange-bidding:   #F06700;
 @grey-bodytext:    #666666;
 
 .blue-raffle {      color: @blue-raffle;}
-.orange-bidding {   color: @orange-bidding;}
+.yellow-bidding {   color: @brand-warning;}
 .grey-bodytext {    color: @grey-bodytext;}
 
 /**
@@ -491,4 +490,5 @@ a.noDecoration:hover {
   max-width: 240px;
   height: 240px;
   display:block;
+  margin-bottom: 20px;
 }
