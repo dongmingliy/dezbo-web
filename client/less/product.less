@@ -1,3 +1,5 @@
+@import "main";
+
 .bg-ellen-banner {
   .container-fluid {
     padding-left: 0;
@@ -44,4 +46,61 @@
   border-right: 30px solid #2c2a2a;
   border-bottom: 0 solid #373535;
   border-left: 0 solid transparent;
+}
+
+.font-number {
+  font-family: @font-family-dezbo;
+}
+
+.chairty-v-middle {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  height: 250px;
+  max-width: 700px;
+}
+
+.divider-left {
+  border-left: 4px solid @gray-lighter;
+}
+
+.divider-right {
+  border-right: 4px solid @gray-lighter;
+}
+.product-margin-top{
+  margin-top:20px;
+}
+.progress-bg-override{
+  .progress{
+    background-color: @gray-lighter !important;
+  }
+}
+.scroll-box {
+  border: 1px solid red;
+  width: 200px;
+  height:60px;
+  overflow: hidden;
+  font-size: 0;
+}
+.scroll-box ul li {
+  display: inline-block;
+  margin: 10px 0 10px 10px;
+}
+.scroll-box ul {
+  width: 200px;
+  height: 60px;
+  margin: 0;
+}
+
+.newsticker{
+  height:30px !important;
+}
+.newsticker li {
+  color: @gray-dark;
+  background: @gray-lighter;
+  overflow: hidden;
+  height: 30px;
+  padding: 5px;
+  list-style: none;
+  font-size: 16px;
 }
