@@ -5222,6 +5222,15 @@ fieldset[disabled] .btn-yahoo.active {
 .bg-maroon {
   background-color: #85144b;
 }
+.blue-raffle {
+  color: #018ed4;
+}
+.orange-bidding {
+  color: #f06700;
+}
+.grey-bodytext {
+  color: #666666;
+}
 /**
  * Typography
  */
@@ -5467,12 +5476,6 @@ a.noDecoration:hover {
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 /* Override thumbnail from bootstrap */
-.homeItems .color-raffle {
-  color: #018ED4;
-}
-.homeItems .color-bidding {
-  color: #f06700;
-}
 .homeItems .thumbnail {
   max-width: 220px;
   min-height: 520px;

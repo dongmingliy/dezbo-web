@@ -5222,6 +5222,15 @@ fieldset[disabled] .btn-yahoo.active {
 .bg-maroon {
   background-color: #85144b;
 }
+.blue-raffle {
+  color: #018ed4;
+}
+.orange-bidding {
+  color: #f06700;
+}
+.grey-bodytext {
+  color: #666666;
+}
 /**
  * Typography
  */
