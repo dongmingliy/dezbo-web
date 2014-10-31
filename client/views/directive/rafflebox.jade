@@ -4,9 +4,9 @@
       img.img-responsive(src='{{i.imageURL}}', width='263', height='500', alt='')
     .item-box
       .text-center.text-uppercase
-        .celebrity-name.bold {{i.celebName}}
-        .item-name.bold {{i.itemName}}
-        .support.bold SUPPORTING
-        .charity-name {{i.charityName}}
+        h5.celebrity-name.bold {{i.celebName}}
+        h4.item-name.bold {{i.itemName}}
+        h5.support.bold SUPPORTING
+        h6.charity-name {{i.charityName}}
         button.btn.btn-primary.item-box-button ENTER TO WIN
-        .countdown.gray-darker Ends {{i.ending}}
+        h5.countdown.gray-darker Ends {{i.ending}}

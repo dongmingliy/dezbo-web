@@ -4,12 +4,12 @@
       img.img-responsive(src='{{i.imageURL}}', width='263', height='263', alt='')
     .item-box
       .text-center.text-uppercase
-        .celebrity-name.bold {{i.celebName}}
-        .item-name.bold{{i.itemName}}
-        .support.bold SUPPORTING
-        .charity-name {{i.charityName}}
-        .bidprice {{i.currentBid}}
-        .bidtitle.bold Current Bid
+        h5.celebrity-name.bold {{i.celebName}}
+        h4.item-name.bold{{i.itemName}}
+        h5.support.bold SUPPORTING
+        h6.charity-name {{i.charityName}}
+        h6.bidprice {{i.currentBid}}
+        h5.bidtitle.bold Current Bid
         button.btn.btn-warning.item-box-button BID NOW
         .countdown
           timer(start-time="1401000000101") {{days}} d - {{hours}}h:{{minutes}}m:{{seconds}}s
