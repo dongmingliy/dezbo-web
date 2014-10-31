@@ -8148,10 +8148,29 @@ a.noDecoration:hover {
     font-size: 7em;
   }
 }
+.centered {
+  margin: 0 auto;
+}
 .howSection {
   background-color: transparent;
   padding-top: 20px;
+  padding-bottom: 20px;
+}
+.how-vision-text {
+  max-width: 800px;
+}
+.winners-section {
+  background-color: #e6e6e6;
+  padding-top: 20px;
   padding-bottom: 30px;
+}
+.winners-box {
+  border-width: 3px;
+  border-color: #ffffff;
+  border-style: solid;
+  max-width: 240px;
+  height: 240px;
+  display: block;
 }
 /* BORDER TRANSITIONS */
 /* Border Fade */
@@ -8172,11 +8191,13 @@ a.noDecoration:hover {
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 /* Override thumbnail from bootstrap */
+.homeItems {
+  padding-bottom: 20px;
+}
 .homeItems .thumbnail {
-  max-width: 220px;
+  max-width: 240px;
   border: 1px solid #777777 !important;
   display: block;
-  margin: 0 auto;
   /*padding:0 !important;*/
 }
 .homeItems .thumbnail .item-box {
@@ -8210,9 +8231,8 @@ a.noDecoration:hover {
 }
 .homeItems .thumbnail .item-box .item-box-button {
   display: block;
-  margin: 0 auto;
   margin-top: 8px;
-  width: 150px;
+  min-width: 70%;
 }
 .homeItems .thumbnail .item-box .bidtitle {
   font-size: 14px;
