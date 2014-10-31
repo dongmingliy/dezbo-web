@@ -88,7 +88,6 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -139,8 +138,7 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -149,7 +147,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -180,12 +177,10 @@ th {
   padding: 0;
 }
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -1555,7 +1550,6 @@ label {
   font-weight: bold;
 }
 input[type="search"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -5477,12 +5471,14 @@ a.noDecoration:hover {
   color: #018ED4;
 }
 .homeItems .color-bidding {
-  color: #ffcb50;
+  color: #f06700;
 }
 .homeItems .thumbnail {
   max-width: 220px;
   min-height: 520px;
   border: 1px solid #777777 !important;
+  display: block;
+  margin: 0 auto;
   /*padding:0 !important;*/
 }
 .homeItems .thumbnail .item-box {
