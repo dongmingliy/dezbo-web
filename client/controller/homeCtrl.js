@@ -23,28 +23,32 @@ dezboapp.controller('homeCtrl', ['$scope', '$modal',
       celebName: "Ellen Degeneres'",
       itemName: "Red Couch on the Ellen Show",
       charityName: "The Gentle Barn",
-      ending: "Nov 25, 2014"
+      ending: "Nov 25, 2014",
+      link: "ellen"
     },
     {
       imageURL: "img/shop/rafflePharrell.png",
       celebName: "Pharrell William's",
       itemName: "Tall Hat",
       charityName: "From One Hand To Another",
-      ending: "Dec 11, 2014"
+      ending: "Dec 11, 2014",
+      link: ""
     },
     {
       imageURL: "img/shop/raffleGaga.png",
       celebName: "Lady Gaga’s ",
       itemName: "Red Carpet Sparkly Diamond Heels",
       charityName: "Born This Way Foundation",
-      ending: "Dec 15, 2014"
+      ending: "Dec 15, 2014",
+      link: ""
     },
     {
       imageURL: "img/shop/raffleSnoop.png",
       celebName: "Snoop’s ",
       itemName: "Stage Mic",
       charityName: "Youth Football League Foundation",
-      ending: "Nov 25, 2014"
+      ending: "Nov 25, 2014",
+      link: ""
     }];
 
     $scope.biddingitems = [{

@@ -8,5 +8,6 @@
         h4.item-name.bold {{i.itemName}}
         h5.support.bold SUPPORTING
         h6.charity-name {{i.charityName}}
-        button.btn.btn-primary.item-box-button.centered ENTER TO WIN
+        a(href='{{i.link}}')
+          button.btn.btn-primary.item-box-button.centered ENTER TO WIN
         h5.countdown.gray-darker Ends {{i.ending}}

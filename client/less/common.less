@@ -36,6 +36,7 @@ h3,
 h4,
 h5 {
   font-family: @font-family-sans-serif !important;
+  color: #666666 !important;
 }
 
 .htitle {
@@ -108,10 +109,38 @@ ul.nav li:hover {
     padding-top: 7px; // offset to same height as slogan
   }
 
-  .navbar-nav > li > a {
+  .navbar-nav-left > li > a {
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
+  }
+
+  .navbar-right > li > a {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .navbar-right {
+    .signup {
+      color: #e68917;
+      border-width: 9px;
+      border-color: white;
+      border-style: solid;
+      width: 90px;
+      height: 50px;
+      padding: 5px;
+    }
+
+    .signup:before {
+      content: " ";
+      position: absolute;
+      z-index: -1;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      border: 1px solid #FBC779;
+    }
   }
 
   .divider-vertical {

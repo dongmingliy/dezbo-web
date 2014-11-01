@@ -2799,6 +2799,7 @@ h3,
 h4,
 h5 {
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  color: #666666 !important;
 }
 .htitle {
   padding-bottom: 40px;
@@ -2862,10 +2863,33 @@ ul.nav li:hover {
 .navbar-default .navbar-nav {
   padding-top: 7px;
 }
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav-left > li > a {
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
+}
+.navbar-default .navbar-right > li > a {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.navbar-default .navbar-right .signup {
+  color: #e68917;
+  border-width: 9px;
+  border-color: white;
+  border-style: solid;
+  width: 90px;
+  height: 50px;
+  padding: 5px;
+}
+.navbar-default .navbar-right .signup:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border: 1px solid #FBC779;
 }
 .navbar-default .divider-vertical {
   border-right-color: #222222;
@@ -5730,8 +5754,8 @@ fieldset[disabled] .btn-info.active {
 }
 .btn-warning {
   color: #ffffff;
-  background-color: #f06700;
-  border-color: #d75c00;
+  background-color: #ffbc1b;
+  border-color: #ffb501;
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -5739,8 +5763,8 @@ fieldset[disabled] .btn-info.active {
 .btn-warning.active,
 .open > .dropdown-toggle.btn-warning {
   color: #ffffff;
-  background-color: #bd5100;
-  border-color: #994200;
+  background-color: #e7a300;
+  border-color: #c38a00;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -5762,11 +5786,11 @@ fieldset[disabled] .btn-warning:active,
 .btn-warning.disabled.active,
 .btn-warning[disabled].active,
 fieldset[disabled] .btn-warning.active {
-  background-color: #f06700;
-  border-color: #d75c00;
+  background-color: #ffbc1b;
+  border-color: #ffb501;
 }
 .btn-warning .badge {
-  color: #f06700;
+  color: #ffbc1b;
   background-color: #ffffff;
 }
 .btn-danger {
@@ -6953,7 +6977,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-warning {
-  background-color: #f06700;
+  background-color: #ffbc1b;
 }
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -7794,7 +7818,7 @@ button.close {
   background-color: #e61d46;
 }
 .white {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 .gray-verylight {
   color: #f2f2f2;
@@ -7928,8 +7952,8 @@ button.close {
 .blue-raffle {
   color: #018ed4;
 }
-.orange-bidding {
-  color: #f06700;
+.yellow-bidding {
+  color: #ffbc1b;
 }
 .grey-bodytext {
   color: #666666;
@@ -8178,6 +8202,7 @@ a.noDecoration:hover {
   max-width: 240px;
   height: 240px;
   display: block;
+  margin-bottom: 20px;
 }
 /* BORDER TRANSITIONS */
 /* Border Fade */
@@ -8201,50 +8226,52 @@ a.noDecoration:hover {
 .homeItems {
   padding-bottom: 20px;
 }
-.homeItems .thumbnail {
+.homeItems .row .thumbnail {
   max-width: 240px;
   border: 1px solid #777777 !important;
   display: block;
+  margin-bottom: 20px;
+  background-color: white;
   /*padding:0 !important;*/
 }
-.homeItems .thumbnail .item-box {
+.homeItems .row .thumbnail .item-box {
   bottom: 28px;
   padding: 4px;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.homeItems .thumbnail .item-box .celebrity-name {
+.homeItems .row .thumbnail .item-box .celebrity-name {
   font-size: 14px;
 }
-.homeItems .thumbnail .item-box .item-name {
+.homeItems .row .thumbnail .item-box .item-name {
   font-size: 22px;
   margin-top: -5px;
   border-bottom: 2px solid #cccccc;
   min-height: 50px;
 }
-.homeItems .thumbnail .item-box .support {
+.homeItems .row .thumbnail .item-box .support {
   font-size: 14px;
 }
-.homeItems .thumbnail .item-box .charity-name {
+.homeItems .row .thumbnail .item-box .charity-name {
   font-family: Georgia;
   font-size: 16px;
   min-height: 40px;
 }
-.homeItems .thumbnail .item-box .countdown {
+.homeItems .row .thumbnail .item-box .countdown {
   margin-left: -4px;
   margin-right: 4px;
   padding: 4px 4px 4px 10px;
   font-size: 12px;
   font-weight: 500;
 }
-.homeItems .thumbnail .item-box .item-box-button {
+.homeItems .row .thumbnail .item-box .item-box-button {
   display: block;
   margin-top: 8px;
   min-width: 70%;
 }
-.homeItems .thumbnail .item-box .bidtitle {
+.homeItems .row .thumbnail .item-box .bidtitle {
   font-size: 14px;
 }
-.homeItems .thumbnail .item-box .bidprice {
+.homeItems .row .thumbnail .item-box .bidprice {
   font-family: Georgia;
   font-size: 40px;
 }

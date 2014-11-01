@@ -88,7 +88,6 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -139,8 +138,7 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -149,7 +147,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -180,12 +177,10 @@ th {
   padding: 0;
 }
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -1555,7 +1550,6 @@ label {
   font-weight: bold;
 }
 input[type="search"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -2162,8 +2156,8 @@ fieldset[disabled] .btn-info.active {
 }
 .btn-warning {
   color: #ffffff;
-  background-color: #f06700;
-  border-color: #d75c00;
+  background-color: #ffbc1b;
+  border-color: #ffb501;
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -2171,8 +2165,8 @@ fieldset[disabled] .btn-info.active {
 .btn-warning.active,
 .open > .dropdown-toggle.btn-warning {
   color: #ffffff;
-  background-color: #bd5100;
-  border-color: #994200;
+  background-color: #e7a300;
+  border-color: #c38a00;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -2194,11 +2188,11 @@ fieldset[disabled] .btn-warning:active,
 .btn-warning.disabled.active,
 .btn-warning[disabled].active,
 fieldset[disabled] .btn-warning.active {
-  background-color: #f06700;
-  border-color: #d75c00;
+  background-color: #ffbc1b;
+  border-color: #ffb501;
 }
 .btn-warning .badge {
-  color: #f06700;
+  color: #ffbc1b;
   background-color: #ffffff;
 }
 .btn-danger {
@@ -3365,7 +3359,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-warning {
-  background-color: #f06700;
+  background-color: #ffbc1b;
 }
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -5097,7 +5091,7 @@ fieldset[disabled] .btn-yahoo.active {
   background-color: #e61d46;
 }
 .white {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 .gray-verylight {
   color: #f2f2f2;
@@ -5231,8 +5225,13 @@ fieldset[disabled] .btn-yahoo.active {
 .blue-raffle {
   color: #018ed4;
 }
+<<<<<<< HEAD
 .orange-bidding {
   color: #f06700;
+=======
+.yellow-bidding {
+  color: #ffbc1b;
+>>>>>>> 3fc82c247955e24e309d1e3c67270eaaa3c099c4
 }
 .grey-bodytext {
   color: #666666;
@@ -5481,6 +5480,10 @@ a.noDecoration:hover {
   max-width: 240px;
   height: 240px;
   display: block;
+<<<<<<< HEAD
+=======
+  margin-bottom: 20px;
+>>>>>>> 3fc82c247955e24e309d1e3c67270eaaa3c099c4
 }
 .bg-ellen-banner {
   background-color: lightgray;
