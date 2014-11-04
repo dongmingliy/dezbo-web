@@ -54,8 +54,7 @@ var paths = {
     'public/lib/fastclick/lib/fastclick.js',
     'public/lib/flex-slider/jquery.flexslider.js',
     'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
-    'public/lib/jquery-scrollbox/jquery.scrollbox.js',
-    'public/lib/jquery-news-ticker/jquery.newsTicker.min.js'
+    'public/lib/liscroll/liscroll.js',
   ],
   lint: [
     'server/config/**/*.js',

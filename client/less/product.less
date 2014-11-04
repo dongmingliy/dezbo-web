@@ -71,36 +71,39 @@
   margin-top:20px;
 }
 .progress-bg-override{
+  margin-top: 24px;margin-left:10px;
   .progress{
     background-color: @gray-lighter !important;
+    height:30px !important;
+  }
+  .progress-bar {
+    line-height: 30px!important;
+    font-size:20px !important;
   }
 }
-.scroll-box {
-  border: 1px solid red;
-  width: 200px;
-  height:60px;
-  overflow: hidden;
-  font-size: 0;
-}
-.scroll-box ul li {
-  display: inline-block;
-  margin: 10px 0 10px 10px;
-}
-.scroll-box ul {
-  width: 200px;
-  height: 60px;
-  margin: 0;
-}
 
-.newsticker{
-  height:30px !important;
-}
-.newsticker li {
-  color: @gray-dark;
-  background: @gray-lighter;
+/* liScroll styles */
+
+.tickercontainer { /* the outer div with the black border */
+  border: 1px solid @gray-dark;
+  background: @white;
+  height: 40px;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
-  height: 30px;
-  padding: 5px;
-  list-style: none;
-  font-size: 16px;
+}
+.tickercontainer .mask { /* that serves as a mask. so you get a sort of padding both left and right */
+}
+ul.newsticker { /* that's your list */
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.newsticker li {
+  float: left; /* important: display inline gives incorrect results when you check for elem's width */
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  margin-left:20px;
 }

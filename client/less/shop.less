@@ -21,7 +21,16 @@
 /* Override thumbnail from bootstrap */
 .homeItems {
   padding-bottom: 20px;
-
+  .raffleItems {
+    .thumbnail:hover {
+      border: 2px solid @brand1 !important;
+    }
+  }
+  .biddingItems {
+    .thumbnail:hover {
+      border: 2px solid @brand-warning !important;
+    }
+  }
   .row {
     .thumbnail {
       max-width: 240px;
@@ -61,7 +70,7 @@
           font-weight: 500;
         }
         .item-box-button {
-          display:block;
+          display: block;
           margin-top: 8px;
           min-width: 70%;
         }
@@ -88,6 +97,7 @@
 .campaignHeading {
   color: #0082c3;
 }
-.bg-whitediamond{
+
+.bg-whitediamond {
   background-image: url(../img/whitediamond.png);
 }

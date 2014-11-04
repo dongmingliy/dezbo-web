@@ -88,6 +88,7 @@ figure {
   margin: 1em 40px;
 }
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -138,7 +139,8 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -147,6 +149,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -177,10 +180,12 @@ th {
   padding: 0;
 }
 * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -1550,6 +1555,7 @@ label {
   font-weight: bold;
 }
 input[type="search"] {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -5225,13 +5231,8 @@ fieldset[disabled] .btn-yahoo.active {
 .blue-raffle {
   color: #018ed4;
 }
-<<<<<<< HEAD
-.orange-bidding {
-  color: #f06700;
-=======
 .yellow-bidding {
   color: #ffbc1b;
->>>>>>> 3fc82c247955e24e309d1e3c67270eaaa3c099c4
 }
 .grey-bodytext {
   color: #666666;
@@ -5250,7 +5251,7 @@ html {
 }
 body#topNav {
   /* Account for fixed navbar */
-  padding-top: 50px;
+  padding-top: 80px;
 }
 /* thin style for large headers */
 h1,
@@ -5480,10 +5481,7 @@ a.noDecoration:hover {
   max-width: 240px;
   height: 240px;
   display: block;
-<<<<<<< HEAD
-=======
   margin-bottom: 20px;
->>>>>>> 3fc82c247955e24e309d1e3c67270eaaa3c099c4
 }
 .bg-ellen-banner {
   background-color: lightgray;
@@ -5543,34 +5541,43 @@ a.noDecoration:hover {
 .product-margin-top {
   margin-top: 20px;
 }
+.progress-bg-override {
+  margin-top: 24px;
+  margin-left: 10px;
+}
 .progress-bg-override .progress {
   background-color: #cccccc !important;
-}
-.scroll-box {
-  border: 1px solid red;
-  width: 200px;
-  height: 60px;
-  overflow: hidden;
-  font-size: 0;
-}
-.scroll-box ul li {
-  display: inline-block;
-  margin: 10px 0 10px 10px;
-}
-.scroll-box ul {
-  width: 200px;
-  height: 60px;
-  margin: 0;
-}
-.newsticker {
   height: 30px !important;
 }
-.newsticker li {
-  color: #333333;
-  background: #cccccc;
+.progress-bg-override .progress-bar {
+  line-height: 30px!important;
+  font-size: 20px !important;
+}
+/* liScroll styles */
+.tickercontainer {
+  /* the outer div with the black border */
+  border: 1px solid #333333;
+  background: #ffffff;
+  height: 40px;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
-  height: 30px;
-  padding: 5px;
-  list-style: none;
-  font-size: 16px;
+}
+.tickercontainer .mask {
+  /* that serves as a mask. so you get a sort of padding both left and right */
+}
+ul.newsticker {
+  /* that's your list */
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.newsticker li {
+  float: left;
+  /* important: display inline gives incorrect results when you check for elem's width */
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  margin-left: 20px;
 }

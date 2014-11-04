@@ -7972,7 +7972,7 @@ html {
 }
 body#topNav {
   /* Account for fixed navbar */
-  padding-top: 50px;
+  padding-top: 80px;
 }
 /* thin style for large headers */
 h1,
@@ -8225,6 +8225,12 @@ a.noDecoration:hover {
 /* Override thumbnail from bootstrap */
 .homeItems {
   padding-bottom: 20px;
+}
+.homeItems .raffleItems .thumbnail:hover {
+  border: 2px solid #377db5 !important;
+}
+.homeItems .biddingItems .thumbnail:hover {
+  border: 2px solid #ffbc1b !important;
 }
 .homeItems .row .thumbnail {
   max-width: 240px;

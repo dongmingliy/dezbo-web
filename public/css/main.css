@@ -5251,7 +5251,7 @@ html {
 }
 body#topNav {
   /* Account for fixed navbar */
-  padding-top: 50px;
+  padding-top: 80px;
 }
 /* thin style for large headers */
 h1,
