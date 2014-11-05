@@ -24,4 +24,9 @@ module.exports.controller = function (app) {
       url: req.url
     });
   });
+  app.get('/directive/donorbox', function (req, res) {
+    res.render('directive/donorbox', {
+      url: req.url
+    });
+  });
 };
