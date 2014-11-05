@@ -5334,6 +5334,12 @@ ul.newsticker li {
 .donorItems {
   padding-bottom: 20px;
 }
+.donorItems .row .triangle {
+  width: 0px;
+  height: 0px;
+  border-top: 20px solid #666666;
+  border-right: 20px solid transparent;
+}
 .donorItems .row .thumbnail {
   width: 240px;
   border: 1px solid #e8e4df !important;
@@ -5349,27 +5355,51 @@ ul.newsticker li {
 }
 .donorItems .row .thumbnail .donor-box .donor-title {
   text-align: left;
-  display: inline;
+  display: inline-block;
   font-size: 16px;
 }
 .donorItems .row .thumbnail .donor-box .donation-amount {
   text-align: right;
-  display: inline;
+  display: inline-block;
   font-size: 24px;
 }
 .donorItems .row .thumbnail .donor-box .donor-title-amount-line {
   border-bottom: 1px solid #cccccc;
+  padding-bottom: 6px;
+}
+.donorItems .row .thumbnail .donor-box .donor-custom-title-amount-line {
+  border: none;
 }
 .donorItems .row .thumbnail .donor-box .prizes {
   font-family: Georgia;
   font-size: 16px;
   margin-bottom: 10px;
   margin-top: 10px;
-  min-height: 34px;
+  max-width: 90%;
+  min-height: 49px;
+}
+.donorItems .row .thumbnail .donor-box .custom-prizes {
+  min-height: 17px !important;
 }
 .donorItems .row .thumbnail .donor-box .donor-box-button {
   display: block;
   margin-top: 8px;
   margin-bottom: 10px;
   min-width: 70%;
+}
+.donorItems .row .thumbnail .donor-box .custom-donation-line {
+  border: 2px solid #e8e4df;
+  width: 85%;
+  font-size: 24px;
+}
+.donorItems .row .thumbnail .donor-box .custom-donation-sign {
+  text-align: left;
+  display: inline-block;
+}
+.donorItems .row .thumbnail .donor-box .custom-donation-input {
+  border: 0;
+  display: inline-block;
+  outline-width: 0;
+  text-align: center;
+  width: 85%;
 }

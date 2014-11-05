@@ -44,6 +44,20 @@ block content
             .container
               .row.donorItems
                 donorbox(ng-repeat='item in donoritems', i='item')
+                .col-md-3.col-sm-4
+                  .thumbnail.centered
+                    figure
+                      img.img-responsive(src='img/product/ellenThankYou.png', width='263', height='263', alt='')
+                    .donor-box
+                      .text-center
+                        .div.donor-title-amount-line.donor-custom-title-amount-line
+                          .donor-title.bold.text-uppercase Custom Amount
+                        .div.custom-donation-line.centered
+                          .custom-donation-sign.font-number $
+                            input.custom-donation-input(type="text" pattern="[0-9]*" align="left")
+                        .prizes.custom-prizes.centered Only $2 an entry
+                        button.btn.btn-primary.donor-box-button.centered DONATE NOW
+
       .row
         .divider
           i.fa.fa-star.blue-raffle
