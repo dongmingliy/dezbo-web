@@ -2985,11 +2985,11 @@ tbody.collapse.in {
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
-  color: #222222;
+  color: #777777;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #090909;
+  color: #5e5e5e;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
@@ -3001,7 +3001,7 @@ tbody.collapse.in {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #333333;
-  background-color: #e7e7e7;
+  background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -3042,7 +3042,7 @@ tbody.collapse.in {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #333333;
-    background-color: #e7e7e7;
+    background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
@@ -3182,11 +3182,11 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #377db5;
+  background-color: #cccccc;
 }
 .jumbotron h1,
 .jumbotron .h1 {
-  color: #ffffff;
+  color: inherit;
 }
 .jumbotron p {
   margin-bottom: 15px;
@@ -3194,7 +3194,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   font-weight: 200;
 }
 .jumbotron > hr {
-  border-top-color: #2b628e;
+  border-top-color: #b3b3b3;
 }
 .container .jumbotron {
   border-radius: 6px;
@@ -3220,7 +3220,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
-  border-radius: 0px;
+  border-radius: 4px;
 }
 .alert h4 {
   margin-top: 0;
@@ -5240,250 +5240,11 @@ fieldset[disabled] .btn-yahoo.active {
 /**
  * Typography
  */
-/**
- * Scaffolding
- */
-html {
-  -webkit-font-smoothing: subpixel-antialiased;
-  /* Sticky Footer Styles Below */
-  position: relative;
-  min-height: 100%;
-}
-body#topNav {
-  /* Account for fixed navbar */
-  padding-top: 80px;
-}
-/* thin style for large headers */
-h1,
-h2 {
-  font-weight: 300;
-}
-/**
- * Navbar
- */
-.navbar-nav .profile-image {
-  width: 30px;
-  height: 30px;
-  margin: -15px 15px -15px 0;
-}
-.navbar-brand {
-  margin-top: -12px;
-  left: 20%;
-  margin-left: 10px;
-}
-.nav-slogan {
-  float: left;
-  font-family: Georgia;
-  font-size: 16px;
-  font-style: italic;
-  margin-top: 22px;
-}
-/**
- * Flash Alerts
- */
-/* remove rounded border */
-.alert {
-  margin-bottom: 0px;
-  text-align: center;
-}
-/*
- * Home Page
- */
-.jumbotron {
-  margin-bottom: 0px;
-}
-.jumbotron h1 {
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  font-size: 26px;
-}
-@media (min-width: 768px) {
-  .jumbotron {
-    margin-bottom: 0px;
-  }
-  .jumbotron h1 {
-    font-size: 65px;
-    margin-top: 20px;
-    margin-bottom: 50px;
-  }
-  .jumbotron h2 {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 40px;
-  }
-  .jumbotron h3 {
-    font-weight: 300;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 28px;
-  }
-  .jumbotron li {
-    line-height: 1;
-    margin: 20px;
-    font-size: 20px;
-    font-weight: 300;
-  }
-  .jumbotron p {
-    font-weight: 300;
-    font-size: 18px;
-  }
-}
-@media (min-width: 1170px) {
-  .jumbotron h1 {
-    font-size: 70px;
-  }
-  .jumbotron h3 {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 34px;
-  }
-  .jumbotron li {
-    line-height: 1;
-    margin: 20px;
-    font-size: 26px;
-  }
-  .jumbotron p {
-    font-size: 22px;
-  }
-}
-.jumbotron .btn {
-  width: 100%;
-  padding: 10px 20px;
-  font-size: 22px;
-}
-.btn-white {
-  color: #333;
-  background-color: #ffffff;
-}
-.btn-white:hover,
-.btn-white:focus,
-.btn-white:active {
-  color: #ffffff;
-  background-color: transparent;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-  border-color: #ffffff;
-}
-@media (min-width: 768px) {
-  .jumbotron .btn {
-    width: 100%;
-    padding: 15px 30px;
-    font-size: 28px;
-  }
-}
-/*
- * Minitron
- * Jumbotron-esque page headers
- */
-.mini-tron {
-  margin-top: 0px;
-  margin-bottom: 15px;
-  padding: 30px 15px;
-  text-align: center;
-}
-.mini-tron h1 {
-  margin-top: 0;
-}
-.mini-tron p {
-  font-weight: 300;
-}
-@media (min-width: 768px) {
-  .mini-tron {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-bottom: 30px;
-  }
-  .mini-tron h1 {
-    font-size: 45px;
-  }
-  .mini-tron p {
-    font-size: 18px;
-  }
-}
-/**
- * Dashboard Page
- */
-.dashboard {
-  text-align: center;
-}
-.dashboard p {
-  font-size: 50px;
-  line-height: 1;
-  color: #ff4136;
-  text-shadow: 1px 1px 1px #111111;
-}
-@media (min-width: 768px) {
-  .dashboard p {
-    font-size: 96px;
-  }
-}
-/**
- * Colors Page
- */
-.pnl {
-  padding: 15px;
-}
-/**
- * Privacy Page
- */
-.table.privacy {
-  text-align: left;
-  margin-top: 30px;
-}
-.table.privacy tbody > tr > td {
-  border-top: 0px;
-  font-weight: 300;
-  font-size: 20px;
-}
-/**
- * Panel Headers Like Buttons
- */
-.panel-button:hover {
-  background: #cfcfcf;
-}
-a.noDecoration {
-  text-decoration: none;
-}
-a.noDecoration:hover {
-  text-decoration: none;
-}
-/**
- * API landing page
- */
-.built-with {
-  font-size: 4em;
-}
-@media (min-width: 768px) {
-  .built-with {
-    font-size: 7em;
-  }
-}
-.centered {
-  margin: 0 auto;
-}
-.howSection {
-  background-color: transparent;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.how-vision-text {
-  max-width: 800px;
-}
-.winners-section {
-  background-color: #e6e6e6;
-  padding-top: 20px;
-  padding-bottom: 30px;
-}
-.winners-box {
-  border-width: 3px;
-  border-color: #ffffff;
-  border-style: solid;
-  max-width: 240px;
-  height: 240px;
-  display: block;
-  margin-bottom: 20px;
-}
 .bg-ellen-banner {
+  background-image: url('../img/product/ellen-banner-ellen.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 396px;
   background-color: lightgray;
 }
 .bg-ellen-banner .container-fluid {
@@ -5493,34 +5254,28 @@ a.noDecoration:hover {
 .banner-img {
   max-width: 100%;
 }
-.trapezoid {
-  border-bottom: 100px solid #252525;
-  border-left: 25px solid transparent;
-  width: 400px;
+.banner-text-width {
+  max-width: 500px;
 }
-.parallelogram {
-  width: 512px;
-  height: 287px;
-  -webkit-transform: skew(-12deg);
-  -moz-transform: skew(-12deg);
-  -o-transform: skew(-12deg);
+.banner-text-bg {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 138px;
+  padding-top: 10px;
+  padding-left: 22px;
 }
-.banner-text {
-  /* z-index: 100; */
-  /* right: 50%; */
-  bottom: 0;
-  /* width: 500px; */
-  color: white;
-  background-color: rgba(36, 35, 35, 0.89);
+.banner-text-bg h1,
+.banner-text-bg h2,
+.banner-text-bg h3,
+.banner-text-bg h4,
+.banner-text-bg h5,
+.banner-text-bg h6 {
+  color: #ffffff !important;
+  margin-top: 0 !important;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-.banner-text:before {
-  font-size: 0;
-  left: -30px;
-  content: '';
-  border-top: 111px solid transparent;
-  border-right: 30px solid #2c2a2a;
-  border-bottom: 0 solid #373535;
-  border-left: 0 solid transparent;
+.banner-text-bg h4 {
+  font-family: 'Old Standard TT', serif !important;
 }
 .font-number {
   font-family: 'Old Standard TT', serif;
@@ -5550,7 +5305,7 @@ a.noDecoration:hover {
   height: 30px !important;
 }
 .progress-bg-override .progress-bar {
-  line-height: 30px!important;
+  line-height: 30px !important;
   font-size: 20px !important;
 }
 /* liScroll styles */
