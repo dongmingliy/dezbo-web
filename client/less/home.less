@@ -1,4 +1,4 @@
-@import "main";
+@import "variables";
 
 /* BORDER TRANSITIONS */
 /* Border Fade */
@@ -22,13 +22,13 @@
 .homeItems {
   padding-bottom: 20px;
   .raffleItems {
-    .thumbnail:hover {
-      border: 2px solid @brand1 !important;
+    .item-name {
+      border-bottom: 2px solid @brand1;
     }
   }
   .biddingItems {
-    .thumbnail:hover {
-      border: 2px solid @brand-warning !important;
+    .item-name {
+      border-bottom: 2px solid @brand-warning;
     }
   }
   .row {
@@ -51,7 +51,6 @@
         .item-name {
           font-size: 22px;
           margin-top: -5px;
-          border-bottom: 2px solid @gray-lighter;
           min-height: 50px;
         }
         .support {
@@ -100,4 +99,19 @@
 
 .bg-whitediamond {
   background-image: url(../img/whitediamond.png);
+}
+.howSection{
+  background-color: transparent;
+  padding-top:20px;
+  padding-bottom: 20px;
+}
+
+.how-vision-text {
+  max-width: 800px;
+}
+
+.winners-section {
+  background-color: #e6e6e6;
+  padding-top:20px;
+  padding-bottom: 30px;
 }
