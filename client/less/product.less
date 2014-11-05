@@ -112,8 +112,8 @@ ul.newsticker li {
 
   .row {
     .thumbnail {
-      max-width: 240px;
-      border: 1px solid @gray-light !important;
+      width: 240px;
+      border: 1px solid @grey-border !important;
       display: block;
       margin-bottom: 20px;
       background-color: white;
@@ -124,9 +124,34 @@ ul.newsticker li {
         padding: 4px;
         font-family: @font-family-sans-serif;
 
+        .donor-title {
+          text-align: left;
+          display: inline;
+          font-size: 16px;
+        }
+
+        .donation-amount {
+          text-align: right;
+          display: inline;
+          font-size: 24px;
+        }
+
+        .donor-title-amount-line {
+          border-bottom: 1px solid @gray-lighter;
+        }
+
+        .prizes {
+          font-family: Georgia;
+          font-size: 16px;
+          margin-bottom: 10px;
+          margin-top: 10px;
+          min-height: 34px;
+        }
+
         .donor-box-button {
           display: block;
           margin-top: 8px;
+          margin-bottom: 10px;
           min-width: 70%;
         }
       }

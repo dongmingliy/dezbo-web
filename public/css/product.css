@@ -5269,10 +5269,10 @@ fieldset[disabled] .btn-yahoo.active {
   padding-right: 10px;
 }
 .banner-text-bg h4 {
-  font-family: 'Old Standard TT', serif !important;
+  font-family: Georgia, 'Old Standard TT', serif !important;
 }
 .font-number {
-  font-family: 'Old Standard TT', serif;
+  font-family: Georgia, 'Old Standard TT', serif;
 }
 .chairty-v-middle {
   display: table-cell;
@@ -5335,8 +5335,8 @@ ul.newsticker li {
   padding-bottom: 20px;
 }
 .donorItems .row .thumbnail {
-  max-width: 240px;
-  border: 1px solid #777777 !important;
+  width: 240px;
+  border: 1px solid #e8e4df !important;
   display: block;
   margin-bottom: 20px;
   background-color: white;
@@ -5347,8 +5347,29 @@ ul.newsticker li {
   padding: 4px;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.donorItems .row .thumbnail .donor-box .donor-title {
+  text-align: left;
+  display: inline;
+  font-size: 16px;
+}
+.donorItems .row .thumbnail .donor-box .donation-amount {
+  text-align: right;
+  display: inline;
+  font-size: 24px;
+}
+.donorItems .row .thumbnail .donor-box .donor-title-amount-line {
+  border-bottom: 1px solid #cccccc;
+}
+.donorItems .row .thumbnail .donor-box .prizes {
+  font-family: Georgia;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  min-height: 34px;
+}
 .donorItems .row .thumbnail .donor-box .donor-box-button {
   display: block;
   margin-top: 8px;
+  margin-bottom: 10px;
   min-width: 70%;
 }

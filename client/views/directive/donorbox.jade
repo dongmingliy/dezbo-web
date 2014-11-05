@@ -4,7 +4,8 @@
       img.img-responsive(src='{{i.imageURL}}', width='263', height='263', alt='')
     .donor-box
       .text-center
-        h4.donor-title.bold {{i.donorTitle}}
-        .font-number.bold {{i.donationAmount}}
-        h5 {{i.prizes}}
+        .div.donor-title-amount-line
+          h4.donor-title.bold.text-uppercase {{i.donorTitle}}
+          .donation-amount.font-number {{i.donationAmount}}
+        .prizes.centered {{i.prizes}}
         button.btn.btn-primary.donor-box-button.centered DONATE NOW

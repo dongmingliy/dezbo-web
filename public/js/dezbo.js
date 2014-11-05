@@ -158,7 +158,7 @@ dezboapp.controller('donorCtrl', ['$scope', '$modal',
         imageURL: 'img/product/ellen25000.png',
         donorTitle: "Legend",
         donationAmount: "$25,000",
-        prizes: "2,000, breakfast/lunch/dinner with Ellen"
+        prizes: "2,000 Entries, break- fast/lunch/dinner with Ellen"
       }
     ];
   }
