@@ -8226,11 +8226,11 @@ a.noDecoration:hover {
 .homeItems {
   padding-bottom: 20px;
 }
-.homeItems .raffleItems .thumbnail:hover {
-  border: 2px solid #377db5 !important;
+.homeItems .raffleItems .item-name {
+  border-bottom: 2px solid #377db5;
 }
-.homeItems .biddingItems .thumbnail:hover {
-  border: 2px solid #ffbc1b !important;
+.homeItems .biddingItems .item-name {
+  border-bottom: 2px solid #ffbc1b;
 }
 .homeItems .row .thumbnail {
   max-width: 240px;
@@ -8251,7 +8251,6 @@ a.noDecoration:hover {
 .homeItems .row .thumbnail .item-box .item-name {
   font-size: 22px;
   margin-top: -5px;
-  border-bottom: 2px solid #cccccc;
   min-height: 50px;
 }
 .homeItems .row .thumbnail .item-box .support {
