@@ -5365,7 +5365,9 @@ ul.newsticker li {
 }
 .donorItems .row .thumbnail .donor-box .donor-title-amount-line {
   border-bottom: 1px solid #cccccc;
-  padding-bottom: 6px;
+  font-size: 24px;
+  min-height: 35px;
+  padding-bottom: 8px;
 }
 .donorItems .row .thumbnail .donor-box .donor-custom-title-amount-line {
   border: none;
