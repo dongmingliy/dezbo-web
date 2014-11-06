@@ -21,43 +21,13 @@ block content
           h2 SUPPORTS:&nbsp;
             span.font-number 14
       .row
-        h3(style='margin-left:40px;') CURRENT DONORS
-        div
-          ul.paymentTicker
-            li
-              h4 Sherril Eure: $50
-            li
-              h4 Rolf Kirch : $12
-            li
-              h4 Diamond Brower: $19
-            li
-              h4 Arielle Coggins: $100
-            li
-              h4 Bradley Artis: $500
-            li
-              h4 Rudolf Hinojosa: $10
-            li
-              h4 Miriam Paxton: $1000
-            li
-              h4 Sherril Eure: $50
-            li
-              h4 Rolf Kirch : $12
-            li
-              h4 Diamond Brower: $19
-            li
-              h4 Arielle Coggins: $100
-            li
-              h4 Bradley Artis: $500
-            li
-              h4 Rudolf Hinojosa: $10
-            li
-              h4 Miriam Paxton: $1000
+        include donors
       .row
         h3.bold.reward-heading CHOOSE YOUR REWARD:
         .donorItems(ng-controller="donorCtrl")
           .container
             .row.donorItems
-              donorbox(ng-repeat='item in donoritems', i='item')
+              donorbox(ng-repeat='item in donoritems', i='item',index='index')
               .col-md-3.col-sm-4
                 .thumbnail.centered
                   figure

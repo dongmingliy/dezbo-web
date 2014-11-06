@@ -5427,3 +5427,6 @@ h3.reward-heading {
   text-align: center;
   width: 85%;
 }
+.text-capticalize {
+  text-transform: capitalize;
+}

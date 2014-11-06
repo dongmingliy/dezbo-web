@@ -36,13 +36,13 @@ dezboapp.controller('donorCtrl', ['$scope', '$modal',
         imageURL: 'img/product/ellen500.png',
         donorTitle: "Hustler",
         donationAmount: "$500",
-        prizes: "1,000 Entries, autographed poster"
+        prizes: "1,000 Entries, personal autographed poster"
       },
       {
         imageURL: 'img/product/ellen1000.png',
         donorTitle: "Angel",
         donationAmount: "$1,000",
-        prizes: "2,000 Entries, autographed mug"
+        prizes: "2,000 Entries, personal autographed mug"
       },
       {
         imageURL: 'img/product/ellen5000.png',
