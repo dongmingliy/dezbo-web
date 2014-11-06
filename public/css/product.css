@@ -5330,6 +5330,9 @@ ul.newsticker li {
   background: #fff;
   margin-left: 20px;
 }
+h3.reward-heading {
+  padding-bottom: 20px;
+}
 /* Donor box styles */
 .donorItems {
   padding-bottom: 20px;
