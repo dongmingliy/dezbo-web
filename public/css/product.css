@@ -88,7 +88,6 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -139,8 +138,7 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -149,7 +147,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -180,12 +177,10 @@ th {
   padding: 0;
 }
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -1555,7 +1550,6 @@ label {
   font-weight: bold;
 }
 input[type="search"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -5357,7 +5351,7 @@ h3.reward-heading {
   font-size: 14px;
   font-weight: bold;
   position: absolute;
-  top: -34px;
+  top: -38px;
   left: 6px;
 }
 .donorItems .row .thumbnail {
@@ -5384,11 +5378,12 @@ h3.reward-heading {
   text-align: right;
   display: inline-block;
   font-size: 24px;
+  margin: 0;
 }
 .donorItems .row .thumbnail .donor-box .donor-title-amount-line {
   border-bottom: 1px solid #cccccc;
   font-size: 24px;
-  min-height: 35px;
+  min-height: 47px;
   padding-bottom: 8px;
 }
 .donorItems .row .thumbnail .donor-box .donor-custom-title-amount-line {
@@ -5399,8 +5394,8 @@ h3.reward-heading {
   font-size: 16px;
   margin-bottom: 10px;
   margin-top: 10px;
-  max-width: 90%;
-  min-height: 60px;
+  max-width: 96%;
+  min-height: 57px;
 }
 .donorItems .row .thumbnail .donor-box .custom-prizes {
   min-height: 17px !important;
@@ -5419,6 +5414,7 @@ h3.reward-heading {
 .donorItems .row .thumbnail .donor-box .custom-donation-sign {
   text-align: left;
   display: inline-block;
+  color: #666666;
 }
 .donorItems .row .thumbnail .donor-box .custom-donation-input {
   border: 0;
