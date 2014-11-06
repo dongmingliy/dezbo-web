@@ -5305,7 +5305,8 @@ fieldset[disabled] .btn-yahoo.active {
 /* liScroll styles */
 .tickercontainer {
   /* the outer div with the black border */
-  border: 1px solid #333333;
+  border: 2px solid #e8e4df;
+  border-top: 5px solid #e8e4df;
   background: #ffffff;
   height: 40px;
   margin: 0;
@@ -5332,6 +5333,7 @@ ul.newsticker li {
 }
 h3.reward-heading {
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 /* Donor box styles */
 .donorItems {
