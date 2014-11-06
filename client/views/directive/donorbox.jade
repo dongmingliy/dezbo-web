@@ -3,6 +3,8 @@
     figure
       img.img-responsive(src='{{i.imageURL}}', width='263', height='263', alt='')
     .donor-box
+      .triangle
+        .triangle-text {{$index + 1}}
       .text-center
         .div.donor-title-amount-line
           .donor-title.bold.text-uppercase {{i.donorTitle}}

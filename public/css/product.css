@@ -5337,8 +5337,19 @@ ul.newsticker li {
 .donorItems .row .triangle {
   width: 0px;
   height: 0px;
-  border-top: 20px solid #666666;
-  border-right: 20px solid transparent;
+  border-top: 40px solid #666666;
+  border-right: 40px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.donorItems .row .triangle .triangle-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: -34px;
+  left: 6px;
 }
 .donorItems .row .thumbnail {
   width: 240px;
@@ -5352,6 +5363,8 @@ ul.newsticker li {
   bottom: 28px;
   padding: 4px;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  top: 0;
 }
 .donorItems .row .thumbnail .donor-box .donor-title {
   text-align: left;
