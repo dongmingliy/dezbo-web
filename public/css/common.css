@@ -5326,7 +5326,7 @@ li.divider {
 /** Nav Bar
  **************************************************************** **/
 ul.nav li:hover {
-  background-color: #007695;
+  background-color: #f2f2f2;
 }
 .navbar-default {
   background-color: white !important;
