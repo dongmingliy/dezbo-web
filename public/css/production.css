@@ -7195,20 +7195,24 @@ h5 {
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   color: #666666 !important;
 }
-h6 {
+h6,
+p {
   color: #666666 !important;
 }
 .htitle {
-  padding-bottom: 40px;
+  padding-bottom: 10px;
   font-size: 48px;
   font-weight: bold;
 }
 .bold {
   font-weight: bold;
 }
-.bodytext {
+p.bodytext {
   font-size: 22px;
   font-family: Georgia;
+}
+a.grey-link {
+  color: #666666 !important;
 }
 /** Divider
  **************************************************************** **/
@@ -8129,11 +8133,16 @@ ul li {
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 /* Override thumbnail from bootstrap */
-.homeItems {
+.homeItems .raffleItems {
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 .homeItems .raffleItems .item-name {
   border-bottom: 2px solid #377db5;
+}
+.homeItems .biddingItems {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .homeItems .biddingItems .item-name {
   border-bottom: 2px solid #ffbc1b;

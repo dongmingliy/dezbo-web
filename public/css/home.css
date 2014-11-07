@@ -5259,11 +5259,16 @@ fieldset[disabled] .btn-yahoo.active {
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 /* Override thumbnail from bootstrap */
-.homeItems {
+.homeItems .raffleItems {
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 .homeItems .raffleItems .item-name {
   border-bottom: 2px solid #377db5;
+}
+.homeItems .biddingItems {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .homeItems .biddingItems .item-name {
   border-bottom: 2px solid #ffbc1b;

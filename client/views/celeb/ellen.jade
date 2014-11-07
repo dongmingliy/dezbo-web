@@ -1,10 +1,9 @@
 extends ../layouts/layout
 block content
   section.wrapper(ng-app='dezboapp' ng-controller='productCtrl')
-    h1.text-center
-      span.campaignHeading Ellen Degeneres&nbsp;
-    h4.text-center Supporting
-      a(href='http://www.gentlebarn.org') &nbsp;The Gentle Barn
+    h3.text-center.text-uppercase.htitle Ellen Degeneres
+    p.bodytext.text-center supporting&nbsp;
+      a.grey-link(href='http://www.gentlebarn.org') The Gentle Barn
     include ellen-banner
     .container
       .row(style='margin-top: 20px;')
@@ -26,7 +25,7 @@ block content
         h3.bold.reward-heading CHOOSE YOUR REWARD:
         .donorItems(ng-controller="donorCtrl")
           .container
-            .row.donorItems
+            .row
               donorbox(ng-repeat='item in donoritems', i='item',index='index')
               .col-md-3.col-sm-4
                 .thumbnail.centered
@@ -35,13 +34,30 @@ block content
                   .donor-box
                     .text-center
                       .div.donor-title-amount-line.donor-custom-title-amount-line
-                        h5.donor-title.bold.text-uppercase Custom Amount
+                        h5.donor-title.reward-heading-small Custom Amount
                       .div.custom-donation-line.centered
                         .custom-donation-sign.font-number $
-                          input.custom-donation-input(type="number" step="any" min="0" value="10.00")
-                      h6.prizes.custom-prizes.centered Only $2 an entry
+                          input.custom-donation-input(type="number" step="any" min="1" value="10.00")
+                      p.reward-text.custom-prizes.text-capitalize Only $2 an entry
                       button.btn.btn-primary.donor-box-button.centered DONATE NOW
-
+              .col-md-3.col-sm-4
+                .thumbnail.centered
+                  .text-center
+                    h5.reward-heading-small.please-note-heading Please Note:
+                    p.reward-text.please-note-body.centered
+                      b Levels 1-8:
+                      br
+                      | Prizes include items in the description plus all previous level items
+                      br
+                      br
+                      b Levels 9-10:
+                      br
+                      | Prizes include items in the description plus all items from levels 1-7
+                      br
+                      br
+                      b Shipping:
+                      br
+                      | Prizes include items in the description plus all previous level items
       .row
         .divider
           i.fa.fa-star.blue-raffle

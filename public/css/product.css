@@ -5337,9 +5337,19 @@ ul.newsticker li {
   background: #fff;
   margin-left: 20px;
 }
+/* Content text styles */
+h5.reward-heading-small {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+p.reward-text {
+  font-family: Georgia;
+  font-size: 16px;
+}
 h3.reward-heading {
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 /* Donor box styles */
 .donorItems {
@@ -5368,19 +5378,18 @@ h3.reward-heading {
   display: block;
   margin-bottom: 20px;
   background-color: white;
+  height: 360px;
   /*padding:0 !important;*/
 }
 .donorItems .row .thumbnail .donor-box {
   bottom: 28px;
   padding: 4px;
-  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
   top: 0;
 }
 .donorItems .row .thumbnail .donor-box .donor-title {
   text-align: left;
   display: inline-block;
-  font-size: 16px;
 }
 .donorItems .row .thumbnail .donor-box .donation-amount {
   text-align: right;
@@ -5390,29 +5399,26 @@ h3.reward-heading {
 }
 .donorItems .row .thumbnail .donor-box .donor-title-amount-line {
   border-bottom: 1px solid #cccccc;
-  font-size: 24px;
-  min-height: 47px;
-  padding-bottom: 8px;
-}
-.donorItems .row .thumbnail .donor-box .donor-custom-title-amount-line {
-  border: none;
+  font-size: 22px;
+  height: 40px;
 }
 .donorItems .row .thumbnail .donor-box .prizes {
-  font-family: Georgia;
-  font-size: 16px;
   margin-bottom: 10px;
   margin-top: 10px;
   max-width: 96%;
-  min-height: 57px;
-}
-.donorItems .row .thumbnail .donor-box .custom-prizes {
-  min-height: 17px !important;
+  min-height: 62px;
 }
 .donorItems .row .thumbnail .donor-box .donor-box-button {
   display: block;
   margin-top: 8px;
   margin-bottom: 10px;
   min-width: 70%;
+}
+.donorItems .row .thumbnail .donor-box .donor-custom-title-amount-line {
+  border: none;
+}
+.donorItems .row .thumbnail .donor-box .custom-prizes {
+  margin: 10px;
 }
 .donorItems .row .thumbnail .donor-box .custom-donation-line {
   border: 2px solid #e8e4df;
@@ -5431,6 +5437,16 @@ h3.reward-heading {
   text-align: center;
   width: 85%;
 }
-.text-capticalize {
+.please-note-heading {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e8e4df;
+}
+.please-note-body {
+  max-width: 80%;
+  font-size: 14px !important;
+  padding-bottom: 10px;
+}
+.text-capitalize {
   text-transform: capitalize;
 }
