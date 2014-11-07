@@ -9,7 +9,7 @@ dezboapp.controller('donorCtrl', ['$scope', '$modal',
         prizes: "20 Entries"
       },
       {
-        imageURL: 'img/product/ellenThankYou.png',
+        imageURL: 'img/product/ellen20.png',
         donorTitle: "Donor",
         donationAmount: "$20",
         prizes: "40 Entries, thank you e-card"
