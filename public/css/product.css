@@ -5279,6 +5279,7 @@ fieldset[disabled] .btn-yahoo.active {
 }
 .font-number {
   font-family: Georgia, 'Old Standard TT', serif;
+  font-weight: normal !important;
 }
 .chairty-v-middle {
   display: table-cell;
@@ -5315,7 +5316,8 @@ fieldset[disabled] .btn-yahoo.active {
   border-top: 5px solid #e8e4df;
   background: #ffffff;
   height: 40px;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 0;
   overflow: hidden;
 }
@@ -5348,12 +5350,12 @@ p.reward-text {
   font-size: 16px;
 }
 h3.reward-heading {
-  padding-bottom: 10px;
-  padding-top: 10px;
+  font-weight: bold;
 }
 /* Donor box styles */
 .donorItems {
-  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .donorItems .row .triangle {
   width: 0px;
