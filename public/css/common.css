@@ -5268,7 +5268,8 @@ h5 {
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   color: #666666 !important;
 }
-h6 {
+h6,
+p {
   color: #666666 !important;
 }
 .htitle {

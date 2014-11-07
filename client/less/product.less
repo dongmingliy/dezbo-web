@@ -105,6 +105,19 @@ ul.newsticker li {
   margin-left: 20px;
 }
 
+/* Content text styles */
+
+h5.reward-heading-small {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+p.reward-text {
+  font-family: Georgia;
+  font-size: 16px;
+}
+
 h3.reward-heading {
   padding-bottom: 20px;
   padding-top: 20px;
@@ -141,19 +154,18 @@ h3.reward-heading {
       display: block;
       margin-bottom: 20px;
       background-color: white;
+      height: 360px;  // same height as "Please note" box
       /*padding:0 !important;*/
 
       .donor-box {
         bottom: 28px;
         padding: 4px;
-        font-family: @font-family-sans-serif;
         position: relative;
         top: 0;
 
         .donor-title {
           text-align: left;
           display: inline-block;
-          font-size: 16px;
         }
 
         .donation-amount {
@@ -165,26 +177,15 @@ h3.reward-heading {
 
         .donor-title-amount-line {
           border-bottom: 1px solid @gray-lighter;
-          font-size: 24px;
-          min-height: 47px;
-          padding-bottom: 8px;
+          font-size: 22px;
+          height: 40px;
          }
 
-        .donor-custom-title-amount-line {
-          border: none;
-        }
-
         .prizes {
-          font-family: Georgia;
-          font-size: 16px;
           margin-bottom: 10px;
           margin-top: 10px;
           max-width: 96%;
-          min-height: 57px;
-        }
-
-        .custom-prizes {
-          min-height: 17px !important;
+          min-height: 62px; // must be same height as textbox+text on custom donation box
         }
 
         .donor-box-button {
@@ -192,6 +193,14 @@ h3.reward-heading {
           margin-top: 8px;
           margin-bottom: 10px;
           min-width: 70%;
+        }
+
+        .donor-custom-title-amount-line {
+           border: none;
+        }
+
+        .custom-prizes {
+          margin: 10px;
         }
 
         .custom-donation-line {
@@ -212,12 +221,24 @@ h3.reward-heading {
           outline-width: 0;
           text-align: center;
           width: 85%;
-
         }
       }
     }
   }
 }
-.text-capticalize{
+
+.please-note-heading {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid @grey-border;
+}
+
+.please-note-body {
+  max-width: 80%;
+  font-size: 14px !important;
+  padding-bottom: 10px;
+}
+
+.text-capitalize{
   text-transform: capitalize;
 }
