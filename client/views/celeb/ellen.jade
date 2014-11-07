@@ -8,56 +8,23 @@ block content
     .container
       .row(style='margin-top: 20px;')
         .col-md-2
-          h2 GOAL:&nbsp;
+          h3.reward-heading GOAL:&nbsp;
             span.font-number $12,000
-        .col-md-4.progress-bg-override
-          progressbar(value='40', type='primary')
-            span $4000
+        .col-md-4
+          .progress-bg-override
+            progressbar(value='40', type='primary')
+              span $4000
         .col-md-3.text-center.divider-left.divider-right
-          h2 DAYS LEFT:&nbsp;
+          h3.reward-heading DAYS LEFT:&nbsp;
             span.font-number 23
-        .col-md-2.text-center
-          h2 SUPPORTS:&nbsp;
+        .col-md-3.text-center
+          h3.reward-heading SUPPORTERS:&nbsp;
             span.font-number 14
       .row
-        include donors
+        .col-md-12
+          include donors
       .row
-        h3.bold.reward-heading CHOOSE YOUR REWARD:
-        .donorItems(ng-controller="donorCtrl")
-          .container
-            .row
-              donorbox(ng-repeat='item in donoritems', i='item',index='index')
-              .col-md-3.col-sm-4
-                .thumbnail.centered
-                  figure
-                    img.img-responsive(src='img/product/ellenThankYou.png', width='263', height='263', alt='')
-                  .donor-box
-                    .text-center
-                      .div.donor-title-amount-line.donor-custom-title-amount-line
-                        h5.donor-title.reward-heading-small Custom Amount
-                      .div.custom-donation-line.centered
-                        .custom-donation-sign.font-number $
-                          input.custom-donation-input(type="number" step="any" min="1" value="10.00")
-                      p.reward-text.custom-prizes.text-capitalize Only $2 an entry
-                      button.btn.btn-primary.donor-box-button.centered DONATE NOW
-              .col-md-3.col-sm-4
-                .thumbnail.centered
-                  .text-center
-                    h5.reward-heading-small.please-note-heading Please Note:
-                    p.reward-text.please-note-body.centered
-                      b Levels 1-8:
-                      br
-                      | Prizes include items in the description plus all previous level items
-                      br
-                      br
-                      b Levels 9-10:
-                      br
-                      | Prizes include items in the description plus all items from levels 1-7
-                      br
-                      br
-                      b Shipping:
-                      br
-                      | Prizes include items in the description plus all previous level items
+        include donorRewards
       .row
         .divider
           i.fa.fa-star.blue-raffle
