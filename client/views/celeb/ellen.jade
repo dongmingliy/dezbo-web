@@ -1,10 +1,9 @@
 extends ../layouts/layout
 block content
   section.wrapper(ng-app='dezboapp' ng-controller='productCtrl')
-    h1.text-center
-      span.campaignHeading Ellen Degeneres&nbsp;
-    div.text-center Supporting
-      a(href='http://www.gentlebarn.org') &nbsp;The Gentle Barn
+    h3.text-center.text-uppercase.htitle Ellen Degeneres
+    p.bodytext.text-center supporting&nbsp;
+      a.grey-link(href='http://www.gentlebarn.org') The Gentle Barn
     include ellen-banner
     .container
       .row(style='margin-top: 20px;')
