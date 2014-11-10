@@ -3,20 +3,6 @@
 .donorItems(ng-controller="donorCtrl")
   .container
     .row
-      donorbox(ng-repeat='item in donoritems', i='item',index='index')
-      .col-md-3.col-sm-4
-        .thumbnail.centered
-          figure
-            img.img-responsive(src='img/product/ellenCustom.png', width='263', height='263', alt='')
-          .donor-box
-            .text-center
-              .div.donor-title-amount-line.donor-custom-title-amount-line
-                h5.donor-title.reward-heading-small Custom Amount
-              .div.custom-donation-line.centered
-                .custom-donation-sign.font-number $
-                  input.custom-donation-input(type="number" step="any" min="1" value="10.00")
-              p.reward-text.custom-prizes.text-capitalize Only $2 an entry
-              button.btn.btn-primary.donor-box-button.centered DONATE NOW
       .col-md-3.col-sm-4
         .thumbnail.centered
           .text-center
@@ -35,3 +21,18 @@
               b Shipping:
               br
               | Prizes include items in the description plus all previous level items
+      donorbox(ng-repeat='item in donoritems', i='item',index='index')
+      .col-md-3.col-sm-4
+        .thumbnail.centered
+          figure
+            img.img-responsive(src='img/product/ellenCustom.png', width='263', height='263', alt='')
+          .donor-box
+            .text-center
+              .div.donor-title-amount-line.donor-custom-title-amount-line
+                h5.donor-title.reward-heading-small Custom Amount
+              .div.custom-donation-line.centered
+                .custom-donation-sign.font-number $
+                  input.custom-donation-input(type="number" step="any" min="1" value="10.00")
+              p.reward-text.custom-prizes.text-capitalize Only $2 an entry
+              button.btn.btn-primary.donor-box-button.centered DONATE NOW
+

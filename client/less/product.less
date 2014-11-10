@@ -9,32 +9,81 @@
   background-repeat: no-repeat;
   background-position: center;
   min-height: 396px;
-  background-color: lightgray;
+  background-color: @gray-bg;
+
 }
 
 .banner-img {
   max-width: 100%;
 }
-.banner-text-width{
-  max-width:500px;
+
+.banner-text-width {
+  max-width: 500px;
 }
 
-.banner-text-bg{
-  background-color: rgba(0, 0, 0, .8);
-  height:138px;
-  padding-top:10px;
-  padding-left:22px;
-  h1,h2,h3,h4,h5,h6{
+.banner-text-bg {
+  background-color: @gray-transparent;
+  height: 138px;
+  padding-top: 10px;
+  padding-left: 22px;
+  h1, h2, h3, h4, h5, h6 {
     color: @white !important;
-    margin-top:0 !important;
-    padding-left:10px;
-    padding-right:10px;
+    margin-top: 0 !important;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   h4 {
     font-family: @font-family-dezbo !important;
   }
 }
 
+.banner-text-width:before {
+  font-size: 0;
+  left: -15px;
+  content: '';
+  border-top: 137px solid transparent;
+  border-right: 30px solid @gray-transparent;
+  border-bottom: 0 solid @gray-transparent;
+  border-left: 0 solid transparent;
+  position: absolute;
+  bottom: 0px;
+}
+
+.skew{
+  -webkit-transform: skew(-12deg);
+  -moz-transform: skew(-12deg);
+  -o-transform: skew(-12deg);
+}
+
+.banner-button {
+  position: absolute;
+  top: 242px;
+  left: 5px;
+  .btn{
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    border-radius: 2px !important;
+  }
+
+}
+
+.banner-button:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
+  top: 100%;
+  border-width: 5px 5px;
+  border-style: solid;
+  border-color: darken(@brand-primary, 15%) darken(@brand-primary, 15%) transparent transparent;
+  z-index: -1;
+}
+.banner-video{
+  position:absolute;
+  top:220px;
+  left:150px;
+}
 .font-number {
   font-family: @font-family-dezbo;
   font-weight: normal !important;
@@ -156,7 +205,7 @@ h3.reward-heading {
       display: block;
       margin-bottom: 20px;
       background-color: white;
-      height: 360px;  // same height as "Please note" box
+      height: 360px; // same height as "Please note" box
       /*padding:0 !important;*/
 
       .donor-box {
@@ -181,7 +230,7 @@ h3.reward-heading {
           border-bottom: 1px solid @gray-lighter;
           font-size: 22px;
           height: 40px;
-         }
+        }
 
         .prizes {
           margin-bottom: 10px;
@@ -198,7 +247,7 @@ h3.reward-heading {
         }
 
         .donor-custom-title-amount-line {
-           border: none;
+          border: none;
         }
 
         .custom-prizes {
@@ -241,6 +290,6 @@ h3.reward-heading {
   padding-bottom: 10px;
 }
 
-.text-capitalize{
+.text-capitalize {
   text-transform: capitalize;
 }
