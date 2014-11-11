@@ -7,36 +7,54 @@ block content
     include pharrell-banner
     .container
       h3.product-heading PHARRELL'S TALL HAT
-      .pharrell-product-bar
+      .bidding-product-box
         .row
           .col-md-6
             img.img-responsive(src='../img/product/pharrell-hat.jpg', width='100%', height='auto')
-            p
+            p.product-text.italic
               | Pharrell Williams has been called many things: Musician. Producer. Entrepreneur. And
               | above all, wearer of hats. Big ones, small ones, but always unique ones. Here’s a
               | collection of some chapeaux he has worn in the past—and a few he plans to wear in
               | the near future. So take your pick and get "Happy" with this collection of tip-top
               | toppers.
           .col-md-6
-            .pharrell-bid-columns.text-center
+            .bidding-columns.text-center
               h3.product-heading CURRENT BID:
               h4.font-number $655
-            .pharrell-bid-columns.text-center
+            .bidding-columns.text-center
               h3.product-heading BIDS:
               h4.font-number 4
-            .pharrell-bid-columns.text-center
+            .bidding-columns.text-center
               h3.product-heading ESTIMATED VALUE:
               h4.font-number $2,000
+            .bidding-countdown.text-uppercase
+              timer(start-time="1401000000101")
+                span {{days}} days&nbsp;
+                span {{hours}} hours&nbsp;
+                span {{minutes}} minutes&nbsp;
+                span {{seconds}} seconds&nbsp; left
+            .bidding-radio
+              label
+                input(type="radio" name="biddingRadio" checked)
+                | Custom amount: minimum bid at $100
+              .div.custom-donation-line.centered
+                .custom-donation-sign.font-number $
+                  input.custom-donation-input(type="number" step="any" min="100" value="100.00")
+              label
+                input(type="radio" name="biddingRadio")
+                | Or bid at Estimated Market Value ($2,000)
+            button.btn.btn-warning PLACE BID
       .row
         .divider
           i.fa.fa-star.yellow-bidding
       .row
-        h2.text-center ABOUT FROM ONE HAND TO ANOTHER
+        h3.text-center.text-uppercase.htitle ABOUT FROM ONE HAND TO ANOTHER
         .col-md-2.col-md-offset-2.pull-left
           a(href='http://fohta.org/')
             img(src='img/fohta-logo.png')
         .col-md-6.col-md-offset-1
-          h4.chairty-v-middle
-            | From One Hand To AnOTHER (FOHTA) is a 501 C3 Not for Profit Foundation established by Pharrell
-            | Williams to provide educational S.T.E.A.M.M. (Science, Technology, Engineering, Arts, Mathematics,
-            | and Motivation) related tools needed for the future success of children.
+          p.charity-v-middle.bodytext-small
+            | From One Hand To AnOTHER (FOHTA) is a 501 C3 Not for Profit Foundation established by
+            | Pharrell Williams to provide educational S.T.E.A.M.M. (Science, Technology, Engineering,
+            | Arts, Mathematics, and Motivation) related tools needed for the future success of
+            | children.

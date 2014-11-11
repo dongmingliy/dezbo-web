@@ -88,7 +88,6 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -139,8 +138,7 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -149,7 +147,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -180,12 +177,10 @@ th {
   padding: 0;
 }
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -1555,7 +1550,6 @@ label {
   font-weight: bold;
 }
 input[type="search"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -5380,7 +5374,7 @@ fieldset[disabled] .btn-yahoo.active {
   font-family: Georgia, 'Old Standard TT', serif;
   font-weight: normal !important;
 }
-.chairty-v-middle {
+.charity-v-middle {
   display: table-cell;
   vertical-align: middle;
   float: none;
@@ -5444,7 +5438,7 @@ h5.reward-heading-small {
   font-weight: bold;
   text-transform: uppercase;
 }
-p.reward-text {
+p.product-text {
   font-family: Georgia;
   font-size: 16px;
 }
@@ -5551,11 +5545,20 @@ h3.product-heading {
 .text-capitalize {
   text-transform: capitalize;
 }
-.pharrell-product-bar {
+.bidding-product-box {
   border-top: 8px solid #ffbc1b;
 }
-.pharrell-bid-columns {
+.bidding-product-box .bidding-columns {
   width: 32%;
   margin: 0 auto;
   display: inline-block;
+}
+.bidding-product-box .bidding-countdown {
+  background-color: #6E6E6E;
+  color: white;
+  text-align: center;
+  border: 1px solid #4d4d4d;
+}
+.bidding-product-box .bidding-radio {
+  border-bottom: 3px solid #b3b3b3;
 }
