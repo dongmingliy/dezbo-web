@@ -5384,7 +5384,7 @@ p.reward-text {
   font-family: Georgia;
   font-size: 16px;
 }
-h3.reward-heading {
+h3.product-heading {
   font-weight: bold;
 }
 /* Donor box styles */
@@ -5486,4 +5486,12 @@ h3.reward-heading {
 }
 .text-capitalize {
   text-transform: capitalize;
+}
+.pharrell-product-bar {
+  border-top: 8px solid #ffbc1b;
+}
+.pharrell-bid-columns {
+  width: 32%;
+  margin: 0 auto;
+  display: inline-block;
 }
