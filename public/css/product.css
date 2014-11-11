@@ -5371,7 +5371,7 @@ fieldset[disabled] .btn-yahoo.active {
   -o-transform: skew(12deg);
 }
 .font-number {
-  font-family: Georgia, 'Old Standard TT', serif;
+  font-family: Georgia, 'Old Standard TT', serif !important;
   font-weight: normal !important;
 }
 .charity-v-middle {
@@ -5553,12 +5553,32 @@ h3.product-heading {
   margin: 0 auto;
   display: inline-block;
 }
+.bidding-product-box .bidding-columns h5.bidding-column-heading {
+  font-size: 14px;
+  min-height: 30px;
+  margin-bottom: 0px !important;
+}
+.bidding-product-box .bidding-columns p.bidding-column-number {
+  font-size: 40px;
+}
 .bidding-product-box .bidding-countdown {
   background-color: #6E6E6E;
   color: white;
   text-align: center;
   border: 1px solid #4d4d4d;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 90%;
 }
 .bidding-product-box .bidding-radio {
   border-bottom: 3px solid #b3b3b3;
+}
+.bidding-product-box .bidding-radio input.bidding-radio-button {
+  font-size: 16px;
+}
+.bidding-product-box .bidding-button {
+  width: 280px;
+  height: 66px;
+  font-size: 28px;
+  float: right;
 }

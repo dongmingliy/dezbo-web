@@ -19,15 +19,18 @@ block content
               | toppers.
           .col-md-6
             .bidding-columns.text-center
-              h3.product-heading CURRENT BID:
-              h4.font-number $655
+              h5.bidding-column-heading
+                b CURRENT BID:
+                br
+                | (by acharm4all)
+              p.bidding-column-number.font-number $655
             .bidding-columns.text-center
-              h3.product-heading BIDS:
-              h4.font-number 4
+              h5.bidding-column-heading.bold BIDS:
+              p.bidding-column-number.font-number 4
             .bidding-columns.text-center
-              h3.product-heading ESTIMATED VALUE:
-              h4.font-number $2,000
-            .bidding-countdown.text-uppercase
+              h5.bidding-column-heading.bold ESTIMATED VALUE:
+              p.bidding-column-number.font-number $2,000
+            .bidding-countdown.text-uppercase.centered
               timer(start-time="1401000000101")
                 span {{days}} days&nbsp;
                 span {{hours}} hours&nbsp;
@@ -43,7 +46,7 @@ block content
               label
                 input(type="radio" name="biddingRadio")
                 | Or bid at Estimated Market Value ($2,000)
-            button.btn.btn-warning PLACE BID
+            button.btn.btn-warning.bidding-button PLACE BID
       .row
         .divider
           i.fa.fa-star.yellow-bidding

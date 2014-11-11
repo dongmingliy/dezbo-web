@@ -125,7 +125,7 @@
 }
 
 .font-number {
-  font-family: @font-family-dezbo;
+  font-family: @font-family-dezbo !important;
   font-weight: normal !important;
 }
 
@@ -348,6 +348,16 @@ h3.product-heading {
     width: 32%;
     margin: 0 auto;
     display: inline-block;
+
+    h5.bidding-column-heading {
+      font-size: 14px;
+      min-height: 30px; // make all columns the same height
+      margin-bottom: 0px !important;
+    }
+
+    p.bidding-column-number {
+      font-size: 40px;
+    }
   }
 
   .bidding-countdown {
@@ -355,9 +365,23 @@ h3.product-heading {
     color: white;
     text-align: center;
     border: 1px solid #4d4d4d;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 90%;
   }
 
   .bidding-radio {
     border-bottom: 3px solid #b3b3b3;
+
+    input.bidding-radio-button {
+      font-size: 16px;
+    }
+  }
+
+  .bidding-button {
+    width: 280px;
+    height: 66px;
+    font-size: 28px;
+    float: right;
   }
 }
