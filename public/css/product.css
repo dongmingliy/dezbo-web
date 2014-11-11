@@ -88,6 +88,7 @@ figure {
   margin: 1em 40px;
 }
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -138,7 +139,8 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -147,6 +149,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -177,10 +180,12 @@ th {
   padding: 0;
 }
 * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -1550,6 +1555,7 @@ label {
   font-weight: bold;
 }
 input[type="search"] {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -5245,6 +5251,17 @@ fieldset[disabled] .btn-yahoo.active {
   padding-left: 0;
   padding-right: 0;
 }
+.bg-pharrell-banner {
+  background-image: url('../img/product/pharrell-banner.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 396px;
+  background-color: #ffffff;
+}
+.bg-pharrell-banner .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
 .banner-img {
   max-width: 100%;
 }
@@ -5287,15 +5304,7 @@ fieldset[disabled] .btn-yahoo.active {
   -moz-transform: skew(-12deg);
   -o-transform: skew(-12deg);
 }
-.banner-button {
-  position: absolute;
-  top: 242px;
-  left: 5px;
-}
-.banner-button .btn {
-  border-radius: 2px !important;
-}
-.banner-button:before {
+.banner-button-helper {
   content: ' ';
   position: absolute;
   width: 0;
@@ -5304,8 +5313,47 @@ fieldset[disabled] .btn-yahoo.active {
   top: 100%;
   border-width: 5px 5px;
   border-style: solid;
-  border-color: #2a6496 #2a6496 transparent transparent;
   z-index: -1;
+}
+.banner-button-blue {
+  position: absolute;
+  top: 242px;
+  left: 5px;
+}
+.banner-button-blue .btn {
+  border-radius: 2px !important;
+}
+.banner-button-blue:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
+  top: 100%;
+  border-width: 5px 5px;
+  border-style: solid;
+  z-index: -1;
+  border-color: #2a6496 #2a6496 transparent transparent;
+}
+.banner-button-yellow {
+  position: absolute;
+  top: 242px;
+  left: 5px;
+}
+.banner-button-yellow .btn {
+  border-radius: 2px !important;
+}
+.banner-button-yellow:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
+  top: 100%;
+  border-width: 5px 5px;
+  border-style: solid;
+  z-index: -1;
+  border-color: #ce9100 #ce9100 transparent transparent;
 }
 .banner-video {
   position: absolute;
@@ -5344,7 +5392,7 @@ fieldset[disabled] .btn-yahoo.active {
   line-height: 30px !important;
   font-size: 20px !important;
 }
-/* liScroll styles */
+/* ---------------liScroll styles----------- */
 .tickercontainer {
   /* the outer div with the black border */
   border: 2px solid #e8e4df;

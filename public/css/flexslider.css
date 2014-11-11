@@ -7,7 +7,7 @@
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
  * Contributing author: Ville Ristimäki (@villeristi)
- * 
+ *
  */
 /* ====================================================================================================================
  * FONT-FACE
@@ -48,7 +48,6 @@
   -webkit-backface-visibility: hidden;
 }
 .flexslider .slides img {
-  width: 100%;
   display: block;
 }
 .flexslider .slides:after {

@@ -1,73 +1,9 @@
 block content
   .container-fluid(style='padding-left:0;padding-right:0')
     #sliderbg
-      .container
-        div.flexslider
-          ul.slides
-            li
-              div.slider-caption
-                div
-                  h1.white
-                    | Ellen Degeneres
-                    br
-                  h3.white
-                    | Supporting
-                    br
-                    | The Gentle Barn
-                    br
-                  a(href='ellen')
-                    button.btn.btn-primary.btn-lg
-                      | Learn more
-              img(src='/img/home1.png', height='600')
-            li
-              div.slider-caption
-                h1.white
-                  | Pharrell Williams
-                  br
-                h3.white
-                  | Supporting
-                  br
-                  | From One Hand To Another
-                  br
-                button.btn.btn-primary.btn-lg
-                  | Learn more
-              img(src='img/home2.png', height='600')
-            li
-              div.slider-caption
-                h1.white
-                  | Kristen Bell
-                  br
-                h3.white
-                  | Supporting
-                  br
-                  | PETA
-                  br
-                button.btn.btn-primary.btn-lg
-                  | Learn more
-              img(src='img/home3.png', height='600')
-            li
-              div.slider-caption
-                h1.white
-                  | Snoop
-                  br
-                h3.white
-                  | Supporting
-                  br
-                  | Youth Football League Foundation
-                  br
-                button.btn.btn-primary.btn-lg
-                  | Learn more
-              img(src='img/home4.png', height='600')
-            li
-              div.slider-caption
-                h1.white
-                  | Lady Gaga
-                  br
-                h3.white
-                  | Supporting
-                  br
-                  | Born This Way Foundation
-                  br
-                button.btn.btn-primary.btn-lg
-                  | Learn more
-              img(src='img/home5.png', height='600')
+      div.flexslider
+        ul.slides
+          li
+            include ../celeb/ellen-banner
+          li
+            include ../celeb/pharrell-banner

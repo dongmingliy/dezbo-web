@@ -35,7 +35,6 @@
   position: relative;
 }
 .flexslider .slides img {
-  width: 100%;
   display: block;
 }
 .flex-pauseplay span {
