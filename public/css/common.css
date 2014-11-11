@@ -5335,10 +5335,21 @@ li.divider {
 ul.nav li:hover {
   background-color: #f2f2f2;
 }
-.navbar-default {
-  background-color: white !important;
-  min-height: 80px !important;
+.navbar-interior {
+  background: white;
   padding-top: 10px;
+  min-height: 80px;
+}
+.navbar-default {
+  background-color: transparent !important;
+  border-width: 0 0 6px 0 !important;
+  -webkit-border-image: -webkit-linear-gradient(#dbdbdb, transparent) 100 1% !important;
+  /* For Safari 5.1 to 6.0 */
+  /* For Firefox 3.6 to 15 */
+  /* For Opera 11.1 to 12.0 */
+  -o-border-image: linear-gradient(#dbdbdb, transparent) 100 1% !important;
+     border-image: linear-gradient(#dbdbdb, transparent) 100 1% !important;
+  /* Standard syntax */
 }
 .navbar-default .navbar-nav {
   padding-top: 7px;
@@ -5364,7 +5375,7 @@ ul.nav li:hover {
 .navbar-default .navbar-right .signup:before {
   content: " ";
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   top: 0px;
   left: 0px;
   right: 0px;

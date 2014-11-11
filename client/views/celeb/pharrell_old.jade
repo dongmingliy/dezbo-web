@@ -1,0 +1,67 @@
+extends ../layouts/layout
+block content
+  section.wrapper
+    h1.text-center
+      span.campaignHeading Pharrell Williams&nbsp;
+      span Supporting
+      a(href='http://fohta.org/') &nbsp;From One Hand To AnOTHER
+    .container
+      .row
+        .col-md-4
+          div.face-wrapper.text-center
+            img.img-circle.face(src='img/game/Music/pharrell.png', width='70', height='70')
+          br
+          .text-center
+            | Pharrell Williams has been called many things: Musician. Producer. Entrepreneur. And above all, wearer of hats. Big ones, small ones, but always unique ones. Here’s a collection of some chapeaux he has worn in the past—and a few he plans to wear in the near future. So take your pick and get "Happy" with this collection of tip-top toppers.
+        .col-md-4
+          .text-center
+            iframe(width='320', height='240', src='//www.youtube.com/embed/3475bELvzio', frameborder='0', allowfullscreen='')
+        .col-md-4
+          .text-center
+            a(href='http://fohta.org/')
+              img(src='http://fohta.org/blog/wp-content/uploads/2014/02/fohta-logo-new.png')
+            br
+            br
+            p
+              | From One Hand To AnOTHER (FOHTA) is a 501 C3 Not for Profit Foundation established by Pharrell Williams to provide educational S.T.E.A.M.M. (Science, Technology, Engineering, Arts, Mathematics, and Motivation) related tools needed for the future success of children.
+
+
+    .divider
+      i.fa.fa-leaf
+    .container
+      div.row
+        div.col-md-6
+
+    .container(ng-init="qty=1;cost=5;")
+      .row
+        .col-sm-6.col-md-6
+          img.img-responsive(src='img/game/Music/Pharrellhat.png', width='500')
+        .col-sm-6.col-md-6
+          // product detail
+          div
+            h2 Pharrell William's Hat
+            div
+              div Current Bid:
+                span.bidprice &nbsp;$655
+                div by
+                  a acharm4all
+            div Time left:
+              timer.brand1(start-time="1412099900101")
+                | {{days}} d - {{hours}}h:{{minutes}}m:{{seconds}}s
+            br
+            div.input-group
+              input.form-control(style='max-width:400px;')
+              span.input-group-btn
+                button.btn.btn-lg.btn-primary(type='button' placeholder='Enter your bid') Place Bid
+          .desc
+            h3.page-header DESCRIPTION
+            p
+              | Pharrell Williams has been called many things: Musician. Producer. Entrepreneur. And above all, wearer of hats. Big ones, small ones, but always unique ones. Here’s a collection of some chapeaux he has worn in the past—and a few he plans to wear in the near future. So take your pick and get "Happy" with this collection of tip-top toppers.
+            .socialApis
+              .api
+                .fb-like(data-href='https://www.facebook.com/stepofweb', data-layout='button_count', data-action='like', data-show-faces='false', data-share='false')
+              .api
+                a.twitter-share-button(href='https://twitter.com/share', data-lang='en') Tweet
+  script#twitter-wjs(src='http://platform.twitter.com/widgets.js')
+  script
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
