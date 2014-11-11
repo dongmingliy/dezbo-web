@@ -66,13 +66,13 @@ script.
         touch: true,
         controlNav:false,
         manualControls: ".flex-control-nav li",
-        after: function (slider) {
+        before: function (slider) {
           var current = slider.currentSlide;
           $('#sliderbg').removeClass();
           if(current === 0){
-            $('#sliderbg').addClass("bg-gray-lighter");
-          } else if(current === 1){
             $('#sliderbg').addClass("bg-white");
+          } else if(current === 1){
+            $('#sliderbg').addClass("bg-gray-raffle");
           } else if(current === 2){
             $('#sliderbg').addClass("bg-gray-light");
           } else if(current === 3){
@@ -87,5 +87,5 @@ script.
 
 script.
   jQuery(window).load(function(){
-    jQuery('ul.paymentTicker').liScroll({travelocity: 0.05});
+    jQuery('ul.paymentTicker').liScroll();
   });

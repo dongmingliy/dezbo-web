@@ -7066,6 +7066,9 @@ button.close {
 .bg-gray-verylight {
   background-color: #f2f2f2;
 }
+.bg-gray-raffle {
+  background-color: #eee9e3;
+}
 .pink {
   color: #ff748a;
 }
@@ -7625,9 +7628,6 @@ a.noDecoration:hover {
 .flexslider .slides > li {
   display: none;
   -webkit-backface-visibility: hidden;
-}
-.flexslider .slides img {
-  display: block;
 }
 .flexslider .slides:after {
   content: "\f137";
@@ -8265,9 +8265,6 @@ ul li {
   display: none;
   /*-webkit-backface-visibility:hidden;*/
   position: relative;
-}
-.flexslider .slides img {
-  display: block;
 }
 .flex-pauseplay span {
   text-transform: capitalize;

@@ -34,9 +34,6 @@
   /*-webkit-backface-visibility:hidden;*/
   position: relative;
 }
-.flexslider .slides img {
-  display: block;
-}
 .flex-pauseplay span {
   text-transform: capitalize;
 }

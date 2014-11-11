@@ -5145,6 +5145,9 @@ fieldset[disabled] .btn-yahoo.active {
 .bg-gray-verylight {
   background-color: #f2f2f2;
 }
+.bg-gray-raffle {
+  background-color: #eee9e3;
+}
 .pink {
   color: #ff748a;
 }

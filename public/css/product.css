@@ -5144,6 +5144,9 @@ fieldset[disabled] .btn-yahoo.active {
 .bg-gray-verylight {
   background-color: #f2f2f2;
 }
+.bg-gray-raffle {
+  background-color: #eee9e3;
+}
 .pink {
   color: #ff748a;
 }
@@ -5358,7 +5361,20 @@ fieldset[disabled] .btn-yahoo.active {
 .banner-video {
   position: absolute;
   top: 220px;
-  left: 150px;
+  left: 130px;
+}
+.banner-video .btn {
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  box-shadow: none;
+}
+.banner-video .btn:hover {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+.banner-video img {
+  -webkit-transform: skew(12deg);
+  -moz-transform: skew(12deg);
+  -o-transform: skew(12deg);
 }
 .font-number {
   font-family: Georgia, 'Old Standard TT', serif;

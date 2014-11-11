@@ -47,9 +47,6 @@
   display: none;
   -webkit-backface-visibility: hidden;
 }
-.flexslider .slides img {
-  display: block;
-}
 .flexslider .slides:after {
   content: "\f137";
   font-size: 30px;
