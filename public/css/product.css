@@ -5547,34 +5547,71 @@ h3.product-heading {
 }
 .bidding-product-box {
   border-top: 8px solid #ffbc1b;
+  margin-top: 20px;
 }
-.bidding-product-box .bidding-columns {
+.bidding-product-box .bidding-info-box {
+  height: 333px;
+  border-bottom: 3px solid #b3b3b3;
+  margin-bottom: 20px;
+}
+.bidding-product-box .bidding-info-box .bidding-columns-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column {
   width: 32%;
   margin: 0 auto;
   display: inline-block;
 }
-.bidding-product-box .bidding-columns h5.bidding-column-heading {
+.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column h5.bidding-column-heading {
   font-size: 14px;
   min-height: 30px;
-  margin-bottom: 0px !important;
+  margin: 0px !important;
 }
-.bidding-product-box .bidding-columns p.bidding-column-number {
+.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column p.bidding-column-number {
   font-size: 40px;
+  margin: 0px !important;
 }
-.bidding-product-box .bidding-countdown {
+.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column-center {
+  border-width: 0 2px 0 2px;
+  border-style: solid;
+  border-color: #cccccc;
+}
+.bidding-product-box .bidding-info-box .bidding-countdown {
   background-color: #6E6E6E;
   color: white;
   text-align: center;
   border: 1px solid #4d4d4d;
   padding-top: 4px;
   padding-bottom: 4px;
-  width: 90%;
+  margin-bottom: 20px;
 }
-.bidding-product-box .bidding-radio {
-  border-bottom: 3px solid #b3b3b3;
-}
-.bidding-product-box .bidding-radio input.bidding-radio-button {
+.bidding-product-box .bidding-info-box .bidding-radio label.bidding-radio-label {
   font-size: 16px;
+  font-weight: normal !important;
+  margin-bottom: 10px;
+}
+.bidding-product-box .bidding-info-box .bidding-radio label.bidding-radio-label input.bidding-radio-button {
+  margin-right: 5px;
+}
+.bidding-product-box .bidding-info-box .custom-bidding-line {
+  border: 2px solid #e8e4df;
+  font-size: 24px;
+  margin-bottom: 20px;
+  width: 50%;
+  min-width: 256px;
+}
+.bidding-product-box .bidding-info-box .custom-bidding-sign {
+  text-align: left;
+  display: inline-block;
+  color: #666666;
+}
+.bidding-product-box .bidding-info-box .custom-bidding-input {
+  border: 0;
+  display: inline-block;
+  outline-width: 0;
+  text-align: center;
+  width: 90%;
 }
 .bidding-product-box .bidding-button {
   width: 280px;

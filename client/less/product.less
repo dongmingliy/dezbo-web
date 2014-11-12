@@ -343,38 +343,84 @@ h3.product-heading {
 
 .bidding-product-box {
   border-top: 8px solid @brand-warning;
+  margin-top: 20px;
 
-  .bidding-columns {
-    width: 32%;
-    margin: 0 auto;
-    display: inline-block;
-
-    h5.bidding-column-heading {
-      font-size: 14px;
-      min-height: 30px; // make all columns the same height
-      margin-bottom: 0px !important;
-    }
-
-    p.bidding-column-number {
-      font-size: 40px;
-    }
-  }
-
-  .bidding-countdown {
-    background-color: #6E6E6E;
-    color: white;
-    text-align: center;
-    border: 1px solid #4d4d4d;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    width: 90%;
-  }
-
-  .bidding-radio {
+  .bidding-info-box {
+    height: 333px;
     border-bottom: 3px solid #b3b3b3;
+    margin-bottom: 20px;
 
-    input.bidding-radio-button {
-      font-size: 16px;
+    .bidding-columns-container
+    {
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      .bidding-column {
+        width: 32%;
+        margin: 0 auto;
+        display: inline-block;
+
+        h5.bidding-column-heading {
+          font-size: 14px;
+          min-height: 30px; // make all columns the same height
+          margin: 0px !important;
+        }
+
+        p.bidding-column-number {
+          font-size: 40px;
+          margin: 0px !important;
+        }
+      }
+
+      .bidding-column-center {
+        border-width: 0 2px 0 2px;
+        border-style: solid;
+        border-color: #cccccc;
+      }
+    }
+
+    .bidding-countdown {
+      background-color: #6E6E6E;
+      color: white;
+      text-align: center;
+      border: 1px solid #4d4d4d;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      margin-bottom: 20px;
+    }
+
+    .bidding-radio {
+      label.bidding-radio-label {
+        font-size: 16px;
+        font-weight: normal !important;
+        margin-bottom: 10px;
+
+        input.bidding-radio-button {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .custom-bidding-line {
+      border: 2px solid @grey-border;
+      font-size: 24px;
+      margin-bottom: 20px;
+      width: 50%;
+      min-width: 256px;
+    }
+
+    .custom-bidding-sign {
+      text-align: left;
+      display: inline-block;
+      color: @grey-bodytext;
+    }
+
+    .custom-bidding-input {
+      border: 0;
+      display: inline-block;
+      outline-width: 0;
+      text-align: center;
+      width: 90%;
     }
   }
 
