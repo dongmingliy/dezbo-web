@@ -13,6 +13,9 @@ module.exports.controller = function (app) {
     });
   });
 
+  app.get('/home/youtube', function (req, res) {
+    res.render('home/youtube');
+  });
   app.get('/comingsoon', function (req, res) {
     res.render('comingsoon/main', {
       url: req.url

@@ -1,9 +1,7 @@
 extends ../layouts/layout
 block content
   section.wrapper(ng-app='dezboapp' ng-controller='productCtrl')
-    h3.text-center.text-uppercase.htitle Ellen Degeneres
-    p.bodytext.text-center Supporting&nbsp;
-      a.grey-link(href='http://www.gentlebarn.org') The Gentle Barn
+    include ellen-title
     include ellen-banner
     .container
       .row(style='margin-top: 20px;')

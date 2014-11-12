@@ -1,9 +1,7 @@
 extends ../layouts/layout
 block content
   section.wrapper(ng-app='dezboapp' ng-controller='productCtrl')
-    h3.text-center.text-uppercase.htitle Pharrell Williams
-    p.bodytext.text-center Supporting&nbsp;
-      a.grey-link(href='http://fohta.org/') From One Hand to AnOther
+    include pharrell-title
     include pharrell-banner
     .container
       h3.product-heading PHARRELL'S TALL HAT
