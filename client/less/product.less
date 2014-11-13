@@ -367,15 +367,20 @@ h3.product-heading {
         margin: 0 auto;
         display: inline-block;
 
-        h5.bidding-column-heading {
+        .bidding-column-heading {
           font-size: 14px;
-          min-height: 30px; // make all columns the same height
+          min-height: 40px; // make all columns the same height
           margin: 0px !important;
+
+          a.highest-bidder {
+            color: @grey-bodytext;
+          }
         }
 
-        p.bidding-column-number {
-          font-size: 40px;
+        .bidding-column-number {
+          font-size: 40px !important;
           margin: 0px !important;
+          color: @grey-bodytext;
         }
       }
 
