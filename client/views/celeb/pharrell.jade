@@ -19,14 +19,13 @@ block content
             .bidding-info-box
               .bidding-columns-container
                 .bidding-column.text-center
-                  h5.bidding-column-heading
-                    b CURRENT BID:
-                    br
-                    | (by acharm4all)
+                  .bidding-column-heading
+                    .bold CURRENT BID:
+                    a.highest-bidder(href='#') (by acharm4all)
                   p.bidding-column-number.font-number $655
                 .bidding-column.text-center.bidding-column-center
                   h5.bidding-column-heading.bold BIDS:
-                  p.bidding-column-number.font-number 4
+                  a.bidding-column-number.font-number(href='#') 4
                 .bidding-column.text-center
                   h5.bidding-column-heading.bold ESTIMATED VALUE:
                   p.bidding-column-number.font-number $2,000
