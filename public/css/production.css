@@ -2444,9 +2444,7 @@ fieldset[disabled] .btn-yahoo.active {
   position: relative;
   border: 0;
   margin: 0;
-}
-.timeline-item {
-  border: 1px solid #e8e4df;
+  background-color: #f4f5f7;
 }
 .blog h2 a {
   text-decoration: none;
@@ -2459,29 +2457,9 @@ fieldset[disabled] .btn-yahoo.active {
   margin-bottom: 60px;
   padding-bottom: 80px;
 }
-.blog .item p.description {
-  font-family: Georgia, 'Old Standard TT', serif;
-  font-style: italic;
-}
-.blog .item .item-btn {
-  display: block;
-  width: 60%;
-  max-width: 180px;
-}
 .blog .item-title {
   margin-bottom: 20px;
   display: block;
-}
-.blog .item-title a {
-  color: #666666;
-}
-.blog .item-title a.celebrity-name {
-  font-weight: bold;
-  font-size: 24px;
-  text-transform: uppercase;
-}
-.blog .item-title a.charity-name {
-  font-family: Georgia, 'Old Standard TT', serif;
 }
 .blog .item-title .label {
   font-size: 10px;
@@ -2635,30 +2613,18 @@ fieldset[disabled] .btn-yahoo.active {
 }
 .blog-timeline .timeline-item .item-date {
   position: absolute;
-  color: #fff;
+  background: #e5e5e5;
+  color: #333;
   font-size: 20px;
   text-align: center;
   top: 0;
   padding-top: 6px;
   border-radius: 6px;
 }
-.blog-timeline .timeline-item .bidding-date {
-  background: #ffbc1b;
-}
-.blog-timeline .timeline-item .bidding-date:after {
-  background: #ffbc1b;
-  border-right: 1px solid #ffbc1b;
-  border-top: 1px solid #ffbc1b;
-}
-.blog-timeline .timeline-item .raffle-date {
-  background: #428bca;
-}
-.blog-timeline .timeline-item .raffle-date:after {
-  background: #428bca;
-  border-right: 1px solid #428bca;
-  border-top: 1px solid #428bca;
-}
 .blog-timeline .timeline-item.pull-right .item-date:after {
+  background: #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
   content: "";
   display: block;
   height: 14px;
@@ -2672,6 +2638,9 @@ fieldset[disabled] .btn-yahoo.active {
   transform: rotate(45deg);
 }
 .blog-timeline .timeline-item.pull-left .item-date:after {
+  background: #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
   content: "";
   display: block;
   height: 14px;
@@ -7496,6 +7465,30 @@ a.noDecoration:hover {
 .centered {
   margin: 0 auto;
 }
+.winners-box {
+  border-width: 3px;
+  border-color: #ffffff;
+  border-style: solid;
+  max-width: 234px;
+  max-height: 234px;
+  display: block;
+  margin-bottom: 20px;
+}
+@media (max-width: 1024px) {
+  .hide-height-sm {
+    height: 0 !important;
+  }
+}
+@media (max-width: 1024px) {
+  .hide-bg-sm {
+    background: none !important;
+  }
+}
+@media (max-width: 1024px) {
+  .hide-content-sm .banner-text-width:before {
+    content: none !important;
+  }
+}
 .comingSection {
   padding-top: 100px;
   height: 600px;
@@ -8245,15 +8238,6 @@ ul li {
   background-color: #e6e6e6;
   padding-top: 20px;
   padding-bottom: 30px;
-}
-.winners-box {
-  border-width: 3px;
-  border-color: #ffffff;
-  border-style: solid;
-  max-width: 234px;
-  max-height: 234px;
-  display: block;
-  margin-bottom: 20px;
 }
 .slider-caption {
   background-color: transparent;

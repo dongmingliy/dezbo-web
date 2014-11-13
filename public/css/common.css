@@ -5544,3 +5544,27 @@ a.noDecoration:hover {
 .centered {
   margin: 0 auto;
 }
+.winners-box {
+  border-width: 3px;
+  border-color: #ffffff;
+  border-style: solid;
+  max-width: 234px;
+  max-height: 234px;
+  display: block;
+  margin-bottom: 20px;
+}
+@media (max-width: 1024px) {
+  .hide-height-sm {
+    height: 0 !important;
+  }
+}
+@media (max-width: 1024px) {
+  .hide-bg-sm {
+    background: none !important;
+  }
+}
+@media (max-width: 1024px) {
+  .hide-content-sm .banner-text-width:before {
+    content: none !important;
+  }
+}
