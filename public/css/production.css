@@ -7480,6 +7480,21 @@ a.noDecoration:hover {
   display: block;
   margin-bottom: 20px;
 }
+@media (max-width: 1024px) {
+  .hide-height-sm {
+    height: 0 !important;
+  }
+}
+@media (max-width: 1024px) {
+  .hide-bg-sm {
+    background: none !important;
+  }
+}
+@media (max-width: 1024px) {
+  .hide-content-sm .banner-text-width:before {
+    content: none !important;
+  }
+}
 .comingSection {
   padding-top: 100px;
   height: 600px;

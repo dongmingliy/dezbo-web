@@ -5247,7 +5247,7 @@ fieldset[disabled] .btn-yahoo.active {
   background-image: url('../img/product/ellen-banner-ellen.png');
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 396px;
+  min-height: 400px !important;
   background-color: #eee9e3;
 }
 .bg-ellen-banner .container-fluid {
@@ -5257,8 +5257,8 @@ fieldset[disabled] .btn-yahoo.active {
 .bg-pharrell-banner {
   background-image: url('../img/product/pharrell-banner.png');
   background-repeat: no-repeat;
-  background-position: center;
-  min-height: 396px;
+  background-position: right -201px top 20px;
+  min-height: 423px !important;
   background-color: #ffffff;
 }
 .bg-pharrell-banner .container-fluid {
@@ -5267,6 +5267,7 @@ fieldset[disabled] .btn-yahoo.active {
 }
 .banner-img {
   max-width: 100%;
+  min-height: 280px;
 }
 .banner-text-width {
   max-width: 500px;
@@ -5301,6 +5302,11 @@ fieldset[disabled] .btn-yahoo.active {
   border-left: 0 solid transparent;
   position: absolute;
   bottom: 0px;
+}
+@media (max-width: 1024px) {
+  .banner-text-width:before {
+    content: none !important;
+  }
 }
 .skew {
   -webkit-transform: skew(-12deg);
