@@ -5268,12 +5268,22 @@ fieldset[disabled] .btn-yahoo.active {
   width: 60%;
   max-width: 180px;
 }
+.blog .item .bidding-item {
+  background: #ffbc1b;
+}
+.blog .item .raffle-item {
+  background: #428bca;
+}
+.blog .item .description-box {
+  padding: 20px;
+}
 .blog .item-title {
-  margin-bottom: 20px;
   display: block;
+  padding: 20px 20px 5px 20px;
+  border-radius: 5px;
 }
 .blog .item-title a {
-  color: #666666;
+  color: white;
 }
 .blog .item-title a.celebrity-name {
   font-weight: bold;
@@ -5421,7 +5431,6 @@ fieldset[disabled] .btn-yahoo.active {
 }
 .blog-timeline .timeline-item {
   margin: 20px 10px 10px 10px;
-  padding: 20px;
   position: relative;
   width: 43%;
   float: left;
