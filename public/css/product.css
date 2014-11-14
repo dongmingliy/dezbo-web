@@ -5588,6 +5588,9 @@ h3.product-heading {
   margin: 0px !important;
   color: #666666;
 }
+.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column a {
+  text-decoration: underline;
+}
 .bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column-center {
   border-width: 0 2px 0 2px;
   border-style: solid;
