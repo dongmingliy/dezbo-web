@@ -2526,7 +2526,6 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -2577,8 +2576,7 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -2587,7 +2585,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -2618,12 +2615,10 @@ th {
   padding: 0;
 }
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -3995,7 +3990,6 @@ label {
   font-weight: bold;
 }
 input[type="search"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -6866,21 +6860,17 @@ button.close {
   max-width: 180px;
 }
 .blog .item .bidding-item {
-  background: #ffbc1b;
+  border-bottom: 3px solid #ffbc1b;
 }
 .blog .item .raffle-item {
-  background: #428bca;
-}
-.blog .item .description-box {
-  padding: 20px;
+  border-bottom: 3px solid #428bca;
 }
 .blog .item-title {
   display: block;
-  padding: 20px 20px 5px 20px;
-  border-radius: 5px;
+  margin-bottom: 20px;
 }
 .blog .item-title a {
-  color: white;
+  color: #666666;
 }
 .blog .item-title a.celebrity-name {
   font-weight: bold;
@@ -7034,6 +7024,7 @@ button.close {
   z-index: 1;
   margin-bottom: 30px;
   background-color: #FFF;
+  padding: 20px;
   border-radius: 6px;
 }
 .blog-timeline .timeline-item.pull-right {
@@ -8141,7 +8132,6 @@ ul li {
   font-size: 16px;
   height: 20px;
   padding: 20px;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .form-signin .form-control:focus {
