@@ -25,7 +25,7 @@ module.exports.controller = function (app) {
 //    if (req.user) {
 //      return res.redirect('/home');
 //    }
-    res.render('home/index', {
+    res.render('comingsoon/main', {
       url: req.url
     });
   });
