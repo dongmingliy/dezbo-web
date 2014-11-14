@@ -1,3 +1,5 @@
+@import "variables";
+
 /** Blog
  **************************************************************** **/
 .blog {
@@ -5,8 +7,13 @@
 	position:relative;
 	border:0;
 	margin:0;
-    background-color: #f4f5f7;
+  //background-color: #f4f5f7;
 }
+
+.timeline-item {
+  border: 1px solid @grey-border;
+}
+
 .blog h2 a {
 	text-decoration:none;
 }
@@ -17,10 +24,35 @@
 	display:block;
 	margin-bottom:60px;
 	padding-bottom:80px;
+
+  p.description {
+    font-family: @font-family-dezbo;
+    font-style: italic;
+  }
+
+  .item-btn {
+    display: block;
+    width: 60%;
+    max-width: 180px;
+  }
 }
 .blog .item-title {
 	margin-bottom:20px;
 	display:block;
+
+  a {
+    color: @grey-bodytext;
+  }
+
+  a.celebrity-name {
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  a.charity-name {
+    font-family: @font-family-dezbo;
+  }
 }
 	.blog .item-title .label {
 		font-size:10px;
@@ -191,8 +223,8 @@
 }
 .blog-timeline .timeline-item .item-date {
 	position:absolute;
-	background: #e5e5e5;
-	color:#333;
+	//background: #e5e5e5;
+	color:#fff;
 	font-size:20px;
 	text-align:center;
 	top:0; padding-top:6px;
@@ -201,10 +233,31 @@
 	   -moz-border-radius: 6px;
 			border-radius: 6px;
 }
+
+.blog-timeline .timeline-item {
+  .bidding-date {
+    background: @brand-warning;
+  }
+  .bidding-date:after {
+    background: @brand-warning;
+    border-right: 1px solid @brand-warning;
+    border-top: 1px solid @brand-warning;
+  }
+
+  .raffle-date {
+    background: @brand-primary;
+  }
+  .raffle-date:after {
+    background: @brand-primary;
+    border-right: 1px solid @brand-primary;
+    border-top: 1px solid @brand-primary;
+  }
+}
+
 .blog-timeline .timeline-item.pull-right .item-date:after {
-	background: #e5e5e5;
-	border-right: 1px solid #e5e5e5;
-	border-top: 1px solid #e5e5e5;
+	//background: #e5e5e5;
+	//border-right: 1px solid #e5e5e5;
+	//border-top: 1px solid #e5e5e5;
 	content: "";
 	display: block;
 	height: 14px;
@@ -219,9 +272,9 @@
 	transform: rotate(45deg);
 }
 .blog-timeline .timeline-item.pull-left .item-date:after {
-	background: #e5e5e5;
-	border-right: 1px solid #e5e5e5;
-	border-top: 1px solid #e5e5e5;
+	//background: #e5e5e5;
+	//border-right: 1px solid #e5e5e5;
+	//border-top: 1px solid #e5e5e5;
 	content: "";
 	display: block;
 	height: 14px;
