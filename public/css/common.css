@@ -5101,25 +5101,25 @@ fieldset[disabled] .btn-yahoo.active {
   color: #ffffff !important;
 }
 .gray-verylight {
-  color: #f2f2f2;
+  color: #f2f2f2 !important;
 }
 .gray-lighter {
-  color: #cccccc;
+  color: #cccccc !important;
 }
 .gray-light {
-  color: #777777;
+  color: #777777 !important;
 }
 .gray {
-  color: #555555;
+  color: #555555 !important;
 }
 .gray-dark {
-  color: #333333;
+  color: #333333 !important;
 }
 .gray-darker {
-  color: #222222;
+  color: #222222 !important;
 }
 .black {
-  color: #111111;
+  color: #111111 !important;
 }
 .bg-white {
   background-color: #ffffff;
@@ -5549,15 +5549,6 @@ a.noDecoration:hover {
 }
 .centered {
   margin: 0 auto;
-}
-.winners-box {
-  border-width: 3px;
-  border-color: #ffffff;
-  border-style: solid;
-  max-width: 234px;
-  max-height: 234px;
-  display: block;
-  margin-bottom: 20px;
 }
 @media (max-width: 1024px) {
   .hide-height-sm {
