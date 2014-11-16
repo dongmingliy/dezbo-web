@@ -5231,7 +5231,7 @@ fieldset[disabled] .btn-yahoo.active {
 .yellow-bidding {
   color: #ffbc1b;
 }
-.grey-bodytext {
+.grey-text {
   color: #666666;
 }
 /**
@@ -5285,6 +5285,9 @@ fieldset[disabled] .btn-yahoo.active {
 }
 .banner-text-bg h4 {
   font-family: Georgia, 'Old Standard TT', serif !important;
+  font-size: 1.125em !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
 }
 .banner-text-width:before {
   font-size: 0;
@@ -5376,10 +5379,6 @@ fieldset[disabled] .btn-yahoo.active {
   -moz-transform: skew(12deg);
   -o-transform: skew(12deg);
 }
-.font-number {
-  font-family: Georgia, 'Old Standard TT', serif !important;
-  font-weight: normal !important;
-}
 .charity-v-middle {
   display: table-cell;
   vertical-align: middle;
@@ -5406,7 +5405,7 @@ fieldset[disabled] .btn-yahoo.active {
 }
 .progress-bg-override .progress-bar {
   line-height: 30px !important;
-  font-size: 20px !important;
+  font-size: 1.25em !important;
 }
 /* ---------------liScroll styles----------- */
 .tickercontainer {
@@ -5438,19 +5437,6 @@ ul.newsticker li {
   background: #fff;
   margin-left: 20px;
 }
-/* Content text styles */
-h5.reward-heading-small {
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-p.product-text {
-  font-family: Georgia;
-  font-size: 16px;
-}
-h3.product-heading {
-  font-weight: bold;
-}
 /* Donor box styles */
 .donorItems {
   margin-top: 20px;
@@ -5467,7 +5453,7 @@ h3.product-heading {
 }
 .donorItems .row .triangle .triangle-text {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: bold;
   position: absolute;
   top: -38px;
@@ -5495,12 +5481,10 @@ h3.product-heading {
 .donorItems .row .thumbnail .donor-box .donation-amount {
   text-align: right;
   display: inline-block;
-  font-size: 24px;
   margin: 0;
 }
 .donorItems .row .thumbnail .donor-box .donor-title-amount-line {
   border-bottom: 1px solid #cccccc;
-  font-size: 22px;
   height: 40px;
 }
 .donorItems .row .thumbnail .donor-box .prizes {
@@ -5524,12 +5508,12 @@ h3.product-heading {
 .donorItems .row .thumbnail .donor-box .custom-donation-line {
   border: 2px solid #e8e4df;
   width: 85%;
-  font-size: 24px;
 }
 .donorItems .row .thumbnail .donor-box .custom-donation-sign {
   text-align: left;
   display: inline-block;
   color: #666666;
+  margin: 0;
 }
 .donorItems .row .thumbnail .donor-box .custom-donation-input {
   border: 0;
@@ -5545,7 +5529,6 @@ h3.product-heading {
 }
 .please-note-body {
   max-width: 80%;
-  font-size: 14px !important;
   padding-bottom: 10px;
 }
 .text-capitalize {
@@ -5570,7 +5553,6 @@ h3.product-heading {
   display: inline-block;
 }
 .bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column .bidding-column-heading {
-  font-size: 14px;
   min-height: 40px;
   margin: 0px !important;
 }
@@ -5578,9 +5560,8 @@ h3.product-heading {
   color: #666666;
 }
 .bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column .bidding-column-number {
-  font-size: 40px !important;
   margin: 0px !important;
-  color: #666666;
+  color: #666666 !important;
 }
 .bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column a {
   text-decoration: underline;
@@ -5600,7 +5581,6 @@ h3.product-heading {
   margin-bottom: 20px;
 }
 .bidding-product-box .bidding-info-box .bidding-radio label.bidding-radio-label {
-  font-size: 16px;
   font-weight: normal !important;
   margin-bottom: 10px;
 }
@@ -5609,7 +5589,6 @@ h3.product-heading {
 }
 .bidding-product-box .bidding-info-box .custom-bidding-line {
   border: 2px solid #e8e4df;
-  font-size: 24px;
   margin-bottom: 20px;
   width: 50%;
   min-width: 256px;
@@ -5629,6 +5608,6 @@ h3.product-heading {
 .bidding-product-box .bidding-button {
   width: 280px;
   height: 66px;
-  font-size: 28px;
+  font-size: 1.75em;
   float: right;
 }

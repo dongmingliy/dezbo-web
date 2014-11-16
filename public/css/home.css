@@ -5231,7 +5231,7 @@ fieldset[disabled] .btn-yahoo.active {
 .yellow-bidding {
   color: #ffbc1b;
 }
-.grey-bodytext {
+.grey-text {
   color: #666666;
 }
 /**
@@ -5276,42 +5276,25 @@ fieldset[disabled] .btn-yahoo.active {
 .homeItems .row .thumbnail .item-box {
   bottom: 28px;
   padding: 4px;
-  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.homeItems .row .thumbnail .item-box .celebrity-name {
-  font-size: 14px;
 }
 .homeItems .row .thumbnail .item-box .item-name {
-  font-size: 22px;
   margin-top: -5px;
   min-height: 50px;
 }
-.homeItems .row .thumbnail .item-box .support {
-  font-size: 14px;
-}
 .homeItems .row .thumbnail .item-box .charity-name {
-  font-family: Georgia;
-  font-size: 16px;
-  min-height: 40px;
+  min-height: 44px;
+  text-transform: uppercase;
 }
 .homeItems .row .thumbnail .item-box .countdown {
   margin-left: -4px;
   margin-right: 4px;
   padding: 4px 4px 4px 10px;
-  font-size: 12px;
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 .homeItems .row .thumbnail .item-box .item-box-button {
   display: block;
   margin-top: 8px;
   min-width: 70%;
-}
-.homeItems .row .thumbnail .item-box .bidtitle {
-  font-size: 14px;
-}
-.homeItems .row .thumbnail .item-box .bidprice {
-  font-family: Georgia;
-  font-size: 40px;
 }
 .productDescription {
   padding-bottom: 50px;

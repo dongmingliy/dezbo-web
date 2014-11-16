@@ -49,7 +49,7 @@ block content
               h2.product-title Ellen’s Red Couch on the Ellen Show
               p
                 | Your donation amount:&nbsp;
-                span.bidprice {{qty * cost | currency}}
+                span {{qty * cost | currency}}
               p Raffle Tickets:
                 div.input-group(style="width:200px;" ng-hide="showInput != 1")
                   a.input-group-addon.btn.btn-social-icon(ng-click="qty = qty - 1")
