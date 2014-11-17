@@ -1,22 +1,29 @@
 .container-fluid.bg-white
   .row
-    .bg-pharrell-banner.col-md-6(style='min-height:420px')
+    .bg-pharrell-banner.col-md-6
     div.col-md-6(style='z-index:1')
-      div(style='height:287px;').hide-height-sm
-      div.banner-video
+      div(style='height:220px;').hide-height-sm
+      div.pharrell-banner-video
         button.btn.skew(style='width: 100px; height: 70px;', ng-click="showYoutubeModal()")
           img(src='../img/product/youtube-light-icon.png', width='50px')
-      div.banner-text-bg
+      div.pharrell-banner-text-bg
         div.banner-button-yellow
           a(href='pharrell')
             button.btn.btn-warning.btn-lg.skew Bid Now
         div.banner-text-width
           strong
-            h2 Pharrell's Hat
+            h1 Pharrell's Hat
           .white.banner-countdown
-            h3
-              timer(start-time="1401000000101")
-                span {{days}} days&nbsp;
-                span {{hours}} hours&nbsp;
-                span {{minutes}} minutes&nbsp;
-                span {{seconds}} seconds&nbsp;
+            timer(start-time="1401000000101")
+              span.timerblock
+                h1 {{days}}&nbsp;
+                span days&nbsp;
+              span.timerblock
+                h1 {{hours}}&nbsp;
+                span hours&nbsp;
+              span.timerblock
+                h1 {{minutes}}&nbsp;
+                span  minutes&nbsp;
+              span.timerblock
+                h1 {{seconds}}&nbsp;
+                span seconds&nbsp;

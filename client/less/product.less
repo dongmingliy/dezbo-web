@@ -35,7 +35,7 @@
   max-width: 500px;
 }
 
-.banner-text-bg {
+.ellen-banner-text-bg {
   background-color: @gray-transparent;
   height: 138px;
   padding-top: 10px;
@@ -54,7 +54,7 @@
   }
 }
 
-.banner-text-width:before {
+.ellen-banner-text-width:before {
   font-size: 0;
   left: -15px;
   content: '';
@@ -65,11 +65,7 @@
   position: absolute;
   bottom: 0px;
 }
-@media (max-width: 1024px) {
-  .banner-text-width:before {
-    content: none !important;
-  }
-}
+
 
 .skew {
   -webkit-transform: skew(-12deg);
@@ -104,15 +100,6 @@
 .banner-button-blue:before {
   .banner-button-helper;
   border-color: darken(@brand-primary, 15%) darken(@brand-primary, 15%) transparent transparent;
-}
-
-.banner-button-yellow {
-  .banner-button-blue;
-}
-
-.banner-button-yellow:before {
-  .banner-button-helper;
-  border-color: darken(@brand-warning, 15%) darken(@brand-warning, 15%) transparent transparent;
 }
 
 .banner-video {
@@ -419,5 +406,98 @@ ul.newsticker li {
     height: 66px;
     font-size: 1.75em;
     float: right;
+  }
+}
+
+.timerblock {
+  float: left;
+  width: 20%;
+  text-align: center;
+  background-color: rgba(19, 28, 37, 1);
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 2px 2px 5px 2px #1F1F1F;
+  border-radius: 5px;
+}
+// ---------- Pharrell --------------
+.pharrell-banner-text-bg {
+  background-color: @gray-transparent;
+  height: 204px;
+  padding-top: 10px;
+  padding-left: 22px;
+  h1, h2, h3, h4, h5, h6 {
+    color: @white !important;
+    margin-top: 0 !important;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  h4 {
+    font-family: @font-family-serif !important;
+    font-size: 1.125em !important;
+    text-transform: none !important;
+    font-weight: 500 !important;
+  }
+}
+
+.pharrell-banner-text-bg:before {
+  font-size: 0;
+  left: -15px;
+  content: '';
+  border-top: 190px solid transparent;
+  border-right: 30px solid @gray-transparent;
+  border-bottom: 0 solid @gray-transparent;
+  border-left: 0 solid transparent;
+  position: absolute;
+  bottom: 0px;
+}
+
+.banner-button-yellow {
+  .banner-button-blue;
+  top: 190px !important;
+}
+
+.banner-button-yellow:before {
+  .banner-button-helper;
+  border-color: darken(@brand-warning, 15%) darken(@brand-warning, 15%) transparent transparent;
+}
+
+.pharrell-banner-video {
+  .banner-video;
+  top: 150px;
+}
+
+@media (max-width: 1024px) {
+  .pharrell-banner-text-bg:before {
+    content: none !important;
+  }
+  .pharrell-banner-text-bg{
+    height:164px;
+  }
+
+  .banner-button-yellow {
+    .banner-button-blue;
+    top: -30px !important;
+  }
+  .pharrell-banner-video {
+    .banner-video;
+    top: -70px;
+  }
+  .bg-pharrell-banner {
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    background-image: url('../img/product/pharrell-banner.png');
+    background-repeat: no-repeat;
+    background-position: right -1px top 20px;
+    background-color: @white;
+    min-height:250px !important;
+    background-size:500px 250px;
+  }
+  .banner-text-width{
+    h1 {
+      font-size:30px !important;
+    }
   }
 }

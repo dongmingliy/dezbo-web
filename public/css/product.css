@@ -88,6 +88,7 @@ figure {
   margin: 1em 40px;
 }
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -138,7 +139,8 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -147,6 +149,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -177,10 +180,12 @@ th {
   padding: 0;
 }
 * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -1550,6 +1555,7 @@ label {
   font-weight: bold;
 }
 input[type="search"] {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -5266,30 +5272,30 @@ fieldset[disabled] .btn-yahoo.active {
 .banner-text-width {
   max-width: 500px;
 }
-.banner-text-bg {
+.ellen-banner-text-bg {
   background-color: rgba(0, 0, 0, 0.8);
   height: 138px;
   padding-top: 10px;
   padding-left: 22px;
 }
-.banner-text-bg h1,
-.banner-text-bg h2,
-.banner-text-bg h3,
-.banner-text-bg h4,
-.banner-text-bg h5,
-.banner-text-bg h6 {
+.ellen-banner-text-bg h1,
+.ellen-banner-text-bg h2,
+.ellen-banner-text-bg h3,
+.ellen-banner-text-bg h4,
+.ellen-banner-text-bg h5,
+.ellen-banner-text-bg h6 {
   color: #ffffff !important;
   margin-top: 0 !important;
   padding-left: 10px;
   padding-right: 10px;
 }
-.banner-text-bg h4 {
+.ellen-banner-text-bg h4 {
   font-family: Georgia, 'Old Standard TT', serif !important;
   font-size: 1.125em !important;
   text-transform: none !important;
   font-weight: 500 !important;
 }
-.banner-text-width:before {
+.ellen-banner-text-width:before {
   font-size: 0;
   left: -15px;
   content: '';
@@ -5299,11 +5305,6 @@ fieldset[disabled] .btn-yahoo.active {
   border-left: 0 solid transparent;
   position: absolute;
   bottom: 0px;
-}
-@media (max-width: 1024px) {
-  .banner-text-width:before {
-    content: none !important;
-  }
 }
 .skew {
   -webkit-transform: skew(-12deg);
@@ -5340,26 +5341,6 @@ fieldset[disabled] .btn-yahoo.active {
   border-style: solid;
   z-index: -1;
   border-color: #2a6496 #2a6496 transparent transparent;
-}
-.banner-button-yellow {
-  position: absolute;
-  top: 242px;
-  left: 5px;
-}
-.banner-button-yellow .btn {
-  border-radius: 2px !important;
-}
-.banner-button-yellow:before {
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0px;
-  top: 100%;
-  border-width: 5px 5px;
-  border-style: solid;
-  z-index: -1;
-  border-color: #ce9100 #ce9100 transparent transparent;
 }
 .banner-video {
   position: absolute;
@@ -5610,4 +5591,140 @@ ul.newsticker li {
   height: 66px;
   font-size: 1.75em;
   float: right;
+}
+.timerblock {
+  float: left;
+  width: 20%;
+  text-align: center;
+  background-color: #131c25;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 2px 2px 5px 2px #1F1F1F;
+  border-radius: 5px;
+}
+.pharrell-banner-text-bg {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 204px;
+  padding-top: 10px;
+  padding-left: 22px;
+}
+.pharrell-banner-text-bg h1,
+.pharrell-banner-text-bg h2,
+.pharrell-banner-text-bg h3,
+.pharrell-banner-text-bg h4,
+.pharrell-banner-text-bg h5,
+.pharrell-banner-text-bg h6 {
+  color: #ffffff !important;
+  margin-top: 0 !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.pharrell-banner-text-bg h4 {
+  font-family: Georgia, 'Old Standard TT', serif !important;
+  font-size: 1.125em !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+}
+.pharrell-banner-text-bg:before {
+  font-size: 0;
+  left: -15px;
+  content: '';
+  border-top: 190px solid transparent;
+  border-right: 30px solid rgba(0, 0, 0, 0.8);
+  border-bottom: 0 solid rgba(0, 0, 0, 0.8);
+  border-left: 0 solid transparent;
+  position: absolute;
+  bottom: 0px;
+}
+.banner-button-yellow {
+  position: absolute;
+  top: 242px;
+  left: 5px;
+  top: 190px !important;
+}
+.banner-button-yellow .btn {
+  border-radius: 2px !important;
+}
+.banner-button-yellow:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
+  top: 100%;
+  border-width: 5px 5px;
+  border-style: solid;
+  z-index: -1;
+  border-color: #ce9100 #ce9100 transparent transparent;
+}
+.pharrell-banner-video {
+  position: absolute;
+  top: 220px;
+  left: 130px;
+  top: 150px;
+}
+.pharrell-banner-video .btn {
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  box-shadow: none;
+}
+.pharrell-banner-video .btn:hover {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+.pharrell-banner-video img {
+  -webkit-transform: skew(12deg);
+  -moz-transform: skew(12deg);
+  -o-transform: skew(12deg);
+}
+@media (max-width: 1024px) {
+  .pharrell-banner-text-bg:before {
+    content: none !important;
+  }
+  .pharrell-banner-text-bg {
+    height: 164px;
+  }
+  .banner-button-yellow {
+    position: absolute;
+    top: 242px;
+    left: 5px;
+    top: -30px !important;
+  }
+  .banner-button-yellow .btn {
+    border-radius: 2px !important;
+  }
+  .pharrell-banner-video {
+    position: absolute;
+    top: 220px;
+    left: 130px;
+    top: -70px;
+  }
+  .pharrell-banner-video .btn {
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    box-shadow: none;
+  }
+  .pharrell-banner-video .btn:hover {
+    background: rgba(0, 0, 0, 0.9) !important;
+  }
+  .pharrell-banner-video img {
+    -webkit-transform: skew(12deg);
+    -moz-transform: skew(12deg);
+    -o-transform: skew(12deg);
+  }
+  .bg-pharrell-banner {
+    background-image: url('../img/product/pharrell-banner.png');
+    background-repeat: no-repeat;
+    background-position: right -1px top 20px;
+    background-color: #ffffff;
+    min-height: 250px !important;
+    background-size: 500px 250px;
+  }
+  .bg-pharrell-banner .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .banner-text-width h1 {
+    font-size: 30px !important;
+  }
 }
