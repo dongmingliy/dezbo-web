@@ -88,7 +88,6 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -139,8 +138,7 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -149,7 +147,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -180,12 +177,10 @@ th {
   padding: 0;
 }
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -1555,7 +1550,6 @@ label {
   font-weight: bold;
 }
 input[type="search"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -5262,7 +5256,7 @@ fieldset[disabled] .btn-yahoo.active {
 }
 .blog .item {
   display: block;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   padding-bottom: 80px;
 }
 .blog .item .item-btn {
@@ -5409,7 +5403,7 @@ fieldset[disabled] .btn-yahoo.active {
 /** Blog Timeline
  **************************************************************** **/
 .blog-timeline {
-  max-width: 900px;
+  max-width: 850px;
   margin: auto;
 }
 .blog-timeline:after {
@@ -5439,7 +5433,7 @@ fieldset[disabled] .btn-yahoo.active {
   border-radius: 6px;
 }
 .blog-timeline .timeline-item.pull-right {
-  margin-top: 120px;
+  margin-top: 180px;
 }
 .blog-timeline .timeline-item .item-date {
   position: absolute;
