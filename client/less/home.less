@@ -20,22 +20,15 @@
 
 /* Override thumbnail from bootstrap */
 .homeItems {
-  .raffleItems {
+  .raffleItems, .biddingItems {
     padding-top: 20px;
     padding-bottom: 20px;
 
     .item-name {
-      border-bottom: 2px solid @brand1;
+      border-bottom: 1px solid @grey-border;
     }
   }
-  .biddingItems {
-    padding-top: 20px;
-    padding-bottom: 20px;
 
-    .item-name {
-      border-bottom: 2px solid @brand-warning;
-    }
-  }
   .row {
     .thumbnail {
       width: 240px;
@@ -48,42 +41,25 @@
       .item-box {
         bottom: 28px;
         padding: 4px;
-        font-family: @font-family-sans-serif;
 
-        .celebrity-name {
-          font-size: 14px;
-        }
         .item-name {
-          font-size: 22px;
           margin-top: -5px;
           min-height: 50px;
         }
-        .support {
-          font-size: 14px;
-        }
         .charity-name {
-          font-family: Georgia;
-          font-size: 16px;
-          min-height: 40px;
+          min-height: 44px;
+          text-transform: uppercase;
         }
         .countdown {
           margin-left: -4px;
           margin-right: 4px;
           padding: 4px 4px 4px 10px;
-          font-size: 12px;
-          font-weight: 500;
+          font-weight: 500 !important;
         }
         .item-box-button {
           display: block;
           margin-top: 8px;
           min-width: 70%;
-        }
-        .bidtitle {
-          font-size: 14px;
-        }
-        .bidprice {
-          font-family: Georgia;
-          font-size: 40px;
         }
       }
     }
@@ -119,4 +95,14 @@
   background-color: #e6e6e6;
   padding-top:20px;
   padding-bottom: 30px;
+}
+
+.winners-box {
+  border-width: 3px;
+  border-color: #ffffff;
+  border-style: solid;
+  max-width: 234px;
+  max-height: 234px;
+  display:block;
+  margin-bottom: 20px;
 }

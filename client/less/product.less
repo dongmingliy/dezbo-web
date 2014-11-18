@@ -8,7 +8,7 @@
   background-image: url('../img/product/ellen-banner-ellen.png');
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 396px;
+  min-height: 400px !important;
   background-color: @gray-bg;
 
 }
@@ -20,20 +20,22 @@
   }
   background-image: url('../img/product/pharrell-banner.png');
   background-repeat: no-repeat;
-  background-position: center;
-  min-height: 396px;
+  background-position: right -201px top 20px;
+  min-height: 423px !important;
   background-color: @white;
+
 }
 
 .banner-img {
   max-width: 100%;
+  min-height:280px;
 }
 
 .banner-text-width {
   max-width: 500px;
 }
 
-.banner-text-bg {
+.ellen-banner-text-bg {
   background-color: @gray-transparent;
   height: 138px;
   padding-top: 10px;
@@ -45,11 +47,14 @@
     padding-right: 10px;
   }
   h4 {
-    font-family: @font-family-dezbo !important;
+    font-family: @font-family-serif !important;
+    font-size: 1.125em !important;
+    text-transform: none !important;
+    font-weight: 500 !important;
   }
 }
 
-.banner-text-width:before {
+.ellen-banner-text-width:before {
   font-size: 0;
   left: -15px;
   content: '';
@@ -60,6 +65,7 @@
   position: absolute;
   bottom: 0px;
 }
+
 
 .skew {
   -webkit-transform: skew(-12deg);
@@ -96,15 +102,6 @@
   border-color: darken(@brand-primary, 15%) darken(@brand-primary, 15%) transparent transparent;
 }
 
-.banner-button-yellow {
-  .banner-button-blue;
-}
-
-.banner-button-yellow:before {
-  .banner-button-helper;
-  border-color: darken(@brand-warning, 15%) darken(@brand-warning, 15%) transparent transparent;
-}
-
 .banner-video {
   position: absolute;
   top: 220px;
@@ -122,11 +119,6 @@
     -moz-transform: skew(12deg);
     -o-transform: skew(12deg);
   }
-}
-
-.font-number {
-  font-family: @font-family-dezbo !important;
-  font-weight: normal !important;
 }
 
 .charity-v-middle {
@@ -158,7 +150,7 @@
   }
   .progress-bar {
     line-height: 30px !important;
-    font-size: 20px !important;
+    font-size: 1.25em !important;
   }
 }
 .banner-countdown{
@@ -203,23 +195,6 @@ ul.newsticker li {
   margin-left: 20px;
 }
 
-/* Content text styles */
-
-h5.reward-heading-small {
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-p.product-text {
-  font-family: Georgia;
-  font-size: 16px;
-}
-
-h3.product-heading {
-  font-weight: bold;
-}
-
 /* Donor box styles */
 
 .donorItems {
@@ -230,7 +205,7 @@ h3.product-heading {
     .triangle {
       width: 0px;
       height: 0px;
-      border-top: 40px solid @grey-bodytext;
+      border-top: 40px solid @grey-text;
       border-right: 40px solid transparent;
       position: absolute;
       top: 0;
@@ -238,7 +213,7 @@ h3.product-heading {
 
       .triangle-text {
         color: @white;
-        font-size: 14px;
+        font-size: 0.875em;
         font-weight: bold;
         position: absolute;
         top: -38px;
@@ -269,13 +244,11 @@ h3.product-heading {
         .donation-amount {
           text-align: right;
           display: inline-block;
-          font-size: 24px;
           margin: 0;
         }
 
         .donor-title-amount-line {
           border-bottom: 1px solid @gray-lighter;
-          font-size: 22px;
           height: 40px;
         }
 
@@ -304,13 +277,13 @@ h3.product-heading {
         .custom-donation-line {
           border: 2px solid @grey-border;
           width: 85%;
-          font-size: 24px;
         }
 
         .custom-donation-sign {
           text-align: left;
           display: inline-block;
-          color: @grey-bodytext;
+          color: @grey-text;
+          margin: 0;
         }
 
         .custom-donation-input {
@@ -333,7 +306,6 @@ h3.product-heading {
 
 .please-note-body {
   max-width: 80%;
-  font-size: 14px !important;
   padding-bottom: 10px;
 }
 
@@ -360,15 +332,22 @@ h3.product-heading {
         margin: 0 auto;
         display: inline-block;
 
-        h5.bidding-column-heading {
-          font-size: 14px;
-          min-height: 30px; // make all columns the same height
+        .bidding-column-heading {
+          min-height: 40px; // make all columns the same height
           margin: 0px !important;
+
+          a.highest-bidder {
+            color: @grey-text;
+          }
         }
 
-        p.bidding-column-number {
-          font-size: 40px;
+        .bidding-column-number {
           margin: 0px !important;
+          color: @grey-text !important;
+        }
+
+        a {
+          text-decoration: underline;
         }
       }
 
@@ -391,7 +370,6 @@ h3.product-heading {
 
     .bidding-radio {
       label.bidding-radio-label {
-        font-size: 16px;
         font-weight: normal !important;
         margin-bottom: 10px;
 
@@ -403,7 +381,6 @@ h3.product-heading {
 
     .custom-bidding-line {
       border: 2px solid @grey-border;
-      font-size: 24px;
       margin-bottom: 20px;
       width: 50%;
       min-width: 256px;
@@ -412,7 +389,7 @@ h3.product-heading {
     .custom-bidding-sign {
       text-align: left;
       display: inline-block;
-      color: @grey-bodytext;
+      color: @grey-text;
     }
 
     .custom-bidding-input {
@@ -427,7 +404,100 @@ h3.product-heading {
   .bidding-button {
     width: 280px;
     height: 66px;
-    font-size: 28px;
+    font-size: 1.75em;
     float: right;
+  }
+}
+
+.timerblock {
+  float: left;
+  width: 20%;
+  text-align: center;
+  background-color: rgba(19, 28, 37, 1);
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 2px 2px 5px 2px #1F1F1F;
+  border-radius: 5px;
+}
+// ---------- Pharrell --------------
+.pharrell-banner-text-bg {
+  background-color: @gray-transparent;
+  height: 204px;
+  padding-top: 10px;
+  padding-left: 22px;
+  h1, h2, h3, h4, h5, h6 {
+    color: @white !important;
+    margin-top: 0 !important;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  h4 {
+    font-family: @font-family-serif !important;
+    font-size: 1.125em !important;
+    text-transform: none !important;
+    font-weight: 500 !important;
+  }
+}
+
+.pharrell-banner-text-bg:before {
+  font-size: 0;
+  left: -15px;
+  content: '';
+  border-top: 190px solid transparent;
+  border-right: 30px solid @gray-transparent;
+  border-bottom: 0 solid @gray-transparent;
+  border-left: 0 solid transparent;
+  position: absolute;
+  bottom: 0px;
+}
+
+.banner-button-yellow {
+  .banner-button-blue;
+  top: 190px !important;
+}
+
+.banner-button-yellow:before {
+  .banner-button-helper;
+  border-color: darken(@brand-warning, 15%) darken(@brand-warning, 15%) transparent transparent;
+}
+
+.pharrell-banner-video {
+  .banner-video;
+  top: 150px;
+}
+
+@media (max-width: 1024px) {
+  .pharrell-banner-text-bg:before {
+    content: none !important;
+  }
+  .pharrell-banner-text-bg{
+    height:164px;
+  }
+
+  .banner-button-yellow {
+    .banner-button-blue;
+    top: -30px !important;
+  }
+  .pharrell-banner-video {
+    .banner-video;
+    top: -70px;
+  }
+  .bg-pharrell-banner {
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    background-image: url('../img/product/pharrell-banner.png');
+    background-repeat: no-repeat;
+    background-position: right -1px top 20px;
+    background-color: @white;
+    min-height:250px !important;
+    background-size:500px 250px;
+  }
+  .banner-text-width{
+    h1 {
+      font-size:30px !important;
+    }
   }
 }

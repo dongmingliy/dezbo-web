@@ -5094,25 +5094,25 @@ fieldset[disabled] .btn-yahoo.active {
   color: #ffffff !important;
 }
 .gray-verylight {
-  color: #f2f2f2;
+  color: #f2f2f2 !important;
 }
 .gray-lighter {
-  color: #cccccc;
+  color: #cccccc !important;
 }
 .gray-light {
-  color: #777777;
+  color: #777777 !important;
 }
 .gray {
-  color: #555555;
+  color: #555555 !important;
 }
 .gray-dark {
-  color: #333333;
+  color: #333333 !important;
 }
 .gray-darker {
-  color: #222222;
+  color: #222222 !important;
 }
 .black {
-  color: #111111;
+  color: #111111 !important;
 }
 .bg-white {
   background-color: #ffffff;
@@ -5231,7 +5231,7 @@ fieldset[disabled] .btn-yahoo.active {
 .yellow-bidding {
   color: #ffbc1b;
 }
-.grey-bodytext {
+.grey-text {
   color: #666666;
 }
 /**

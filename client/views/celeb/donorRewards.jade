@@ -1,13 +1,13 @@
 .col-md-12
-  h3.product-heading CHOOSE YOUR REWARD:
+  h2 CHOOSE YOUR REWARD:
 .donorItems(ng-controller="donorCtrl")
   .container
     .row
       .col-md-3.col-sm-4
         .thumbnail.centered
           .text-center
-            h5.reward-heading-small.please-note-heading Please Note:
-            p.product-text.please-note-body.centered
+            h4.please-note-heading Please Note:
+            p.text-xsmall.please-note-body.centered
               b Levels 1-8:
               br
               | Prizes include items in the description plus all previous level items
@@ -29,10 +29,10 @@
           .donor-box
             .text-center
               .div.donor-title-amount-line.donor-custom-title-amount-line
-                h5.donor-title.reward-heading-small Custom Amount
-              .div.custom-donation-line.centered
-                .custom-donation-sign.font-number $
+                h4.donor-title Custom Amount
+              .div.text-xlarge.custom-donation-line.centered
+                p.text-number.custom-donation-sign $
                   input.custom-donation-input(type="number" step="any" min="1" value="10.00")
-              p.product-text.custom-prizes.text-capitalize Only $2 an entry
+              p.text-small.custom-prizes.text-capitalize Only $2 an entry
               button.btn.btn-primary.donor-box-button.centered DONATE NOW
 

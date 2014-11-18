@@ -9,22 +9,22 @@
     .footer-content
       .container
         .row.column.col-md-8
-          .column.col-md-4
+          .column.col-md-4.col-xs-6
             h3
               a(href='terms') Terms
             h3
               a(href='privacy') Privacy
-          .column.col-md-4
+          .column.col-md-4.col-xs-6
             h3
               a(href='faq') FAQ
             h3
               a(href='faq') About us
-          .column.col-md-4
+          .column.col-md-4.col-xs-6
             h3
               a(href='faq') Contact
             h3
               a(href='faq') Jobs
-          .column.col-md-4
+          .column.col-md-4.col-xs-6
         .column.col-md-4.text-right
           .row
             .socialIcons.text-center.gray-lighter
@@ -71,8 +71,10 @@ script.
           $('#sliderbg').removeClass();
           if(current === 0){
             $('#sliderbg').addClass("bg-white");
+            // $('#sliderbg').css({ height: "800px" });
           } else if(current === 1){
             $('#sliderbg').addClass("bg-gray-raffle");
+            // $('#sliderbg').css({ height: "600px" });
           } else if(current === 2){
             $('#sliderbg').addClass("bg-gray-light");
           } else if(current === 3){

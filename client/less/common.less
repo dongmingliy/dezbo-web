@@ -19,55 +19,115 @@ html, body {
 }
 
 .wrapper {
-  position:relative;
-  overflow:hidden;
-  margin:0; padding:0;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 section.margin-footer {
-  margin-bottom:-92px; /* see wrapper padding */
+  margin-bottom: -92px; /* see wrapper padding */
 }
 
-// Heading font styles
-@font-family-sans-serif:  "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-h1,
-h2,
-h3,
-h4,
+// Common font styling
+h1, h2, h3, h4, h5, h6, p {
+  color: @grey-text !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: @font-family-sans-serif !important;
+  text-transform: uppercase;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: bold !important;
+}
+h1 {
+  font-size: 3em !important;       //48px
+}
+h2 {
+  font-size: 1.5em !important;     //24px
+}
+h3 {
+  font-size: 1.375em !important;   //22px
+}
+h4 {
+  font-size: 1em !important;       //16px
+}
 h5 {
-   font-family: @font-family-sans-serif !important;
-   color: @grey-bodytext !important;
- }
-h6, p {
-  color: @grey-bodytext !important;
+  font-size: 0.875em !important;   //14px
+}
+h6 {
+  font-size: 0.75em !important;    //12px
 }
 
-.htitle {
-  font-size: 48px;
-  font-weight: bold;
+p {
+  font-family: @font-family-serif !important;
+}
+.text-xxlarge {
+  font-size: 2.5em !important;     //40px
+}
+.text-xlarge {
+  font-size: 1.5em !important;     //24px
+}
+.text-large {
+  font-size: 1.375em !important;   //22px
+}
+.text-mid {
+  font-size: 1.25em !important;    //20px
+}
+.text-small {
+  font-size: 1em !important;       //16px
+}
+.text-xsmall {
+  font-size: 0.875em !important;   //14px
+}
+.text-number {
+  font-family: @font-family-serif !important;
+  font-weight: normal !important;
 }
 
 .bold {
   font-weight: bold;
 }
-
 .italic {
   font-style: italic;
 }
 
-p.bodytext {
-  font-size: 22px;
-  font-family: Georgia;
-}
-
-p.bodytext-small {
-  font-size: 20px;
-  font-family: Georgia;
-}
-
 a.grey-link {
-  color: @grey-bodytext !important;
+  color: @grey-text !important;
+}
+
+// Media query font sizes
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+@media (min-width:320px) {
+  body{
+    font-size: 12px !important;
+  }
+}
+
+/* smartphones, Android phones, landscape iPhone */
+@media (min-width:480px) {
+  body{
+    font-size: 14px !important;
+  }
+}
+
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+@media (min-width:600px) {
+  body{
+    font-size: 16px !important;
+  }
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:801px) {
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width:1025px) {
+}
+
+/* hi-res laptops and desktops */
+@media (min-width:1281px) {
 }
 
 /** Divider
@@ -83,42 +143,46 @@ a.grey-link {
   position: relative;
   clear: both;
 }
+
 .divider.half-margins {
-  margin:30px 0;
+  margin: 30px 0;
 }
 
 .divider .fa {
   background: transparent; /* same as background color */
   text-align: center;
   display: inline-block;
-  height: 50px; line-height: 50px;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
   width: 50px;
   font-size: 20px;
 
   position: absolute;
-  top: -25px; left: 50%;
+  top: -25px;
+  left: 50%;
   margin: 0 auto 0 -25px;
 }
 
-.divider.white .fa { /* for white background color OR white rounded icon */
+.divider.white .fa {
+  /* for white background color OR white rounded icon */
   background: #fff;
   color: #333;
 }
 
 li.divider {
-  margin:6px;
+  margin: 6px;
 }
 
 /** Nav Bar
  **************************************************************** **/
 ul.nav li:hover {
-  background-color:@gray-verylight;
+  background-color: @gray-verylight;
 }
 
 .navbar-interior {
   background: white;
-  padding-top: 10px;  // offset to center logo on navbar
+  padding-top: 10px; // offset to center logo on navbar
   min-height: 80px;
 }
 
@@ -127,10 +191,10 @@ ul.nav li:hover {
 
   // Gradient border
   border-width: 0 0 6px 0 !important;
-  -webkit-border-image: -webkit-linear-gradient(@grey-navbar, transparent) 100 1% !important;  /* For Safari 5.1 to 6.0 */
-  -moz-border-image: -moz-linear-gradient(@grey-navbar, transparent) 100 1% !important;        /* For Firefox 3.6 to 15 */
-  -o-border-image: -o-linear-gradient(@grey-navbar, transparent) 100 1% !important;            /* For Opera 11.1 to 12.0 */
-  border-image: linear-gradient(@grey-navbar, transparent) 100 1% !important;                  /* Standard syntax */
+  -webkit-border-image: -webkit-linear-gradient(@grey-navbar, transparent) 100 1% !important; /* For Safari 5.1 to 6.0 */
+  -moz-border-image: -moz-linear-gradient(@grey-navbar, transparent) 100 1% !important; /* For Firefox 3.6 to 15 */
+  -o-border-image: -o-linear-gradient(@grey-navbar, transparent) 100 1% !important; /* For Opera 11.1 to 12.0 */
+  border-image: linear-gradient(@grey-navbar, transparent) 100 1% !important; /* Standard syntax */
 
   .navbar-nav {
     padding-top: 7px; // offset to same height as slogan
@@ -217,14 +281,15 @@ h1, h2 {
  * Navbar
  */
 
-@navbar-default-brand-color:       @gray-darker;
-@navbar-default-link-hover-bg:     darken(@navbar-default-bg, 6.5%);
+@navbar-default-brand-color: @gray-darker;
+@navbar-default-link-hover-bg: darken(@navbar-default-bg, 6.5%);
 
 .navbar-nav .profile-image {
   width: 30px;
   height: 30px;
   margin: -15px 15px -15px 0;
 }
+
 .navbar-brand {
   //  background-image: url(/img/dezbo_logo.png);
   //  background-repeat: no-repeat;
@@ -233,8 +298,9 @@ h1, h2 {
   //  padding-left: 200px;
   margin-top: -12px;
   left: 20%;
-  margin-left:10px;
+  margin-left: 10px;
 }
+
 .nav-slogan {
   float: left;
   font-family: Georgia;
@@ -259,12 +325,13 @@ h1, h2 {
   color: #333;
   background-color: @white;
 }
+
 .btn-white:hover,
 .btn-white:focus,
 .btn-white:active {
   color: @white;
   background-color: transparent;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
   border-color: @white;
 }
 
@@ -293,6 +360,7 @@ h1, h2 {
     font-weight: 300;
   }
 }
+
 @media (min-width: 768px) {
   .mini-tron {
     padding-top: 40px;
@@ -320,6 +388,7 @@ h1, h2 {
     text-shadow: 1px 1px 1px @black;
   }
 }
+
 @media (min-width: 768px) {
   .dashboard {
     p {
@@ -343,7 +412,7 @@ h1, h2 {
 .table.privacy {
   text-align: left;
   margin-top: 30px;
-  tbody>tr>td {
+  tbody > tr > td {
     border-top: 0px;
     font-weight: 300;
     font-size: 20px;
@@ -357,9 +426,11 @@ h1, h2 {
 .panel-button:hover {
   background: darken(#f5f5f5, 15%);
 }
+
 a.noDecoration {
   text-decoration: none;
 }
+
 a.noDecoration:hover {
   text-decoration: none;
 }
@@ -367,17 +438,26 @@ a.noDecoration:hover {
 // Main page sections
 
 .centered {
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 
-.winners-box {
-  border-width: 3px;
-  border-color: #ffffff;
-  border-style: solid;
-  max-width: 240px;
-  height: 240px;
-  display:block;
-  margin-bottom: 20px;
+.hide-height-sm {
+  @media (max-width: 1024px) {
+    height: 0 !important;
+  }
 }
 
+.hide-bg-sm {
+  @media (max-width: 1024px) {
+    background: none !important;
+  }
+}
+
+.hide-content-sm {
+  @media (max-width: 1024px) {
+    .banner-text-width:before {
+      content: none !important;
+    }
+  }
+}

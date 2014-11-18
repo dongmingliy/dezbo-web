@@ -5094,25 +5094,25 @@ fieldset[disabled] .btn-yahoo.active {
   color: #ffffff !important;
 }
 .gray-verylight {
-  color: #f2f2f2;
+  color: #f2f2f2 !important;
 }
 .gray-lighter {
-  color: #cccccc;
+  color: #cccccc !important;
 }
 .gray-light {
-  color: #777777;
+  color: #777777 !important;
 }
 .gray {
-  color: #555555;
+  color: #555555 !important;
 }
 .gray-dark {
-  color: #333333;
+  color: #333333 !important;
 }
 .gray-darker {
-  color: #222222;
+  color: #222222 !important;
 }
 .black {
-  color: #111111;
+  color: #111111 !important;
 }
 .bg-white {
   background-color: #ffffff;
@@ -5231,7 +5231,7 @@ fieldset[disabled] .btn-yahoo.active {
 .yellow-bidding {
   color: #ffbc1b;
 }
-.grey-bodytext {
+.grey-text {
   color: #666666;
 }
 /**
@@ -5241,7 +5241,7 @@ fieldset[disabled] .btn-yahoo.active {
   background-image: url('../img/product/ellen-banner-ellen.png');
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 396px;
+  min-height: 400px !important;
   background-color: #eee9e3;
 }
 .bg-ellen-banner .container-fluid {
@@ -5251,8 +5251,8 @@ fieldset[disabled] .btn-yahoo.active {
 .bg-pharrell-banner {
   background-image: url('../img/product/pharrell-banner.png');
   background-repeat: no-repeat;
-  background-position: center;
-  min-height: 396px;
+  background-position: right -201px top 20px;
+  min-height: 423px !important;
   background-color: #ffffff;
 }
 .bg-pharrell-banner .container-fluid {
@@ -5261,31 +5261,35 @@ fieldset[disabled] .btn-yahoo.active {
 }
 .banner-img {
   max-width: 100%;
+  min-height: 280px;
 }
 .banner-text-width {
   max-width: 500px;
 }
-.banner-text-bg {
+.ellen-banner-text-bg {
   background-color: rgba(0, 0, 0, 0.8);
   height: 138px;
   padding-top: 10px;
   padding-left: 22px;
 }
-.banner-text-bg h1,
-.banner-text-bg h2,
-.banner-text-bg h3,
-.banner-text-bg h4,
-.banner-text-bg h5,
-.banner-text-bg h6 {
+.ellen-banner-text-bg h1,
+.ellen-banner-text-bg h2,
+.ellen-banner-text-bg h3,
+.ellen-banner-text-bg h4,
+.ellen-banner-text-bg h5,
+.ellen-banner-text-bg h6 {
   color: #ffffff !important;
   margin-top: 0 !important;
   padding-left: 10px;
   padding-right: 10px;
 }
-.banner-text-bg h4 {
+.ellen-banner-text-bg h4 {
   font-family: Georgia, 'Old Standard TT', serif !important;
+  font-size: 1.125em !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
 }
-.banner-text-width:before {
+.ellen-banner-text-width:before {
   font-size: 0;
   left: -15px;
   content: '';
@@ -5332,26 +5336,6 @@ fieldset[disabled] .btn-yahoo.active {
   z-index: -1;
   border-color: #2a6496 #2a6496 transparent transparent;
 }
-.banner-button-yellow {
-  position: absolute;
-  top: 242px;
-  left: 5px;
-}
-.banner-button-yellow .btn {
-  border-radius: 2px !important;
-}
-.banner-button-yellow:before {
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0px;
-  top: 100%;
-  border-width: 5px 5px;
-  border-style: solid;
-  z-index: -1;
-  border-color: #ce9100 #ce9100 transparent transparent;
-}
 .banner-video {
   position: absolute;
   top: 220px;
@@ -5369,10 +5353,6 @@ fieldset[disabled] .btn-yahoo.active {
   -webkit-transform: skew(12deg);
   -moz-transform: skew(12deg);
   -o-transform: skew(12deg);
-}
-.font-number {
-  font-family: Georgia, 'Old Standard TT', serif !important;
-  font-weight: normal !important;
 }
 .charity-v-middle {
   display: table-cell;
@@ -5400,7 +5380,7 @@ fieldset[disabled] .btn-yahoo.active {
 }
 .progress-bg-override .progress-bar {
   line-height: 30px !important;
-  font-size: 20px !important;
+  font-size: 1.25em !important;
 }
 /* ---------------liScroll styles----------- */
 .tickercontainer {
@@ -5432,19 +5412,6 @@ ul.newsticker li {
   background: #fff;
   margin-left: 20px;
 }
-/* Content text styles */
-h5.reward-heading-small {
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-p.product-text {
-  font-family: Georgia;
-  font-size: 16px;
-}
-h3.product-heading {
-  font-weight: bold;
-}
 /* Donor box styles */
 .donorItems {
   margin-top: 20px;
@@ -5461,7 +5428,7 @@ h3.product-heading {
 }
 .donorItems .row .triangle .triangle-text {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: bold;
   position: absolute;
   top: -38px;
@@ -5489,12 +5456,10 @@ h3.product-heading {
 .donorItems .row .thumbnail .donor-box .donation-amount {
   text-align: right;
   display: inline-block;
-  font-size: 24px;
   margin: 0;
 }
 .donorItems .row .thumbnail .donor-box .donor-title-amount-line {
   border-bottom: 1px solid #cccccc;
-  font-size: 22px;
   height: 40px;
 }
 .donorItems .row .thumbnail .donor-box .prizes {
@@ -5518,12 +5483,12 @@ h3.product-heading {
 .donorItems .row .thumbnail .donor-box .custom-donation-line {
   border: 2px solid #e8e4df;
   width: 85%;
-  font-size: 24px;
 }
 .donorItems .row .thumbnail .donor-box .custom-donation-sign {
   text-align: left;
   display: inline-block;
   color: #666666;
+  margin: 0;
 }
 .donorItems .row .thumbnail .donor-box .custom-donation-input {
   border: 0;
@@ -5539,7 +5504,6 @@ h3.product-heading {
 }
 .please-note-body {
   max-width: 80%;
-  font-size: 14px !important;
   padding-bottom: 10px;
 }
 .text-capitalize {
@@ -5563,14 +5527,19 @@ h3.product-heading {
   margin: 0 auto;
   display: inline-block;
 }
-.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column h5.bidding-column-heading {
-  font-size: 14px;
-  min-height: 30px;
+.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column .bidding-column-heading {
+  min-height: 40px;
   margin: 0px !important;
 }
-.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column p.bidding-column-number {
-  font-size: 40px;
+.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column .bidding-column-heading a.highest-bidder {
+  color: #666666;
+}
+.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column .bidding-column-number {
   margin: 0px !important;
+  color: #666666 !important;
+}
+.bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column a {
+  text-decoration: underline;
 }
 .bidding-product-box .bidding-info-box .bidding-columns-container .bidding-column-center {
   border-width: 0 2px 0 2px;
@@ -5587,7 +5556,6 @@ h3.product-heading {
   margin-bottom: 20px;
 }
 .bidding-product-box .bidding-info-box .bidding-radio label.bidding-radio-label {
-  font-size: 16px;
   font-weight: normal !important;
   margin-bottom: 10px;
 }
@@ -5596,7 +5564,6 @@ h3.product-heading {
 }
 .bidding-product-box .bidding-info-box .custom-bidding-line {
   border: 2px solid #e8e4df;
-  font-size: 24px;
   margin-bottom: 20px;
   width: 50%;
   min-width: 256px;
@@ -5616,6 +5583,142 @@ h3.product-heading {
 .bidding-product-box .bidding-button {
   width: 280px;
   height: 66px;
-  font-size: 28px;
+  font-size: 1.75em;
   float: right;
+}
+.timerblock {
+  float: left;
+  width: 20%;
+  text-align: center;
+  background-color: #131c25;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 2px 2px 5px 2px #1F1F1F;
+  border-radius: 5px;
+}
+.pharrell-banner-text-bg {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 204px;
+  padding-top: 10px;
+  padding-left: 22px;
+}
+.pharrell-banner-text-bg h1,
+.pharrell-banner-text-bg h2,
+.pharrell-banner-text-bg h3,
+.pharrell-banner-text-bg h4,
+.pharrell-banner-text-bg h5,
+.pharrell-banner-text-bg h6 {
+  color: #ffffff !important;
+  margin-top: 0 !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.pharrell-banner-text-bg h4 {
+  font-family: Georgia, 'Old Standard TT', serif !important;
+  font-size: 1.125em !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+}
+.pharrell-banner-text-bg:before {
+  font-size: 0;
+  left: -15px;
+  content: '';
+  border-top: 190px solid transparent;
+  border-right: 30px solid rgba(0, 0, 0, 0.8);
+  border-bottom: 0 solid rgba(0, 0, 0, 0.8);
+  border-left: 0 solid transparent;
+  position: absolute;
+  bottom: 0px;
+}
+.banner-button-yellow {
+  position: absolute;
+  top: 242px;
+  left: 5px;
+  top: 190px !important;
+}
+.banner-button-yellow .btn {
+  border-radius: 2px !important;
+}
+.banner-button-yellow:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
+  top: 100%;
+  border-width: 5px 5px;
+  border-style: solid;
+  z-index: -1;
+  border-color: #ce9100 #ce9100 transparent transparent;
+}
+.pharrell-banner-video {
+  position: absolute;
+  top: 220px;
+  left: 130px;
+  top: 150px;
+}
+.pharrell-banner-video .btn {
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  box-shadow: none;
+}
+.pharrell-banner-video .btn:hover {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+.pharrell-banner-video img {
+  -webkit-transform: skew(12deg);
+  -moz-transform: skew(12deg);
+  -o-transform: skew(12deg);
+}
+@media (max-width: 1024px) {
+  .pharrell-banner-text-bg:before {
+    content: none !important;
+  }
+  .pharrell-banner-text-bg {
+    height: 164px;
+  }
+  .banner-button-yellow {
+    position: absolute;
+    top: 242px;
+    left: 5px;
+    top: -30px !important;
+  }
+  .banner-button-yellow .btn {
+    border-radius: 2px !important;
+  }
+  .pharrell-banner-video {
+    position: absolute;
+    top: 220px;
+    left: 130px;
+    top: -70px;
+  }
+  .pharrell-banner-video .btn {
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    box-shadow: none;
+  }
+  .pharrell-banner-video .btn:hover {
+    background: rgba(0, 0, 0, 0.9) !important;
+  }
+  .pharrell-banner-video img {
+    -webkit-transform: skew(12deg);
+    -moz-transform: skew(12deg);
+    -o-transform: skew(12deg);
+  }
+  .bg-pharrell-banner {
+    background-image: url('../img/product/pharrell-banner.png');
+    background-repeat: no-repeat;
+    background-position: right -1px top 20px;
+    background-color: #ffffff;
+    min-height: 250px !important;
+    background-size: 500px 250px;
+  }
+  .bg-pharrell-banner .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .banner-text-width h1 {
+    font-size: 30px !important;
+  }
 }
