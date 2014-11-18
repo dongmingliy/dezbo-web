@@ -1,7 +1,7 @@
 {
   "author": "Siddique Hameed",
   "name": "angular-timer",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "homepage": "https://github.com/siddii/angular-timer",
   "description": "Angular-Timer : A simple AngularJS directive demonstrating re-usability & interoperability",
   "repository": {
@@ -21,11 +21,11 @@
     "./node_modules/",
     "./bower_components/"
   ],
-  "_release": "1.1.6",
+  "_release": "1.1.7",
   "_resolution": {
     "type": "version",
-    "tag": "v1.1.6",
-    "commit": "9920b726503b4784c83ed97c456c6848bff7b00c"
+    "tag": "v1.1.7",
+    "commit": "a1286aa417c85e1a4d4107055e2e6e45c9455320"
   },
   "_source": "git://github.com/siddii/angular-timer.git",
   "_target": "*",

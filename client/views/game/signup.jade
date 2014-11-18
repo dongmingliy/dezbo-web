@@ -1,0 +1,25 @@
+.modal-content
+  .modal-header
+    button.close(type='button', ng-click='cancel()') ×
+    h4.modal-title STAY UPDATED
+  .modal-body
+    .alert.alert-success.alert-dismissable(ng-class="{'hidden': signupPending == true}")
+      button.close(type='button', data-dismiss='alert', aria-hidden='true')
+        i.fa.fa-times-circle-o
+      p.flashmsg
+        strong
+          i.fa.fa-times-circle-o
+        | &nbsp;&nbsp;Thank you for signing up. You Rock!
+    div
+      | Sign up to receive exclusive updates on Dezbo & continue voting to see the voting results and a special video at the end.
+    br
+    .row-fluid.text-center
+      .col-md-10.col-md-offset-2
+        .col-md-6
+          input.form-control(style='min-width=200px;', ng-model='emailAddress', type='email', name='email', id='email', placeholder='Enter your email', required)
+        .col-md-6
+          button.btn.btn-primary.btn-reset.pull-left(ng-click='signup(emailAddress)') Sign up
+  br
+  .modal-footer
+    button.btn.btn-primary(type='button', ng-click='ok()') Continue
+

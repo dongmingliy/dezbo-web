@@ -7,15 +7,25 @@
  * Celeb Controller
  */
 
-var passportConf  = require('../config/passport');
+
 module.exports.controller = function (app) {
-  app.get('/campaigns', passportConf.isAuthenticated, function (req, res) {
+  app.get('/campaigns', function (req, res) {
     res.render('celeb/campaigns', {
       url: req.url
     });
   });
-  app.get('/ellen', passportConf.isAuthenticated, function (req, res) {
+  app.get('/ellen', function (req, res) {
     res.render('celeb/ellen', {
+      url: req.url
+    });
+  });
+  app.get('/pharrell', function (req, res) {
+    res.render('celeb/pharrell', {
+      url: req.url
+    });
+  });
+  app.get('/directive/donorbox', function (req, res) {
+    res.render('directive/donorbox', {
       url: req.url
     });
   });

@@ -1,48 +1,383 @@
-.page-header {
-    padding-bottom: 0 !important;
-    margin: 0 !important;
-    border-bottom: 0 !important;
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+@import 'variables';
+
+/** 01. Globals
+ **************************************************************** **/
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-.page-header .navbar-nav {
-    float: right;
+
+html, body {
+  min-height: 100%;
 }
-.page-header>div>div, .page-header>div>ul {
-    display:inline-block;
+
+// remove empty space on the right for mobile
+html, body {
+  width: auto !important;
+  overflow-x: hidden !important;
 }
-.text-edit {
-    padding: 13px 0 0 0;
+
+.wrapper {
+  position:relative;
+  overflow:hidden;
+  margin:0; padding:0;
 }
-.account {
-    text-align:right;
+
+section.margin-footer {
+  margin-bottom:-92px; /* see wrapper padding */
 }
-.account>div, .account>ul {
-    text-align:left;
+
+// Heading font styles
+@font-family-sans-serif:  "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+   font-family: @font-family-sans-serif !important;
+   color: @grey-bodytext !important;
+ }
+h6, p {
+  color: @grey-bodytext !important;
 }
-.navbar .nav>li>a.brand {
-    padding-left:20px;
-    margin-left:0
+
+.htitle {
+  font-size: 48px;
+  font-weight: bold;
 }
-.content {
-    margin-top:70px;
-    width:100%
+
+.bold {
+  font-weight: bold;
 }
-footer {
-    position:fixed;
-    left:0;
-    bottom:0;
-    height:30px;
-    width:100%;
-    background:#ddd;
-    -webkit-box-shadow:0 8px 6px 6px black;
-    -moz-box-shadow:0 8px 6px 6px black;
-    box-shadow:0 8px 6px 6px black
+
+.italic {
+  font-style: italic;
 }
-footer p {
-    padding:5px 0 12px 10px
+
+p.bodytext {
+  font-size: 22px;
+  font-family: Georgia;
 }
-.ng-invalid.ng-dirty{
-    border-color:#FA787E;
+
+p.bodytext-small {
+  font-size: 20px;
+  font-family: Georgia;
 }
-.ng-valid.ng-dirty{
-    border-color:#78FA89;
+
+a.grey-link {
+  color: @grey-bodytext !important;
 }
+
+/** Divider
+ **************************************************************** **/
+
+.divider {
+  border: 0;
+  margin: 40px 0;
+  height: 4px;
+  border-top: #ddd 1px solid;
+  border-bottom: #ddd 1px solid;
+  text-align: center;
+  position: relative;
+  clear: both;
+}
+.divider.half-margins {
+  margin:30px 0;
+}
+
+.divider .fa {
+  background: transparent; /* same as background color */
+  text-align: center;
+  display: inline-block;
+  height: 50px; line-height: 50px;
+  text-align: center;
+  width: 50px;
+  font-size: 20px;
+
+  position: absolute;
+  top: -25px; left: 50%;
+  margin: 0 auto 0 -25px;
+}
+
+.divider.white .fa { /* for white background color OR white rounded icon */
+  background: #fff;
+  color: #333;
+}
+
+li.divider {
+  margin:6px;
+}
+
+/** Nav Bar
+ **************************************************************** **/
+ul.nav li:hover {
+  background-color:@gray-verylight;
+}
+
+.navbar-interior {
+  background: white;
+  padding-top: 10px;  // offset to center logo on navbar
+  min-height: 80px;
+}
+
+.navbar-default {
+  background-color: transparent !important;
+
+  // Gradient border
+  border-width: 0 0 6px 0 !important;
+  -webkit-border-image: -webkit-linear-gradient(@grey-navbar, transparent) 100 1% !important;  /* For Safari 5.1 to 6.0 */
+  -moz-border-image: -moz-linear-gradient(@grey-navbar, transparent) 100 1% !important;        /* For Firefox 3.6 to 15 */
+  -o-border-image: -o-linear-gradient(@grey-navbar, transparent) 100 1% !important;            /* For Opera 11.1 to 12.0 */
+  border-image: linear-gradient(@grey-navbar, transparent) 100 1% !important;                  /* Standard syntax */
+
+  .navbar-nav {
+    padding-top: 7px; // offset to same height as slogan
+  }
+
+  .navbar-nav-left > li > a {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .navbar-right > li > a {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .navbar-right {
+    .signup {
+      color: #e68917;
+      border-width: 9px;
+      border-color: white;
+      border-style: solid;
+      width: 90px;
+      height: 50px;
+      padding: 5px;
+    }
+
+    .signup:before {
+      content: " ";
+      position: absolute;
+      z-index: 0;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      border: 1px solid #FBC779;
+    }
+  }
+
+  .divider-vertical {
+    border-right-color: #222222;
+    border-left-color: #111111;
+  }
+}
+
+.navbar .divider-vertical {
+  height: 60px;
+  margin: 0 9px;
+  border-right: 1px solid #ffffff;
+  border-left: 1px solid #bbbbbb;
+}
+
+@media (max-width: 767px) {
+  .divider-vertical {
+    display: none;
+  }
+}
+
+/**
+ * Scaffolding
+ */
+
+html {
+  // http://files.christophzillgens.com/webkit-font-smoothing.html
+  // -webkit-font-smoothing: antialiased;  // also try subpixel-antialiased, antialiased, none
+  // text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  /* Sticky Footer Styles Below */
+  position: relative;
+  min-height: 100%;
+}
+
+body#topNav {
+  /* Account for fixed navbar */
+  padding-top: 80px;
+}
+
+/* thin style for large headers */
+h1, h2 {
+  font-weight: 300;
+}
+
+/**
+ * Navbar
+ */
+
+@navbar-default-brand-color:       @gray-darker;
+@navbar-default-link-hover-bg:     darken(@navbar-default-bg, 6.5%);
+
+.navbar-nav .profile-image {
+  width: 30px;
+  height: 30px;
+  margin: -15px 15px -15px 0;
+}
+.navbar-brand {
+  //  background-image: url(/img/dezbo_logo.png);
+  //  background-repeat: no-repeat;
+  //  background-size: 200px;
+  //  background-position: left center;
+  //  padding-left: 200px;
+  margin-top: -12px;
+  left: 20%;
+  margin-left:10px;
+}
+.nav-slogan {
+  float: left;
+  font-family: Georgia;
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 22px;
+}
+
+/**
+ * Flash Alerts
+ */
+
+/* remove rounded border */
+@alert-border-radius: 0px;
+
+.alert {
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.btn-white {
+  color: #333;
+  background-color: @white;
+}
+.btn-white:hover,
+.btn-white:focus,
+.btn-white:active {
+  color: @white;
+  background-color: transparent;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+  border-color: @white;
+}
+
+@media (min-width: 768px) {
+  .jumbotron .btn {
+    width: 100%;
+    padding: 15px 30px;
+    font-size: 28px;
+  }
+}
+
+/*
+ * Minitron
+ * Jumbotron-esque page headers
+ */
+
+.mini-tron {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  padding: 30px 15px;
+  text-align: center;
+  h1 {
+    margin-top: 0;
+  }
+  p {
+    font-weight: 300;
+  }
+}
+@media (min-width: 768px) {
+  .mini-tron {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    h1 {
+      font-size: 45px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+}
+
+/**
+ * Dashboard Page
+ */
+
+.dashboard {
+  text-align: center;
+  p {
+    font-size: 50px;
+    line-height: 1;
+    color: @red;
+    text-shadow: 1px 1px 1px @black;
+  }
+}
+@media (min-width: 768px) {
+  .dashboard {
+    p {
+      font-size: 96px;
+    }
+  }
+}
+
+/**
+ * Colors Page
+ */
+
+.pnl {
+  padding: 15px;
+}
+
+/**
+ * Privacy Page
+ */
+
+.table.privacy {
+  text-align: left;
+  margin-top: 30px;
+  tbody>tr>td {
+    border-top: 0px;
+    font-weight: 300;
+    font-size: 20px;
+  }
+}
+
+/**
+ * Panel Headers Like Buttons
+ */
+
+.panel-button:hover {
+  background: darken(#f5f5f5, 15%);
+}
+a.noDecoration {
+  text-decoration: none;
+}
+a.noDecoration:hover {
+  text-decoration: none;
+}
+
+// Main page sections
+
+.centered {
+  margin:0 auto;
+}
+
+
+.winners-box {
+  border-width: 3px;
+  border-color: #ffffff;
+  border-style: solid;
+  max-width: 240px;
+  height: 240px;
+  display:block;
+  margin-bottom: 20px;
+}
+

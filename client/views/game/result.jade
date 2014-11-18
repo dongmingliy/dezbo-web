@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  include ../home/head
+  body.boxed(ng-app="dezboapp" ng-controller='resultCtrl')
+  include navigation
+  include ../home/flash
+  .container
+    .row
+      h2.text-center MOST WANTED ITEMS ON DEZBO
+      br
+      div.text-center.gray-light Results are sorted by the number of most wanted items
+      br
+      .col-md-6.col-md-offset-3
+        div(ng-repeat="result in voteResults")
+          | {{result.title}}
+          progressbar(value='100*result.voteup/(topvotecount)', type='primary')
+            span {{result.voteup }} wants
+        div(style='padding-bottom:20px')
+        div.text-center.video-container
+          iframe(src='//www.youtube.com/embed/bPv7epZ7Z8U', width='100%',height='100%' frameborder='0', allowfullscreen='')
+    .row
+      br
+      h4.text-center
+        | STAY UPDATED
+      br
+      form.form-inline(method='POST', action='gamesignup')
+        .row-fluid.text-center
+          input(type='hidden', name='_csrf', value=_csrf)
+          input.center-block.form-control(style='width:300px;', type='email', name='email', id='email', placeholder='Enter your email', required)
+          span(style='margin-right:15px;') &nbsp;
+          button.btn.btn-primary.btn-reset(type='submit') Sign up
+      br
+  include ../home/footer-script

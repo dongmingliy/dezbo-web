@@ -1,0 +1,433 @@
+@import "variables";
+
+.bg-ellen-banner {
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  background-image: url('../img/product/ellen-banner-ellen.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 396px;
+  background-color: @gray-bg;
+
+}
+
+.bg-pharrell-banner {
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  background-image: url('../img/product/pharrell-banner.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 396px;
+  background-color: @white;
+}
+
+.banner-img {
+  max-width: 100%;
+}
+
+.banner-text-width {
+  max-width: 500px;
+}
+
+.banner-text-bg {
+  background-color: @gray-transparent;
+  height: 138px;
+  padding-top: 10px;
+  padding-left: 22px;
+  h1, h2, h3, h4, h5, h6 {
+    color: @white !important;
+    margin-top: 0 !important;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  h4 {
+    font-family: @font-family-dezbo !important;
+  }
+}
+
+.banner-text-width:before {
+  font-size: 0;
+  left: -15px;
+  content: '';
+  border-top: 137px solid transparent;
+  border-right: 30px solid @gray-transparent;
+  border-bottom: 0 solid @gray-transparent;
+  border-left: 0 solid transparent;
+  position: absolute;
+  bottom: 0px;
+}
+
+.skew {
+  -webkit-transform: skew(-12deg);
+  -moz-transform: skew(-12deg);
+  -o-transform: skew(-12deg);
+}
+
+// helper class
+.banner-button-helper {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
+  top: 100%;
+  border-width: 5px 5px;
+  border-style: solid;
+  z-index: -1;
+}
+
+.banner-button-blue {
+  position: absolute;
+  top: 242px;
+  left: 5px;
+  .btn {
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    border-radius: 2px !important;
+  }
+}
+
+.banner-button-blue:before {
+  .banner-button-helper;
+  border-color: darken(@brand-primary, 15%) darken(@brand-primary, 15%) transparent transparent;
+}
+
+.banner-button-yellow {
+  .banner-button-blue;
+}
+
+.banner-button-yellow:before {
+  .banner-button-helper;
+  border-color: darken(@brand-warning, 15%) darken(@brand-warning, 15%) transparent transparent;
+}
+
+.banner-video {
+  position: absolute;
+  top: 220px;
+  left: 130px;
+  .btn{
+    background:rgba(0, 0, 0, .7);
+    border:none;
+    box-shadow:none;
+  }
+  .btn:hover{
+    background: rgba(0, 0, 0, .9) !important;
+  }
+  img{
+    -webkit-transform: skew(12deg);
+    -moz-transform: skew(12deg);
+    -o-transform: skew(12deg);
+  }
+}
+
+.font-number {
+  font-family: @font-family-dezbo !important;
+  font-weight: normal !important;
+}
+
+.charity-v-middle {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  height: 250px;
+  max-width: 700px;
+}
+
+.divider-left {
+  border-left: 4px solid @gray-lighter;
+}
+
+.divider-right {
+  border-right: 4px solid @gray-lighter;
+}
+
+.product-margin-top {
+  margin-top: 20px;
+}
+
+.progress-bg-override {
+  margin-top: 24px;
+  margin-left: 10px;
+  .progress {
+    background-color: @gray-lighter !important;
+    height: 30px !important;
+  }
+  .progress-bar {
+    line-height: 30px !important;
+    font-size: 20px !important;
+  }
+}
+.banner-countdown{
+
+}
+
+
+
+
+
+/* ---------------liScroll styles----------- */
+
+.tickercontainer {
+  /* the outer div with the black border */
+  border: 2px solid @grey-border;
+  border-top: 5px solid @grey-border;
+  background: @white;
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.tickercontainer .mask {
+  /* that serves as a mask. so you get a sort of padding both left and right */
+}
+
+ul.newsticker {
+  /* that's your list */
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.newsticker li {
+  float: left; /* important: display inline gives incorrect results when you check for elem's width */
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  margin-left: 20px;
+}
+
+/* Content text styles */
+
+h5.reward-heading-small {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+p.product-text {
+  font-family: Georgia;
+  font-size: 16px;
+}
+
+h3.product-heading {
+  font-weight: bold;
+}
+
+/* Donor box styles */
+
+.donorItems {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .row {
+    .triangle {
+      width: 0px;
+      height: 0px;
+      border-top: 40px solid @grey-bodytext;
+      border-right: 40px solid transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      .triangle-text {
+        color: @white;
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        top: -38px;
+        left: 6px;
+      }
+    }
+
+    .thumbnail {
+      width: 240px;
+      border: 1px solid @grey-border !important;
+      display: block;
+      margin-bottom: 20px;
+      background-color: white;
+      height: 360px; // same height as "Please note" box
+      /*padding:0 !important;*/
+
+      .donor-box {
+        bottom: 28px;
+        padding: 4px;
+        position: relative;
+        top: 0;
+
+        .donor-title {
+          text-align: left;
+          display: inline-block;
+        }
+
+        .donation-amount {
+          text-align: right;
+          display: inline-block;
+          font-size: 24px;
+          margin: 0;
+        }
+
+        .donor-title-amount-line {
+          border-bottom: 1px solid @gray-lighter;
+          font-size: 22px;
+          height: 40px;
+        }
+
+        .prizes {
+          margin-bottom: 10px;
+          margin-top: 10px;
+          max-width: 96%;
+          min-height: 62px; // must be same height as textbox+text on custom donation box
+        }
+
+        .donor-box-button {
+          display: block;
+          margin-top: 8px;
+          margin-bottom: 10px;
+          min-width: 70%;
+        }
+
+        .donor-custom-title-amount-line {
+          border: none;
+        }
+
+        .custom-prizes {
+          margin: 10px;
+        }
+
+        .custom-donation-line {
+          border: 2px solid @grey-border;
+          width: 85%;
+          font-size: 24px;
+        }
+
+        .custom-donation-sign {
+          text-align: left;
+          display: inline-block;
+          color: @grey-bodytext;
+        }
+
+        .custom-donation-input {
+          border: 0;
+          display: inline-block;
+          outline-width: 0;
+          text-align: center;
+          width: 85%;
+        }
+      }
+    }
+  }
+}
+
+.please-note-heading {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid @grey-border;
+}
+
+.please-note-body {
+  max-width: 80%;
+  font-size: 14px !important;
+  padding-bottom: 10px;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.bidding-product-box {
+  border-top: 8px solid @brand-warning;
+  margin-top: 20px;
+
+  .bidding-info-box {
+    height: 333px;
+    border-bottom: 3px solid #b3b3b3;
+    margin-bottom: 20px;
+
+    .bidding-columns-container
+    {
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      .bidding-column {
+        width: 32%;
+        margin: 0 auto;
+        display: inline-block;
+
+        h5.bidding-column-heading {
+          font-size: 14px;
+          min-height: 30px; // make all columns the same height
+          margin: 0px !important;
+        }
+
+        p.bidding-column-number {
+          font-size: 40px;
+          margin: 0px !important;
+        }
+      }
+
+      .bidding-column-center {
+        border-width: 0 2px 0 2px;
+        border-style: solid;
+        border-color: #cccccc;
+      }
+    }
+
+    .bidding-countdown {
+      background-color: #6E6E6E;
+      color: white;
+      text-align: center;
+      border: 1px solid #4d4d4d;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      margin-bottom: 20px;
+    }
+
+    .bidding-radio {
+      label.bidding-radio-label {
+        font-size: 16px;
+        font-weight: normal !important;
+        margin-bottom: 10px;
+
+        input.bidding-radio-button {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .custom-bidding-line {
+      border: 2px solid @grey-border;
+      font-size: 24px;
+      margin-bottom: 20px;
+      width: 50%;
+      min-width: 256px;
+    }
+
+    .custom-bidding-sign {
+      text-align: left;
+      display: inline-block;
+      color: @grey-bodytext;
+    }
+
+    .custom-bidding-input {
+      border: 0;
+      display: inline-block;
+      outline-width: 0;
+      text-align: center;
+      width: 90%;
+    }
+  }
+
+  .bidding-button {
+    width: 280px;
+    height: 66px;
+    font-size: 28px;
+    float: right;
+  }
+}

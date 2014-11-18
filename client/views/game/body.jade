@@ -1,34 +1,30 @@
 block content
-  .headline.responsive-heading.col-md-4.text-center
-    h4.gray-light Vote & we will approach the celebrities
-      bt
-     h4.gray-light with the most popular items
-  .container(ng-controller='gameCtrl')
+  .responsive-heading.col-md-4.text-center
+    h4.gray-light.col-centered.headline Vote & we will approach the celebrities with the most popular items
+  .container
     .row
-      .gameSection.center-block
-        h2.text-center.gameTitle(ng-model='counter') {{celebItem.itemTitle}}
-        div.bottom
+      .gameSection.center-block.responsive-heading
+        h1.responsive-heading.text-center.gameTitle(ng-model='counter') {{celebItem.itemTitle}}
+        div
           div.face-wrapper.pull-left
             img.img-circle.face(ng-src='{{celebItem.celebURL}}', width='70', height='70')
           div.v-middle
             h4 {{celebItem.celebName}}
+          div.pull-right
+            | {{counter+1}}/{{maxItems}}
+        br
         div.imgSection
           img.img-responsive(ng-src='{{celebItem.itemURL}}')
-        .col-md-6.text-center(style='margin-bottom: 20px;')
-          a.btn.btn-success.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(1)')
-            i.fa.fa-heart.fa-6
-            | &nbsp;I Want this
-        .col-md-6.text-center
-          a.btn.btn-danger.btn-lg.btn-responsive( style='width:200px;', ng-class="{'disabled': inProgress == true}", ng-click='changeItem(-1)')
-            i.fa.fa-times.fa-6
-            | &nbsp;Not Interested
-    div.progressSection
-      progressbar(value='votePercentage', type='primary')
-       span(ng-show='showProgress') {{votePercentage}}%
-    br
-    div.text-center(ng-show='showProgress')
-     | {{votePercentage}}% of people want this
-
+        br
+        .row-no-padding
+          .col-md-6.col-xs-12.text-center(style='margin-bottom: 20px;')
+            a.btn.btn-lg.btn-success.btn-responsive(style='width:180px;' ng-class="{'disabled': inProgress == 1}", ng-click='changeItem(1)')
+              i.fa.fa-heart.fa-6
+              | &nbsp;I Want this
+          .col-md-6.col-xs-12.text-center
+            a.btn.btn-lg.btn-danger.btn-responsive(style='width:180px;' ng-class="{'disabled': inProgress == -1}", ng-click='changeItem(-1)')
+              i.fa.fa-times.fa-6
+              | &nbsp;Not Interested
 
   //.comingSoonEmail
   //  .container

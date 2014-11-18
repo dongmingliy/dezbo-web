@@ -6,7 +6,7 @@ if 'development' != process.env.NODE_ENV
 else if 'development' == process.env.NODE_ENV
   script(src='/lib/jquery/dist/jquery.min.js')
 
-script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js')
+script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js')
 if 'development' != process.env.NODE_ENV
   script(src='/js/#{application}.min.js')
 else if 'development' == process.env.NODE_ENV
@@ -15,27 +15,12 @@ script(src="https://js.stripe.com/v2/")
 //- Backup just in case
 script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min.js"><\/script>')
 script $.fn.modal || document.write('<script src="/lib/bootstrap/dist/js/bootstrap.min.js"><\/script>')
-//- Then use jQuery to async load everything else
+script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-540f8ed6699d23bb')
 script.
-  jQuery(document).ready(function($) {
-    //- Async load socket.io
-    $.ajax({
-      type: 'GET',
-      url: '//cdn.socket.io/socket.io-1.0.6.js',
-      dataType: 'script',
-      cache: true
-    }).done(function () {
-      $(function(){
-        var socket = io(window.location.hostname);
-        socket.on('connect', function () {
-          socket.emit('pageview', window.location.href);
-        });
-        window.onhashchange = function () {
-          socket.emit('pageview', window.location.href);
-        };
-      });
-    });
-  });
+  var addthis_config = {
+       data_track_clickback: false
+  }
+//- Then use jQuery to async load everything else
 script.
   jQuery(window).load(function(){
     if(jQuery('.flexslider').length > 0){
@@ -51,3 +36,8 @@ script.
       });
     }
   });
+
+script.
+  setTimeout(function () {
+    jQuery('ul.paymentTicker').liScroll({travelocity: 0.15});
+  }, 0);

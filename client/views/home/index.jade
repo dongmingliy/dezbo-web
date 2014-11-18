@@ -1,7 +1,8 @@
 extends ../layouts/layout
 block content
-  section.boxed
+  section.boxed(ng-controller="homeCtrl")
     .wrapper
       include homeSlider
-      include howItWorks
       include homeItems
+      include winners
+      include howItWorks

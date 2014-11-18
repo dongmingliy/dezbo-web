@@ -1,0 +1,13 @@
+.col-md-3.col-sm-4
+  .thumbnail.centered
+    figure
+      img.img-responsive(src='{{i.imageURL}}', width='263', height='263', alt='')
+    .donor-box
+      .triangle
+        .triangle-text {{$parent.$index + 1}}
+      .text-center
+        .div.donor-title-amount-line
+          h5.donor-title.reward-heading-small {{i.donorTitle}}&nbsp;
+          h6.donation-amount.font-number {{i.donationAmount}}
+        p.prizes.product-text.centered.text-capitalize {{i.prizes}}
+        button.btn.btn-primary.donor-box-button.centered DONATE NOW

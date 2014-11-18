@@ -1,50 +1,115 @@
 'use strict';
-dezboapp.controller('gameCtrl', ['$scope','$http','$window','$timeout',
-  function($scope, $http, $window, $timeout) {
+
+dezboapp.controller('gameCtrl', ['$scope', '$http', '$window', '$timeout', '$modal',
+  function ($scope, $http, $window, $timeout, $modal) {
+    $scope.counter = 1;
+    var showModal = 5;
+    $scope.maxItems = showModal;
     $scope.celebItems = [];
-    $http.get('/celebItems').
-      success(function(data){
-      $scope.celebItems = data;
-        $scope.counter = 0;
-        $scope.celebItem = $scope.celebItems[$scope.counter];
-        $scope.showProgress = false;
-    })
-      .error(function(data){
-        console.log(data);
-        $scope.$apply(function() { $location.path("/comingsoon"); });
-    });
-//    $http({
-//      method: "post",
-//      url: "process.cfm",
-//      transformRequest: transformRequestAsFormPost,
-//      data: {
-//        id: 4,
-//        name: "Kim",
-//        status: "Best Friend"
-//      }
-//    });
+    retrieveCelebItems($http, $scope);
 
-    $scope.changeItem = function(voteValue) {
-      $scope.inProgress = true;
-      if($scope.counter == 1){
-        $scope.counter = 0;
+    $scope.changeItem = function (voteValue) {
+      // in progress will determine which button will get disabled 1 means up button is disabled, -1 is the other one
+      $scope.inProgress = voteValue;
+      var currentItem = $scope.celebItems[randomItems[$scope.counter]];
+      currentItem.vote = voteValue;
+
+      if ($scope.counter === (showModal - 1)) {
+        showModalDialog($scope,$http, $modal, $window, $timeout,voteValue);
       } else {
-        $scope.counter = 1;
+        showNextImage($scope,$http, $window, $timeout,voteValue);
       }
-      // send google analytics the current item's vote
-      if($window.ga){
-        ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle , voteValue);
-      }
-      $scope.showProgress = true;
-      $scope.votePercentage = Math.floor((Math.random() * 100) + 0);
-      var nextImage = function() {
-        $scope.celebItem = $scope.celebItems[$scope.counter];
-        $scope.showProgress = false;
-        $scope.inProgress = false;
-        $scope.votePercentage = 0;
-      };
-
-      $timeout(nextImage, 1500);
     };
+
   }
 ]);
+
+var randomItems;
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+
+function showModalDialog($scope,$http, $modal, $window, $timeout,voteValue) {
+  var modalInstance = $modal.open({
+    templateUrl: '/game/signup',
+    controller: 'ModalInstanceCtrl',
+    size: 'modal-sm',
+    backdrop: 'static'
+  });
+
+  modalInstance.result.then(function () {
+    $scope.maxItems = randomItems.length;
+    $scope.inProgress = voteValue;
+    showNextImage($scope,$http, $window, $timeout,voteValue);
+  });
+
+}
+
+function showNextImage($scope,$http, $window, $timeout,voteValue) {
+  var itemCounter = $scope.counter + 1;
+  if ($scope.celebItems[randomItems[itemCounter]]) {
+    var transform = function (data) {
+      return $.param(data);
+    };
+    $http.post('/voteitem', $scope.celebItems[randomItems[$scope.counter]],
+      {headers: {'Content-Type': 'application/x-www-form-urlencoded'}, transformRequest: transform})
+      .success(function (data) {
+        $timeout(nextImage, 200);
+      })
+      .error(function (error){
+        console.log(error);
+      });
+
+    var nextImage = function () {
+      $scope.counter++;
+      $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
+      $scope.inProgress = -100;
+      // send google analytics the current item's vote
+      if ($window.ga) {
+        ga('send', 'event', 'voteitem', $scope.celebItem.id, $scope.celebItem.itemTitle, voteValue);
+      }
+    };
+
+  }
+  // no item on the current index
+  else {
+    $scope.inProgress = false;
+    $window.location.href = '/result';
+  }
+}
+
+function retrieveCelebItems($http, $scope) {
+  $http.get('/celebItems').
+    success(function (data) {
+      randomItems = new Array(data.length);
+      for (var i = 0; i < randomItems.length; i++) {
+        randomItems[i] = i;
+      }
+      shuffle(randomItems);
+      $scope.celebItems = data;
+      $scope.counter = 0;
+      $scope.celebItem = $scope.celebItems[randomItems[$scope.counter]];
+    })
+    .error(function (data) {
+      console.log(data);
+      $scope.$apply(function () {
+        $location.path("/comingsoon");
+      });
+    });
+}

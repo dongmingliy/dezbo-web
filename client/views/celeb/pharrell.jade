@@ -1,0 +1,65 @@
+extends ../layouts/layout
+block content
+  section.wrapper(ng-app='dezboapp' ng-controller='productCtrl')
+    include pharrell-title
+    include pharrell-banner
+    .container
+      h3.product-heading PHARRELL'S TALL HAT
+      .bidding-product-box
+        .row
+          .col-md-6
+            img.img-responsive(src='../img/product/pharrell-hat.jpg', width='100%', height='auto')
+            p.product-text.italic
+              | Pharrell Williams has been called many things: Musician. Producer. Entrepreneur. And
+              | above all, wearer of hats. Big ones, small ones, but always unique ones. Here’s a
+              | collection of some chapeaux he has worn in the past—and a few he plans to wear in
+              | the near future. So take your pick and get "Happy" with this collection of tip-top
+              | toppers.
+          .col-md-6
+            .bidding-info-box
+              .bidding-columns-container
+                .bidding-column.text-center
+                  h5.bidding-column-heading
+                    b CURRENT BID:
+                    br
+                    | (by acharm4all)
+                  p.bidding-column-number.font-number $655
+                .bidding-column.text-center.bidding-column-center
+                  h5.bidding-column-heading.bold BIDS:
+                  p.bidding-column-number.font-number 4
+                .bidding-column.text-center
+                  h5.bidding-column-heading.bold ESTIMATED VALUE:
+                  p.bidding-column-number.font-number $2,000
+              .bidding-countdown.text-uppercase.centered
+                timer(start-time="1401000000101")
+                  span {{days}} days&nbsp;
+                  span {{hours}} hours&nbsp;
+                  span {{minutes}} minutes&nbsp;
+                  span {{seconds}} seconds&nbsp; left
+              .bidding-radio
+                label.bidding-radio-label
+                  input.bidding-radio-button(type="radio" name="biddingRadio" checked)
+                  b Custom amount:&nbsp;
+                  | minimum bid at $100
+                .custom-bidding-line
+                  .custom-bidding-sign.font-number $
+                    input.custom-bidding-input(type="number" step="any" min="100" value="100.00")
+                label.bidding-radio-label
+                  input.bidding-radio-button(type="radio" name="biddingRadio")
+                  b Or bid at Estimated Market Value&nbsp;
+                  | ($2,000)
+            button.btn.btn-warning.bidding-button PLACE BID
+      .row
+        .divider
+          i.fa.fa-star.yellow-bidding
+      .row
+        h3.text-center.text-uppercase.htitle ABOUT FROM ONE HAND TO ANOTHER
+        .col-md-2.col-md-offset-2.pull-left
+          a(href='http://fohta.org/')
+            img(src='img/fohta-logo.png')
+        .col-md-6.col-md-offset-1
+          p.charity-v-middle.bodytext-small
+            | From One Hand To AnOTHER (FOHTA) is a 501 C3 Not for Profit Foundation established by
+            | Pharrell Williams to provide educational S.T.E.A.M.M. (Science, Technology, Engineering,
+            | Arts, Mathematics, and Motivation) related tools needed for the future success of
+            | children.

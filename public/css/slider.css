@@ -1,1 +1,69 @@
-ul.nav li:hover{background-color:#007695}.navbar-inverse .navbar-nav>li>a{font-weight:700;color:#fff!important}.navbar .divider-vertical{height:60px;margin:0 9px;border-right:1px solid #fff;border-left:1px solid #bbb}.navbar-inverse .divider-vertical{border-right-color:#222;border-left-color:#111}@media (max-width:767px){.divider-vertical{display:none}}.active-nav{color:#fff;background-color:#007695;-moz-text-decoration-color:#fff;text-decoration-color:#fff}.carouselSize{top:0;overflow:hidden;height:340px}.slider-caption{position:absolute;display:block;margin-top:240px;margin-left:40px}.slider-caption h3{text-transform:uppercase}.slider-border{background:url(../img/shadow1.png) no-repeat;background-size:100% 100%}@media all and (max-device-width:640px){.slider-caption{position:absolute;display:block;margin-top:30px}.slider-font h1{font-size:20px!important}.slider-font h1,.slider-font h3{color:#fff!important;text-shadow:#000111 1px 2px 1px}.slider-font h3{font-size:16px!important}.slider-font button{width:100px;white-space:normal}}@media all and (max-device-width:320px){.slider-caption{position:absolute;display:block;margin-top:10px}.slider-font h1{font-size:14px!important}.slider-font h1,.slider-font h3{color:#fff!important;text-shadow:#000111 1px 2px 1px}.slider-font h3{font-size:12px!important}.slider-font button{width:100px;white-space:normal}}.featured-box{vertical-align:middle}
+.slider-caption {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* FF3+, Saf3+, Opera 10.10+, Chrome, IE9 */
+  bottom: 0;
+  color: #fff;
+  display: block;
+  left: 0;
+  padding: 1em;
+  position: absolute;
+  width: 100%;
+  zoom: 1;
+}
+/* Minified FlexSlider CSS with Chrome fix */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus {
+  outline: 0;
+}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+.flexslider .slides > li {
+  display: none;
+  /*-webkit-backface-visibility:hidden;*/
+  position: relative;
+}
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+.slides:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+html[xmlns] .slides {
+  display: block;
+}
+* html .slides {
+  height: 1%;
+}
+.no-js .slides > li:first-child {
+  display: block;
+}
+.flexslider {
+  background: #fff;
+  position: relative;
+  zoom: 1;
+}
+.flex-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.loading .flex-viewport {
+  max-height: 300px;
+}

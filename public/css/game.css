@@ -1,1 +1,163 @@
-.gameSection{max-width:600px;padding-top:20px}.gameSection,.gameSection .imgSection{padding-bottom:20px}.gamelogo{padding-top:6px;padding-bottom:6px}.face-wrapper .face{z-index:1;margin:15px;box-shadow:0 0 0 10px #e8e6e6}.img-circle{z-index:20;border-radius:500px}.gameTitle{border-bottom:1px solid #000}@media (min-width:300px){.responsive-heading h1{font-size:24px}.responsive-heading h3{font-size:20px;text-align:center}}@media (min-width:768px){.responsive-heading h1{font-size:34px}.responsive-heading h3{font-size:20px;text-align:center}}@media (min-width:992px){.responsive-heading h1{font-size:20px}.responsive-heading h3{font-size:20px;text-align:center}.navtagline{padding-top:20px}}@media (min-width:1170px){.responsive-heading h1{font-size:50px}.responsive-heading h3{font-size:20px;padding-left:4px}.navtagline{padding-top:20px}}@media (min-width:1440px){.responsive-heading h1{font-size:60px}.responsive-heading h3{font-size:24px}.navtagline{padding-top:20px}}.v-middle{display:table-cell;float:none;height:120px;vertical-align:middle}
+.gameSection {
+  padding-top: 5px;
+  max-width: 600px;
+}
+.gameSection .imgSection {
+  margin-bottom: 2px;
+}
+.gamelogo {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.headline {
+  width: 340px;
+  padding-top: 10px !important;
+}
+.face-wrapper .face {
+  z-index: 1;
+  /* Firefox */
+  /* Safari, Chrome */
+  box-shadow: 0px 0px 0px 8px #e8e6e6;
+  /* CSS3 */
+  margin: 12px;
+}
+.img-circle {
+  z-index: 20;
+  border-radius: 500px;
+}
+.gameTitle {
+  border-bottom: 1px solid #000;
+}
+.progressSection {
+  float: none;
+  margin: 0 auto;
+  max-width: 200px;
+  padding-bottom: 30px;
+}
+.progressSection .progress {
+  margin-bottom: 0 !important;
+}
+.progressSection .progress-bar {
+  color: black !important;
+}
+@media (min-width: 300px) {
+  .responsive-heading h1 {
+    font-size: 20px;
+  }
+  .responsive-heading h4 {
+    font-size: 14px;
+    text-align: center;
+  }
+  .headline {
+    width: 260px;
+    padding-top: 10px !important;
+  }
+  .btnVote {
+    padding: 10px 5px;
+    font-size: 16px;
+    border-radius: 4px ;
+    width: 180px;
+  }
+}
+@media (min-width: 768px) {
+  .responsive-heading h1 {
+    font-size: 28px;
+  }
+  .responsive-heading h4 {
+    font-size: 14px;
+    text-align: center;
+  }
+  .btnVote {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width: 160px;
+  }
+}
+@media (min-width: 992px) {
+  .responsive-heading h1 {
+    font-size: 34px;
+  }
+  .responsive-heading h4 {
+    font-size: 16px;
+    text-align: center;
+  }
+  .headline {
+    width: 200px;
+    padding-top: 10px !important;
+  }
+  .navtagline {
+    padding-top: 8px;
+  }
+  .btnVote {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width: 200px;
+  }
+}
+@media (min-width: 1170px) {
+  .responsive-heading h1 {
+    font-size: 40px;
+  }
+  .responsive-heading h4 {
+    font-size: 18px;
+    padding-left: 4px;
+  }
+  .headline {
+    width: 360px;
+    padding-top: 10px !important;
+  }
+  .navtagline {
+    padding-top: 20px;
+  }
+  .btnVote {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width: 200px;
+  }
+}
+@media (min-width: 2560px) {
+  .responsive-heading h1 {
+    font-size: 34px;
+  }
+  .responsive-heading h4 {
+    font-size: 18px;
+  }
+  .navtagline {
+    padding-top: 20px;
+  }
+  .btnVote {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width: 200px;
+  }
+}
+.v-middle {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  height: 80px;
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

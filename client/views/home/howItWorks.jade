@@ -1,19 +1,11 @@
 block content
-  section.container.howSection
-    h3.text-center.text-uppercase How it works
-    .row
-      .col-md-6
-        .featured-box.border-only.text-center
-          img(src='img/shop/bid.png', height='100', width='100')
-          .box-content
-            h4 Bidding
-            div Highest Bidder Wins!
-            br
-            div Support a charity with every winning bid
-      .col-md-6
-        .featured-box.nobg.border-only.text-center
-          img(src='img/shop/raffle.png', width='130')
-          h4 Raffle Entry
-          div Enter for a chance to win!
-          br
-          div All entries benefit the charity
+  .howSection
+    .container
+      h3.text-center.text-uppercase.htitle How it works
+      p.bodytext.text-center.how-vision-text.centered(style='margin-bottom:40px;')
+        |We believe that every diehard fan should be able to afford their favorite celebrity's items.
+        | Dezbo will provide celebrity items for a cause.
+      .row
+        .col-md-6.col-md-offset-3.text-center
+          div.text-center.video-container
+            iframe(src='//www.youtube.com/embed/UVOxtQ_xmgM', width='100%',height='100%' frameborder='0', allowfullscreen='')

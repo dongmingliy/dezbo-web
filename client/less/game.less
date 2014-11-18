@@ -1,18 +1,18 @@
 .gameSection{
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 5px;
   max-width: 600px;
   .imgSection{
-    margin-bottom: 40px;
-    width:600px;
-    height:400px;
+    margin-bottom: 2px;
   }
 }
 .gamelogo {
   padding-top:6px;
   padding-bottom:6px;
 }
-
+.headline{
+  width:340px;
+  padding-top:10px !important;
+}
 .face-wrapper .face {
   z-index: 1;
   -moz-box-shadow: 0px 0px 0px 8px #e8e6e6; /* Firefox */
@@ -35,6 +35,7 @@
   float: none;
   margin: 0 auto;
   max-width:200px;
+  padding-bottom:30px;
   //override bootstrap
   .progress{
     margin-bottom: 0 !important;
@@ -43,69 +44,115 @@
     color: black !important;
   }
 }
+
 @media (min-width: 300px) {
   .responsive-heading{
     h1 {
-      font-size: 24px;
-    }
-    h3{
       font-size: 20px;
+    }
+    h4{
+      font-size: 14px;
       text-align: center;
     }
   }
-
+  .headline{
+    width:260px;
+    padding-top:10px !important;
+  }
+  .btnVote{
+    padding: 10px 5px;
+    font-size: 16px;
+    border-radius: 4px ;
+    width:180px;
+  }
 }
+
 @media (min-width: 768px) {
   .responsive-heading{
     h1 {
-      font-size: 34px;
+      font-size: 28px;
     }
-    h3{
-      font-size: 20px;
+    h4{
+      font-size: 14px;
       text-align: center;
     }
   }
-
+  .btnVote{
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width:160px;
+  }
 }
 @media (min-width: 992px) {
   .responsive-heading{
     h1 {
-      font-size: 20px;
+      font-size: 34px;
     }
-    h3{
-      font-size: 20px;
+    h4{
+      font-size: 16px;
       text-align: center;
     }
   }
+  .headline{
+    width:200px;
+    padding-top:10px !important;
+  }
   .navtagline{
-    padding-top: 20px;
+    padding-top: 8px;
+  }
+  .btnVote{
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width:200px
   }
 }
 @media (min-width: 1170px) {
   .responsive-heading{
     h1 {
-      font-size: 50px;
+      font-size: 40px;
     }
-    h3{
-      font-size: 20px;
+    h4{
+      font-size: 18px;
       padding-left:4px;
     }
   }
+  .headline{
+    width:360px;
+    padding-top:10px !important;
+  }
   .navtagline{
     padding-top: 20px;
+  }
+  .btnVote{
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width:200px
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 2560px) {
   .responsive-heading{
     h1 {
-      font-size: 60px;
+      font-size: 34px;
     }
-    h3{
-      font-size: 24px;
+    h4{
+      font-size: 18px;
     }
   }
   .navtagline{
     padding-top: 20px;
+  }
+  .btnVote{
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px ;
+    width:200px
   }
 }
 .v-middle {
@@ -114,8 +161,21 @@
   float: none;
   height:80px;
 }
-.test {
-  padding-left:10px;
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 // make buttons smaller
 //
