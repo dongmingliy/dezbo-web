@@ -40,45 +40,8 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4, h5 {
   font-weight: bold !important;
 }
-h1 {
-  font-size: 3em !important;       //48px
-}
-h2 {
-  font-size: 1.5em !important;     //24px
-}
-h3 {
-  font-size: 1.375em !important;   //22px
-}
-h4 {
-  font-size: 1em !important;       //16px
-}
-h5 {
-  font-size: 0.875em !important;   //14px
-}
-h6 {
-  font-size: 0.75em !important;    //12px
-}
-
 p {
   font-family: @font-family-serif !important;
-}
-.text-xxlarge {
-  font-size: 2.5em !important;     //40px
-}
-.text-xlarge {
-  font-size: 1.5em !important;     //24px
-}
-.text-large {
-  font-size: 1.375em !important;   //22px
-}
-.text-mid {
-  font-size: 1.25em !important;    //20px
-}
-.text-small {
-  font-size: 1em !important;       //16px
-}
-.text-xsmall {
-  font-size: 0.875em !important;   //14px
 }
 .text-number {
   font-family: @font-family-serif !important;
@@ -100,21 +63,76 @@ a.grey-link {
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 @media (min-width:320px) {
   body{
-    font-size: 12px !important;
+    font-size: 16px !important;
+  }
+
+  h1 {
+    font-size: 2.125em !important;   //lowered from 48px to 34px
+  }
+  h2 {
+    font-size: 1.375em !important;   //lowered from 24px to 22px
+  }
+  h3 {
+    font-size: 1.25em !important;    //lowered from 22px to 20px
+  }
+  h4 {
+    font-size: 1em !important;       //16px
+  }
+  h5 {
+    font-size: 0.875em !important;   //14px
+  }
+  h6 {
+    font-size: 0.75em !important;    //12px
+  }
+  .text-xxlarge {
+    font-size: 1.875em !important;   //lowered from 40px to 30px
+  }
+  .text-xlarge {
+    font-size: 1.375em !important;   //lowered from 24px to 22px
+  }
+  .text-large {
+    font-size: 1.25em !important;    //lowered from 22px to 20px
+  }
+  .text-mid {
+    font-size: 1.25em !important;    //20px
+  }
+  .text-small {
+    font-size: 1em !important;       //16px
+  }
+  .text-xsmall {
+    font-size: 0.875em !important;   //14px
   }
 }
 
 /* smartphones, Android phones, landscape iPhone */
 @media (min-width:480px) {
-  body{
-    font-size: 14px !important;
+  h1 {
+    font-size: 2.625em !important;   //lowered from 48px to 40px
+  }
+  h2 {
+    font-size: 1.5em !important;     //24px
+  }
+  h3 {
+    font-size: 1.375em !important;   //22px
+  }
+  .text-xxlarge {
+    font-size: 2.25em !important;    //lowered from 40px to 36px
+  }
+  .text-xlarge {
+    font-size: 1.5em !important;     //24px
+  }
+  .text-large {
+    font-size: 1.375em !important;   //22px
   }
 }
 
 /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 @media (min-width:600px) {
-  body{
-    font-size: 16px !important;
+  h1 {
+    font-size: 3em !important;       //48px
+  }
+  .text-xxlarge {
+    font-size: 2.5em !important;     //40px
   }
 }
 
