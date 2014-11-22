@@ -36,3 +36,26 @@ block content
             | The Gentle Barn is a nonprofit corporation. It was founded in 1999 by Ellie R. Laks and is now run by
             | Ellie and Jay Weiner, who joined forces in 2002. The Gentle Barn's mission is to provide sanctuary for
             | abused animals who would not otherwise be able to find homes.
+
+block scripts
+  script(src="https://checkout.stripe.com/v2/checkout.js")
+
+  script.
+    $(document).on("click", ".donor-box-button", function () {
+      var token = function(res){
+      var $input = $('<input type=hidden name=stripeToken />').val(res.id);
+      $('form').append($input).submit();
+      };
+      StripeCheckout.open({
+      key:         'pk_test_V9KoJMZboWIvd2ikQUHGWMUA',
+      address:     true,
+      amount:      5000,
+      currency:    'usd',
+      name:        'Dezbo',
+      description: '{{i.donorTitle}}',
+      panelLabel:  'Checkout',
+      token:       token,
+      image:       'img/logo_o.png'
+      });
+      return false;
+    });
