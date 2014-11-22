@@ -32,7 +32,9 @@
                 h4.donor-title Custom Amount
               .div.text-xlarge.custom-donation-line.centered
                 p.text-number.custom-donation-sign $
-                  input.custom-donation-input(type="number" step="any" min="1" value="10.00")
+                  input.custom-donation-input(type="number" step="any" min="1"
+                    ng-model="customAmount" ng-init="customAmount=10")
               p.text-small.custom-prizes.text-capitalize Only $2 an entry
-              button.btn.btn-primary.donor-box-button.centered DONATE NOW
+              button.btn.btn-primary.donor-box-button.centered(
+                ng-click='donateAmount(customAmount * 100, "Custom Donation")') DONATE NOW
 

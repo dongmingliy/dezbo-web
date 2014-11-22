@@ -10,4 +10,5 @@
           h4.donor-title {{i.donorTitle}}&nbsp;
           p.text-xlarge.donation-amount.text-number {{i.donationAmount}}
         p.text-small.prizes.centered.text-capitalize {{i.prizes}}
-        button.btn.btn-primary.donor-box-button.centered DONATE NOW
+        button.btn.btn-primary.donor-box-button.centered(
+          ng-click='$parent.donateAmount(i.donationInt, i.donorTitle)') DONATE NOW
