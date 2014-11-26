@@ -13,7 +13,7 @@ dezboapp.controller('homeCtrl', ['$scope', '$modal',
       });
     };
 
-    $scope.startTimer = function () {
+    $scope.endingr = function () {
       $scope.$broadcast('timer-start');
       $scope.timerRunning = true;
     };
@@ -66,7 +66,7 @@ dezboapp.controller('homeCtrl', ['$scope', '$modal',
       itemName: "signed Oscars Selfie",
       currentBid: "$350",
       charityName: "The Gentle Barn",
-      startTime: "1401000000101"
+      ending: "Dec 15, 2014"
     },
     {
       imageURL: "img/shop/biddingSnoop.png",
@@ -74,7 +74,7 @@ dezboapp.controller('homeCtrl', ['$scope', '$modal',
       itemName: "Sunglasses",
       currentBid: "$250",
       charityName: "Youth Football League Foundation",
-      startTime: "1401000000101"
+      ending: "Dec 22, 2014"
     },
     {
       imageURL: "img/shop/biddingGaga.png",
@@ -82,7 +82,7 @@ dezboapp.controller('homeCtrl', ['$scope', '$modal',
       itemName: "Heart Leather Gloves",
       currentBid: "$784",
       charityName: "Born This Way Foundation",
-      startTime: "1401000000101"
+      ending: "Dec 25, 2014"
     },
     {
       imageURL: "img/shop/biddingKristen.png",
@@ -90,7 +90,7 @@ dezboapp.controller('homeCtrl', ['$scope', '$modal',
       itemName: "DSLR Camera",
       currentBid: "$1500",
       charityName: "PETA",
-      startTime: "1401000000101"
+      ending: "Jan 15, 2015"
     }];
   }
 ]);
